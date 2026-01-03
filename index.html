@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AserLand Studio | Argoteda</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         /* GENEL TASARIM AYARLARI */
         :root {
@@ -25,7 +25,6 @@
 
         /* HEADER (ÜST KISIM) */
         header {
-            /* Arka planı biraz daha sarıya uyumlu hale getirdim */
             background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
@@ -43,7 +42,7 @@
             margin: 0;
             text-transform: uppercase;
             letter-spacing: 5px;
-            color: var(--ana-renk); /* Başlığı Sarı Yaptım */
+            color: var(--ana-renk);
             text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
         }
 
@@ -92,7 +91,7 @@
             padding: 25px;
             background-color: var(--kart-rengi);
             border-radius: 5px;
-            border-left: 5px solid var(--ana-renk); /* Sol çizgi sarı oldu */
+            border-left: 5px solid var(--ana-renk);
             box-shadow: 0 4px 6px rgba(0,0,0,0.5);
         }
 
@@ -121,7 +120,7 @@
 
         .card:hover {
             transform: translateY(-5px);
-            border-color: var(--ana-renk); /* Üzerine gelince sarı çerçeve */
+            border-color: var(--ana-renk);
         }
 
         .btn {
@@ -151,8 +150,16 @@
             margin-top: 50px;
             border-top: 2px solid #222;
         }
-        
-        strong {
+
+        footer a {
+            color: #888;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        footer a:hover {
             color: var(--ana-renk);
         }
 
@@ -198,13 +205,13 @@
                 <div class="card">
                     <h3>🛠️ AserPermissions</h3>
                     <p>Minecraft sunucuları için geliştirdiğim özel yetki ve GUI yönetim sistemi. EssentialsChat, Vault ve TAB özelliklerini tek çatıda toplar.</p>
-                    <a href="#" class="btn"><i class="fab fa-github"></i> İncele / İndir</a>
+                    <a href="https://github.com/Argoteda" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub'da İncele</a>
                 </div>
 
                 <div class="card">
                     <h3>🎮 AserLand: Skarrgard Revolution</h3>
                     <p>Unity ve C# kullanılarak geliştirilen 2D sıra tabanlı RPG oyunu. AserLand evreninin derin hikayesini keşfedin.</p>
-                    <a href="#" class="btn"><i class="fas fa-gamepad"></i> Detaylar</a>
+                    <a href="https://github.com/Argoteda" target="_blank" class="btn"><i class="fas fa-gamepad"></i> Geliştirici Profili</a>
                 </div>
 
             </div>
@@ -215,8 +222,8 @@
             <p>"AserLand Pt.2" ve diğer çalışmalarım. Atmosferik, karanlık ve endüstriyel tınılar.</p>
             
             <div style="background:#222; padding:20px; border-radius:5px; text-align:center; border: 1px dashed #444;">
-                <p>🎵 Müziklerim yakında burada olacak.</p>
-                <a href="#" target="_blank" class="btn"><i class="fab fa-spotify"></i> Spotify'da Dinle</a>
+                <p>🎵 En son parçalarıma ve albümlerime buradan ulaşabilirsiniz.</p>
+                <a href="https://open.spotify.com/artist/0XLQbC6B3f7bM2DESccij3" target="_blank" class="btn"><i class="fab fa-spotify"></i> Spotify'da Dinle</a>
             </div>
         </section>
 
@@ -227,6 +234,7 @@
                 Skarrgard devrimi, uluslar ve kasabaların hikayesi burada şekillenir.
             </p>
             <p><i>Detaylı wiki ve hikaye arşivi yakında eklenecek...</i></p>
+            <a href="https://discord.gg/UA6dZjvg3v" target="_blank" class="btn"><i class="fab fa-discord"></i> Discord Sunucusuna Katıl</a>
         </section>
 
     </div>
@@ -234,9 +242,9 @@
     <footer>
         <p>© 2026 AserLand Studio. Tüm Hakları Saklıdır.</p>
         <p>
-            <a href="#" style="color:#666; margin:0 10px; text-decoration:none;"><i class="fab fa-discord"></i> Discord</a>
-            <a href="#" style="color:#666; margin:0 10px; text-decoration:none;"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="#" style="color:#666; margin:0 10px; text-decoration:none;"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://discord.gg/UA6dZjvg3v" target="_blank"><i class="fab fa-discord"></i></a>
+            <a href="https://www.instagram.com/argoteda.mp3/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/Argoteda" target="_blank"><i class="fab fa-github"></i></a>
         </p>
     </footer>
 
