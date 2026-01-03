@@ -8,9 +8,9 @@
     <style>
         /* GENEL TASARIM AYARLARI */
         :root {
-            --ana-renk: #00ff9d; /* Neon Yeşili */
-            --arka-plan: #0f0f0f;
-            --kart-rengi: #1a1a1a;
+            --ana-renk: #FFD700; /* Endüstriyel Sarı */
+            --arka-plan: #0f0f0f; /* Tam Siyah */
+            --kart-rengi: #1a1a1a; /* Koyu Gri */
             --yazi-rengi: #e0e0e0;
         }
         
@@ -25,7 +25,8 @@
 
         /* HEADER (ÜST KISIM) */
         header {
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            /* Arka planı biraz daha sarıya uyumlu hale getirdim */
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
             height: 60vh;
@@ -34,7 +35,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            border-bottom: 3px solid var(--ana-renk);
+            border-bottom: 4px solid var(--ana-renk);
         }
 
         h1 {
@@ -42,14 +43,17 @@
             margin: 0;
             text-transform: uppercase;
             letter-spacing: 5px;
-            color: #fff;
-            text-shadow: 0 0 20px var(--ana-renk);
+            color: var(--ana-renk); /* Başlığı Sarı Yaptım */
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
         }
 
         .subtitle {
             font-size: 1.2rem;
-            color: var(--ana-renk);
+            color: #fff;
             margin-top: 10px;
+            border: 1px solid var(--ana-renk);
+            padding: 5px 15px;
+            border-radius: 20px;
         }
 
         /* MENÜ */
@@ -60,7 +64,7 @@
             padding: 15px;
             text-align: center;
             z-index: 1000;
-            box-shadow: 0 5px 15px rgba(0,255,157,0.1);
+            border-bottom: 1px solid #333;
         }
 
         nav a {
@@ -85,16 +89,19 @@
 
         section {
             margin-bottom: 60px;
-            padding: 20px;
+            padding: 25px;
             background-color: var(--kart-rengi);
-            border-radius: 10px;
-            border-left: 5px solid var(--ana-renk);
+            border-radius: 5px;
+            border-left: 5px solid var(--ana-renk); /* Sol çizgi sarı oldu */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.5);
         }
 
         h2 {
             color: var(--ana-renk);
             border-bottom: 1px solid #333;
             padding-bottom: 10px;
+            text-transform: uppercase;
+            font-size: 1.5rem;
         }
 
         /* PROJE KARTLARI */
@@ -105,39 +112,48 @@
         }
 
         .card {
-            background-color: #252525;
+            background-color: #222;
             padding: 20px;
-            border-radius: 8px;
-            transition: transform 0.3s;
+            border-radius: 5px;
+            transition: transform 0.3s, border 0.3s;
+            border: 1px solid transparent;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            background-color: #2d2d2d;
+            border-color: var(--ana-renk); /* Üzerine gelince sarı çerçeve */
         }
 
         .btn {
             display: inline-block;
-            background-color: var(--ana-renk);
-            color: #000;
+            background-color: transparent;
+            color: var(--ana-renk);
             padding: 10px 20px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 3px;
             font-weight: bold;
             margin-top: 10px;
+            border: 2px solid var(--ana-renk);
+            transition: 0.3s;
         }
         
         .btn:hover {
-            background-color: #fff;
+            background-color: var(--ana-renk);
+            color: #000;
         }
 
         /* FOOTER */
         footer {
             text-align: center;
             padding: 40px;
-            background-color: #000;
+            background-color: #050505;
             color: #666;
             margin-top: 50px;
+            border-top: 2px solid #222;
+        }
+        
+        strong {
+            color: var(--ana-renk);
         }
 
         /* MOBİL UYUMLULUK */
@@ -198,9 +214,9 @@
             <h2><i class="fas fa-music"></i> Müzik: Argoteda</h2>
             <p>"AserLand Pt.2" ve diğer çalışmalarım. Atmosferik, karanlık ve endüstriyel tınılar.</p>
             
-            <div style="background:#252525; padding:20px; border-radius:8px; text-align:center;">
+            <div style="background:#222; padding:20px; border-radius:5px; text-align:center; border: 1px dashed #444;">
                 <p>🎵 Müziklerim yakında burada olacak.</p>
-                <a href="https://open.spotify.com/" target="_blank" class="btn">Spotify'da Dinle</a>
+                <a href="#" target="_blank" class="btn"><i class="fab fa-spotify"></i> Spotify'da Dinle</a>
             </div>
         </section>
 
@@ -216,11 +232,11 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 AserLand Studio. Tüm Hakları Saklıdır.</p>
+        <p>© 2026 AserLand Studio. Tüm Hakları Saklıdır.</p>
         <p>
-            <a href="#" style="color:#888; margin:0 10px;"><i class="fab fa-discord"></i> Discord</a>
-            <a href="#" style="color:#888; margin:0 10px;"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="#" style="color:#888; margin:0 10px;"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" style="color:#666; margin:0 10px; text-decoration:none;"><i class="fab fa-discord"></i> Discord</a>
+            <a href="#" style="color:#666; margin:0 10px; text-decoration:none;"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#" style="color:#666; margin:0 10px; text-decoration:none;"><i class="fab fa-github"></i> GitHub</a>
         </p>
     </footer>
 
