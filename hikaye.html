@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AserLand Evreni | Wiki</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* TEMEL AYARLAR (Ana Siteyle Aynı) */
+        :root {
+            --ana-renk: #FFD700;
+            --arka-plan: #0f0f0f;
+            --sidebar-renk: #050505;
+            --yazi-renk: #e0e0e0;
+        }
+        body { background-color: var(--arka-plan); color: var(--yazi-renk); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 100; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+        nav a:hover { color: var(--ana-renk); }
+
+        /* WIKI DÜZENİ (Sol Menü + Sağ İçerik) */
+        .wiki-container { display: flex; flex: 1; max-width: 1200px; margin: 0 auto; width: 100%; }
+        
+        /* SOL MENÜ (Sidebar) */
+        .sidebar {
+            width: 250px;
+            background: var(--sidebar-renk);
+            padding: 20px;
+            border-right: 1px solid #333;
+            height: 100vh; /* Tam boy */
+            position: sticky;
+            top: 60px;
+            overflow-y: auto;
+        }
+        .sidebar h3 { color: var(--ana-renk); border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 20px; }
+        .sidebar ul { list-style: none; padding: 0; }
+        .sidebar li { margin-bottom: 10px; }
+        .sidebar a:hover { color: var(--ana-renk); padding-left: 5px; }
+
+        /* SAĞ İÇERİK (Content) */
+        .content { flex: 1; padding: 40px; }
+        .content h1 { font-size: 3rem; color: var(--ana-renk); border-bottom: 2px solid #333; padding-bottom: 20px; }
+        .content h2 { color: var(--ana-renk); margin-top: 40px; }
+        .wiki-box { background: #1a1a1a; padding: 20px; border-left: 4px solid var(--ana-renk); margin-bottom: 20px; }
+        
+        /* MOBİL UYUM */
+        @media (max-width: 768px) {
+            .wiki-container { flex-direction: column; }
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; border-right: none; border-bottom: 1px solid #333; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html"><i class="fas fa-home"></i> Ana Sayfa</a>
+        <a href="#" style="color:var(--ana-renk);">AserLand Wiki</a>
+        <a href="index.html#projeler">Projeler</a>
+    </nav>
+
+    <div class="wiki-container">
+        
+        <aside class="sidebar">
+            <h3>📖 İçindekiler</h3>
+            <ul>
+                <li><a href="#genel"><i class="fas fa-globe"></i> Evrene Giriş</a></li>
+                <li><a href="#tarihce"><i class="fas fa-hourglass-half"></i> Tarihçe</a></li>
+                <li><a href="#cografya"><i class="fas fa-map"></i> Coğrafya & Harita</a></li>
+            </ul>
+
+            <h3>👑 Uluslar ve Irklar</h3>
+            <ul>
+                <li><a href="#skarrgard">Skarrgard İmparatorluğu</a></li>
+                <li><a href="#direnis">Direniş Güçleri</a></li>
+            </ul>
+            
+            <h3>⚔️ Önemli Karakterler</h3>
+            <ul>
+                <li><a href="#">Argoteda</a></li>
+                <li><a href="#">Kral Valdred</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <h1 id="genel">AserLand Evreni</h1>
+            <p class="lead">Büyünün teknolojiyle harmanlandığı, kadim savaşların gölgesinde bir dünya...</p>
+
+            <div class="wiki-box">
+                <p><strong>Bilgi:</strong> Bu sayfa şu an yapım aşamasındadır. Google Sites verileri aktarılmaktadır.</p>
+            </div>
+
+            <h2 id="tarihce">Tarihçe ve Skarrgard Devrimi</h2>
+            <p>
+                AserLand'ın kaderi, Skarrgard Devrimi ile sonsuza dek değişti. (Buraya hikayenin girişini yazacağız...)
+            </p>
+
+            <h2 id="cografya">Coğrafya</h2>
+            <p>
+                Kuzeyin buzlu dağlarından, güneyin kurak çöllerine kadar AserLand geniş bir coğrafyaya yayılır.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
