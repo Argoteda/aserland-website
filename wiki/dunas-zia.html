@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dunas Zia | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 30px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.5rem; }
+
+        /* INFOBOX (BİLGİ KUTUSU) */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 250px; /* Resim yoksa yer tutucu */
+            object-fit: cover;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details open>
+                <summary>PHASE 1: Başlangıç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html" class="active">➤ Dunas Zia</a></li>
+                    <li><a href="#">Diğer Karakterler...</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>PHASE 2: Gelişme</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">DUNAS ZIA</div>
+                
+                <div class="infobox-image"><i class="fas fa-user-tie" style="font-size:3rem;"></i></div>
+
+                <table class="infobox-table">
+                    <tr><th>Unvan:</th><td>Adaletin ve Umudun Sessiz Elçisi</td></tr>
+                    <tr><th>Doğum:</th><td>M.Ö 39<br><small>AserLand Merkez</small></td></tr>
+                    <tr><th>Ölüm:</th><td>M.S 0 (İdam)<br><small>AserLand Merkez Sarayı</small></td></tr>
+                    <tr><th>Görevi:</th><td>XIX. Kral Yardımcısı (Demokrat)</td></tr>
+                    <tr><th>Görev Süresi:</th><td>7 Yıl (M.Ö 7 – 0)</td></tr>
+                    <tr><th>Selefi:</th><td>Pair Louren Comma</td></tr>
+                    <tr><th>Halefi:</th><td>Madam Maria Von Cortex</td></tr>
+                    <tr><th>Eğitim:</th><td>Ironreach Üniversitesi Hukuk Fakültesi</td></tr>
+                </table>
+            </div>
+
+            <h1>Dunas Zia</h1>
+            <p><strong>"Adaletin ve Umudun Sessiz Elçisi" (M.Ö 39 – 0)</strong></p>
+            
+            <p>
+                Dunas Zia, AserLand merkezinde, orta halli ve dürüst ailelerin yetiştirdiği bir ortamda dünyaya geldi. 
+                Küçük yaşlardan itibaren adaleti, dürüstlüğü ve insanlara yardım etme sorumluluğunu hisseden Zia, öğrenmeye karşı aç, 
+                meraklı ve nazik bir çocuk olarak yetişti. Babasının dürüst ticari yaşamından, annesinin fedakarlığından ilham alan Dunas, 
+                eğitim hayatında felsefe, hukuk ve antik diplomasi metinleriyle yoğruldu.
+            </p>
+            <p>
+                Gençlik yıllarında, halkın çektiği zalim vergi yükleri, acımasız ortak yönetimin haksızlıkları ve yoksulluğun yarattığı acılar 
+                ona derin yaralar açtı. Bu durum, ona insanları bir araya getirecek, sorunlara çözüm bulacak bir elçi olma arzusunu aşılamıştı.
+            </p>
+
+            <h2>Saray Yılları ve Diplomasi</h2>
+            <p>
+                Yeterli eğitim ve iyi huylu kişiliği nedeniyle, Dunas Zia kısa zamanda AserLand saray çevresinde güven duyulan bir isim haline geldi. 
+                Kralın yardımcısı olarak, ideallerinin aksine şiddetle çözüm arayışına inanmıyor; diyalog ve açık görüşlülükle sorunların aşılacağına inanıyordu. 
+                Zia, genç yaşına rağmen akılcı yaklaşımı, soğukkanlılığı ve empati dolu kalbiyle birçok iç ve dış krizde aracılık yaparak itibarını pekiştirdi.
+            </p>
+            <p>
+                Diplomasi sanatında ustalaştı; tartışmaları, atışmaları, iç çekişmeleri sakinleştirip ortak payda oluşturacak yöntemler geliştirdi. 
+                Bu süreçte, saray mektupları, gizli toplantılar ve halkla kurduğu temasa dayalı çalışmalarıyla, kendisini <em>“adaletin ve umudun sessiz elçisi”</em> 
+                olarak konumlandırdı.
+            </p>
+
+            <h2>Skarrgard Gerçeği ile Yüzleşme</h2>
+            <p>
+                Her şeyin değişmeye başlaması, Zia’ya kuzeybatı sınırındaki gerilimleri yatay olarak azaltmak için verilen görevle başladı. 
+                IV. Aserilios, Skarryion’un halkı kışkırtan yayınlarıyla müdahaleye razı olmadığı halde, aksilen diplomatik bir yol aramak isteyen 
+                yönetimin baskısı sonucu, Dunas Zia’ya elçilik görevini vermişti. Yanına ona eşlik etmesi için dört asker havale edildi ve yaklaşık 
+                10 günlük zorlu bir yolculuğa çıktılar.
+            </p>
+            <p>
+                Yolculuk esnasında, görevinin ağırlığı yavaşça üzerine çöktü. Doğa, sert kış rüzgarları ve zorlu arazilerle sınırlarını belirlerken, 
+                Zia, yolda ilerleyen askerlerden gelen ihbarı alarak, ufkun ötesinde devasa siyah mermer bloklarla örülmüş, yaklaşık 4-5 metre yüksekliğinde 
+                bir sura denk geldi. Üzerinde <strong>“Skarrgard”</strong> ifadesiyle anlam yüklü bu yapının görüntüsü, Zia’nın yüreğinde derin bir sarsıntı yarattı.
+            </p>
+            <p>
+                Bu yapı, barışçıl diyaloğun imkânsızlığının ve gücün artık kelimelerle değil, kararlı eylemlerle tartışılacağını açıkça ortaya koyuyordu. 
+                Zia, askerlerine “Serap görme, kendine gel!” diye seslenmiş; fakat serapın ardından gelen somut, girintili mermer bloklar onun kararlılığında 
+                mutlak bir sarsıntı yaratmıştı.
+            </p>
+
+            <h2>İdamı ve Mirası</h2>
+            <p>
+                Görevini tamamlamak üzere merkeze dönen Dunas Zia, sarayda umduğu diplomatik çözümden çok farklı bir atmosferle karşılaştı. 
+                IV. Aserilios, Zia’nın getirdiği haberin ardından öfkeyle doluydu. Zia, suskunluğunun ve vicdanının ağırlığı altında ezilmiş olsa da, 
+                gerçekleri yönetimin önüne sergilemekten kaçınmadı. Uzun sorgulamalar ve idam tehdidi sonrasında, Zia’nın direnci kırılır kırılmaz, 
+                gözyaşları içinde saraya mektuplarını teslim etti.
+            </p>
+            <p>
+                Ne yazık ki, kralın merhametsiz baskısı altında, Dunas Zia’nın itibarı, idealleri ve yaşam dolu yüreği, IV. Aserilios tarafından 
+                verilen zalim bir emirle son bulduruldu. Yıllarca barışın ve adaletin sesi olmayı amaçlayan bu değerli elçi, sonunda ihanet ve kırgınlık içinde idam ettirildi.
+            </p>
+            <p>
+                Dunas Zia’nın ölümü, sarayın soğuk taş duvarları arasında yankılanan bir hüzün çığlığı gibi yayıldı. Kimileri Zia’yı paniğe düşen zayıf 
+                bir elçi olarak görse de, halkın gözünde o, adaletin sesi ve barış uğruna canını feda etmiş bir kahramandı.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
