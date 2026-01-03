@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AserLand Wiki | Külliyat</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+        nav a:hover { color: var(--ana-renk); }
+
+        /* DÜZEN */
+        .container { max-width: 1000px; margin: 40px auto; padding: 20px; }
+        
+        h1 { color: var(--ana-renk); text-align: center; font-size: 3rem; text-transform: uppercase; letter-spacing: 3px; }
+        .intro { text-align: center; margin-bottom: 50px; color: #888; font-size: 1.2rem; }
+
+        /* PHASE KUTULARI */
+        .phase-box {
+            background: var(--panel);
+            border: 1px solid #333;
+            border-left: 5px solid var(--ana-renk);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 0 10px 10px 0;
+            transition: 0.3s;
+        }
+        .phase-box:hover { transform: translateX(10px); border-color: var(--ana-renk); }
+        .phase-title { color: #fff; font-size: 1.8rem; margin-bottom: 15px; font-weight: bold; }
+        .phase-desc { color: #aaa; margin-bottom: 20px; }
+        .story-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+        .story-tag { 
+            background: #222; color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; border: 1px solid #444; 
+        }
+        .story-tag:hover { background: var(--ana-renk); color: #000; }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Ana Sayfa</a>
+        <a href="#" style="color:var(--ana-renk);">Wiki Merkezi</a>
+    </nav>
+
+    <div class="container">
+        <h1>AserLand Külliyatı</h1>
+        <p class="intro">95.000+ kelimelik devasa bir evren. Kronolojik sıraya göre ayrılmış arşivler.</p>
+
+        <div class="phase-box">
+            <div class="phase-title">PHASE 1: Başlangıç (Örnek İsim)</div>
+            <div class="phase-desc">
+                Evrenin yaratılışı, ilk ulusların kuruluşu ve Skarrgard'ın kökenleri.
+                Burada AserLand'ın temellerinin atıldığı dönemi okuyacaksınız.
+            </div>
+            <ul class="story-list">
+                <li><a href="yaratilis.html" class="story-tag">1. Yaratılış</a></li>
+                <li><a href="ilk-savas.html" class="story-tag">2. İlk Savaş</a></li>
+                <li><a href="skarrgard-kurulus.html" class="story-tag">3. Skarrgard Kuruluş</a></li>
+            </ul>
+        </div>
+
+        <div class="phase-box">
+            <div class="phase-title">PHASE 2: Yükseliş ve Kaos</div>
+            <div class="phase-desc">
+                Teknolojinin büyü ile birleştiği, direnişin başladığı dönemler. 
+                Kral Valdred'in tahta çıkışı ve devrim hareketleri.
+            </div>
+            <ul class="story-list">
+                <li><a href="#" class="story-tag">Bölüm 1 (Yakında)</a></li>
+                <li><a href="#" class="story-tag">Bölüm 2 (Yakında)</a></li>
+            </ul>
+        </div>
+
+        <div class="phase-box">
+            <div class="phase-title">PHASE 3: Sonun Başlangıcı</div>
+            <div class="phase-desc">
+                Günümüz olayları ve oyunun (Skarrgard Revolution) geçtiği zaman dilimi.
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
