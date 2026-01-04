@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madam Elena Von Cortex | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 30px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.5rem; }
+        
+        /* ÖZEL LİSTELER */
+        .content ul { list-style: none; padding-left: 0; }
+        .content li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+        .content li::before { content: '•'; color: var(--ana-renk); font-weight: bold; position: absolute; left: 0; }
+        
+        /* ALINTI KUTUSU */
+        blockquote {
+            background: #1a1a1a;
+            border-left: 5px solid var(--ana-renk);
+            margin: 20px 0;
+            padding: 20px;
+            font-style: italic;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 220px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details open>
+                <summary>PHASE 1: Başlangıç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html" class="active">➤ Madam Elena Von Cortex</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>PHASE 2: Gelişme</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">MADAM ELENA</div>
+                
+                <div class="infobox-image"><i class="fas fa-crown" style="font-size:4rem;"></i></div>
+
+                <table class="infobox-table">
+                    <tr><th>Tam Adı:</th><td>Madam Elena Von Cortex</td></tr>
+                    <tr><th>Unvan:</th><td>Kayıp Reformcu<br>I. Doğu AserLand Kraliçesi</td></tr>
+                    <tr><th>Yaşam:</th><td>M.Ö 17 – M.S 56</td></tr>
+                    <tr><th>Doğum Yeri:</th><td>Skinnyleg / AserLand</td></tr>
+                    <tr><th>Ölüm Yeri:</th><td>EASC / Supremia</td></tr>
+                    <tr><th>Ölüm Nedeni:</th><td>Yaşlılık</td></tr>
+                    <tr><th>Eğitim:</th><td>AserLand Üniversitesi Hukuk Üst Fakültesi</td></tr>
+                    <tr><th>Meslek:</th><td>Demokratik Danışman / Kraliçe</td></tr>
+                    <tr><th>Görev Süresi:</th><td>6 Ay (M.S. 36 – 37)</td></tr>
+                    <tr><th>Selefi:</th><td>Yok (EASC tarafından seçilen ilk hükümdar)</td></tr>
+                    <tr><th>Halefi:</th><td>Celestine D'Arvell</td></tr>
+                </table>
+            </div>
+
+            <h1>Madam Elena Von Cortex</h1>
+            
+            <p>
+                Elena Von Cortex, M.Ö. 17’de AserLand’ın en seçkin akademisyen ailelerinden birinde doğdu. Ablası Maria Von Cortex (I. Cortex) gibi zihinsel keskinliği ve güçlü idealleriyle tanınan biri olmasına rağmen, hayatı boyunca hep ablasının gölgesinde kaldı.
+            </p>
+            <p>
+                Maria, yöneticiliği devrim niteliğinde bir değişimle ele alırken, Elena daha sessiz ve uyumlu bir figür olarak yetişti. Ablasının yanında büyüyerek demokrasi fikrine inandı, ancak bu sistemi nasıl yöneteceğine dair derin bir vizyon geliştirme fırsatı bulamadı.
+            </p>
+            
+            <blockquote>
+                "Ben, halkın iradesini korumak için yetiştirildim. Ancak gerçek liderlik yalnızca ideallerle değil, kararlılıkla sağlanır."
+            </blockquote>
+
+            <h2>Tahta Çıkışı ve Umut Vadeden Başlangıç (M.S. 36)</h2>
+            <p>
+                Batı AserLand Kraliçesi’nin varlığı Doğu AserLand için herhangi bir baş yönetici gereksinimi hissettirmemişti. Ancak Maria Cortex’in ölümüyle birlikte EASC, Elena’yı Doğu AserLand’ın ilk hükümdarı olarak seçti. Amaçladığı ilk şey ablasının getirdiği demokratik düzeni sürdürmekti. Ablasıyla hemen hemen benzer eğitim ve yaşantıyı deneyimlediği için halkın ona karşı umutları yüksekti. Doğu AserLand’ın yeni dönemine liderlik etme konusunda kendine güveniyordu. Ancak ablası gibi daha önce herhangi bir devlet işinde çalışmamıştı ve tecrübesizdi.
+            </p>
+
+            <blockquote>
+                "Ben bir hükümdar değilim, bir halk temsilcisiyim. Ancak halkın sevgisini kazanmak zorundayım."
+            </blockquote>
+
+            <h2>Yönetimde Zorluklar ve Kararsızlık (M.S. 36 - M.S. 37)</h2>
+            <p>
+                Elena, ablasının oluşturduğu yönetimi devam ettirmek istese de kritik kararları almakta zorlanıyordu.
+            </p>
+            <ul>
+                <li>Ekonomik sıkıntılar ortaya çıkmaya başladı ve halkın desteği azalmaya başladı.</li>
+                <li>Bazı bölgesel yönetimler, merkezi hükümetle uyumsuzluk yaşamaya başladı.</li>
+                <li>AserCouncil içinde bazı gruplar Elena’nın yetersizliğini açıkça dile getirdi.</li>
+                <li>✔ Halk, karar alma sürecinin yavaş olmasından rahatsızdı.</li>
+                <li>✔ Aser soyundan gelen yöneticiler, halkın gözünde tekrar güçlü bir alternatif olarak görülmeye başladı.</li>
+                <li>✔ Elena, halkın taleplerini karşılamak için yeni reformlar vaat etti, ancak bu reformlar uygulanamadı.</li>
+            </ul>
+
+            <blockquote>
+                "Benim niyetim, halkın iyiliği için yönetmekti. Ancak yönetmek istemek yeterli değil, yönetmek zorundasın."
+            </blockquote>
+
+            <h2>EASC’nin Müdahalesi ve Yönetimin Sonu (M.S. 37)</h2>
+            <ul>
+                <li>6 ay sonunda, halkın ve konseyin desteğini büyük ölçüde kaybetti.</li>
+                <li>EASC, AserCouncil’in de desteğiyle birlikte Elena’nın yönetiminin sürdürülemez olduğuna karar verdi.</li>
+                <li>Oy birliği ile Elena’nın görevine son verildi ve demokratik bir seçim süreci başlatıldı.</li>
+                <li>EASC oylamasıyla Halktan birisi olan Celestine D'Arvell başa geçti.</li>
+                <li>✔ Elena, tahtı bırakmak zorunda kaldı ve AserLand’da demokrasinin yeni bir dönemi başladı.</li>
+                <li>✔ Artık her lider Aser soyundan gelmek zorunda değildi. Liderler artık halkın seçimiyle yönetime gelmeye başladı.</li>
+                <li>✔ Elena’nın yönetimi kısa sürdü, ancak demokrasi sürecini kalıcı olarak değiştirdi.</li>
+            </ul>
+
+            <blockquote>
+                "Geri adım atmak zorunda kaldım. Ancak halkın kendi yolunu seçmesi, demokrasinin en güçlü yanıdır."
+            </blockquote>
+
+            <h2>Son Yılları ve Tarihteki Yeri</h2>
+            <ul>
+                <li>Tahttan indikten sonra, Elena EASC tarafından danışman olarak görevlendirildi.</li>
+                <li>Bölgesel yönetimler konusunda deneyimi kullanarak bazı reform önerilerinde bulundu.</li>
+                <li>Halk, onu başarısız bir lider olarak değil, demokrasinin bir dönemini temsil eden bir figür olarak hatırladı.</li>
+            </ul>
+
+            <blockquote>
+                "Ben başarılı bir hükümdar olmadım, ancak demokrasinin sürekliliği için mücadele ettim."
+            </blockquote>
+
+            <h2>Ölümü ve Tarihteki Yeri</h2>
+            <ul>
+                <li>✔ M.S. 56’da Elena Von Cortex yaşlılıktan hayatını kaybetti.</li>
+                <li>✔ Halk tarafından resmi bir törenle uğurlandı, ancak devletin yöneticisi olarak değil, bir demokratik reform figürü olarak anıldı.</li>
+                <li>✔ Doğu AserLand Halkı, onun yönetimini hatalarıyla kabul etti ancak demokrasiye olan katkısını da unutmadı.</li>
+            </ul>
+            <p>
+                Madam Elena, hükümdar olarak başarılı olamadı, ancak demokrasiye yaptığı katkılar Doğu AserLand’ın geleceğini şekillendirdi. Elena'nın ölümüyle Cortexler dönemi tamamen sona ermiş oldu.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
