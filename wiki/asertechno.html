@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AserTechno | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 30px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.5rem; }
+        
+        /* ÖZEL LİSTELER */
+        .content ul { list-style: none; padding-left: 0; }
+        .content li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+        .content li::before { content: '➤'; color: var(--ana-renk); font-weight: bold; position: absolute; left: 0; }
+
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 220px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details open>
+                <summary>PHASE 1: Başlangıç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html" class="active">➤ AserTechno</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>PHASE 2: Gelişme</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">ASERTECHNO</div>
+                
+                <div class="infobox-image"><i class="fas fa-cogs" style="font-size:4rem;"></i></div>
+
+                <table class="infobox-table">
+                    <tr><th>Unvan:</th><td>Mekaniğin Dâhisi ve Teknolojinin Mimarı</td></tr>
+                    <tr><th>Yaşam:</th><td>M.Ö 32 – M.S 37</td></tr>
+                    <tr><th>Doğum Yeri:</th><td>Ironheart / AserLand</td></tr>
+                    <tr><th>Ölüm Yeri:</th><td>Teknoloji Bakanlığı Laboratuvarı</td></tr>
+                    <tr><th>Ölüm Nedeni:</th><td>Suikast</td></tr>
+                    <tr><th>Eğitim:</th><td>Aldewood Ironheart Ortak Teknoloji Enstitüsü</td></tr>
+                    <tr><th>Meslek:</th><td>Mekanik Mühendisi / I. Teknoloji Bakanı</td></tr>
+                    <tr><th>Görev Süresi:</th><td>IV. Aserilios (< 1 Yıl)<br>I. Cortex (36 Yıl)<br>Zykrath (< 1 Yıl)</td></tr>
+                    <tr><th>Halefi:</th><td>II. AserTechno</td></tr>
+                </table>
+            </div>
+
+            <h1>AserTechno</h1>
+            
+            <p>
+                AserTechno, AserLand’ın sanayi merkezlerinin en başında gelen “Ironheart’da” doğdu. Ailesi, bölgesinde yaşayan çoğu aile gibi demir işçiliği konusunda usta zanaatkârlardan oluşuyordu; fakat genç AserTechno hiçbir zaman geleneksel yöntemlerle çalışmayı tercih etmedi. Küçük yaşlardan itibaren mekanik sistemler ve hidrolik düzenekler konularına karşı sıra dışı bir ilgi göstermeye başladı.
+            </p>
+            <p>
+                Babası ona "Demir, ateşle şekillenir; ama zihin, sadece bilgiyle keskinleşir." derdi. AserTechno, bu sözleri hayatının merkezine alarak, sanayi ve mekanik alanında daha ileri teknolojiler geliştirmek için kendini adadı. Çıraklık yıllarında, su gücüyle çalışan dövme makineleri tasarladı, katapult sistemlerini iyileştirdi ve nihayetinde balistik mekanikler üzerine yoğunlaşarak savaş mühendisliği alanında derinlemesine araştırmalar yapmaya başladı.
+            </p>
+            <p>
+                AserLand’da askeri yenilikler her zaman önemliydi, ancak teknolojinin hükümet tarafından bir korku silahı olarak kullanılmaya başlanması IV. Aserilios’un iktidara darbeyle gelişiyle başladı. IV. Aserilios, hükümetin başına geçtiğinde tüm askeri yatırımları ağır savaş makineleri, top sistemleri ve savaş araçları üzerine yoğunlaştırdı. AserTechno’nun üstün mekanik bilgisi kısa sürede dikkat çekti ve IV. Aserilios onu kişisel olarak kraliyet mühendisleri arasına dahil etti.
+            </p>
+            
+            <h2>Cañón de los Aseros ve Kuzeybatı Harekatı</h2>
+            <p>
+                Bu noktada AserTechno'nun en büyük projesi Cañón de los Aseros idi. IV. Aserilios, devasa surları yıkabilecek ve düşman hatlarını paramparça edebilecek bir silah istedi. AserTechno, o dönemde mekanik balistiklerin zayıf noktalarını anlamıştı; barutun etkisini artırarak, güllelerin daha hızlı ve güçlü atılmasını sağlayan özel bir yükleme mekanizması tasarladı.
+            </p>
+            <p>
+                Bu mekanizma sayesinde, 40 kiloluk devasa gülleler saniyede 500 metre hızla fırlatılabiliyor, hedefi bir anda yok edebilecek bir etkiye sahip oluyordu. Topun namlusu o kadar büyüktü ki içine üç insan kafası rahatlıkla sığabiliyordu. IV. Aserilios, bu silahın yaratılmasını gördüğünde AserTechno’ya yüksek onur nişanı verdi ve onu askeri mühendislik şefi olarak atadı.
+            </p>
+            <p>
+                AserTechno’nun tasarladığı Cañón de los Aseros topları, IV. Aserilios’un Kuzeybatı Harekatı’nda büyük bir tehdit unsuru olarak kullanıldı. Aser ordusu 60.000 askerle kuzeybatıya ilerlerken, AserTechno bizzat topçu birliklerinin düzenini yönetiyordu.
+            </p>
+            <p>
+                Ancak, Skarryion Damethsizi’nin ve Denoistos Los Aser’in stratejik zekâsı ve modern savaş teknikleri karşısında AserTechno’nun geliştirdiği toplar yeterince etkili olamadı. Skarryion, savaşın sur dışında gerçekleşmesini sağlayarak topların yıkım gücünü boşa çıkardı. Toplar kısa menzilli saldırılarda işlevsiz hale gelince, AserLand birlikleri Skarrgard ordusunun üstün otomatik arbaletleri ve hafif hareketli birlikleri karşısında büyük kayıplar verdi.
+            </p>
+            <p>
+                Kuzeybatı muharebesi 4 gün sürdü ve sonunda IV. Aserilios esir düştü. AserTechno, kralın yenilgisiyle birlikte artık savaş mühendisliği alanında daha fazla görev almak istemediğini hissetmeye başladı. O, teknolojinin yıkım için değil, kalkınma için kullanılması gerektiğine inanıyordu.
+            </p>
+
+            <h2>Madam Maria Von Cortex Dönemi ve Teknoloji Bakanlığı</h2>
+            <p>
+                Aserilios’un esir düşmesi, AserLand’da büyük bir değişimin başlangıcı oldu. Madam Maria Von Cortex hükümeti devralınca, zalim rejimin savaş teknolojilerini kaldırarak, bilim ve kalkınma odaklı bir yönetim şekli belirledi.
+            </p>
+            <p>
+                Bu süreçte AserTechno’ya "Teknoloji Bakanlığı" verilmesi kararlaştırıldı. Cortex, ona yeni dönemde tarım, mekanik üretim, şehir savunması ve enerji sistemleri üzerine projeler geliştirme görevini verdi. AserTechno artık toplar ve savaş makineleri yerine su kaynakları yönetimi, yeni nesil değirmenler ve halkın yaşamını kolaylaştıran mekanik çözümler üretmeye başladı.
+            </p>
+            <p>Bu dönemde AserTechno, şu büyük projelere imza attı:</p>
+            <ul>
+                <li><strong>Sanayi Devriminin Temeli Atıldı</strong> → Halka üretim ve istihdam imkanı sağlayacak dünyanın ilk fabrikasını kurdu.</li>
+                <li><strong>Savunma Sistemleri</strong> → Şehir koruma mekanizmaları, gelişmiş sur güçlendirme teknolojileri tasarladı.</li>
+                <li><strong>Halk İçin Mühendislik</strong> → Tarım aletleri modernize edildi, sulama sistemleri geliştirildi, evlerde kullanılan mekanik sistemler geliştirdi.</li>
+                <li><strong>Skarrgard ile İşbirliği</strong> → Damethia Anlaşması’nın getirdiği yeni sorumluluklar ile birlikte Skarrgard ile ortak teknoloji projeleri yürüterek, diplomatik bağları güçlendirdi.</li>
+            </ul>
+
+            <h2>İdeolojik Çatışma ve Baskılar</h2>
+            <p>
+                Madam Maria Von Cortex’in iktidarı döneminde AserTechno, savaş makineleri üretmekten vazgeçmiş ve bilimi halkın hizmetine sunan bir teknoloji bakanlığına dönüşmüştü. Ancak Cortex’in ölümünden sonra hükümetin milliyetçi kesimleri tekrar güç kazanmaya başladı. Eski rejimi savunan Aser yanlıları, teknolojinin yeniden askeri amaçlar için kullanılmasını istiyordu.
+            </p>
+            <p>
+                AserTechno, hayatı boyunca silah üretimini değil, kalkınmayı hedeflediği için bu yeni baskıcı sistemle hiçbir zaman tam olarak uyum sağlayamadı. Yıllarca teknoloji bakanlığını yönetmiş olmasına rağmen, milliyetçiler ona rejime ihanet eden biri gözüyle bakıyordu. Onlar için teknoloji, savaşın bir aracı olmalıydı. Ama AserTechno, barış ve ilerleme için bilim kullanmaya inanıyordu.
+            </p>
+            <p>
+                Madam Maria Von Cortex’in ölümünden sonra AserTechno, Skarrgard ile ortak mühendislik projelerine devam etti. Bu proje kapsamında şehir koruma mekanizmaları ve halk için tasarlanmış mekanik çözümler geliştiriliyordu. Milliyetçi Aser yanlıları, Skarrgard’a teknoloji sağlanmasını devletin çıkarlarına aykırı olarak değerlendirse de komşu devlet olan Doğu AserLand hükümetinin başında Madam Maria Von Cortex ile aynı ideolojiye sahip olan kardeşi Madam Elena Von Cortex (II. Cortex) vardı. Her ne kadar Batı AserLand’ın kraliçesi olmasa da Maria’nın kardeşiydi ve etkisini Batı AserLand’da hissettirebilecek bir figürdü. Bu sebeple Elena’nın varlığında Maria’dan sonra tahtı devralan Zykrath Vhalgoroth Aser, Cortex’in ve yandaşlarının iktidardaki gücünün yüksek olması ve halk desteğinin olması sebebiyle sessiz kalmayı tercih etti. Elena, AserTechno’nun bu hamlelerine olumlu bakıyordu. Ayrıca Damethia Anlaşması hala yürürlükteydi ve AserTechno’nun Skarrgard üzerindeki reformlarını engellemek Skarrgard ile siyasi bir kriz doğurabilirdi. Elena bu riski almak istemedi.
+            </p>
+            <p>
+                AserTechno, II. Cortex’in de kısa süre içerisinde tahttan devrilmesiyle yeni reformları için olan son desteğini de kaybetmişti. Zykrath Vhalgoroth Aser, Madam Elena Von Cortex’in tahttan devrilmesini beklemiş ve AserTechno’nun siyasi desteğinin tamamen kesilmesini beklemişti. Yeni gelen hükümet radikal milliyetçiliği benimsiyordu ve acilen teknoloji bakanlığının bağımsızlığının feshedilip devlete bağlanılması isteniyordu. AserTechno, hükümete çağrı yaparak bilimin tarafsız olması gerektiğini, Skarrgard’a verilen teknolojinin sadece insani amaçlar taşıdığını, anlaşma koşulu olduğunu ve savaş için kullanılmadığını belirtti. Fakat milliyetçiler, onu AserLand’ı bölmeye çalışan bir hain olarak görmeye başladı.
+            </p>
+            <p>
+                Bu gerilim giderek arttı ve sonunda Zykrath ve hükümet içindeki muhafazakâr kesimler, AserTechno’yu görevinden almak için harekete geçti. Ona, üst düzey hükümet yetkilileri tarafından teknoloji bakanlığını bırakması ve tamamen hükümetin kontrolüne geçmesi için gizli tehditler edildi. Ancak o, bilimin özgürlüğü olmadan ilerleme olamayacağını söyleyerek bu teklifi reddetti.
+            </p>
+
+            <h2>Suikast ve Ölüm</h2>
+            <p>
+                AserTechno’nun hükümetle çatışması, onu rejimin hedefi hâline getirdi. Özellikle milliyetçi Aser subayları, onun yok edilmesi gerektiğine karar verdi. Çünkü AserTechno, teknolojinin sadece savaş için değil, halk için kullanılmasını savunarak muhafazakâr askeri düzenin çıkarlarına zarar veriyordu. Aser subayları Damethia Anlaşması’nın gereğinden fazla uzadığına kanaat getirmişti.
+            </p>
+            <p>
+                Sonunda, AserTechno’nun ölümü için sessiz bir suikast planı hazırlandı. Muhafazakâr bir grup, onu teknoloji merkezinde çalıştığı sırada öldürmek için harekete geçti.
+            </p>
+            <p>
+                O gün, AserTechno kendi laboratuvarında “Buharlı Çok Amaçlı Teknoloji” üzerinde çalışıyordu. Bu proje, Skarrgard ile ortak olarak yürütülen ve kuzeybatı bölgesinde de sanayi devriminin temellerini atacak olan bir çalışmaydı. Sessizce içeri giren suikastçılar, ortamı bozmadan yaklaştı. AserTechno farkına vardığında, zaman çok geçmişti. Suikastçılardan biri hızla zehirli bir bıçak çıkardı ve onu tam omuz kemiğinden yaraladı. AserTechno anında yere düştü, zehrin etkisiyle vücudu ağır şekilde zayıflamaya başladı.
+            </p>
+            <p>
+                Laboratuvardaki mühendisler olayı fark ettiğinde, saldırganlar çoktan kaçmıştı. AserTechno yerde yatarken, nefesi gittikçe ağırlaşıyordu. Gözleri bulanıklaşırken, son anlarında yanında çalışan mühendislerden biri ona yaklaşarak "Ne yapabiliriz?" diye sordu.
+            </p>
+            <p>
+                Son nefesinde, AserTechno derin bir gülümsemeyle şöyle dedi:
+                <br><em>"Bilim, benden sonra da yaşayacak. Bizi öldürebilirler, ama ilerlemeyi durduramazlar."</em>
+            </p>
+            <p>
+                Ve böylece, bilimin özgürlüğünü savunan en büyük mühendislerden biri, kendi idealinin kurbanı oldu.
+            </p>
+
+            <h2>Miras ve Sonuçlar</h2>
+            <p>
+                AserTechno’nun ölümü AserLand’da büyük bir yankı uyandırdı. Suikastçılar yakalanmadı, çünkü herkes bu suikastın Zykrath ve adamları tarafından gerçekleştirildiğinin farkındaydı. Halk onun ölümünü bilimin susturulması olarak gördü. Ölümünden sonra halk arasında "Teknoloji Özgürlüğü Hareketi" başlatıldı. Onun öldürülmesine tepki gösteren genç mühendisler ve bilim insanları, onun fikirlerini yaşatmak için gizli örgütler ve sendikalar kurarak milliyetçi rejime karşı teknolojinin bağımsızlığını savunmaya başladılar.
+            </p>
+            <p>Ölümünden sonra şu değişiklikler yaşandı:</p>
+            <ul>
+                <li><strong>AserTechno Teknoloji Protestoları:</strong> Zykrath’ın kalkıştığı bu hamle bilimseverlerin protestolarına kapı açtı. Elara Ventis önderliğinde binlerce insan köylerin meydanlarına akın etti. Zykrath bu protestoları kanlı bir şekilde bastırdı. Protestoların sonunun gelmediğini fark edince AserTechno ibaresinin bir isimden çıkarak bir ünvana dönüşmesini yasalaştırdı. Ancak işin sonunda AserTechno’nun istediği olmadı ve Teknoloji Bakanlığı; hükümet ile paralel çalışan bir yapıya dönüştü.</li>
+                <li><strong>Teknoloji Özgürlüğü Günü:</strong> AserLand’da onun ölüm günü, bilim özgürlüğünü kutlamak için resmi bir anma günü olarak kabul edildi. Daha sonra Skarrgard da bu günü kendi resmi bayramlarına ekledi. (17 Eylül)</li>
+                <li><strong>Skarrgard ve AserLand Arasında Mühendislik İşbirliği Sarsıldı:</strong> AserTechno’nun kurduğu ortak projeler Aser subaylarınca birden askıya alındı. Skarrgard ile ilişkiler sekteye uğradı.</li>
+                <li><strong>Onun Adına Akademiler Kuruldu:</strong> Genç mühendislerin yetiştirildiği, "AserTechno Bilim Enstitüsü" kurularak onun mirası yaşatıldı.</li>
+            </ul>
+            <p>
+                Bugün AserTechno’nun adı, savaş teknolojisinin bir mühendis tarafından barış teknolojisine dönüştürülmesi olarak anılıyor. Madam Maria Von Cortex’le birlikte yaptığı reformlar, onu bilim ve teknoloji özgürlüğünün efsanesi haline getirdi.
+            </p>
+            <p>
+                Onun hayatı, bilimin yıkım için değil, ilerleme için var olması gerektiğini gösteren bir örnekti. Savaş makinelerinden buharlı çok amaçlı teknolojilere kadar yaptığı dönüşüm, bir mühendis olarak değil, bir devrimci düşünür olarak anılmasına neden oldu. Ölümü, şiddete karşı verilmiş bir ideolojik savaş olarak görüldü ve nesiller boyu "AserTechno’nun idealleri ölmedi" sözleriyle hatırlanmaya devam etti.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
