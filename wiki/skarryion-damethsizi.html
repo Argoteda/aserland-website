@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skarryion Damethsizi | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 30px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.5rem; }
+
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 250px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details open>
+                <summary>PHASE 1: Başlangıç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html" class="active">➤ Skarryion Damethsizi</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>PHASE 2: Gelişme</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">SKARRYION DAMETHSIZI</div>
+                
+                <div class="infobox-image"><i class="fas fa-pen-nib" style="font-size:4rem;"></i></div>
+
+                <table class="infobox-table">
+                    <tr><th>Unvan:</th><td>Devrimin Kalemi<br>Skarrgard'ın Kurucusu ve İlk Kralı</td></tr>
+                    <tr><th>Yaşam:</th><td>M.Ö 32 – M.S 12</td></tr>
+                    <tr><th>Doğum Yeri:</th><td>Hyena Hills, AserNorthia (Damethia)</td></tr>
+                    <tr><th>Ölüm Yeri:</th><td>The Strife Sea Kuzey Kıyıları</td></tr>
+                    <tr><th>Ölüm Nedeni:</th><td>Savaş (The Doom Waters Yaratıkları)</td></tr>
+                    <tr><th>Eğitim:</th><td>AserNorthia Medya Üniversitesi Gazetecilik Fakültesi</td></tr>
+                    <tr><th>Meslek:</th><td>Gazeteci / Kral</td></tr>
+                    <tr><th>Görev Süresi:</th><td>12 Yıl (0 – 12)</td></tr>
+                    <tr><th>Halefi:</th><td>Eumandarg Damethsizi</td></tr>
+                </table>
+            </div>
+
+            <h1>Skarryion Damethsizi</h1>
+            
+            <p>
+                Skarryion Damethsizi; M.Ö. 32 yılında, şimdi Damethia olarak anılan AserNorthia şehrinde, dondurucu kışların ve sarp dağların gölgesinde dünyaya geldi. Fakir bir çiftçi ailesinin çocuğu olarak, küçük yaşlardan itibaren soğuğun, rüzgarın ve kısıtlı kaynakların acımasız gerçekleriyle büyüdü. Babası, elindeki yıpranmış ekipmanla tarlayı sürerken annesi, geçimini sağlamak için evde ilmek ilmek dikiş dikiyordu. Küçük Skarryion, yoksullukla yoğrulmuş bu çevrede, sık sık yıldızlara bakarak büyük hayaller kurar, savaşçıların ve kahramanların destanlarını dinlerdi. O dönemin en saygın mesleklerinden biri olan Aser askeri olmak, hem ailenin onurunu kurtarmak hem de kendi varoluşunu anlamlandırmak için idealdi.
+            </p>
+            <p>
+                Küçük Skarryion için askerlik, sadece prestijin değil; aynı zamanda adaletin ve özgürlüğün simgesi olacaktı. Fakat ailesi ve çevresi, bulundukları coğrafyanın zorlu koşulları içinde bulunmalarından mütevellit hiç kimsenin bu hayali gerçekleştirebileceğine inanmadı. Üstelik, merkezi AserLand yönetimi, kuzeybatıya uyguladığı ağır vergi politikaları ve kışın tarımı neredeyse imkansız hale getiren yardım kısıtlamaları, Skarryion’un kalbinde büyük bir kızgınlık tohumladı. Bu baskı, onun merkezi yönetime bakışını radikal bir dönüşüme uğrattı; özgürce savaş mermiyle değil, kelime ve bilgiyle kılıç kuşanması gerektiğini sezdi. Yaşadığı adaletsizlik, onu içten içe silahlanmaya değil, insanları uyandırmaya iten bir ideal sahibi haline getirdi.
+            </p>
+            <p>
+                İlk askerlik hayali çöktükçe, genç Skarryion kendini tanımaya başlamıştı. Akıllı ve meraklı zihni, okuduğu eski kitaplardan, kasabanın yaşlı bilge adamının anlattığı destanlardan besleniyordu. Her kelimede adaletin, özgürlüğün ve halkın uyanışının yankılarını duyardı. Bu sebeple, okuma yazma öğrenmeye, kalem ve mürekkebe sığınarak gazeteci olmaya karar verdi. Yerel mahallede küçük bir haber bülteni çıkaran, köy köy meydanlarda dolaşarak anıları dinleyen Skarryion, kısa sürede adını duyurmaya başladı. Yazılarında, vergi yükünün acımasızlığını, kışın açlığa terk edilen kuzeybatılı ailelerin dramını, merkezi yönetimin usulsüzlüklerini tek kaleme alıp herkese duyuruyordu. O, kelimelerle yaraları sarmaya çalışan bir yazardı artık; kalemiyle umudu yeşerten genç bir devrimci olarak öne çıkacaktı.
+            </p>
+            <p>
+                Gazetecilik kariyeri ilerledikçe, Skarryion fark etti ki sesini daha geniş kitlelere duyurmanın yolu medya kontrolünden geçiyor. O dönemde, bölgenin en önemli bilgi kaynaklarından biri olan matbaa firmaları, merkezi yönetimin etkisi altındaydı. Skarryion, kardeşi Eumandarg ile birlikte, sosyal yaşantısından edindiği zengin iş adamları ve mülk sahibi insanların desteğini alarak çalıştığı matbaa firmasının yönetimini sözde bir darbe ile ele geçirdi. Kendi akıl ve inancı ile, rakiplerini saf dışı bırakarak ya da onların matbaa evlerini yasal olmayan yöntemlerle kendi ağına kattı. Bir yıl gibi kısa bir sürede, kuzeybatı bölgesindeki neredeyse tüm matbaa evleri, onun kontrolüne geçti. Artık, baskı ve propaganda onun kalemi olmuş, “Sizin kurtarıcınız benim” ifadesiyle yüzü sayfalarda yankılanıyordu. Bu sayede, halkın gözünde merkezi yönetime karşı özgürlük mücadelesinin sesi haline geldi.
+            </p>
+            <p>
+                Medyanın gücünü eline geçiren Skarryion, sadece kelimelerle yetinmedi; halkın öfkesini organize edecek gizli yapılar inşa etmeye başladı. Yazılarında, zalim vergi sisteminden, sınırlandırılmış ekspert yardımın acımasızlığından, merkezi AserLand’in usulsüzlüklerinden daha sıkça bahsederek halkın bilinçlenmesini sağladı. Ancak Skarryion için kelimeler yeterli değildi. Gizlice, kendisine inanan ve ülkelerinin yeniden dirilişi için hazır olan eski askerlerin ve radikal düşünürlerin desteğini alarak, bir direniş ordusu kurdu. Bu ordu, basit yerel milislerden ibaret değildi; aynı zamanda eski askerlik rüyalarını yitirmiş, adaletsizlik karşısında öfkeyle yanıp tutuşan insanlardan oluşuyordu. O, hem medyanın hem de ordunun başında duracak bir lider olarak, yeni bir devrim düzeninin temellerini atıyordu.
+            </p>
+            <p>
+                Bu süreçte, merkezi yönetim, Skarryion’un etkisini hissetmeye başlamıştı. IV. Aserilios’ün eline, Skarryion’un isyan ateşini yakan gazetelerden biri geçtiğinde, merkezdeki baskı doruk noktasına ulaştı. Kral yardımcısı olan Dunas Zia, dört sadık asker eşliğinde 10 günlük zorlu bir yolculuğa çıkarak kuzeybatıya diplomasinin ve barışın savunucusu olarak görev yapmak istiyordu. Fakat yolda karşılaştığı manzara — batı koridorunun kuzeyinde, 4-5 metrelik devasa surlar, üzerine kocaman “Skarrgard” yazısı kazınmış siyah mermer bloklar — Dunas Zia’nın yürek taşlarını bile dondurdu. Bu görüntü, halkın diktatörle barış içinde yaşamaktan ziyade, özgürlük için savaştığını açıkça gösteriyordu. Geri döndüğünde, ağır görev ve idam tehdidiyle sarsılan Zia’nın gözyaşları, merkezi yönetimin acımasızlığının bir sembolü oldu; sonunda, IV. Aserilios’un emriyle kendisine geç bilgi verme sebebi ile idam edilmek zorunda kaldı.
+            </p>
+            <p>
+                Dunası Zia’nın trajik ölümü, merkezi yönetimin halk üzerindeki baskısını daha da belirgin hale getirdi. IV. Aserilios, kuzeybatıya yönelen 60.000 kişilik devasa ordusunu hazırlarken, Askerlere "The Doom Waters’daki yaratıkların sayısı artıyor, bir sonraki durakları Aser Çoklu Körfezi olacaktır!" diyerek moral ve korku kasırgası estirmişti. Fakat, ordunun içindeki esas durumu bilen bazı komutanlar "insanın insanla savaşması" fikrine tepki gösterip isyan etti. Bu iç çekişmeler ve isyanlar, orduyu 60.000’den 35.000’e indirse de, IV. Aserilios, kuzeybatıya doğru yürümekte ısrarcıydı.
+            </p>
+            <p>
+                Sanayinin, matbaa evlerinden ve yel değirmenlerinden oluştuğu bu devirde IV. Aserilios döneminin önde gelen mucitlerinden AserTechno’ya çağının çok ötesinde bir icat olan “Cañón de los Aseros” toplarını yaptırmıştı. Bu top yapıları ve duvarları yıkmak için tasarlanmıştı. Üç insan kafasını sığdırabilecek geniş namlusu ve 40 kiloluk gülleleri saniyede 500 metre hızla fırlatabilen bu top, savaş alanında benzersiz bir güç unsuru olarak sunulsa da; Skarryion’un ordusu, surların dışında, çevik arbaletlerle donanmış ve hırslıydı. Teknoloji ve ideolojinin iç içe geçtiği bu muharebede, toplar salt yıkım aracı olarak kalırken, halkın kalbindeki isyan ve özgürlük ateşi her geçen dakikada büyüdü.
+            </p>
+            <p>
+                Dört gün süren acımasız çatışmaların ardından, kuzeybatıdaki direniş güçleri önemli bir zafer elde etti. IV. Aserilios savaş alanında esir alınmış, eski gücün sembolü bir düşüş yaşamıştı. Bu zafer, Skarryion’un medyanın yanı sıra, gizlice kurduğu ordu ve halkın desteğiyle merkezi yönetime karşı başarıya ulaşmasının mihenk taşıydı.
+            </p>
+            <p>
+                Hazırlanan yeni siyasi düzen, "Damethia Antlaşması" adı altında şekillendi. Kuzeybatıda Skarryion liderliğinde yeni bir ülke olan “Skarrgard” kuruldu. Başkent, eski adı AserNorthia olan “Damethia” seçildi. Yıllar geçtikçe, Skarryion Damethsizi'nin devrimci başarısı ve merkezi yönetimi devirme eylemi kendisine muhalif grupların doğmasına yol açtı. Ancak büyük devrimler zamanla beraber yeni çatışmaların, iç çekişmelerin ve zorlu sınavların habercisi oldu. Skarryion, hem medyanın hem de ordu gücünün elinde olduğu bu devlette, halkın desteğini sürdürmek için büyük fedakarlıklar yaptı.
+            </p>
+            <p>
+                Kendi dehasıyla kurduğu yeni düzende, Skarryion; eğitimden, sağlık hizmetlerine, kültürel canlanmadan siyasi reformlara kadar pek çok alanda devrim yarattı. Ancak zamanın acı gerçeği, liderlerde de yorgunluk ve kırılganlık yaratıyordu. Yıllarca süren mücadele, savaşın acı tatlarını ve ihanetlerin gölgelerini içine çekmişti. Bazı eski dostları ve yakın çevresi, kişisel çıkarları uğruna onun yöntemlerini sorgulamaya başlamış; daha genç ve hırslı rakipler, devrimin ne kadar idealle başladığını unutarak yeni iktidar mücadelelerini tetiklemişti.
+            </p>
+            <p>
+                Yaşlılık basmak üzereyken, Skarryion’un ülkesi ve halkı beklenmedik bir düşman tehdidiyle karşı karşıya geldi. Efsanevi “The Doom Waters”ın derinliklerinden, bir zamanlar unutulmaya yüz tutmuş dehşet verici yaratıklar yeniden ortaya çıkmaya başladı. Bu, sadece doğanın bir uyarısı değil, aynı zamanda oradaki yaratıkların kontrolünü kısmen elinde bulunduran Doğu AserLand’ın siyasi bir hamlesiydi.
+            </p>
+            <p>
+                Kanatları zayıflamış Skarryion, ulusal birlik adına son bir sefer düzenledi. Skarryion, tüm gücünü toplamak ve halkını ve topraklarını korkunç yaratıklardan savunmak için eski günlerdeki cesaret ve kararlılığı yeniden alevlendirmek üzere, en son savaşa girişti. Yaşlı bedenine rağmen, kalbindeki ateşin eksilmemiş olması, onu savaş meydanına geri taşıdı.
+            </p>
+            <p>
+                Savaş alanında, Skarryion, düşman hatlarına doğru tek başına ilerleyen, etrafında toplanan son sadık askerleri ve devrimci idealin temsilcileriyle birlikte son direnişi başlattı. Kılıcı ve kalemi elinde, her bir mermisi, her bir kelimesi; özgürlüğün, adaletin ve yoksulun hak ettiği yaşamın savunmasıydı. Ancak Skarryion, ne ile savaştığını ya da savaşacağını bilmiyordu. Kendisi hayatı boyunca The Doom Waters’ın yaratıklarıyla hiç savaşmamıştı. Bu güneylilerin ve daha çok Doğu AserLand’ın sorumluluğuydu. Bu görece basit bir devrim savaşına hiç benzemeyecekti.
+            </p>
+            <p>
+                Savaşın en yoğun anında, Skarryion, düşman hatlarının tam kalbinde, yüce ideallerine son nefesinde kavuşmak üzereydi. Ölümüne çok az zaman kala, kalabalığa seslendi:
+            </p>
+            <p>
+                <em>“Benim bedenim çöküyor olabilir, fakat sizler; her biriniz bu ülkenin, adaletin ve özgürlüğün mihenk taşlarısınız. Benim sözlerim, canlanan kalplerinizde ebediyen yaşayacak. Skarrgard, bağımsızlık ateşiyle yanacak; asla sönmeyecek.”</em>
+            </p>
+            <p>
+                Bu son sözleri, savaş alanında yankılandı. Skarryion, hayatını, adaletsizliğe karşı mücadelesinde, ölüme uğrayan bir kahraman olarak verdi. Vücudu pence yaraları ve savaşın acı izleriyle kaplı halde, son nefesini verdikten sonra, çevresindeki askerler onu ölümsüz bir efsanenin simgesi olarak yâd ettiler.
+            </p>
+            <p>
+                Skarryion Damethsizi, yoksul bir çiftçi çocuğundan, kelimenin gücünü ve stratejik zekâsını kullanarak halkın sesi, orduyu ve medyayı kontrol eden devrimci bir lider haline geldi. Onun hikayesi, sadece bir isyanın değil, aynı zamanda insanın içindeki adalet ve özgürlük arzusunun, baskıya karşı filizlenmesinin destanıdır.
+            </p>
+            <p>
+                Kendi kaleminden yayılan her haber, halkın bilincini yükseltirken, basılı sayfalarda yer alan yüzü ve “Sizin kurtarıcınız benim” sloganı, zalim yönetime karşı duruşun simgesi oldu. Skarryion’un yönetimindeki yeni düzen, uluslararası arenada da yankı buldu; damla damla dökülen adalet, komşu topraklarda da özgürlük rüzgarlarını estirmeye başladı.
+            </p>
+            <p>
+                Gelecek nesiller, Skarryion Damethsizi’ni, yalnızca bir devrimci değil; halkın acılarını dindiren, umudu yeşerten ve tarih sahnesinde karanlığa inat aydınlık yarınlar biçen bir önder olarak hatırlayacaklardı. Onun yükselişi, düşüşü ve nihayetinde kurulmuş yeni düzen, Damethia’nın topraklarına ve Aser dünyasına ebediyen kazınan bir destana dönüştü. Günümüzde bile Skarryion Damethsizi, Aser ırkına ihanet etmiş biri gibi lanse edilse de, en büyük düşmanları bile onu takdir etmiş ve tarih derslerinde asla anlatılmadan geçilmeyecek bir lider olmuştur.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
