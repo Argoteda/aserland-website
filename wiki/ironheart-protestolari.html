@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ironheart Teknoloji Protestoları | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 30px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.5rem; }
+        .content ul { list-style: none; padding-left: 0; }
+        .content li { background: #1a1a1a; margin-bottom: 10px; padding: 15px; border-left: 2px solid #555; }
+        .content li:hover { border-left-color: var(--ana-renk); }
+
+        /* INFOBOX (OLAY TİPİ) */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 200px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details open>
+                <summary>PHASE 1: Başlangıç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html" class="active">➤ Ironheart Protestoları</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>PHASE 2: Gelişme</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">IRONHEART PROTESTOLARI</div>
+                
+                <div class="infobox-image"><i class="fas fa-cogs" style="font-size:4rem;"></i></div>
+
+                <table class="infobox-table">
+                    <tr><th>Tarih:</th><td>M.S. 37 (Sonbahar)</td></tr>
+                    <tr><th>Konum:</th><td>Ironheart, AserLand</td></tr>
+                    <tr><th>Sebep:</th><td>AserTechno'nun Suikasti</td></tr>
+                    <tr><th>Taraflar:</th><td>Ironheart Mühendisleri<br>vs.<br>Kral Zykrath (Aser Lejyonları)</td></tr>
+                    <tr><th>Lider:</th><td>Elara Ventis</td></tr>
+                    <tr><th>Sonuç:</th><td>İsyan Bastırıldı<br>Elara İdam Edildi<br>Teknoloji Özgürlüğü Hareketi Kuruldu</td></tr>
+                </table>
+            </div>
+
+            <h1>Ironheart Teknoloji Protestoları</h1>
+            
+            <p>
+                M.S. 37 yılının o acımasız sonbaharında, Ironheart'ın kalbi durmuştu. AserTechno'nun suikast haberi, şehrin üzerine bir cenaze örtüsü gibi serildiğinde, önce uğultu kesildi. Normalde binlerce atölyeden yükselen çekiç sesleri, metalin ateşe teslim oluşunun hırıltısı ve devasa buhar mekanizmalarının ritmik nefesiyle yaşayan şehir, sağır edici bir sessizliğe gömülmüştü. Bacalar artık tütmüyor, nehirleri yönlendiren devasa su çarkları hareketsiz duruyordu. Bu, yasın sessizliği değildi; bu, kırılmış bir inancın, boğulmuş bir öfkenin ve yaklaşan fırtınanın korkunç sükûnetiydi.
+            </p>
+            <p>
+                Ustasının artık ruhsuz olan merkez atölyesinde, plazma fırınının soğuk külleri başında duran Elara Ventis, bu sessizliği herkesten daha derinden hissediyordu. Elara, AserTechno'nun sadece en parlak çırağı değil, onun "bilim halk içindir" idealinin de en ateşli savunucusuydu. AserTechno’dan sonra teknolojinin yeni varisi olarak görülüyordu. Gözlerinin önündeki masada, Skarrgard ile ortak yürütülen ve kıtanın geleceğini aydınlatacak olan "Buharlı Çok Amaçlı Teknoloji" projesinin planları, öksüz kalmış bir çocuk gibi duruyordu. Kral Zykrath'ın sarayından yayılan "talihsiz bir laboratuvar kazası" yalanı, Elara'nın zihninde bir hakaret gibi yankılandı. Bu bir kaza değil, bir geleceğin katliamıydı.
+            </p>
+            <p>
+                O gece, şehrin en eski dökümhanesinin buz gibi mahzeninde, Ironheart'ın ruhu yeniden bir araya geldi. Kömür tozuyla kararmış yüzleri ve nasırlı elleriyle zanaatkâr loncalarının ustaları, AserTechno'nun projesini ondan devralan kıdemli mühendisler ve şehrin sözü geçen aileleri oradaydı. Elara Ventis, topluluğun ortasında durduğunda, titreyen elleriyle ustasının yarım kalmış planlarını havaya kaldırdı. "Bize bir kaza olduğunu söylediler," diye fısıldadı, sesi titriyordu. "Ama biz biliyoruz. Onlar bir adamı değil, bir fikri öldürdüler. Ve bir fikir, ancak biz susarsak ölür." O an, o mahzende, Ironheart'ın susturulan çekiçleri yeniden dövülmeye yemin etti; bu kez demiri değil, kaderi şekillendirmek için.
+            </p>
+
+            <h2>Gelişme: Dehanın Savunması</h2>
+            <p>
+                Elara'nın liderliğinde başlayan direniş, bir isyan gibi değil, şehrin kendi kendini savunma mekanizması gibiydi. İlk günler, on binlerce zanaatkâr, mühendis ve aileleri, "Bilim Özgürdür!", "AserTechno'nun Mirası Satılık Değildir!" yazılı pankartlarla şehrin ana meydanını doldurdu. Bu, barışçıl bir haykırıştı; adaletin ve bilimin bağımsızlığının korunması için bir talepti.
+            </p>
+            <p>
+                Kral Zykrath'ın cevabı, başkentten gelen zırhlı bir ulakla ulaştı. Ferman, buz gibiydi: Protestolar derhal dağıtılacak, liderler teslim olacak ve Teknoloji Bakanlığı kayıtsız şartsız askeri yönetime devredilecekti. Ferman meydanda okunduğunda, kalabalıktan yükselen öfkeli uğultu, Zykrath'a verilmiş bir cevaptı. Ültimatom reddedilmişti.
+            </p>
+            <p>
+                İşte o an Ironheart, yaşayan bir kaleye dönüştü. Elara ve mühendisler, şehri bir savaş alanına değil, dev bir mekanik bulmacaya çevirdiler. Bu, AserTechno'nun dehasının son, trajik şaheseriydi:
+            </p>
+
+            <ul>
+                <li>
+                    Normalde nehir yatağındaki tonlarca kayayı kaldıran <strong>"Nehir Ağzı Vinçleri"</strong>, hidrolik kollarını birbirine kenetleyerek şehrin ana kapılarını kapatan, aşılması imkânsız, hareketli bir duvar oluşturdu.
+                </li>
+                <li>
+                    Maden cevherlerini un ufak eden devasa <strong>"Cevher Kırıcılar"</strong>, dar sokakların altına gizlenerek, üzerlerinden geçen zırhlı lejyoner gruplarını yutan mekanik kapanlara dönüştürüldü.
+                </li>
+                <li>
+                    Şehrin altını bir ağ gibi saran ve <strong>"Dökümhanenin Akciğerleri"</strong> olarak bilinen buhar tünelleri, lejyonerlerin ilerlediği yollara basınçlı ve yakıcı buhar püskürterek ortalığı kör edici bir sise boğdu.
+                </li>
+                <li>
+                    Fabrikaların ve dökümhanelerin sirenleri, Elara'nın merkez atölyeden yönettiği bir sistemle, düşmanın emir komuta zincirini felç eden ve askerlerin zihninde panik yaratan sağır edici bir kakofoniyle aynı anda çalmaya başladı.
+                </li>
+            </ul>
+
+            <p>
+                Ironheart kılıç çekmiyordu; kendi damarlarında akan bilimi ve teknolojiyi bir kalkan gibi kuşanıyordu. Bu, AserTechno'nun hayatını adadığı felsefenin en acımasız sınavıydı.
+            </p>
+
+            <h2>Sonuç: Kırık Dişliler ve Fısıldayan Yemin</h2>
+            <p>
+                Kral Zykrath'ın öfkesi, lejyonlarının Ironheart surları önünde mekanik tuzaklara düşüp kayıplar vermesiyle doruğa ulaştı. "O şehrin her dişlisini kendi kanlarında boğun!" emrini verdi. Disiplinli, acımasız ve sayıca çok üstün Aser lejyonları, mühendislerin zekâsını kaba kuvvetle ezmeye başladı. Hidrolik vinçler mancınıklarla parçalandı, buhar tünelleri çökertildi, mekanik kapanlar askerlerin cesetleriyle doldurularak etkisiz hale getirildi.
+            </p>
+            <p>
+                Savaşın son perdesi, AserTechno'nun büyük merkez atölyesinde oynandı. Elara Ventis ve hayatta kalan son birkaç düzine mühendis, ustalarının yarım kalmış icatlarının arasında son bir direniş hattı kurmuştu. Atölyenin dev, buhar gücüyle çalışan dövme çekicini çalıştırdılar. Çekiç, her birkaç saniyede bir tonlarca ağırlığıyla örse iniyor, çıkardığı ses ve yarattığı sarsıntıyla binaya girmeye çalışan lejyonerleri yavaşlatıyordu. Ama bu, ölümü sadece birkaç değerli dakika geciktirdi. Atölyenin zırhlı kapıları koçbaşlarıyla kırıldı.
+            </p>
+            <p>
+                Lejyonerler içeri dolduğunda Elara, elinde bir silahla değil, ustasının planlarının sarılı olduğu deri bir tomarla duruyordu. Gözlerinde korku değil, kırılmaz bir kararlılık vardı. İsyan bastırılmıştı.
+            </p>
+            <p>
+                Zykrath'ın intikamı korkunç oldu. Elara ve diğer liderler, "devlete ve krala isyan" suçundan, susturulmuş şehrin ana meydanında halkın gözü önünde idam edildi. Ironheart, askeri bir valinin demir yumruğu altına girdi. Teknoloji Bakanlığı'nın bağımsızlığı tamamen feshedildi ve tüm o dahi beyinlerin ürünü olan atölyeler, artık sadece Zykrath'ın savaş makinesine hizmet etmek için çalışmaya başladı.
+            </p>
+            <p>
+                Ancak Zykrath'ın zaferi, gölgelerde bir yenilgiye gebeydi. İsyanın en kanlı anlarında, şehrin altındaki unutulmuş bakım tünellerinden kaçmayı başaran genç mühendisler ve zanaatkârlar vardı. Onlar, Elara'nın son anlarında kendilerine gizlice ulaştırdığı, AserTechno'nun çalışmalarının kopyalarıyla birlikte yeraltına çekildiler. O gece, işgal altındaki şehrin soğuk ve karanlık dehlizlerinde, yeni bir yemin fısıldandı. AserTechno'nun ideallerini yaşatmak ve bir gün bilimin özgürlüğünü geri getirmek için gizli bir örgüt kurdular: <strong>Teknoloji Özgürlüğü Hareketi</strong>.
+            </p>
+            <p>
+                Ironheart'ın kırık dişlileri ve susturulmuş makineleri arasında, bir efsane doğmuştu. Zykrath bilimi esir almıştı, ama fikri öldürememişti. Fikir, artık yeraltında nefes alıyor ve doğru zamanı bekliyordu.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
