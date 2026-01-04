@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madam Maria Von Cortex | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 30px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.5rem; }
+        
+        /* LİSTELER */
+        .content ul { list-style: none; padding-left: 0; }
+        .content li { margin-bottom: 15px; padding-left: 20px; position: relative; }
+        .content li::before { content: '⚜'; color: var(--ana-renk); font-weight: bold; position: absolute; left: 0; font-size: 0.9rem; top: 2px; }
+
+        /* ALINTI */
+        blockquote {
+            background: #1a1a1a;
+            border-left: 5px solid var(--ana-renk);
+            margin: 20px 0;
+            padding: 20px;
+            font-style: italic;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 220px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details open>
+                <summary>PHASE 1: Başlangıç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html" class="active">➤ Madam Maria Von Cortex</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>PHASE 2: Gelişme</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">MADAM MARIA VON CORTEX</div>
+                
+                <div class="infobox-image"><i class="fas fa-balance-scale" style="font-size:4rem;"></i></div>
+
+                <table class="infobox-table">
+                    <tr><th>Unvan:</th><td>Özgürlüğün Sarsılmaz Şafağı<br>XXX. Batı AserLand Kraliçesi</td></tr>
+                    <tr><th>Yaşam:</th><td>M.Ö 22 – M.S 36</td></tr>
+                    <tr><th>Doğum Yeri:</th><td>Skinnyleg / AserLand</td></tr>
+                    <tr><th>Ölüm Yeri:</th><td>Doğu AserLand Özgürlük Meydanı</td></tr>
+                    <tr><th>Ölüm Nedeni:</th><td>Suikast</td></tr>
+                    <tr><th>Eğitim:</th><td>AserLand Üniversitesi Hukuk Üst Fakültesi</td></tr>
+                    <tr><th>Meslek:</th><td>Savcı / Kral Yardımcısı / Kraliçe</td></tr>
+                    <tr><th>Görev Süresi:</th><td>36 Yıl (0 - 36)</td></tr>
+                    <tr><th>Selefi:</th><td>IV. Aserilios</td></tr>
+                    <tr><th>Halefi:</th><td>Zykrath Vhalgoroth Aser</td></tr>
+                </table>
+            </div>
+
+            <h1>Madam Maria Von Cortex</h1>
+            
+            <p>
+                Madam Maria Von Cortex, AserLand’ın en seçkin akademisyen ailelerinden birinde doğdu. Babası tarihçi, annesi hukukçuydu; bu nedenle çocukluğu, adalet ve yönetim üzerine yapılan derin tartışmaların içinde geçti. Küçük yaşlardan itibaren devlet mekanizmalarını, hukuk sistemlerinin işleyişini ve tarih boyunca halk hareketlerinin gücünü öğrendi. Kendi geleceğini hukuk üzerine kurmak istedi; ancak kaderi onu siyasetin ve devrimlerin içinde bulmaya zorlayacaktı.
+            </p>
+            <p>
+                Eğitim hayatına erken yaşlarda başladı ve hızla yükselerek AserLand’ın en prestijli hukuk akademisi olan AserCouncil Üniversitesi Hukuk Üst Fakültesi’ne kabul edildi. Burada insan hakları, yönetim etiği ve devlet yönetimi üzerine çalıştı. Akademideki profesörleri, onun zekâsı ve sorgulayıcı bakış açısını takdir etse de, iktidarın sert yüzüyle çelişen düşünceleri nedeniyle sürekli olarak baskılarla karşılaştı. Bununla birlikte, akademik başarısı ve halk üzerindeki etkisi hızla arttı.
+            </p>
+            <p>
+                İnsan hakları konusundaki ilgisi nedeniyle, mezun olur olmaz yüksek mahkemede çalışmaya başladı ve zamanla adalet sisteminde saygın bir figür haline geldi. Bu konumu ona devletin işleyişini içeriden görme fırsatı sundu; ancak aynı zamanda zalim ve baskıcı yönetimin acımasız yüzünü de sergiledi. IV. Aserilios’un iktidara darbe ile gelmesi, onun hukuk anlayışını ve devletin geleceğine dair umudunu ciddi şekilde sarsan olaylardan biri oldu.
+            </p>
+            <p>
+                Aserilios’un darbe ile iktidarı ele geçirmesi, AserLand’da büyük yankı uyandırdı. Cortex, merkezi yönetimin içinde aktif bir hukuk insanı olarak varlık gösterse de, kısa sürede rejim ile fikir ayrılıkları yaşadı. Vergi sisteminin sertleşmesi ve kuzeybatı halkı üzerindeki baskıların arttırılması, onu derinden rahatsız ediyordu. Ancak IV. Aserilios, liderler arasından kendisine muhalefet etmeyen, kritik anlarda saraya bağlılığı devam eden figürleri tercih etti. Her ne kadar muhalif bir kişilik olsa da IV. Aserilios, yüksek zekâsı ve stratejik yaklaşımı nedeniyle Cortex’i, Dunas Zia’nın idamından hemen sonra kral yardımcılığı görevine getirdi. Fakat onun yönetimde bulunması IV. Aserilios ile arasında ciddi bir gerilim yarattı.
+            </p>
+            <p>
+                Cortex kısa bir sürede bu mevkide hizmet verse de hiçbir zaman IV. Aserilios ile tam olarak uyum sağlayamadı; çünkü onun baskıcı politikalarına karşı çıkıyor ve barışçıl çözümler üretmeye çalışıyordu. Dunas Zia’nın ölümü, onun içinde bulunduğu iktidarın acımasız yüzünü bir kez daha gözler önüne sermişti. Krala çok yakın olmasına rağmen onun zalimliğini dizginleyememesi, kamuoyu tarafından dikkatle izlendi. Yönetim içerisindeki pragmatik duruşu nedeniyle halk tarafından doğrudan bir muhalif olarak değil, dengeyi sağlamak isteyen bir hukukçu olarak görülüyordu.
+            </p>
+            <p>
+                Aserilios’un Kuzeybatı Harekatı’nda aldığı ağır mağlubiyet ve savaş alanında esir düşmesi, AserLand’ın yönetim mekanizmasını kaosa sürükledi. Cortex, bu olaydan sonra kısa süreliğine naip olarak görev aldı ve ülkeyi geçici olarak yönetti. Fakat IV. Aserilios’un esir tutulduğuna dair haberler doğrulandığında, naiplikten ayrılarak AserLand’ın doğrudan yönetimini üstlendi.
+            </p>
+            <p>
+                Tahta geçer geçmez ilk icraatı, IV. Aserilios ve yandaşlarını kamuoyunun önünde açıkça lanetlemek oldu. Ancak kamuoyu, Cortex’in IV. Aserilios ile yıllar boyunca pragmatik bir ilişki sürdürdüğünü çok iyi biliyordu. Fakat ilginçtir ki, halk geçmişteki bu durumu ona bir suç olarak yüklemedi. Çünkü Cortex, zalim rejim içinde yer alsa da, hiçbir zaman baskıcı eylemlerin destekçisi olmamıştı. Onun yönetimi sırasında halk, yeni bir dönemin başlamakta olduğunun farkına vardı.
+            </p>
+            <p>
+                Cortex, Skarrgard’ın kuruluşunu büyük bir adım olarak gördü. Sadece bir bölgesel bağımsızlık hareketi değil, aynı zamanda küresel demokratik sistemin de kapılarının açıldığı bir dönüm noktası olarak kabul etti.
+            </p>
+            
+            <blockquote>
+                “Skarrgard’ın kuruluşunu dünyamız için açılan yeni bir demokrasi kapısı olarak görüyorum. Hatta Skarrgard’ın kuruluşunu resmen milat ilan etmek istiyorum.”
+            </blockquote>
+
+            <p>
+                Bu açıklaması, milliyetçi gruplar arasında büyük tartışmalara yol açtı. Ancak Cortex, halkın yeniden inşa edilmesi için bu sürecin gerekli olduğuna inanıyordu. Cortex’in yönetimi altındaki AserLand, yeni reformlarla tanıştı. Özellikle Doğu AserLand’a yaptığı geziler, bölgedeki demokratik sistemin oturması için kişisel çaba sarf ettiğini gösterdi. Fakat bu tür reformist girişimler, içerideki eski yönetimi destekleyen gizli grupların hoşuna gitmedi.
+            </p>
+            <p>
+                Kısa süre içinde suikast girişimleri başladı. Fakat ilginçtir ki, Cortex bu girişimlere karşı katı bir ceza uygulamadı. Onun hukuk felsefesi, intikam veya baskı üzerine kurulu değildi. İnsan haklarına verdiği önem nedeniyle, kendisine suikast planlayanlara bile adil davranmaya devam etti.
+            </p>
+
+            <blockquote>
+                “Beni öldürmeye çalışanları cezalandırmayacağım. İnsan hakları her şeyden önce gelir ve benim görevim onların bile haklarını korumaktır.”
+            </blockquote>
+
+            <p>
+                Bu tutumu, onun derin bağlılık gösterdiği hukuk sisteminin bir yansımasıydı. Zalim bir yönetimden çıkıp adalet ve insan hakları odaklı bir ülke yaratmaya çalışan Cortex, halkın gözünde bir liderden çok bir ideolojik dönüşüm figürü olarak anılmaya başladı.
+            </p>
+            <p>
+                Madam Maria Von Cortex’in yönetimi, AserLand’da kalıcı bir iz bıraktı. Onun liderliği ve hukuksal anlayışı, şiddete dayalı yönetimden çok hukuka dayalı bir reform hareketine dönüştü. Yönetimi boyunca:
+            </p>
+            <ul>
+                <li>IV. Aserilios’un baskıcı mirasını ortadan kaldırdı ve kamuoyu önünde rejimi resmen lanetledi.</li>
+                <li>Skarrgard’ın bağımsızlığını destekleyerek, bunu sadece bir bölgesel ayrılık olarak değil, demokrasi için atılmış bir adım olarak değerlendirdi.</li>
+                <li>Doğu AserLand’a kişisel reform gezileri düzenleyerek, bölgedeki adalet sistemini güçlendirdi.</li>
+                <li>Kendisine yapılan suikast girişimlerine karşı intikam yerine insan hakları temelinde yaklaşım sergileyerek, eski rejimin baskıcı yöntemlerini reddetti.</li>
+                <li>Doğu AserLand’da demokrasinin kendisinden sonra da tesis edebilmesi için Doğu AserLand Yüksek Konseyi’ni kurdurttu.</li>
+            </ul>
+
+            <p>
+                Ancak, Cortex’in bu reformist duruşu ve Skarrgard’ın bağımsızlığını açıkça desteklemesi, onu milliyetçi Aser yanlısı grupların hedefi haline getirdi. AserLand içerisinde hâlâ IV. Aserilios’un sert yönetimini ideal gören ve merkezi otoritenin zayıflamasını bir ihanet olarak değerlendiren bazı kesimler, Cortex’i yumuşak bir lider ve Aser ruhunu baltalayan bir figür olarak görüyordu.
+            </p>
+            <p>
+                Cortex, hükümdarlığının son döneminde, bir dizi reform gezisi düzenlediği sırada bir milliyetçi Aser yanlısının suikast girişimi ile hayatını kaybetti. Ölümü, halkın büyük bir kısmı için adaletin ve ilerlemenin karşısında duran karanlık güçlerin son vuruşu olarak görüldü.
+            </p>
+            <p>
+                O gün, Cortex Doğu AserLand’daki demokratik reformları denetlemek için düzenlediği gezinin son durağındaydı. Eski yönetimin kalıntıları hâlâ bazı bölgelerde etkisini sürdürüyordu ve ona karşı suikast girişimlerinin gerçekleşmesi kaçınılmazdı. Fakat Cortex, kendisine yapılan tüm saldırılara rağmen hiçbir suikastçıya cezai yaptırım uygulamamıştı. Ona karşı yapılan girişimleri bile halkın ifade özgürlüğü kapsamında değerlendirmiş, “İnsan hakları her şeyden önce gelir” diyerek, hatta katillerini yargılama sistemine bırakmıştı.
+            </p>
+            <p>
+                Ne var ki, bu tavrı, onun sonunu getiren faktörlerden biri oldu. Reform gezisinin son gecinde, halka hitap etmeye hazırlanıyordu. Konuşmasında Doğu AserLand’daki demokrasi sürecine dair umut verici mesajlar verecek, yeni yasaların Skarrgard ile uyumlu çalışmasını destekleyecekti. Fakat gece ilerlerken, kalabalık arasından bir ok Cortex’e doğru geldi.
+            </p>
+            <p>
+                Milliyetçi bir AserLand yanlısı, IV. Aserilios’un yönetiminin yerle bir edilmesini ve AserLand’ın bölünmesini ihanet olarak gören bir radikal olarak Cortex’in yakınlarına kadar sızmıştı. Bir arbaletle Cortex’i konuşma yaptığı kürsüde hedef aldı. Okunu attığında, ok göğsüne isabet etti.
+            </p>
+            <p>
+                Cortex bir adım geriye tökezledi, derin bir nefes almaya çalıştı. Fakat ikinci ok omzuna, üçüncü ok ise kalbine saplandı. Korumaları etrafına koşarak onu yakalamaya çalıştı, fakat çok geçti. Kanlar içinde yere yığılırken, son nefesinde dudaklarından şu kelimeler döküldü:
+            </p>
+
+            <blockquote>
+                “Şiddet, bir ideali öldüremez. Hukuk, eninde sonunda kazanacaktır.”
+            </blockquote>
+
+            <p>
+                Halkın çığlıkları yankılanırken, saldırgan hemen olay yerinden kaçtı. Yakalanan suikastçının kimliği kısa sürede ortaya çıktı: IV. Aserilios’a bağlı bir oligark. Merkezi yönetimin bölünmesini asla kabul etmeyen, AserLand’ın bir bütün olarak kalması gerektiğine inanan aşırı milliyetçi bir figürdü. Suikastın ardından, Doğu AserLand sokaklarında büyük protestolar başladı. Halkın çoğunluğu, bu cinayeti demokrasiye vurulmuş bir hançer olarak değerlendirdi.
+            </p>
+            <p>
+                Cortex’in ölümü, halk arasında büyük bir sarsıntıya neden oldu. O sadece bir lider değildi; adaletin ve demokratik ideallerin temsilcisi idi. Onun ardından, AserLand’ın yönetimi üzerindeki tüm dengeler değişti. Milliyetçi kesimler, suikastı haklı çıkararak eski rejimi geri getirmeye çalıştı, ancak halkın büyük bir bölümü Cortex’in mirasına sahip çıkmaya karar verdi.
+            </p>
+            <p>
+                Ölümünden sonra tahtı devralan kardeşi Madam Elena Von Cortex, şu yasaları yürürlüğe soktu:
+            </p>
+            <ul>
+                <li><strong>Cortex Yasası:</strong> AserLand’da suikast sonucu öldürülen liderlerin fikirlerinin korunması adına bir yasa çıkarıldı.</li>
+                <li><strong>Doğu AserLand’ın siyasi yapısı güçlendirildi:</strong> Demokratik süreçleri daha fazla hızlandırıldı.</li>
+                <li><strong>Suikastçılar idam ile cezalandırılmadı:</strong> Cortex’in vasiyeti gereği, saldırganlara yönelik idam cezaları yerine hukuk sürecinin işlemesi sağlandı.</li>
+                <li><strong>Skarrgard ile diplomatik ve ekonomik ilişkiler geliştirildi:</strong> Artık AserLand, Skarrgard’da ticaret, Skarrgard da AserLand’da ticaret yapmaya başladı.</li>
+            </ul>
+            <p>
+                Cortex’in ölümü, onu sadece bir lider değil, demokrasi uğruna can veren bir figür olarak tarihe kazıdı. Ölümünden sonra, AserLand’ın büyük şehirlerinde onun adına anıtlar dikildi. Ölüm günü, halk tarafından “Adaleti Anma Günü – 16 Mayıs” olarak kabul edildi. Her yıl, reformist gruplar onun mirasını ve bıraktığı demokratik idealleri kutlamak için anmalar düzenlediler.
+            </p>
+            <p>
+                Madam Maria Von Cortex, zalim yönetimin gölgesinden çıkıp adalet için mücadele eden, halkın özgürlüğünü savunan, barış ve demokrasi için hayatını feda eden bir lider olarak tarih sayfalarına kazındı.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
