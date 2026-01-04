@@ -31,107 +31,119 @@
         .sidebar a:hover { color: #fff; }
         .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
 
-        /* İÇERİK ALANI - RESMİ BELGE STİLİ */
+        /* İÇERİK ALANI */
         .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.8; }
         
+        /* --- BELGE ÇERÇEVESİ (KUTU) --- */
         .treaty-document {
             background: #121212;
             border: 2px solid #333;
             border-top: 5px solid var(--ana-renk);
-            padding: 50px; /* Boşluk artırıldı */
-            position: relative;
+            padding: 60px;
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            
+            /* İŞTE SİHİRLİ KODLAR BURADA: */
+            display: flex;             /* Esnek kutu yap */
+            flex-direction: column;    /* Alt alta diz */
+            align-items: center;       /* Yatayda her şeyi ORTALA */
+            text-align: center;        /* Metinleri ORTALA */
         }
 
-        /* BAŞLIK VE GİRİŞ - ORTALANDI */
+        /* Başlık */
         .treaty-document h1 { 
-            font-size: 2.5rem; 
+            font-size: 2.8rem; 
             color: var(--ana-renk); 
-            text-align: center; /* ORTALI */
-            margin-bottom: 20px; 
+            margin-bottom: 30px; 
             text-transform: uppercase; 
-            letter-spacing: 2px;
-            border-bottom: 1px solid #333; 
+            letter-spacing: 3px;
+            border-bottom: 1px solid #444; 
             padding-bottom: 20px;
+            width: 100%; /* Tam genişlikte olsun ki altındaki çizgi uzasın */
         }
 
+        /* Giriş Metni (Preamble) */
         .preamble { 
             font-style: italic; 
             color: #aaa; 
-            text-align: center; /* ORTALI */
-            margin-bottom: 40px; 
-            padding: 0 20px;
-            border-bottom: 1px solid #333; 
-            padding-bottom: 30px; 
+            margin-bottom: 50px; 
+            max-width: 800px; /* Çok yayılmasın, derli toplu dursun */
+            line-height: 1.9;
         }
 
-        /* MADDELER */
-        .article-box { margin-bottom: 30px; }
+        /* Taraflar Kutusu */
+        .parties-box { 
+            display: flex; 
+            justify-content: center; /* Kutuları ortada topla */
+            gap: 60px; /* Aralarını aç */
+            background: #1a1a1a; 
+            padding: 30px; 
+            margin-bottom: 50px; 
+            border: 1px solid #333; 
+            width: 100%;
+            max-width: 900px;
+        }
+        .party { text-align: center; } /* İsimleri ortala */
+        .party h3 { color: #fff; border-bottom: 2px solid var(--ana-renk); padding-bottom: 10px; margin-bottom: 15px; display: inline-block; }
+        .party ul { list-style: none; padding: 0; }
+        .party li { margin-bottom: 8px; color: #bbb; }
+
+        /* Maddeler */
+        .article-box { 
+            margin-bottom: 35px; 
+            width: 100%; 
+            max-width: 900px; /* Okunabilirlik için genişlik sınırı */
+        }
+        
         .article-title { 
             color: var(--ana-renk); 
             font-weight: bold; 
-            font-size: 1.3rem; 
-            margin-bottom: 10px; 
+            font-size: 1.4rem; 
+            margin-bottom: 15px; 
             display: block; 
-            text-align: center; /* Madde Başlıkları da Ortalı Olsun mu? Evet daha şık durur */
-            border-bottom: 1px dashed #333;
-            padding-bottom: 5px;
+            text-align: center; /* Madde başlıklarını ortala */
+            text-decoration: underline;
+            text-decoration-color: #333;
+            text-underline-offset: 8px;
         }
-        .article-content { color: #ddd; text-align: justify; padding: 10px 20px; }
-
-        /* TARAFLAR KUTUSU */
-        .parties-box { display: flex; justify-content: space-around; background: #1a1a1a; padding: 30px; margin-bottom: 40px; border: 1px solid #333; text-align: center; }
-        .party { width: 45%; }
-        .party h3 { color: #fff; border-bottom: 2px solid var(--ana-renk); padding-bottom: 10px; font-size: 1.2rem; margin-bottom: 15px; }
-        .party ul { list-style: none; padding: 0; }
-        .party li { margin-bottom: 8px; color: #bbb; font-size: 1.1rem; }
         
-        /* SONUÇ KUTUSU */
+        /* Madde metinleri okunaklı olsun diye "İki Yana Yaslı" (Justify) kalmalı. 
+           Eğer bunu da ortalamak istersen 'text-align: center' yapabilirsin ama zor okunur. */
+        .article-content { 
+            color: #ddd; 
+            text-align: justify; 
+            background: #151515; /* Hafif bir arka plan verelim ki öne çıksın */
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px dashed #333;
+        }
+
+        /* Sonuç ve Onay */
         .conclusion-box {
-            text-align: center; 
-            margin-top: 50px; 
-            border: 2px solid #333; 
+            margin-top: 40px; 
             padding: 30px;
-            background: #151515;
+            max-width: 800px;
+            border-top: 2px solid #333;
         }
 
         /* INFOBOX */
         .infobox {
             float: right;
-            width: 320px;
+            width: 300px;
             background: #1a1a1a;
             border: 1px solid var(--ana-renk);
             margin: 0 0 20px 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
-        .infobox-header {
-            background: var(--ana-renk);
-            color: #000;
-            text-align: center;
-            padding: 10px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-        }
-        .infobox-image {
-            width: 100%;
-            display: block;
-            border-bottom: 1px solid var(--border);
-            background: #000;
-            height: 180px;
-            display: flex; align-items: center; justify-content: center; color: #333;
-        }
-        .infobox-table { width: 100%; border-collapse: collapse; }
-        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
-        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+        .infobox-header { background: var(--ana-renk); color: #000; text-align: center; padding: 10px; font-weight: bold; }
+        .infobox-image { background: #000; height: 150px; display: flex; align-items: center; justify-content: center; color: #333; }
+        .infobox-table th, .infobox-table td { padding: 8px; border-bottom: 1px solid #333; text-align: left; }
+        .infobox-table th { color: var(--ana-renk); width: 40%; }
 
         @media (max-width: 900px) { 
             .container { flex-direction: column; } 
             .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
             .infobox { float: none; width: 100%; margin: 20px 0; }
-            .parties-box { flex-direction: column; }
-            .party { width: 100%; margin-bottom: 20px; }
+            .parties-box { flex-direction: column; gap: 30px; }
         }
     </style>
 </head>
@@ -158,12 +170,6 @@
                     <li><a href="damethia-anlasmasi.html" class="active"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
                 </ul>
             </details>
-            <details>
-                <summary>PHASE 2: Gelişme</summary>
-                <ul>
-                    <li><a href="#">(Yakında)</a></li>
-                </ul>
-            </details>
         </aside>
 
         <main class="content">
@@ -171,26 +177,26 @@
             <div class="infobox">
                 <div class="infobox-header">BELGE KÜNYESİ</div>
                 <div class="infobox-image"><i class="fas fa-scroll" style="font-size:4rem;"></i></div>
-                <table class="infobox-table">
+                <table class="infobox-table" style="width:100%; border-collapse:collapse;">
                     <tr><th>Belge Adı:</th><td>Damethia Anlaşması</td></tr>
                     <tr><th>Tarih:</th><td>0 Yılı</td></tr>
-                    <tr><th>Yer:</th><td>Damethia (Eski AserNorthia)</td></tr>
+                    <tr><th>Yer:</th><td>Damethia</td></tr>
                     <tr><th>Durum:</th><td>Yürürlükte</td></tr>
                     <tr><th>İmzalayanlar:</th><td>Kuzeybatılı İsyancı Halk<br>AserLand Devleti</td></tr>
-                    <tr><th>Sonuç:</th><td>Skarrgard'ın Bağımsızlığı<br>AserLand'ın İkiye Ayrılması</td></tr>
                 </table>
             </div>
 
             <div class="treaty-document">
-                <h1>Damethia Anlaşması (0) – Eumandarg Damethsizi</h1>
+                <h1>Damethia Anlaşması (0)</h1>
+                <h3 style="color:#888; margin-top:-20px; margin-bottom:30px;">Eumandarg Damethsizi</h3>
                 
-                <p class="preamble">
+                <div class="preamble">
                     İşbu anlaşma, Kuzeybatılı İsyancı Halk ve AserLand Devleti arasında vuku bulan savaş halini sonlandırmak, kalıcı barış ve istikrarı tesis etmek, tarafların hak ve yükümlülüklerini belirlemek maksadıyla, tarafların tam yetkili temsilcileri tarafından 0 yılı Damethia'da akdedilmiş ve tasdik edilmiştir.
-                </p>
+                </div>
 
                 <div class="parties-box">
                     <div class="party">
-                        <h3>Kuzeybatılı İsyancı Halk'ı Temsilen:</h3>
+                        <h3>Kuzeybatılı İsyancı Halk</h3>
                         <ul>
                             <li>Skarryion Damethsizi</li>
                             <li>Eumandarg Damethsizi</li>
@@ -198,7 +204,7 @@
                         </ul>
                     </div>
                     <div class="party">
-                        <h3>AserLand Devleti'ni Temsilen:</h3>
+                        <h3>AserLand Devleti</h3>
                         <ul>
                             <li>Kraliçe Madam Maria Von Cortex</li>
                         </ul>
@@ -256,7 +262,7 @@
 
                 <div class="conclusion-box">
                     <span class="article-title" style="border:none;">Tasdik ve Yürürlük</span>
-                    <p style="color:#ddd;">
+                    <p style="color:#ddd; margin:0;">
                         İşbu anlaşma, tarafların karşılıklı rızası ve tasdikiyle, imza altına alındığı andan itibaren tüm maddeleriyle birlikte derhal yürürlüğe girer.
                     </p>
                 </div>
