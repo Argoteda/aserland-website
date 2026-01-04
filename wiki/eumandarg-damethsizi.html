@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eumandarg Damethsizi | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 30px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.5rem; }
+        
+        /* LİSTELER */
+        .content ul { list-style: none; padding-left: 0; }
+        .content li { margin-bottom: 15px; padding-left: 20px; position: relative; }
+        .content li::before { content: '❖'; color: var(--ana-renk); font-weight: bold; position: absolute; left: 0; font-size: 0.8rem; top: 5px; }
+        .content li strong { color: var(--ana-renk); }
+
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 220px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details open>
+                <summary>PHASE 1: Başlangıç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html" class="active">➤ Eumandarg Damethsizi</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>PHASE 2: Gelişme</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">EUMANDARG DAMETHSIZI</div>
+                
+                <div class="infobox-image"><i class="fas fa-drafting-compass" style="font-size:4rem;"></i></div>
+
+                <table class="infobox-table">
+                    <tr><th>Unvan:</th><td>Mirasın Bekçisi ve Skarrgard'ın Mimarı</td></tr>
+                    <tr><th>Yaşam:</th><td>M.Ö 22 – M.S 19</td></tr>
+                    <tr><th>Doğum Yeri:</th><td>Hyena Hills, AserNorthia (Damethia)</td></tr>
+                    <tr><th>Ölüm Yeri:</th><td>Skarrgard Sarayı</td></tr>
+                    <tr><th>Ölüm Nedeni:</th><td>Hastalık (Kanser)</td></tr>
+                    <tr><th>Eğitim:</th><td>AserNorthia Medya Üniversitesi Gazetecilik Fakültesi</td></tr>
+                    <tr><th>Meslek:</th><td>Gazeteci / II. Skarrgard Kralı</td></tr>
+                    <tr><th>Görev Süresi:</th><td>7 Yıl (12 – 19)</td></tr>
+                    <tr><th>Selefi:</th><td>Skarryion Damethsizi</td></tr>
+                    <tr><th>Halefi:</th><td>Kaelen Damethsizi</td></tr>
+                </table>
+            </div>
+
+            <h1>Eumandarg Damethsizi</h1>
+            
+            <p>
+                Eumandarg Damethsizi, ağabeyi Skarryion'un devrimci aurasının aksine, daha sakin ve düşünceli bir karaktere sahipti. Yoksul bir çiftçi ailesinin çocuğu olarak, Skarryion gibi soğuk kışların ve kıt kaynakların acımasız gerçekleriyle büyüdü. Ağabeyinin askerlik hayalinin, AserLand yönetiminin baskıcı vergi politikaları ve kışın tarımı imkansız kılan yardım kısıtlamaları yüzünden suya düşmesine tanık oldu. Bu durum, Eumandarg'ın kalbinde de benzer bir kızgınlık tohumladı, ancak onun tepkisi daha içe dönük ve stratejikti. Ağabeyinin kelime ve bilgiyle kılıç kuşanma sezgisini , o da aynı şekilde benimsedi ve okuma yazma öğrenerek, kaleme ve mürekkebe sığınarak gazeteci olmaya karar verdi.
+            </p>
+            <p>
+                Skarryion yerel haber bültenleri çıkarırken ve köy köy dolaşarak halkın dertlerini dinlerken, Eumandarg, ağabeyinin yazılarının etkisini geniş kitlelere yaymanın yollarını düşünüyordu. O dönemde matbaa firmalarının merkezi yönetimin etkisi altında olduğunu fark eden Skarryion'un , kendi matbaa firmasını ele geçirme planında Eumandarg'ın rolü kilit oldu. Ağabeyiyle birlikte, sosyal çevresinden edindikleri zengin iş adamları ve mülk sahiplerinin desteğini alarak, matbaa firmasının yönetimini adeta bir darbeyle ele geçirdiler. Eumandarg, bu süreçte ağabeyinin akıl ve inancıyla rakiplerini saf dışı bırakırken , aynı zamanda matbaa evlerini kendi ağlarına katarak , kuzeybatıdaki neredeyse tüm matbaa evlerinin kontrolünü bir yıl gibi kısa bir sürede ele geçirmesini sağladı. Artık baskı ve propaganda onların kalemi olmuş, "Sizin kurtarıcınız benim" ifadesiyle Skarryion'un yüzü sayfalarda yankılanıyordu.
+            </p>
+            <p>
+                Skarryion, halkın öfkesini organize edecek gizli yapılar inşa etmeye başladığında ve Denoistos liderliğinde bir direniş ordusu kurduğunda, Eumandarg, bu direnişin görünmeyen lojistik gücü oldu. Haber bültenlerinin basımı, dağıtımı, hatta gizli toplantıların organize edilmesi ve direnişçiler arasındaki iletişimin sağlanması gibi kritik görevleri üstlendi. Ağabeyi medyanın, Denoistos’un ordunun başında bir lider olarak yeni bir devrim düzeninin temellerini atarken, Eumandarg, bu temellerin sağlam atıldığından emin olan, detaylara hakim bir mimar gibi çalıştı.
+            </p>
+            <p>
+                IV. Aserilios'un Skarryion'un isyan ateşini yakan gazetelerden birini ele geçirmesi ve kral yardımcısı Dunas Zia'nın kuzeybatıya gönderilmesiyle başlayan süreçte , Skarrgard'ın devasa surlarının inşasında Eumandarg'ın büyük rolü vardı. Bu surlar sadece fiziki bir savunma değil, aynı zamanda halkın özgürlük için savaşma kararlılığının bir sembolüydü.
+            </p>
+            <p>
+                IV. Aserilios'un 60.000 kişilik ordusu Skarrgard'a yürürken, Eumandarg, sadece matbaa evlerini değil, aynı zamanda AserTechno'nun geliştirdiği "Cañón de los Aseros" topları gibi yeni teknolojilerin etkilerini de göz önünde bulundurarak, Denoistos ile birlikte savunmayı pekiştirmek için çok çalıştı. Skarrgard'ın savunma stratejilerini şekillendirmede ağabeyine danışmanlık yaptı. Arbaletlerle donanmış çevik Skarryion ordusunun  bu toplara karşı nasıl duracağını planlamada, Eumandarg'ın analitik zekası ve teknolojiye olan yatkınlığı önemliydi. Dört gün süren çatışmalarda elde edilen zaferde, Skarryion'un medya ve ordu gücünün yanı sıra, Eumandarg'ın sağladığı altyapısal destek de yadsınamazdı.
+            </p>
+            <p>
+                Damethia Antlaşması ile Skarrgard'ın kuruluşu ve Skarryion'un ilk kral olmasıyla birlikte, Eumandarg, yeni devletin bürokratik yapısını kurma ve işlerliğini sağlama görevini üstlendi. Skarryion eğitim, sağlık, kültürel canlanma ve siyasi reformlar gibi pek çok alanda devrim yaratırken, Eumandarg bu reformların halka ulaşmasını ve sürdürülebilir olmasını sağlayan mekanizmaları kurdu. Vergi sisteminin adil bir şekilde yeniden düzenlenmesi, tarım desteklerinin geliştirilmesi ve halkın refahının artırılmasına yönelik programların yürütülmesine aktif rol aldı. Özellikle, merkezi AserLand yönetiminin kısıtladığı uzman yardımlarının Skarrgard'da yeniden canlandırılması ve halka ulaştırılması için büyük çaba sarf etti.
+            </p>
+            <p>
+                Ancak büyük devrimler beraberinde yeni çatışmalar ve zorlu sınavlar getirmişti. Skarryion'un yaşlılığın getirdiği yorgunluk ve çevresindeki kişisel çıkarları olanların yöntemlerini sorgulamasıyla başlayan süreçte, Eumandarg, ağabeyinin üzerindeki yükü hafifletmek için elinden geleni yaptı. İç çekişmeleri yatıştırmaya, muhalif gruplarla diyalog kurmaya ve Skarrgard'ın birliğini korumaya çalıştı.
+            </p>
+            <p>
+                M.S 12 yılında, efsanevi "The Doom Waters" yaratıklarının yeniden ortaya çıkmasıyla başlayan krizde , Skarryion'un son sefere çıkışı, Eumandarg için derin bir dönüm noktasıydı. Bu yaratıkların Doğu AserLand'ın siyasi bir hamlesi olduğunu bilmek, Eumandarg'ı daha da hırslandırdı. Ağabeyinin bu güneylilerin sorumluluğundaki yaratıklarla daha önce hiç savaşmamış olması, Eumandarg'ı yeni bir strateji geliştirmeye itti. Skarryion'un ölüm döşeğindeki "Skarrgard, bağımsızlık ateşiyle yanacak; asla sönmeyecek" sözleri, Eumandarg'ın omuzlarına ağır bir miras bıraktı.
+            </p>
+            <p>
+                Skarryion'un vefatıyla birlikte, Eumandarg Damethsizi, Skarrgard'ın ikinci kralı olarak tahta çıktı. Hükümdarlık süresince, ağabeyinin devrimci ruhunu korumanın yanı sıra, devleti daha da güçlendirmeye odaklandı.
+            </p>
+
+            <h2>Eumandarg'ın Hükümdarlık Dönemindeki İcraatları:</h2>
+            <ul>
+                <li>
+                    <strong>Savunma Reformları ve The Doom Waters Tehdidi:</strong> The Doom Waters yaratıklarının oluşturduğu tehdidi en büyük önceliği olarak gördü. Ağabeyinin son savaşındaki deneyimlerden ders çıkararak, orduyu bu tür mistik ve bilinmeyen tehditlere karşı özel olarak eğitmeye başladı. Yeni savunma kuleleri ve gözetleme noktaları inşa ettirdi, özellikle The Doom Waters'a yakın kıyılarda askeri varlığı güçlendirdi ve General Denoistos’u bizzat The Doom Waters’a gönderdi. Yaratıkların davranışlarını incelemek ve onlara karşı etkili silahlar geliştirmek için araştırmacılardan oluşan özel bir birlik kurdu. Doğu AserLand ile diplomatik ilişkileri sürdürürken, onların bu yaratıkları manipüle etme potansiyeline karşı da tetikte oldu.
+                </li>
+                <li>
+                    <strong>Ekonomik İstikrar ve Refah:</strong> Skarryion'un devrimle sağladığı ekonomik reformları daha da ileriye taşıdı. Tarım üretimini artırmak için yeni sulama sistemleri ve ekim teknikleri geliştirdi. Matbaa evlerini sadece propaganda aracı olarak değil, aynı zamanda eğitim materyalleri ve tarım kılavuzları basmak için de kullandı. Ticareti canlandırmak için komşu topraklardaki yeni pazarlara açıldı ve Skarrgard ürünlerinin (özellikle dokuma ve tarım ürünleri) dış pazarlara ulaşmasını sağladı. Halkın yaşam standartlarını yükseltmek için yeni iş alanları yaratmaya ve zanaatkarlığı desteklemeye odaklandı.
+                </li>
+                <li>
+                    <strong>Hukuk ve Adalet Sistemi:</strong> Damethia Antlaşması'nın getirdiği hukuk sistemini daha da pekiştirdi. Yargıçların bağımsızlığını güvence altına aldı ve adaletin herkese eşit şekilde uygulanmasını sağladı. Skarryion'un adalet ve özgürlük ideallerini yansıtan yasal düzenlemeler yaptı. Halkın hukuka erişimini kolaylaştırmak için yerel mahkemelerin sayısını artırdı.
+                </li>
+                <li>
+                    <strong>Eğitim ve Kültürel Gelişim:</strong> Skarryion'un başlattığı eğitim seferberliğini devam ettirdi. Daha fazla okul açtı ve öğretmenlerin eğitimine önem verdi. Matbaa evlerini kullanarak halkın okuryazarlık oranını artırmayı hedefledi. Skarrgard'ın kültürel kimliğini güçlendirmek için sanatçıları ve bilginleri destekledi. Ağabeyinin hayatını ve devrimini anlatan eserlerin yazılmasını teşvik etti, böylece yeni nesillerin Skarrgard'ın kuruluş ruhunu anlamasını sağladı.
+                </li>
+                <li>
+                    <strong>Diplomatik İlişkiler:</strong> Skarryion'un zaferinin ardından uluslararası arenada yankı bulan Skarrgard'ın konumunu güçlendirmeye çalıştı. Komşu topraklarda "özgürlük rüzgarlarının" esmesini sağlamak için diplomatik ilişkiler kurdu. IV. Aserilios'un esir alınmasından sonra Madam Maria Von Cortex ile yeni bir denge kurmaya çalıştı, barışçıl ilişkileri sürdürme ve ticari anlaşmalar yapma yoluna gitti. Ancak yine de Skarrgard'ın bağımsızlığını her şeyin üstünde tuttu.
+                </li>
+            </ul>
+
+            <p>
+                Eumandarg, ağabeyinin ani kaybının getirdiği boşluğu doldurmak için büyük bir sorumluluk üstlendi. Skarryion'un efsanevi liderliğinin getirdiği baskıya rağmen, kendi özgün liderlik tarzını geliştirdi. Daha çok bir devlet adamı, bir mimar ve bir diplomat olarak öne çıktı. Skarryion'un devrimci ateşini, Eumandarg, istikrarlı ve sürdürülebilir bir devlet yapısına dönüştürdü. O, Skarryion'un başlattığı hareketi, gelecek nesillere aktarılacak sağlam bir miras haline getiren kişi oldu.
+            </p>
+            <p>
+                M.S 19 yılında, Skarrgard Sarayı'nda kanserden dolayı vefat etti. Geride, ağabeyinin ideallerine sadık, ancak kendi vizyonuyla şekillenmiş güçlü bir Skarrgard bıraktı. III. Damethsizi'nin tahta geçmesiyle, Eumandarg'ın mirası da yeni bir döneme girdi. Tarih kitaplarında Skarryion "Devrimin Kalemi" olarak anılırken, Eumandarg "Mirasın Bekçisi ve Skarrgard'ın Mimarı" olarak, ağabeyinin bıraktığı tohumları yeşerten, devleti büyüten ve koruyan lider olarak hatırlanacaktı.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
