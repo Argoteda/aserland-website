@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nevery Aserilios | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 30px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.5rem; }
+
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 220px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details open>
+                <summary>PHASE 1: Başlangıç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html" class="active">➤ Nevery Aserilios</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>PHASE 2: Gelişme</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">IV. ASERILIOS</div>
+                
+                <div class="infobox-image"><i class="fas fa-crown" style="font-size:4rem;"></i></div>
+
+                <table class="infobox-table">
+                    <tr><th>Tam Adı:</th><td>Nevery Aserilios</td></tr>
+                    <tr><th>Unvan:</th><td>XXIX. AserLand Kralı<br><em>"Aserlerin Kara Lekesi"</em></td></tr>
+                    <tr><th>Yaşam:</th><td>M.Ö 44 – M.S 9</td></tr>
+                    <tr><th>Doğum Yeri:</th><td>AserLand Merkez Sarayı</td></tr>
+                    <tr><th>Ölüm Yeri:</th><td>Damethia Sarayı (Skarrgard)</td></tr>
+                    <tr><th>Ölüm Nedeni:</th><td>İntihar</td></tr>
+                    <tr><th>Eğitim:</th><td>Aserwar Kraliyet Savaş Okulu</td></tr>
+                    <tr><th>Meslek:</th><td>Asker / Kral</td></tr>
+                    <tr><th>Görev Süresi:</th><td>7 Yıl (M.Ö 7 – 0)</td></tr>
+                    <tr><th>Selefi:</th><td>Vorian Boris Aser</td></tr>
+                    <tr><th>Halefi:</th><td>Madam Maria Von Cortex</td></tr>
+                </table>
+            </div>
+
+            <h1>Nevery Aserilios</h1>
+            
+            <p>
+                Nevery Aserilios, AserLand’ın saray duvarları arasında ağır gelenekler ve uzun süredir süregelen iç çekişmelerin ortasında doğdu. Soyundan gelen prestijli geçmişine rağmen, çevresindeki yozlaşmış ve çıkar odaklı yönetim anlayışı, genç Aserilios’un gözünden geçmeye yetmedi. Hırslı ve acımasız bir karaktere sahip olan Nevery Aserilios, mevcut iktidarın zayıflığını ve halkın memnuniyetsizliğini fırsata çevirerek, darbe ile iktidara gelmeye karar verdi.
+            </p>
+            <p>
+                Sarayın içindeki sadık casuslar, gizli toplantılar düzenleyerek rakip liderlerin zayıf noktalarını belirlemeye başladı. Bir gece, merkezi yönetimin güvenlik hatalarını kolladığı anda, Nevery Aserilios ve destekçilerinden oluşan seçkin bir grup kısa sürede sarayın kontrolünü ele geçirdi. Böylece, uzun süredir süregelen baskıcı düzen kırılarak, Nevery Aserilios, zalim ama organize bir şekilde iktidarın elini ele geçirerek IV. Aserilios olarak taç giydi.
+            </p>
+            <p>
+                İktidara geldikten hemen sonra, mevcut kadroları yeniledi. IV. Aserilios mevcut sistemin kusurlarını pekiştirmek amacıyla adeta radikal bir ekonomik politika izlemeye başladı. Önceki krala baskıcı diye hitap edenler IV. Aserilios başa geldikten sonra sözlerini geri alacaklardı. Kuzeybatı bölgesinde hâlihazırda uygulanan ağır vergiler, AserLand’ın merkezi yönetimi tarafından var olan baskılar arasında sayılıyordu. Fakat Aserilios, bu vergileri daha da artırarak; temel tüketim maddeleri, giyim, barınma ve tarım ürünlerine ekstra vergi koydu. Bu sert önlemler, kuzeybatı halkının geçim mücadelesini derinleştirdi, öfkeyi körükledi ve işçi ile çiftçi katmanları arasında sosyal huzursuzluğu arttırdı. Alınan fazladan vergiler ise IV. Aserilios’un egosunu tatmin edebileceği saraylara harcandı.
+            </p>
+            <p>
+                IV. Aserilios, kuzeybatı bölgesine yaptığı zalimce hamleleri ile Skarryion Damethsizi adında devrimci bir düşman edinmişti. Devrime karşı caydırıcı bir güç olmak ve yeni iktidarının meşruiyetini ilan etmek için büyük bir ordu kurdu. 60.000 kişilik kuvveti, propaganda mesajlarıyla moral kazandırılarak seferber edildi. Ancak, uygulanan aşırı vergi yükü, yalan propaganda mesajları ve sert askeri disiplin, iç çekişmelere de zemin hazırladı. Ordunun içinde çıkan isyanlar, kısa süre içerisinde 60.000 kişilik orduyu 35.000’e düşürdü. Böylece, otoritesini zorlayacak faktörler hem ekonomik hem de askerî alanda mevcuduydu.
+            </p>
+            <p>
+                IV. Aserilios, iktidarını pekiştirmek için teknolojik üstünlük stratejisine de güvendi. Dönemin en yetenekli mucitlerinden AserTechno’dan “Cañón de los Aseros”nun yapılmasını emretti. Bu devasa top, geniş namlusu ile üç insan kafasını rahatça içine alabilmekte ve 40 kiloluk gülleleri saniyede 500 metre hızla fırlatabilmekteydi. Fakat bu silahın işlevi, esas olarak yapı yıkımına yönelikti ve savaş alanında, düşmanın yerleşimlerine yöneltilen saldırılarda moral ve korku unsuru olarak kullanılmaya çalışıldı. Konuşlanmış, seri hareket eden yer birimlerine karşı bu topun herhangi bir işlevi yoktu.
+            </p>
+            <p>
+                Ayrıca, merkezi yönetimin propagandasını güçlendirmek amacıyla tıpkı Skarryion gibi yayın organlarını kontrol altına aldı. Darbe sonrası yeni rejiminde uyguladığı medya baskısı yarı askeri yarı sivil bir rejimi betimler nitelikteydi. Propagandaları, etrafında şekillenen gazetelerle desteklendi. Kendisini adeta Aser dünyasının tanrısı olarak lanse ediyor, halka “Ben olmasaydım halkımız bu seviyeye gelemezdi” gibi sözler sarf ederek aynı anda hem güveni hem de korkuyu aşılıyordu. Böylece, hem teknolojik hem de sözlü güç unsurlarını kullanarak, halkın düşünce yapısını ve muhalif sesleri dize getirip kontrol etmeye yönelik stratejiler geliştirdi.
+            </p>
+            <p>
+                IV. Aserilios’un uyguladığı radikal vergi politikaları, kuzeybatı halkının temel geçim kaynaklarını derinden sarstı. Kuzeybatı'da yaşayan çiftçiler, işçiler ve sıradan vatandaşlar, aşırı vergi yükü altında ezilirken, ekonomik çöküş ve sosyal rahatsızlık isyanların fitilini ateşledi. Geleneksel AserLand düzenine inanan bazı kesimler bu baskılara boyun eğse de, modern görüşe sahip devrimciler ve özgürlük savunucuları, Skarryion Damethsizi’nin tepkisini alarak isyanı organize etmeye başladı. Bu durum, IV. Aserilios için hem askeri hem de siyasi itibarın erozyonuna neden oldu.
+            </p>
+            <p>
+                Kuzeybatı İsyanı (Skarrgard Bağımsızlık Savaşı) sırasında uygulanan zayıf taktikler, soğuk kış günleri, askerlerin yorgunluğu ve iç çekişmeler, nihayetinde AserLand ordusunun savaşı kaybetmesine sebep oldu ve IV. Aserilios esir alındı. Darbe ile iktidara gelmiş ve zalim vergileri uygulayarak halkı ezmiş olan IV. Aserilios’un yönetim sistemi, artık meşruiyetini ve gücünü kaybetmeye başlamıştı.
+            </p>
+            <p>
+                Esir alındığı dönemden itibaren IV. Aserilios, sarayın soğuk zindanları ya da tutuklu ortamınlarından ziyade, rakibi Skarryion tarafından sarayın en prestijli konumunda ağırlandı. Uyguladığı acımasız politikaların yarattığı ekonomik, sosyal ve askeri sorunlar karşısında, içinde bulunduğu yalnızlık, yıllar geçtikçe hem fiziksel hem de ruhsal yaralar açtı. Ölümü kayıtlara intihar olarak geçti. Son nefesinde, belki de kendi zulmünün ve acımasız yöntemlerinin bedelini derinden hissetti; ancak, bırakmış olduğu sistem, onun hafızalardaki yerini “Aser adını kirleten zalim yönetici” olarak belirledi.
+            </p>
+            <p>
+                Nevery Aserilios’un hayatı, darbe ile iktidara gelmiş, radikalleşen ekonomik baskılarla halkı eziyet etmiş ve teknolojiyi korku unsuru olarak kullanarak merkezi gücü sağlamlaştırmaya çalışmış bir liderin trajik yükselişi ve çöküşü olarak tarihe geçmiştir. Onun uyguladığı sert vergiler, otoriter yöntemler ve medyayı kontrol etme çabaları, Skarrgard’ın topraklarında hem uyarı niteliğinde anılara hem de gelecek nesillere örnek teşkil edecek derslere dönüştü.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
