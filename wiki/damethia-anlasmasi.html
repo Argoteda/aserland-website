@@ -38,35 +38,62 @@
             background: #121212;
             border: 2px solid #333;
             border-top: 5px solid var(--ana-renk);
-            padding: 40px;
+            padding: 50px; /* Boşluk artırıldı */
             position: relative;
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
 
+        /* BAŞLIK VE GİRİŞ - ORTALANDI */
         .treaty-document h1 { 
             font-size: 2.5rem; 
             color: var(--ana-renk); 
-            text-align: center; 
-            margin-bottom: 10px; 
+            text-align: center; /* ORTALI */
+            margin-bottom: 20px; 
             text-transform: uppercase; 
+            letter-spacing: 2px;
             border-bottom: 1px solid #333; 
             padding-bottom: 20px;
         }
 
-        .preamble { font-style: italic; color: #aaa; text-align: justify; margin-bottom: 30px; border-bottom: 1px solid #333; padding-bottom: 20px; }
+        .preamble { 
+            font-style: italic; 
+            color: #aaa; 
+            text-align: center; /* ORTALI */
+            margin-bottom: 40px; 
+            padding: 0 20px;
+            border-bottom: 1px solid #333; 
+            padding-bottom: 30px; 
+        }
 
         /* MADDELER */
-        .article-box { margin-bottom: 25px; }
-        .article-title { color: var(--ana-renk); font-weight: bold; font-size: 1.3rem; margin-bottom: 10px; display: block; border-left: 3px solid var(--ana-renk); padding-left: 10px; }
-        .article-content { color: #ddd; text-align: justify; padding-left: 13px; }
+        .article-box { margin-bottom: 30px; }
+        .article-title { 
+            color: var(--ana-renk); 
+            font-weight: bold; 
+            font-size: 1.3rem; 
+            margin-bottom: 10px; 
+            display: block; 
+            text-align: center; /* Madde Başlıkları da Ortalı Olsun mu? Evet daha şık durur */
+            border-bottom: 1px dashed #333;
+            padding-bottom: 5px;
+        }
+        .article-content { color: #ddd; text-align: justify; padding: 10px 20px; }
 
         /* TARAFLAR KUTUSU */
-        .parties-box { display: flex; justify-content: space-between; background: #1a1a1a; padding: 20px; margin-bottom: 30px; border: 1px solid #333; }
-        .party { width: 48%; }
-        .party h3 { color: #fff; border-bottom: 1px solid var(--ana-renk); padding-bottom: 5px; font-size: 1.1rem; }
+        .parties-box { display: flex; justify-content: space-around; background: #1a1a1a; padding: 30px; margin-bottom: 40px; border: 1px solid #333; text-align: center; }
+        .party { width: 45%; }
+        .party h3 { color: #fff; border-bottom: 2px solid var(--ana-renk); padding-bottom: 10px; font-size: 1.2rem; margin-bottom: 15px; }
         .party ul { list-style: none; padding: 0; }
-        .party li { margin-bottom: 5px; color: #888; }
-        .party li::before { content: '✍'; margin-right: 10px; color: var(--ana-renk); }
+        .party li { margin-bottom: 8px; color: #bbb; font-size: 1.1rem; }
+        
+        /* SONUÇ KUTUSU */
+        .conclusion-box {
+            text-align: center; 
+            margin-top: 50px; 
+            border: 2px solid #333; 
+            padding: 30px;
+            background: #151515;
+        }
 
         /* INFOBOX */
         .infobox {
@@ -143,9 +170,7 @@
 
             <div class="infobox">
                 <div class="infobox-header">BELGE KÜNYESİ</div>
-                
                 <div class="infobox-image"><i class="fas fa-scroll" style="font-size:4rem;"></i></div>
-
                 <table class="infobox-table">
                     <tr><th>Belge Adı:</th><td>Damethia Anlaşması</td></tr>
                     <tr><th>Tarih:</th><td>0 Yılı</td></tr>
@@ -229,11 +254,11 @@
                     </div>
                 </div>
 
-                <div class="article-box" style="text-align: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+                <div class="conclusion-box">
                     <span class="article-title" style="border:none;">Tasdik ve Yürürlük</span>
-                    <div class="article-content" style="text-align: center;">
+                    <p style="color:#ddd;">
                         İşbu anlaşma, tarafların karşılıklı rızası ve tasdikiyle, imza altına alındığı andan itibaren tüm maddeleriyle birlikte derhal yürürlüğe girer.
-                    </div>
+                    </p>
                 </div>
 
             </div>
