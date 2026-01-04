@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Damethia Anlaşması | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI - RESMİ BELGE STİLİ */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.8; }
+        
+        .treaty-document {
+            background: #121212;
+            border: 2px solid #333;
+            border-top: 5px solid var(--ana-renk);
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .treaty-document h1 { 
+            font-size: 2.5rem; 
+            color: var(--ana-renk); 
+            text-align: center; 
+            margin-bottom: 10px; 
+            text-transform: uppercase; 
+            border-bottom: 1px solid #333; 
+            padding-bottom: 20px;
+        }
+
+        .preamble { font-style: italic; color: #aaa; text-align: justify; margin-bottom: 30px; border-bottom: 1px solid #333; padding-bottom: 20px; }
+
+        /* MADDELER */
+        .article-box { margin-bottom: 25px; }
+        .article-title { color: var(--ana-renk); font-weight: bold; font-size: 1.3rem; margin-bottom: 10px; display: block; border-left: 3px solid var(--ana-renk); padding-left: 10px; }
+        .article-content { color: #ddd; text-align: justify; padding-left: 13px; }
+
+        /* TARAFLAR KUTUSU */
+        .parties-box { display: flex; justify-content: space-between; background: #1a1a1a; padding: 20px; margin-bottom: 30px; border: 1px solid #333; }
+        .party { width: 48%; }
+        .party h3 { color: #fff; border-bottom: 1px solid var(--ana-renk); padding-bottom: 5px; font-size: 1.1rem; }
+        .party ul { list-style: none; padding: 0; }
+        .party li { margin-bottom: 5px; color: #888; }
+        .party li::before { content: '✍'; margin-right: 10px; color: var(--ana-renk); }
+
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 180px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+            .parties-box { flex-direction: column; }
+            .party { width: 100%; margin-bottom: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details open>
+                <summary>PHASE 1: Başlangıç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html" class="active"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>PHASE 2: Gelişme</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">BELGE KÜNYESİ</div>
+                
+                <div class="infobox-image"><i class="fas fa-scroll" style="font-size:4rem;"></i></div>
+
+                <table class="infobox-table">
+                    <tr><th>Belge Adı:</th><td>Damethia Anlaşması</td></tr>
+                    <tr><th>Tarih:</th><td>0 Yılı</td></tr>
+                    <tr><th>Yer:</th><td>Damethia (Eski AserNorthia)</td></tr>
+                    <tr><th>Durum:</th><td>Yürürlükte</td></tr>
+                    <tr><th>İmzalayanlar:</th><td>Kuzeybatılı İsyancı Halk<br>AserLand Devleti</td></tr>
+                    <tr><th>Sonuç:</th><td>Skarrgard'ın Bağımsızlığı<br>AserLand'ın İkiye Ayrılması</td></tr>
+                </table>
+            </div>
+
+            <div class="treaty-document">
+                <h1>Damethia Anlaşması (0) – Eumandarg Damethsizi</h1>
+                
+                <p class="preamble">
+                    İşbu anlaşma, Kuzeybatılı İsyancı Halk ve AserLand Devleti arasında vuku bulan savaş halini sonlandırmak, kalıcı barış ve istikrarı tesis etmek, tarafların hak ve yükümlülüklerini belirlemek maksadıyla, tarafların tam yetkili temsilcileri tarafından 0 yılı Damethia'da akdedilmiş ve tasdik edilmiştir.
+                </p>
+
+                <div class="parties-box">
+                    <div class="party">
+                        <h3>Kuzeybatılı İsyancı Halk'ı Temsilen:</h3>
+                        <ul>
+                            <li>Skarryion Damethsizi</li>
+                            <li>Eumandarg Damethsizi</li>
+                            <li>General Denoistos Los Aser</li>
+                        </ul>
+                    </div>
+                    <div class="party">
+                        <h3>AserLand Devleti'ni Temsilen:</h3>
+                        <ul>
+                            <li>Kraliçe Madam Maria Von Cortex</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="article-box">
+                    <span class="article-title">Madde 1: Skarrgard Devleti'nin Bağımsızlığı ve Egemenliği</span>
+                    <div class="article-content">
+                        Kuzeybatılı İsyancı Halk tarafından kurulan Skarrgard Devleti'nin bağımsızlığı ve toprak bütünlüğü, işbu anlaşmaya taraf olan devletlerce ve uluslararası arenada tanınmıştır. AserNorthia kenti, Skarrgard Devleti'nin başkenti olarak tayin edilmiş ve adı Damethia olarak resmen ilan edilmiştir. Kurulan yeni devletin lideri olarak Skarryion Damethsizi, Ana Bakan olarak ise Eumandarg Damethsizi görevlendirilmiştir.
+                    </div>
+                </div>
+
+                <div class="article-box">
+                    <span class="article-title">Madde 2: Halkın Tanımlanması</span>
+                    <div class="article-content">
+                        Skarrgard Devleti vatandaşlarına, herhangi bir resmi veya gayri resmi kaynakta "Kuzeybatılılar" olarak hitap edilmesi yasaklanmıştır. Tüm resmi belgelerde ve iletişimde, Skarrgard vatandaşları için münhasıran "Skarrgardlılar" ifadesi kullanılacaktır.
+                    </div>
+                </div>
+
+                <div class="article-box">
+                    <span class="article-title">Madde 3: AserLand'ın İdari Yeniden Yapılandırılması</span>
+                    <div class="article-content">
+                        AserLand Devleti, anlaşmanın yürürlüğe girmesiyle birlikte idari olarak Doğu AserLand ve Batı AserLand olmak üzere ikiye ayrılacaktır. Skinnyleg, Fatlag, Ternas, Supremia ve Ithran şehirleri ile çevresindeki bölgeler Doğu AserLand'a bağlanmış; mevcut AserLand'ın geri kalan toprakları ise Batı AserLand olarak isimlendirilmiştir. Her iki bölgenin idari sorumluluğu, görevi süresince Madam Maria Von Cortex'e devredilmiştir.
+                    </div>
+                </div>
+
+                <div class="article-box">
+                    <span class="article-title">Madde 4: Savaş Tazminatı ve Ekonomik İhya</span>
+                    <div class="article-content">
+                        Batı AserLand, Skarrgard'a 150.000 Asercoin tutarında savaş tazminatı ödemeyi taahhüt eder. Ek olarak, Batı AserLand, yıllardır süregelen ağır vergiler nedeniyle ekonomik olarak yıpranmış olan Skarrgard bölgesinin yeniden inşasından ve ihyasından mesul tutulacaktır.
+                    </div>
+                </div>
+
+                <div class="article-box">
+                    <span class="article-title">Madde 5: Nevery Aserilios'un Hukuki Durumu</span>
+                    <div class="article-content">
+                        Nevery Aserilios, bir savaş esiri olarak Damethia Sarayı'nda tutuklu kalacaktır. Kendisinin iadesi için Batı AserLand hükümetleriyle hiçbir koşulda pazarlık yapılmayacaktır. Aserilios hanedanına mensup bireyler, Batı AserLand hükümetinin denetimi altında gözetim altında tutulacaktır.
+                    </div>
+                </div>
+
+                <div class="article-box">
+                    <span class="article-title">Madde 6: Eğitim Kurumlarının Yönetimi</span>
+                    <div class="article-content">
+                        Nevery Aserilios'un mensubu olduğu ve eğitim gördüğü Aserwar Kraliyet Savaş Okulu'nun tüm idari yetkileri, Skarrgard'ın yeni atanan Generali Denoistos Los Aser'e devredilecektir.
+                    </div>
+                </div>
+
+                <div class="article-box">
+                    <span class="article-title">Madde 7: Teknolojik İşbirliği</span>
+                    <div class="article-content">
+                        Mühendis AserTechno'ya, Skarrgard Devleti sınırları içinde bir teknoloji enstitüsü kurma ve yönetme yetkisi verilmiştir.
+                    </div>
+                </div>
+
+                <div class="article-box" style="text-align: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+                    <span class="article-title" style="border:none;">Tasdik ve Yürürlük</span>
+                    <div class="article-content" style="text-align: center;">
+                        İşbu anlaşma, tarafların karşılıklı rızası ve tasdikiyle, imza altına alındığı andan itibaren tüm maddeleriyle birlikte derhal yürürlüğe girer.
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>
