@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Denoistos Los Aser | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 40px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.8rem; background: linear-gradient(90deg, #222, transparent); padding: 10px; border-radius: 0 5px 5px 0; }
+        
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 220px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details>
+                <summary>1. Kısım: Parçalanmış Taç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details open>
+                <summary>2. Kısım: Tiranların Çağı</summary>
+                <ul>
+                    <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
+                    <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
+                    <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
+                    <li><a href="iki-taht-bir-golge.html">➤ İki Taht, Bir Gölge</a></li>
+                    <li><a href="denoistos-los-aser.html" class="active">➤ General Denoistos Los Aser</a></li>
+                    <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Yaşam Öyküleri</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">DENOISTOS LOS ASER</div>
+                <div class="infobox-image"><i class="fas fa-skull-crossbones" style="font-size:4rem;"></i></div>
+                <table class="infobox-table">
+                    <tr><th>Unvan:</th><td>İmparatorluğun Kasabı<br>I. Skarrgard Generali</td></tr>
+                    <tr><th>Yaşam:</th><td>M.Ö. 28 – M.S. 51</td></tr>
+                    <tr><th>Doğum Yeri:</th><td>Aserion (AserLand)</td></tr>
+                    <tr><th>Ölüm Yeri:</th><td>Kuzey Ithran (Aseria)</td></tr>
+                    <tr><th>Ölüm Nedeni:</th><td>Gecelerin Pelerini Suikastı</td></tr>
+                    <tr><th>Eğitim:</th><td>Aserwar Kraliyet Savaş Okulu</td></tr>
+                    <tr><th>Görev Süresi:</th><td>M.Ö. 8 – M.S. 51 (59 Yıl)</td></tr>
+                </table>
+            </div>
+
+            <h1>General Denoistos Los Aser</h1>
+
+            <p>
+                Denoistos Los Aser, AserLand Merkez sarayında doğmuş, doğduğu zamandan beri de Aser hanedanlığında tahtın yeni varisi olarak görülen bir figürdü. Kralın kardeşi olmasıdan mütevellit gördüğü eğitim her daim katıydı. Ona devlet yönetimi hakkında dersler veriliyordu. Kendisine empoze edilmeye çalışılan bazı haksız fikirlerin de farkındaydı. AserNorthia’daki halkın nasıl daha kolay baskılanabileceğine dair birçok ders konusu vardı. Her derste kendisine dayatılan şeyin farkındaydı. Abisi Vorian ile bunu konuşmaya kalkıştığında her seferinde bir tartışma çıkıyordu. Tartışmalardan sonra farkediyordu ki; AserNorthia için çizilmiş kader adeta kraliçelerine yemek taşıyan işçi karıncalarınkinden farksızdı.
+            </p>
+            <p>
+                Denoistos, saraydaki yıllar süren eğitiminden sonra tüm hanedanlığa asker olmak istediğini duyurunca hanedanlık konseyi olan AserCouncil, Denoistos’un bu isteğini reddetti. Ancak Denoistos, işin içine abisini sokunca AserCouncil’in kralın baskısı altında kararları geçersiz sayıldı ve Denoistos istediği bölgenin komutanı olarak atanma özgürlüğüne sahip oldu.
+            </p>
+            <p>
+                Kendisi hemen AserNorthia’yı seçerek oranın komutanı olmak istedi. İsteği tartışmasız kabul edildi. Denoistos, AserNorthia halkının kelimenin tam anlamıyla merkezden kopmuş olduğunu gördü ve kendisine merkezden gelen biri olarak kuzeylilerin ona kötü bakacağını biliyordu. Hemen oraya gider gitmez halkla ilişkilerini geliştirmeye başladı. Hatta ara sıra tedarik yollarını bozan haydutlara karşı bizzat savunma yaparak halkın güvenini kazanmaya çalıştı. Çabaladığı şey meyvesini de veriyordu. Halk ona artık güveniyor ve her ne kadar Aser hanedanından da gelse bunun ön yargısını yapmıyorlardı.
+            </p>
+
+            <h2>Devrimin Başlangıcı</h2>
+            <p>
+                Tarihler M.Ö 7’yi gösterdiğinde Denoistos’un askerlik okuldaşı olan Nevery Aserilios’un darbe ile iktidarı ele geçirdiği haberi tüm Aser dünyasında yankılanıyordu. Aserilios, AserNorthia Komutanlığı hariç tüm devlet ve askeri kadroları revize etti. Revizyonu reddedenler ise kılıçtan geçirildi. Aserilios’un AserNorthia kadrolarına dokunmama sebebi ise okul zamanlarından kalan Aserilios ve Denoistos tanınırlığıydı. Ancak bu ilişkinin bir sonu vardı.
+            </p>
+            <p>
+                Aserilios tahtı devralır almaz AserNorthia bölgesindeki tüm vergileri akılalmaz ölçüde arttırdı. AserNorthia halkı artık resmen ikinci sınıf insan muamelesi görüyordu. Bu haksızlığa en yakından şahit olan iki isimin yolu bir tane matbaa evinde kesişecekti.
+            </p>
+            <p>
+                Denoistos’un askerleri klasik gece kontrollerini yaptığı bir sırada bir tane matbaa evinin günlerdir içinden çok fazla ses geldiğini Denoistos’a duyurdu. Denoistos “Gazeteciler günü yetiştirmek için gece mesaisi yapıyolardır.” dedi ancak bu durum diğerlerinden farklıydı. Askerler Denoistos’u şahsi kontrol için zorladılar ve o matbaa evine bir baskı yapılması kararlaştırıldı. Denoistos ve 20 askeri bir anda o matbaa evine bir baskın düzenledi. Içerdeki herkesin üstü bir bir arandı. Üst araması bittiğinde tam Denoistos ve askerleri dışarı çıkacakken içerden bir tan eses yankılandı: “Komutan Denoistos!”
+            </p>
+            <p>
+                Denoistos kafasını sese doğru çevirdi. Seslenen adam kendini belli etti. Mavi gözlü, gözlüklü ve elinde kalem vardı. Kaleminden mürekkep taze akıyordu. “Kimsin sen?” diye sordu Denoistos. “Bu halkın sizin yardımınıza ihtiyacı var.” dedi içerideki adam. Denoistos bu adamın söylediğini hem anlamıştı hem de tam anlamamıştı. İçerideki adam: “Derhal matbaa evini boşaltın. Komutan ile özel görüşmeliyim” diye içerdeki herkese seslendi. Bir anda tüm matbaa evi boşaldı. Sadece komutan ve o adam kalmıştı. Denoistos normalde “Bu ne cürret!” diyebilirdi ama bu adamın da ne diyeceğini merak etmişti. Adam, Denoistos’u matbaa evinde oturtabileceği en iyi koltuğa oturttu ve konuşmaya başladı:
+            </p>
+            <ul>
+                <li><strong>Skarryion:</strong> Öncelikle beni kırmadığınız için teşekkür ederim komutan.</li>
+                <li><strong>Denoistos:</strong> Rica ederim ancak sen kimsin ve beni niye böyle bir anda çağırdın?</li>
+                <li><strong>Skarryion:</strong> Kendimi tanıtayım. Ben Skarryion Damethsizi. Bağımsız bir gazeteciyim. Sanırım biz de sizin dikkatinizi çok çekmiş olmalıyız ki teftişe gelmişsiniz.</li>
+                <li><strong>Denoistos:</strong> Evet. Buradaki etkinliğiniz askerlerimin gözüne çarptı.</li>
+                <li><strong>Skarryion:</strong> Sizi buraya çağırmamın sebebi biraz çarpıcı gelebilir. Biz… aslında… AserNorthia genelinde bir devrim gerçekleştirmeye çalışıyoruz.</li>
+                <li><strong>Denoistos:</strong> Bunu bana söyleyebiliyor olman büyük cesaret. Söylediğin şey yüzünden ayrılıkçı damgası yiyebilirsin ve idam edilebilirsin.</li>
+                <li><strong>Skarryion:</strong> Haklı olabilirsiniz ancak ben sizin bunu yapacağınızı düşünmüyorum. Sizi biraz araştırdım. Yaşantınızı ve hanedanlık ilişkilerinizi. Nevery Aserilios’dan artık haz etmediğinizi biliyorum. Ve neden buraya atanmak istediğinizi de biliyorum. Siz aslında doğruyu görenlerin safındasınız. Doğruyu söylemek gerekirse deneyimli ve güçlü bir komutan olarak sizin desteğiniz çok büyük önem arz eder.</li>
+                <li><strong>Denoistos:</strong> Benden kendi soyuma ihanet etmemi istiyorsun. Doğru mu anladım?</li>
+                <li><strong>Skarryion:</strong> Zaten onlar da size ihanet etmedi mi? Sizin halkınıza…</li>
+            </ul>
+            <p>
+                Bu konuşmadan sonra Denoistos hiçbirşey söylemeden kalktı. Skarryion ise resmen soğuk terler döküyordu. Komutan, onun teklifine yeşil ışık yakmamıştı ama kırmızı da yakmamıştı. Denoistos resmen gri bölgede olduğunu göstererek gitmişti.
+            </p>
+
+            <h2>Damethia Savaşı ve Kuruluş</h2>
+            <p>
+                Denoistos karargaha döndüğünde Skarryion’un söylediklerini düşündü. “Acaba” ile başlayan cümleleri kafasında çok fazla yer edinmeye başladı. Bu acabalar siyasi bir kriz ile son bulacaktı. Aserilios, AserNorthia’daki bağımsızlık ateşinin fitilinin atıldığını öğrenmişti ancak bu duruma sözde müdahele etmesi gereken Denoistos’tan haber alınamıyordu. Aserilios’un sert mizacı durumu savaşa sürükleyecekken, kral yardımcısı olan Dunas Zia savaşsız bir çözüm için diplomatik temas kurmak üzere kuzeybatıya doğru 10 günlük bir yolculuğa çıktı. Dunas Zia üstünde Skarrgard yazan surları gördüğünde, Denoistos da onu gördü. Dunas Zia yapılacak birşeyin olmadığını düşünerek geri döndü ve Denoistos bu geri dönüşün savaşla geri geleceğini sezdi.
+            </p>
+            <p>
+                Denoistos hemen Skarryion’un yanına gitti. Savaşın kapıda olduğunu belirtti ve kendisinin ve emrindeki ordusunun da onla beraber savaşacağını belirtti. Denoistos hemen Skarryion’un halktan toplamış orduyu düzenli hale getirip güçlendirmeye odaklandı. İşin sonunda AserLand merkezi kuvvetlerine karşı koyabilecek bir ordu çıkmıştı.
+            </p>
+            <p>
+                Dunas Zia’nın idamından sonra Aserilios ordunun içindeki isyanları bastırır bastırmaz kuzeybatıya doğru yola koyuldu. Aserilios kuzeybatıya varmadan yoldaki kuzeybatılı casuslar, Aserilios’un elinin altında çok büyük bir top olduğunu görmüştü. Bu top hemen casuslar tarafından Skarryion ve Denoistos’a bildirildi. Denoistos savaşın surların dışında olması gerektiğine karar verdi. Böylece top işlevsiz kalacaktı.
+            </p>
+            <p>
+                Aserilios’un kuvvetleri kuzeybatı sınırındaki surların önüne geldiklerinde savaş anında başladı. Savaş 4 gün sürdü ve savaşın son günü Aserilios, bizzat Denoistos tarafından boğazlanarak Skarryion’un önüne atıldı.
+            </p>
+            <p>
+                Savaş sonrası Damethia Anlaşması imzalanmış, Skarrgard kurulmuş ve AserLand, Doğu ile Batı olmak üzere ikiye ayrılmıştı. Skarrgard’ın kurulması ile birlikte Skarryion ülkenin başkanı, Eumandarg ülkenin bakanı ve Denoistos Genel Kuvvetlerin Generali olarak atanmıştı. Böylelikle Denoistos Generallik rütbesine terfi etti.
+            </p>
+
+            <h2>Doom Waters ve Aldewood Baskını</h2>
+            <p>
+                Skarryion’un The Doom Waters yaratıklarıyla çarpışırken hayatını kaybetmesi Denoistos’u derinden yaralamıştı. Skarryion’un kardeşi Eumandarg, tahtı devralır almaz Denoistos’a verdiği bir talimat ile The Doom Waters’a sefere çıkmasını söyledi. Denoistos bunu seve seve yaptı ve en az 50 yıl boyunca bir daha The Doom Waters tehdidi çıkmamasını sağlayacak kadar canavarla çarpıştı.
+            </p>
+            <p>
+                Denoistos The Doom Waters sularından geri döndüğünde Eumandarg hayatını kaybetmişti. Tahtın yeni sahibi Eumandarg’ın oğluydu. Bu genç çocuk Denoistos’a göre çok toydu ve devlet yönetiminden anlamıyordu. Bunu şimdilik sorun etmeyecekti.
+            </p>
+            <p>
+                M.S 30’da III. Damethsizi bir anda gözünü AserLand’a bağlı olan Aldewood topraklarına dikti. Sebebi ise ormanlık alanlara duyulan ihtiyaçtı. Bu ihtiyaç için daha öncesinde dönemin, kendisini insan haklarının savunucusu olarak gören Madam Maria Von Cortex’e bir talepte bulunulmuştu. Talepte, Skarrgard ağaçlarının iklim yüzünden çok yavaş büyüdüğü bu yüzden de halkın kışın yakacak odun bulamaması sebebi ile soğuktan birçok vatandaşın hayatını kaybetmesine değinilerek Aldewood ormanlarından toprak talebinde bulunulmuştu. Maria, bu teklife cevap vermedi. Hatta bu teklifin geldiğine dair kimseye haber dahi vermedi.
+            </p>
+            <p>
+                III. Damethsizi bu teklife cevap verilmemesine hem şaşırmış hem de üzülmüştü. Ama üzgünlüğünü Denoistos giderecekti. Denoistos hemen bir işgal planı hazırladı. Teklifi krala sundu ve sunar sunmaz onay çıktı. Denoistos ve emrindeki askerler Aldewood’a doğru yola koyuldu. III. Damethsizi’nin aklında Denoistos’un Skarrgard’ın istediği ölçekte toprağı ilhak edeceği düşüncesi vardı. Ancak Denoistos, Aldewood ormanlarına girer girmez sınır tanımadı ve karşısına çıkan tüm askerlere kan kusturdu, sivil kadınlara ise tecavüz etti.
+            </p>
+            <p>
+                III. Damethsizi bu olayın siyasi bir kriz doğuracağını ve Skarrgard’ın kendisinin taleplerde hak talep ettiği topraklardan fazlasına göz koyan Denoistos’u tehditkar bir mesaj ile uyardı. Denoistos ilk başta emire karşı gelmeyi düşündü ancak yanındaki sadık askerleri, karşı gelme durumunda ne AserLand’ın ne de Skarrgard’ın onların safında olmayacağını söyleyerek ikna etmeyi başardı. Aldewood’daki ufak çaplı kriz sonrasında AserLand’ın sivil ya da askeri zayiatı çok değildi. Ancak böylesine insan hakları üzerine yasa taslaklarını ülkesine empoze etmeye çalışan Maria, bu olay karşısında sessiz kaldı. Hatta halkın kulağına gitmesini engellemek amacıyla bu olay özelinde sansür uygulattırdı. Aldewood halkı kendisini tam anlamıyla satılmış hissetti. Denoistos her ne kadar Skarrgard merkezi tarafından geri çağırılsa da Aldewood halkını kışkırtmış ve istemeden de olsa orada ayrılıkçı tohumları ekmişti.
+            </p>
+
+            <h2>Düşüş ve Ölüm</h2>
+            <p>
+                Aseria lideri Celestine D’Arvell, 39 yılında radikal bir kararla Skarrgard ile ekonomik ilişkileri kesti. Aseria ile yapılan ticaret III. Damethsizi için çok önemliydi. Yıllarca mektuplar ile ticaretin yeniden başlaması talep edildi, AserLand kralı olan Zykrath Vhalgoroth Aser’den arabulucu olunması istendi ancak hiçbir sonuç alınamadı.
+            </p>
+            <p>
+                11 yıl sonra yani 50 yılında III. Damethsizi’nin gönderdiği bir demokratik temsilci heyeti Aseria sınır muhafızlarınca öldürüldü. III. Damethsizi bu duruma çok sinirlenerek savaş ilan etmek istedi ancak Denoistos, “Gizli İşgal” adını verdiği bir planı krala sundu. Kraldan izin çıkınca General Denoistos ve emrindeki ordusu Aseria sınırları içerisinde olan Kuzey Ithran’a doğru yola koyuldu. Kuzey Ithran yolundaki ilk kasabanın yağma haberi Celestine’in kulağına gitmişti. Denoistos bunun Celestine’in kulağına gideceğini zaten biliyordu. Bu yüzden sürekli ilerlemeye devam etti. Gittiği her yerde katliam çıkarıyor, çocukları ailesinden ayırıyor ve kadınlara tecavüz ediyordu.
+            </p>
+            <p>
+                Denoistos, işgali sırasında tıpkı Aldewood Baskını’ndaki gibi III. Damethsizi’den uyarı aldı. Ancak bu uyarı diğerlerine benzemiyordu. Kendisi resmen vatan haini ilan edilmişti. Arkasında Skarrgard gücü yoktu. Aksine arkasından onu durdurmak için Skarrgard güçleri geliyordu. Önden de Aseria kuvvetlerinin geleceğini bilen Denoistos kapana kısılmıştı.
+            </p>
+            <p>
+                Denoistos bu kapana kısılmışlığı henüz kendisinin peşinden gelen askerler varana kadar aldırış etmedi. Adeta “Sonuna Kadar!” dercesine ilerledi. İlerlemesi esnasında Ithran merkezi yakınlarında bir suikastçı taburunun saldırısına uğradı. Binlerce kişilik ordusu, alışılmışın dışında yetenekli 30 – 40 tane suikastçı tarafından 30 dakika içerisinde telef oldu. En sonunda kendisi de suikastçılar tarafından yakalanarak öldürüldü.
+            </p>
+            <p>
+                Sonuç olarak General Denoistos, IV. Aserilios'un kurduğu düzenin hem en keskin kılıcı hem de ilk derin çatlağıdır. O, Aser ve Asrier soylarının getirdiği kan mirasını ve kaosu reddederken, liyakate dayalı acımasız bir düzen hayal etti. Ancak hizmet ettiği kralın düzeninin, hayalini kurduğu güçten değil, paranoyadan ve korkudan beslenen bir "Büyük Sessizlik" olduğunu anladığında, kendi yarattığı sessizliğin içinde bir isyan fırtınasına dönüştü. Denoistos'un trajedisi, zayıflığın her türünden nefret edip, hizmet ettiği düzenin çürüyen kalbindeki nihai zayıflıkla yüzleşmek zorunda kalmasıdır. O, Kralın Demir Yumruğu'ydu; ancak bir yumruğun, hizmet ettiği bedenden daha güçlü olamayacağını en acı yoldan öğrenmiştir.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
