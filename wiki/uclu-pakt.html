@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üçlü Pakt (104) | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; display: flex; justify-content: center; }
+
+        /* ANLAŞMA KAĞIDI TASARIMI */
+        .agreement-paper {
+            background-color: #f4e4bc; /* Parşömen rengi */
+            color: #1a1a1a; /* Koyu mürekkep rengi */
+            width: 100%;
+            max-width: 900px;
+            padding: 60px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            font-family: 'Georgia', serif; /* Resmi belge fontu */
+            line-height: 1.6;
+            border: 1px solid #d4c4a0;
+            position: relative;
+        }
+        /* Kağıt Dokusu Efekti */
+        .agreement-paper::before {
+            content: "";
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 2px solid #8b7d6b;
+            pointer-events: none;
+        }
+
+        .agreement-title {
+            text-align: center;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid #1a1a1a;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .preamble { font-style: italic; margin-bottom: 30px; text-align: justify; }
+        
+        .parties { background: #e8d8b0; padding: 15px; border: 1px solid #8b7d6b; margin-bottom: 30px; }
+        .parties ul { list-style: none; padding: 0; }
+        .parties li { margin-bottom: 5px; font-weight: bold; }
+
+        .article { margin-bottom: 25px; }
+        .article-title { font-weight: bold; text-transform: uppercase; text-decoration: underline; display: block; margin-bottom: 5px; }
+
+        .signatures { margin-top: 60px; display: flex; justify-content: space-between; text-align: center; }
+        .sign-box { width: 30%; border-top: 1px solid #1a1a1a; padding-top: 10px; }
+        .sign-title { font-size: 0.8rem; text-transform: uppercase; display: block; margin-top: 5px; }
+        .seal { font-size: 3rem; color: #8b0000; margin-bottom: 10px; opacity: 0.8; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .agreement-paper { padding: 20px; }
+            .signatures { flex-direction: column; gap: 30px; }
+            .sign-box { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details>
+                <summary>1. Kısım: Parçalanmış Taç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details open>
+                <summary>2. Kısım: Tiranların Çağı</summary>
+                <ul>
+                    <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
+                    <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
+                    <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
+                    <li><a href="iki-taht-bir-golge.html">➤ İki Taht, Bir Gölge</a></li>
+                    <li><a href="denoistos-los-aser.html">➤ General Denoistos Los Aser</a></li>
+                    <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
+                    <li><a href="lucian-baron-mhoore.html">➤ Lucian "Baron" Mhoore</a></li>
+                    <li><a href="zykrath-vhalgoroth-aser.html">➤ Kral Zykrath Vhalgoroth Aser</a></li>
+                    <li><a href="celestine-darvell.html">➤ Celestine D'Arvell</a></li>
+                    <li><a href="kutuphanedeki-sessiz-kanaat.html">➤ Belge: Kütüphanedeki Sessiz Kanaat</a></li>
+                    <li><a href="stellan-korvath.html">➤ Stellan Korvath (Kuzeyin Mimarı)</a></li>
+                    <li><a href="kaelus-theron.html">➤ Lord Koruyucu Kaelus Theron</a></li>
+                    <li><a href="behemoth-yapilis-sureci.html">➤ Belge: Behemoth'un İnşası</a></li>
+                    <li><a href="aserwar-gedian.html">➤ Aserwar Gedian (Suikastçı Mimar)</a></li>
+                    <li><a href="morvran-corvus.html">➤ General Morvran Corvus</a></li>
+                    <li><a href="silus-praxton.html">➤ Silus Praxton (Yankı'nın Mirasçısı)</a></li>
+                    <li><a href="sapan-disliler.html">➤ Hikaye: Sapan Dişliler</a></li>
+                    <li><a href="uclu-pakt.html" class="active"><i class="fas fa-file-signature"></i> Belge: Üçlü Pakt</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Yaşam Öyküleri</summary>
+                <ul>
+                    <li><a href="aserwar-gedian-yasam-oykusu.html">➤ Aserwar Gedian: Yaşam Öyküsü</a></li>
+                    <li><a href="denoistos-los-aser-yasam-oykusu.html">➤ General Denoistos: Yaşam Öyküsü</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+            
+            <div class="agreement-paper">
+                <div class="agreement-title">ÜÇLÜ PAKT (104)</div>
+                
+                <div class="preamble">
+                    <p>İşbu anlaşma, Batı AserLand, Aseria Yüksek Konseyi (ASC) ve Skarrgard Devrim Konseyi (SRC) arasında on yıllardır süren "Sessizlik Duvarı", "Hayalet Savaşı" ve "Behemoth Savaşları" dönemlerini resmen sonlandırmak, kıtada kalıcı bir denge ve barış dönemini tesis etmek, tarafların hak ve yükümlülüklerini belirlemek maksadıyla, tarafların tam yetkili temsilcileri tarafından 104 yılı bağımsız şehir devleti Ithran'da akdedilmiş ve tasdik edilmiştir.</p>
+                </div>
+
+                <div class="parties">
+                    <strong>ANLAŞMANIN TARAFLARI:</strong>
+                    <ul>
+                        <li>Batı AserLand'i temsilen: AserCouncil Lideri <strong>Aserwar Gedian</strong>.</li>
+                        <li>Aseria Yüksek Konseyi'ni (ASC) temsilen: Baş Konsül <strong>Silus Praxton</strong>.</li>
+                        <li>Skarrgard Devrim Konseyi'ni (SRC) temsilen: Başbakan <strong>Stellan Korvath</strong>.</li>
+                    </ul>
+                </div>
+
+                <div class="article">
+                    <span class="article-title">Madde 1: Ateşkes ve Düşmanlıkların Sona Ermesi</span>
+                    Taraflar, aralarındaki on yıllardır süren tüm düşmanlıklara, vekalet savaşlarına ve soğuk savaş politikalarına derhal son vermeyi ve üç devlet arasında kalıcı bir ateşkes sağlamayı taahhüt eder.
+                </div>
+
+                <div class="article">
+                    <span class="article-title">Madde 2: Sınırların Tanınması ve Toprak Bütünlüğü</span>
+                    Tüm taraflar, mevcut ulusal sınırları resmen tanır. Batı AserLand, Lord Koruyucu Kaelus'un ölümü sonrası oluşan güç boşluğunda Skarrgard Devrim Konseyi'nin ilhak ettiği kuzey toprakları (Batı AserLand'in kuzeyi) üzerindeki Skarrgard hakimiyetini resmen tanır.
+                </div>
+
+                <div class="article">
+                    <span class="article-title">Madde 3: Ticaretin Yeniden Başlaması ve İzolasyonun Kaldırılması</span>
+                    Kral Zykrath ve Celestine D'Arvell döneminde kurulan "Sessizlik Duvarı" politikası resmen terk edilmiştir. Üç devlet arasındaki tüm ticaret yolları yeniden açılacak ve ekonomik izolasyonlar kaldırılacaktır.
+                </div>
+
+                <div class="article">
+                    <span class="article-title">Madde 4: Ithran'ın Statüsü</span>
+                    Anlaşmanın imzalandığı Ithran Deltası, Gecelerin Pelerini'nin yok edilişi ve Aseria yönetimindeki statüsü göz önünde bulundurularak, üç devletin de ortak olarak tanıdığı, tarafsız ve bağımsız bir şehir devleti statüsüne kavuşmuştur.
+                </div>
+
+                <div class="article">
+                    <span class="article-title">Madde 5: Batı AserLand'in Güvenceleri ve Denge Politikası</span>
+                    Batı AserLand, Proje Behemoth'un imha edildiğini ve bir daha "mutlak silah" inşa edilmeyeceğini teyit eder. Lider Aserwar Gedian, Aseria ve Skarrgard'a "güven" yerine "öngörülebilirlik" vaat eder. Bu vaadin teminatları şunlardır:
+                    <ul style="margin-top:10px;">
+                        <li><strong>Teknoloji Bağımsızlığı Fermanı:</strong> Bilimsel gelişmelerin askeri tiranlık amacıyla kullanılmasını engellemek üzere, Teknoloji Özgürlüğü Hareketi (TÖH) özerk bir denetim kurumu olarak tanınmıştır.</li>
+                        <li><strong>AserCouncil Anayasası:</strong> Batı AserLand Liderinin gücü, tiranlığa dönüşmesini engellemek amacıyla anayasal olarak AserCouncil Yönetim Meclisi tarafından denetlenecektir.</li>
+                    </ul>
+                </div>
+
+                <div class="article">
+                    <span class="article-title">TASDİK VE YÜRÜRLÜK</span>
+                    İşbu anlaşma, tarafların karşılıklı rızası ve tasdikiyle, imza altına alındığı andan itibaren tüm maddeleriyle birlikte derhal yürürlüğe girer.
+                </div>
+
+                <div class="signatures">
+                    <div class="sign-box">
+                        <div class="seal"><i class="fas fa-user-ninja"></i></div>
+                        <strong>Aserwar Gedian</strong>
+                        <span class="sign-title">Batı AserLand Lideri</span>
+                    </div>
+                    <div class="sign-box">
+                        <div class="seal"><i class="fas fa-city"></i></div>
+                        <strong>Silus Praxton</strong>
+                        <span class="sign-title">Aseria Baş Konsülü</span>
+                    </div>
+                    <div class="sign-box">
+                        <div class="seal"><i class="fas fa-mountain"></i></div>
+                        <strong>Stellan Korvath</strong>
+                        <span class="sign-title">Skarrgard Başbakanı</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>
