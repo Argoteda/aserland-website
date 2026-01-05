@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Behemoth Savaşları ve Gedian | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 40px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.8rem; background: linear-gradient(90deg, #222, transparent); padding: 10px; border-radius: 0 5px 5px 0; }
+        
+        /* LİSTELER */
+        .content ul { list-style: none; padding-left: 0; }
+        .content li { margin-bottom: 15px; padding-left: 20px; position: relative; }
+        .content li::before { content: '⚔'; color: var(--ana-renk); font-weight: bold; position: absolute; left: 0; font-size: 0.8rem; top: 5px; }
+        .content li strong { color: var(--ana-renk); }
+
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 220px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details>
+                <summary>1. Kısım: Parçalanmış Taç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details open>
+                <summary>2. Kısım: Tiranların Çağı</summary>
+                <ul>
+                    <li><a href="behemoth-savaslari.html" class="active">➤ Behemoth Savaşları ve Gedian</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Yaşam Öyküleri</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">BEHEMOTH SAVAŞLARI</div>
+                <div class="infobox-image"><i class="fas fa-chess-king" style="font-size:4rem;"></i></div>
+                <table class="infobox-table">
+                    <tr><th>Dönem:</th><td>M.S. 98 - M.S. 100+</td></tr>
+                    <tr><th>Konum:</th><td>Batı AserLand / Aserion</td></tr>
+                    <tr><th>Ana Karakterler:</th><td>Kaelus (Lord Koruyucu)<br>Aserwar Gedian</td></tr>
+                    <tr><th>Olaylar:</th><td>İç Savaş<br>Ithran'ın Yok Oluşu<br>Behemoth'un İmhası</td></tr>
+                    <tr><th>Sonuç:</th><td>AserCouncil'in Kuruluşu<br>Aserwar Gedian'ın Zaferi</td></tr>
+                </table>
+            </div>
+
+            <h1>Behemoth Savaşları ve Aserwar Gedian</h1>
+
+            <h2>Bölüm 1: Kontrol Savaşı</h2>
+            <p>
+                M.S. 98 Yılı. Kral Zykrath'ın son nefesi, Aserion'daki sarayında bir fısıltı gibi kaybolduğunda, Batı AserLand'in üzerine çöken sessizlik, bir yasın değil, patlamaya hazır bir barut fıçısının sessizliğiydi. Demir Kral ölmüştü ve onun demir iradesiyle bastırılan tüm hırslar, ihanetler ve intikam yeminleri, bir anda serbest kalmıştı.
+            </p>
+            <p>
+                Haber, sarayın mühürlü kapılarından sızdığında, ilk hamleler acımasız ve hızlı oldu. Başkentin hemen dışındaki ana ordugâhta, Zykrath'ın en yaşlı ve en gelenekçi komutanı General Kaelus, kendini Demir Kral'ın meşru halefi ilan etti. Lejyonlarının önünde kükredi: "Zykrath'ın kılıcı düştü ama mirası yaşayacak! Bu krallığı, kuzeyin barbarlarına veya doğunun bürokratlarına yem etmeyeceğiz! Aserion'u ve Demir Kral'ın iradesini koruyacağız!" Onun için taht, en güçlü ordunun hakkıydı.
+            </p>
+            <p>
+                Ancak Aserion'un kalbinde, "Demir Göz" teşkilatının karanlık koridorlarında, daha kurnaz bir varis pusuya yatmıştı. Zykrath'ın casus ustası ve gizli polis şefi General Morvran, krallığın sinir sistemini elinde tutuyordu. O, gücün ordularda değil, bilgi ve korkuda yattığını biliyordu. Kaelus'un hamlesine, krallığı "istikrara kavuşturmak" adına kendisinin başkanlığında bir "Geçici Konsey" kurduğunu ilan ederek karşılık verdi. Bu, tahta giden yolu entrikayla açma girişimiydi.
+            </p>
+            <p>
+                İki generalin bu beyanları, Batı AserLand'i bir gecede ikiye böldü. Kaelus'un lejyonları Aserion'a yürümeye çalıştığında, şehrin stratejik noktalarına yerleşmiş Morvran'a sadık Demir Göz ajanları ve özel birliklerle karşılaştılar. Zykrath'ın ölümünün üzerinden bir hafta geçmeden, başkentin sokakları, onun kendi generallerinin iç savaş alanına dönmüştü.
+            </p>
+            <p>Bu kaos, kıtanın diğer güç merkezleri için beklenen bir fırsat çanıydı.</p>
+            <ul>
+                <li><strong>Damethia'da:</strong> Skarrgard Devrim Konseyi (SRC) acil olarak toplandı. Başbakan Stellan Korvath, masadaki haritayı işaret etti. "Aserion alevler içinde. Kuzey garnizonları lidersiz ve desteksiz. Kaelen Kralı'mızın yarım asır beklediği an budur. Batı'nın kaosu, bizim yükselişimizdir." Skarrgard ordusu, "Uzun Kış"ın ardından ilk kez, kuzey sınırına doğru tam teçhizatlı bir şekilde yürüyüşe geçti.</li>
+                <li><strong>Supremia'da:</strong> Aseria Yüksek Konseyi (ASC)'nin Baş Konsülü Silus Praxton, gelen istihbarat raporlarını buz gibi bir sükunetle okudu. Generallerin iç savaşı, TÖH'ün isyanı için mükemmel bir perdeydi. O da tek bir emir verdi: "Joel Van Cortex'e mesajı iletin. Zincirler kırıldı. Zamanı geldi."</li>
+                <li><strong>Ironheart'ın yeraltı tünellerinde:</strong> Aseria'dan gelen bu şifreli mesaj, Joel Van Cortex'e ulaştığında, on yıllardır süren bekleyiş sona erdi. Babasının ve Elara Ventis'in hayalini gerçekleştirme vaktiydi. TÖH hücreleri, şehrin kalbini generallerin elinden geri almak için harekete geçti.</li>
+            </ul>
+            <p>
+                "Paslanan Taht" için Aserion'da kan dökülürken, asıl ödül olan Proje Behemoth'un kaderi için verilecek olan çok cepheli savaş, kıtanın dört bir yanından gelen oyuncuların hamleleriyle başlamıştı. Ve gölgelerin en derininde, Gecelerin Pelerini, bu yeni ve tehlikeli satranç tahtasındaki tüm piyonları dikkatle izliyordu.
+            </p>
+
+            <h2>Bölüm 2: Gücün Kontrolü</h2>
+            <p>
+                Zykrath'ın ölümünün üzerinden aylar geçmiş, Batı AserLand bir iç savaş cehennemine dönmüştü. Aserion sokakları, General Kaelus'un ağır zırhlı lejyonları ile General Morvran'ın acımasız Demir Göz ajanları arasında bir ölüm tarlası haline gelmişti. İki general de birbirini yenemiyor, krallığın kalbi durmaksızın kan kaybediyordu.
+            </p>
+            <p>
+                Bu sırada Ironheart'ta, Joel Van Cortex liderliğindeki TÖH, generallerin garnizonunu şehrin merkezindeki kaleye hapsetmiş, dökümhaneleri ve atölyeleri birer birer ele geçiriyordu. Her geçen gün Proje Behemoth'un kontrol merkezine daha da yaklaşıyorlardı. Bu haberler Aserion'a ulaştığında, hem Kaelus hem de Morvran, paslı bir taht için kavga ederken asıl hazinenin ellerinden kayıp gitmekte olduğunu anladı.
+            </p>
+            <p>
+                İlk büyük hamleyi yapan, kaba kuvvetin ustası General Kaelus oldu. Entrikayı ve sabrı bir kenara bırakarak, en iyi bildiği şeyi yaptı: Savaş hilesi. Aserion'un güney cephesinden büyük bir geri çekilme emri vererek, Morvran'ın hırslı komutanlarını bir tuzağın içine çekti. Morvran, Kaelus'un nihayet kırıldığına inanarak, zaferi kazanmak için en seçkin birliklerini bu boşluğa sürdü.
+            </p>
+            <p>
+                Bu, onun son hatası oldu. Kaelus'un gizlediği ağır zırhlı birlikler ve topçu bataryaları, dar sokaklarda sıkışıp kalan Demir Göz kuvvetlerinin üzerine cehennemi yaşattı. Gün batarken, Morvran'ın ordusundan geriye enkazdan başka bir şey kalmamıştı. General Morvran'ın kendisi de, karargahına yapılan bir baskın sırasında, Kaelus'un lejyonerleri tarafından katledildi.
+            </p>
+            <p>
+                Aserion düşmüştü. Kaelus, rakibinin tüm birliklerini kendi komutası altına alarak ve kalan son sadakat kırıntılarını da idam sehpalarında yok ederek, Batı AserLand'in tek askeri gücü haline geldi. Kendini "Lord Koruyucu" ilan etti ve Zykrath'ın paslanmış tahtına oturdu.
+            </p>
+            <p>
+                Ancak kutlamaya vakti yoktu. Ordusunun ezici bir çoğunluğunu anında toplayarak, tek bir hedefe doğru yürüyüşe geçti: Ironheart. Kaelus'un birleşik ordusunun Ironheart'a gelişi, TÖH'ün tüm planlarını alt üst etti. Karşılarında artık bölünmüş bir garnizon değil, iç savaşı kazanmış, acımasız ve tek bir irade altında birleşmiş bir ordu vardı. TÖH, haftalarca süren kanlı çatışmaların ardından şehrin yeraltı tünellerine ve dış mahallelerine geri çekilmek zorunda kaldı. Kaelus'un askerleri, şehrin merkezini ve en önemlisi, devasa metal canavar Proje Behemoth'un ana kontrol merkezini tamamen güvence altına aldı.
+            </p>
+            <p>Krallığın en büyük ödülünü kazanan Kaelus, gücünü hemen diğer düşmanlarına hissettirdi:</p>
+            <ul>
+                <li><strong>Skarrgard'a:</strong> Kuzey sınırına gönderilen elit bir ordu, Stellan Korvath'ın ilerleyişini durdururdu. Mesaj netti: Kolay kazanım dönemi sona ermişti.</li>
+                <li><strong>Aseria'ya:</strong> Gizli kanallardan gönderilen bir mesaj, TÖH'e verilecek en ufak bir desteğin bile artık bir savaş sebebi sayılacağını bildirdi. Bu tehdidin arkasında, artık sadece bir ordu değil, her an aktive edilebilecek bir kıyamet makinesi vardı.</li>
+            </ul>
+            <p>
+                Batı AserLand'in yeni tiranı belli olmuştu. General Kaelus, Zykrath'ın demir yumruğunun varisiydi ve şimdi, o yumruğun içinde tüm kıtayı titretecek bir güç tutuyordu: Proje Behemoth.
+            </p>
+
+            <h2>Bölüm 3: Gölgelerin Gücünde</h2>
+            <p>
+                Lord Koruyucu Kaelus, Batı AserLand'in tek hükümdarı olmuştu, ancak Zykrath'ın paranoyasını da miras almıştı. Rakibi Morvran'ın esrarengiz "kalp krizi"nin ardındaki gerçeği, yani Gecelerin Pelerini'nin varlığını biliyordu. Sarayındaki her gölgeden, her fısıltıdan şüpheleniyordu. Biliyordu ki, Proje Behemoth elinde olsa bile, bu görünmez düşman var olduğu sürece tahtı asla tam anlamıyla güvende olmayacaktı.
+            </p>
+            <p>
+                Zykrath gibi beklemeyi seçmedi. O bir avcıydı. Ve avını görebilmesi gerekiyordu. Behemoth'un devasa mineral çekirdeğinin sadece bir güç kaynağı olmadığını keşfeden mühendisleri, ona aradığı silahı verdi. Çekirdek, yaydığı enerji dalgalarıyla, belirli bir alandaki en ufak anormallikleri bile tespit edebilen dev bir sensör ağı gibi kullanılabiliyordu. Kaelus, tarihin en büyük cadı avını başlattı: Gölgelerin Avı.
+            </p>
+            <p>
+                Proje Behemoth, Ironheart'tan ayrılıp yavaş ve korkutucu bir şekilde krallığın üzerinde gezinmeye başladı. O, artık sadece bir silah değil, gezgin bir sorgu merkezi, bir mobil işkence kalesiydi. Behemoth bir bölgenin üzerine geldiğinde, Demir Göz ajanları o bölgeyi ablukaya alıyor, en ufak bir şüphede yüzlerce kişiyi sorguluyor ve Pelerin'in izini sürüyordu.
+            </p>
+            <p>
+                Yıllarca süren bu acımasız av, Pelerin'i sürekli hareket etmeye ve hata yapmaya zorladı. Ve sonunda, Kaelus aradığı şeyi buldu: Örgütün ana sığınağı, kadim Fısıldayan Labirent'in bulunduğu Ithran Deltası.
+            </p>
+            <p>
+                Kaelus, Behemoth'u deltanın kenarına getirdi. Lejyonları, Pelerin'in ustası olduğu bataklıklara ve kanallara girmeye cesaret edemedi. Ama girmelerine gerek de yoktu. Kaelus, Behemoth'un komuta köprüsüne çıktı ve tek bir emir verdi: "O bataklığı haritadan silin."
+            </p>
+            <p>
+                Proje Behemoth'un ana topu, ilk ve son kez ateşlendi. Hedefi bir kale ya da bir ordu değildi; bir coğrafyaydı. Dağları eritebilecek güçteki enerji, deltanın kalbine vurduğunda, su anında buharlaştı, bin yıllık ağaçlar küle döndü ve Fısıldayan Labirent'in altındaki tüm gizli geçitler ve odalar, erimiş kaya ve çamurun içinde sonsuza dek kayboldu. Ithran Deltası'nın yerinde artık sadece camlaşmış, radyoaktif bir krater vardı.
+            </p>
+            <p>
+                Gecelerin Pelerini, yüzyıllardır süren varlıklarının ardından, tek bir hamlede, bir fısıltı bile bırakmadan yok edilmişti. Bu mutlak ve vahşi güç gösterisi, kıtanın diğer başkentlerinde bir şok dalgası yarattı.
+            </p>
+            <ul>
+                <li><strong>Aseria'da:</strong> Silus Praxton, olanları öğrendiğinde, TÖH'e olan tüm desteği anında kesti ve Aseria'yı tam bir izolasyona soktu.</li>
+                <li><strong>Skarrgard'da:</strong> Stellan Korvath, feth ettiği kuzey topraklarından bile çekilmeyi düşündü.</li>
+            </ul>
+            <p>
+                Her iki krallık da Kaelus'a, onun "üstünlüğünü" tanıyan ve barış dileyen elçiler gönderdi. Kaelus, artık sadece Batı AserLand'in değil, tüm kıtanın efendisiydi. Sağlam bir caydırıcılık uygulamıştı. Kaelus, kraterden yükselen dumana bakarken zaferini kutluyordu. Gölgeleri yok etmişti. Artık mutlak güce sahipti. Ancak bilmediği bir şey vardı: Bir denge unsurunu yok ettiğinizde, doğa her zaman o boşluğu dolduracak yeni ve genellikle daha tehlikeli bir şey yaratırdı.
+            </p>
+
+            <h2>Bölüm 4: Yeniden Doğuş</h2>
+            <p>
+                Ithran Deltası'nın yerinde artık sadece camlaşmış bir krater varken, kıtanın üzerine daha önce hiç görülmemiş, boğucu bir barış çöktü. Lord Koruyucu Kaelus, Proje Behemoth'un gölgesinde, tartışmasız tek hükümdardı. Aseria ve Skarrgard, onun gücü karşısında sinmiş, birer uydu devlet haline gelmişti. Yüzyıllardır tarihin akışını gizlice yönlendiren Gecelerin Pelerini'nin yok edilmesiyle, Kaos ve Tiranlık arasındaki o hassas terazi de paramparça olmuştu. Dünya, Tiranlık'ın ağır baskısı altında eziliyordu ve artık onu dengeleyecek hiçbir güç yoktu.
+            </p>
+            <p>
+                Ancak mutlak güç, her zaman kendi karşıtını doğurur. Pelerin'in yok oluşundan birkaç yıl sonra, Kaelus'un demir krallığında tuhaf fısıltılar dolaşmaya başladı. Behemoth'un en kilit mühendislerinden biri, korunaklı odasında bir "kaza" sonucu ölüyordu. Halkına zulmeden acımasız bir vali, bir gece yarısı ardında hiçbir iz bırakmadan ortadan kayboluyordu. Bu eylemler, TÖH'ün dağınık sabotajlarına benzemiyordu. Bunlar birer sanat eseri gibi kusursuz, cerrahi ve ölümcül suikastlardı.
+            </p>
+            <p>
+                Kısa süre sonra, bu eylemlerin arkasındaki isimsiz güce bir ad verildi: Aserwar Gedian. Çoğu kişi onun nereden geldiğini, gerçek adını veya yüzünü bilmiyordu. "Aserwar", onun AserLand'in en elit savaş okulunun disiplinine sahip olduğunu; "Gedian" ise eski dilde "intikam" veya "yargı" anlamına geldiğini fısıldıyordu. O, Pelerin'in yokluğuyla oluşan boşlukta doğan bir hayaletti.
+            </p>
+            <p>
+                Aserwar Gedian, Pelerin'in hatasının, Denge'yi korumak için fazla pasif ve reaktif kalmak olduğuna inanıyordu. O, Denge'yi beklemeyecek, onu zorla dayatacaktı. Bu amaçla, kıtanın en tehlikeli ve en yetenekli bireylerini – Kaelus'un ordusundan kaçan onurlu askerleri, TÖH'ün hayatta kalan dâhi sabotajcılarını, Pelerin'in yok oluşundan kurtulmuş olabilecek birkaç gölgeyi – kendi sancağı altında toplamaya başladı.
+            </p>
+            <p>
+                Ve bu yeni, acımasız örgüte, Aser tarihinin en ironik ismini verdi: AserCouncil. Bir zamanlar adaletin ve meclis yönetiminin sembolü olan bu saygın isim, artık kralların bile uykusunu kaçıran, gölgelerdeki yeni ve ölümcül bir suikastçı konseyinin adı olmuştu. Aserwar Gedian'ın hedefi basitti: Gecelerin Pelerini'nin bıraktığı yerden devam etmek, ancak bunu onların aksine daha otoriter, daha mücadeleci ve çok daha kanlı bir şekilde yapmak. Denge terazisini, bu kez kendi elleriyle ve kılıcının ucuyla yeniden kuracaktı.
+            </p>
+
+            <h2>Bölüm 5: Doğuşun Savaşı</h2>
+            <p>
+                Lord Koruyucu Kaelus, Gecelerin Pelerini'ni yok ederek kıtanın tek efendisi olduğunu sandığı an, aslında en tehlikeli düşmanını kendi elleriyle yaratmıştı. Pelerin'in küllerinden doğan yeni AserCouncil, eski örgütün pasif "Denge" felsefesini reddediyor; onlar adaleti bekleyen değil, onu getiren bir hançer olacaklardı. Liderleri Aserwar Gedian, Kaelus'un mutlak gücünün merkezine, Proje Behemoth'a karşı bir gölge savaşı başlattı.
+            </p>
+            <p>
+                Bu, Zykrath'ın TÖH'e karşı yürüttüğü yıpratma savaşına benzemiyordu. AserCouncil daha acımasız, daha zeki ve daha hedefe yönelikti. Kaelus'un rejimini bir ağacın yapraklarını kopararak değil, doğrudan köklerini keserek yok etmeye çalıştılar:
+            </p>
+            <ul>
+                <li>Behemoth'un ihtiyaç duyduğu nadir minerali taşıyan tedarik hatlarına sabotajlar düzenlediler.</li>
+                <li>Kaelus'un en sadık generalleri ve Demir Göz komutanları, ustaca planlanmış suikastlarla birer birer ortadan kaldırıldı.</li>
+                <li>Kaelus'un komuta zincirine sızarak sahte emirler yaydılar, generallerini birbirine düşürdüler ve ordunun içinde bir paranoya ve güvensizlik ortamı yarattılar.</li>
+            </ul>
+            <p>
+                Kaelus, kendisini devasa, zaptedilemez kalesinin içinde kapana kısılmış buldu. Dünyanın en güçlü silahına sahipti ama bu silah, damarlarında dolaşan zehre karşı işe yaramazdı.
+            </p>
+            <p>
+                Son hamle, bizzat Aserwar Gedian'dan geldi. O ve en seçkin AserCouncil ajanları, tarihin en cüretkâr sızma operasyonunu gerçekleştirdi. Aylarca süren planlamanın ardından, Behemoth'un neredeyse fark edilmesi imkansız bir yapısal zayıflığından faydalanarak devasa makinenin içine sızdılar. Gedian ve ekibi, makinenin kalbine, Kaelus'un komuta köprüsüne ulaştığında, savaş kısa ve sessiz oldu. Kaelus'un seçkin muhafızları, gölgelerden çıkan bu ustalara karşı hiçbir şansları olmadan etkisiz hale getirildi. Sonunda, zırhlı köprüde sadece iki kişi kalmıştı: Batı AserLand'in tiranı Lord Koruyucu Kaelus ve onun celladı Aserwar Gedian.
+            </p>
+            <p>
+                Kaelus, kılıcını çekmeye bile fırsat bulamadı. Gedian, bir hayalet gibi hareket ederek onu etkisiz hale getirdi ve yakaladı. AserCouncil, Behemoth'un kontrolünü ele geçirmişti.
+            </p>
+            <p>
+                Bir hafta sonra, Aserion'un ana meydanında, Zykrath'ın heykelinin gölgesinde bir idam sehpası kuruldu. Aserwar Gedian, yüzü hala bir maskenin ardında gizliyken, esir alınmış Kaelus'u halkın önüne çıkardı. "Tiranlık, kendi varisini yaratır," dedi Gedian, sesi tüm meydana yayılan bir netlikteydi. "Ama her zincir, bir gün kırılır."
+            </p>
+            <p>
+                Kaelus, halkının önünde idam edildi. O gün, Behemoth Savaşları sona erdi. Aserwar Gedian, hem generali hem de onun kıyamet makinesini fethederek, Batı AserLand'in yeni ve sorgulanamaz lideri oldu. Artık o bir gölge değil, tahtın yeni sahibiydi ve tüm kıta, bu gizemli suikastçının mutlak gücüyle ne yapacağını görmek için nefesini tutmuştu.
+            </p>
+
+            <h2>Bölüm 6: Doğuşun Düzeni</h2>
+            <p>
+                Lord Koruyucu Kaelus'un Aserion meydanındaki idamının ardından, Aserwar Gedian Batı AserLand'in ve Proje Behemoth'un mutlak hakimiydi. Generalleri, müttefikleri ve tüm kıta, onun bu ezici gücü nasıl kullanacağını görmek için nefesini tutmuştu. Herkes yeni bir Demir Kral, eskisinden daha gizemli ve daha ölümcül bir tiran bekliyordu.
+            </p>
+            <p>
+                Gedian'ın ilk emri, tüm beklentileri yıktı. Ironheart'taki Proje Behemoth'un komuta köprüsünde, AserCouncil'in gölge savaşçıları ve Teknoloji Özgürlüğü Hareketi'nin lideri Joel Van Cortex ile bir araya geldi. Joel, atalarının (Cortex'lerin) ideallerini yıkan bu metal canavara nefretle bakıyordu. Gedian, devasa makinenin kontrol panellerine döndü ve tek bir cümle söyledi: "Bunu yok edin."
+            </p>
+            <p>
+                Odada şok olmuş bir sessizlik oldu. Generallerden biri itiraz etmeye cüret etti: "Ama efendim... Bu bizim en büyük gücümüz! Aseria ve Skarrgard'ı dizginleyen tek şey bu!" Gedian, maskesinin ardından ona döndü. Sesi sakin ama kesindi. "Mutlak güç, sadece mutlak tiranlık doğurur. Denge, birinin diğerinden daha büyük bir kılıca sahip olmasıyla değil, kimsenin kılıcının diğerlerinin sesini bastıramamasıyla sağlanır. Bu makine, bir silahtan çok bir zehirdir. Ve panzehiri, onun yok oluşudur."
+            </p>
+            <p>
+                Proje Behemoth'un sökülme görevi, onu inşa etmeye zorlananların mirasçılarına, yani TÖH'ün mühendislerine verildi. Bu bir yıkım değil, sembolik bir törendi. Haftalarca, dünyanın en büyük savaş makinesi, Ironheart'ın dökümhanelerinde parçalara ayrıldı, eritildi ve yeniden ham maddeye dönüştürüldü.
+            </p>
+            <p>Behemoth'un yok edildiği haberi, kıtanın diğer başkentlerine en güçlü diplomatik mesaj olarak ulaştı.</p>
+            <ul>
+                <li><strong>Aseria ve Skarrgard ile Barış:</strong> Gedian, Aseria Yüksek Konseyi'ne ve Skarrgard Devrim Konseyi'ne elçiler gönderdi. Mesajı basitti: "Batı AserLand'in saldırganlık çağı sona ermiştir." En büyük tehditlerinin kendi kendini imha ettiğini gören Silus Praxton ve Stellan Korvath, şüpheyle de olsa masaya oturmayı kabul ettiler. Gedian, ilk iyi niyet göstergesi olarak, Skarrgard'ın savaş sırasında ilhak ettiği kuzey toprakları üzerindeki haklarını resmen tanıdı. On yıllardır süren düşmanlık, yerini kırılgan bir diyaloğa bırakmaya başladı.</li>
+                <li><strong>TÖH ile İttifak:</strong> Aserwar Gedian, Joel Van Cortex'i Aserion'a davet etti. TÖH'e bir af çıkarmakla kalmadı, onlara AserLand'in geleceğinde merkezi bir rol teklif etti. "Teknoloji Bağımsızlığı Fermanı" adıyla bir yasa çıkardı. Bu fermanla, bilimsel ve teknolojik gelişmelerin mutlak devlet kontrolünden arındırıldığını ilan etti. TÖH'ü, bu bağımsızlığı denetleyecek, yeni teknolojilerin etik kurallarını belirleyecek ve bir daha asla Behemoth gibi bir canavarın inşa edilmemesini sağlayacak özerk bir kuruma dönüştürdü. Yeraltındaki devrimciler, sistemin koruyucuları haline gelmişti.</li>
+            </ul>
+            <p>
+                Birkaç ay içinde Aserwar Gedian, Zykrath ve Kaelus'un on yıllardır inşa ettiği korku imparatorluğunu temelden sarsmıştı. En büyük silahını yok etmiş, en büyük düşmanlarıyla barış masasına oturmuş ve en büyük iç tehdidini bir müttefike dönüştürmüştü. O, bir tiran olmadığını kanıtlamıştı. Ama herkesin aklındaki soru aynıydı: Bir suikastçı, bir ulusu nasıl yönetecekti?
+            </p>
+
+            <h2>Bölüm 7: Doğuşun Değişimi</h2>
+            <p>
+                Aserwar Gedian, Batı AserLand'in lideri olduğunda, bir fatih gibi davranmadı. O, bir mimar gibi, Zykrath ve Kaelus'un tiranlığının yıktığı temelleri yeniden ve daha sağlam bir şekilde inşa etmeye başladı. Saltanatının geri kalanını, bir daha asla tek bir kişinin mutlak gücünün krallığı bir felakete sürükleyemeyeceği bir düzen kurmaya adadı.
+            </p>
+            <p>
+                <strong>"Aser" Kimliğinin Yeniden Tanımlanması:</strong> Gedian'ın ilk ve en sembolik reformu, kendi adını taşıyan Aserwar Savaş Okulu'nda gerçekleşti. Kendisinin de bir zamanlar gölgelerde eğitim aldığı bu okula yaptığı bir ziyarette, mezunlara seslendi: "Aser adı, yüzyıllarca kan bağıyla, mirasla gelen bir ayrıcalık olarak görüldü. Bu ayrıcalık, tiranlığın ve kibrin kalkanı oldu. Bugünden sonra, Aser olmak bir soyun değil, bir liyakatin adıdır." Yeni bir yasa çıkardı: Artık her yıl Aserwar Savaş Okulu'ndan birincilikle mezun olan en yetenekli öğrenciye, bir unvan olarak "Aserwar" ismi verilecekti. Bu, onun kendi kimliğinin de bir yansımasıydı; çünkü kimse onun gerçek adını bilmiyordu. "Aserwar Gedian", onun doğuştan gelen değil, kazandığı bir kimlikti.
+            </p>
+            <p>
+                <strong>Ithran'ın Bağımsızlığı:</strong> Gedian, kıtadaki yaraları sarmak için Aseria Yüksek Konseyi (ASC) ile masaya oturdu. En hararetli anlaşmalar, Ithran bölgesinin kaderi üzerine yapıldı. Gedian, Gecelerin Pelerini'nin yok edilmesiyle sonuçlanan trajedinin yaşandığı bu toprakların, kendi kaderini tayin etme hakkı olduğunu savundu. ASC hükümeti, zaten kendilerine sürekli sorun çıkaran ve ekonomik olarak bir yük haline gelen bu bölgenin bağımsızlık fikrine, Gedian'ın diplomatik baskısıyla sıcak baktı. Ithran'da bir bağımsızlık referandumu yapılmasına onay verildi. Sandıktan ezici bir "evet" oyu çıkmasıyla, küllerinden doğan Ithran, bağımsız bir şehir devleti oldu.
+            </p>
+            <p>
+                <strong>Anayasal Devrim: AserCouncil'in Yeni Rolü:</strong> Gedian'ın son ve en büyük mirası, kendisinden sonraki düzeni güvence altına alacak anayasal reformdu. Yeni bir anayasa düzenlemesiyle, kendi kurduğu AserCouncil'in statüsünü ve geleceğini belirledi. Bu yeni anayasayla AserCouncil, AserLand tarihinde eşi benzeri görülmemiş, çift rollü bir yapıya kavuştu:
+            </p>
+            <ul>
+                <li><strong>Yönetim Konseyi:</strong> AserCouncil, artık sadece bir liderin gizli örgütü değil, farklı bölgelerden ve gruplardan (TÖH, Ordu, Bilim Akademisi vb.) gelen, anayasal güvence altına alınmış bağımsız delegelerden oluşan bir yönetim meclisi haline geldi. Liderin kararlarını denetleyecek, ona danışmanlık yapacak ve bir tiranlığa dönüşmesini engelleyecek bir güç merkeziydi.</li>
+                <li><strong>Savunma Gücü:</strong> Konseyin gölgelerdeki kimliği de anayasaya girdi. AserCouncil, AserLand'in bir numaralı savunma gücü ve istihbarat teşkilatı olarak tanımlandı. Üyeleri, ülkeyi dış düşmanlardan ve daha da önemlisi, içeriden gelecek tiranlık heveslilerinden korumakla görevli, devletin resmi suikastçıları ve ajanlarıydı.</li>
+            </ul>
+
+        </main>
+    </div>
+
+</body>
+</html>
