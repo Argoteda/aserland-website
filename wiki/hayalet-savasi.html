@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hayalet Savaşı | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 40px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.8rem; background: linear-gradient(90deg, #222, transparent); padding: 10px; border-radius: 0 5px 5px 0; }
+        
+        /* LİSTELER */
+        .content ul { list-style: none; padding-left: 0; }
+        .content li { margin-bottom: 15px; padding-left: 20px; position: relative; }
+        .content li::before { content: '⚠️'; color: var(--ana-renk); font-weight: bold; position: absolute; left: 0; font-size: 0.8rem; top: 5px; }
+        .content li strong { color: var(--ana-renk); }
+
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 220px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details>
+                <summary>1. Kısım: Parçalanmış Taç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details open>
+                <summary>2. Kısım: Tiranların Çağı</summary>
+                <ul>
+                    <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
+                    <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
+                    <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
+                    <li><a href="hayalet-savasi.html" class="active">➤ Hayalet Savaşı</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Yaşam Öyküleri</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">HAYALET SAVAŞI</div>
+                <div class="infobox-image"><i class="fas fa-ghost" style="font-size:4rem;"></i></div>
+                <table class="infobox-table">
+                    <tr><th>Dönem:</th><td>M.S. 69 - M.S. 98</td></tr>
+                    <tr><th>Konum:</th><td>Batı AserLand (Aserion)</td></tr>
+                    <tr><th>Taraflar:</th><td>Kral Zykrath (Tiranlık)<br>Aseria ASC (İstihbarat)<br>TÖH (Sabotaj)</td></tr>
+                    <tr><th>Savaş Türü:</th><td>Soğuk Savaş / Sabotaj / Propaganda</td></tr>
+                    <tr><th>Sonuç:</th><td>Zykrath'ın Yıpranması<br>TÖH'ün Yükselişi<br>Kazanılmayan Savaş</td></tr>
+                </table>
+            </div>
+
+            <h1>Hayalet Savaşı</h1>
+
+            <h2>Bölüm 1: Yankının Mirası (M.S. 69 - 80)</h2>
+            <p>
+                M.S. 69 yılının sonbaharında, Aseria'nın kalbi Supremia'dan yayılan haber, önce bir fısıltı, sonra ise tüm kıtayı sarsan bir sessizlik oldu: Celestine D'Arvell ölmüştü. Batı'da, Aserion'daki Paranoya Kalesi'nin efendisi Kral Zykrath, haberi aldığında harita odasında tek başınaydı. Yıllardır satranç oynadığı rakibi masadan kalkmıştı. Ordularını, casuslarını ve tüm krallığını, Aseria'da patlak verecek olan kaçınılmaz iç savaşa ve kaosa hazırladı. Skarrgard'ın yeni kralı, ambargoyu kırmak için sınıra birliklerini kaydırdı. Kıtadaki tüm güçler, devin çöküşünü ve geride bırakacağı enkazdan bir parça kapmayı bekliyordu.
+            </p>
+            <p>
+                Ancak Aseria çökmedi. Haftalar geçti, aylar geçti. Sınırlardan ne bir mülteci akını ne de bir isyan haberi geldi. Ticaret aynı hassas düzenle devam etti, vergiler aynı dakiklıkla toplandı, şehirlerin sokakları aynı kusursuz temizlikte kaldı. Celestine'in kurduğu makine, kurucusu olmadan da işlemeye devam ediyordu. Bu durum, Zykrath'ın beklediği kaostan çok daha korkutucuydu. Artık karşısında anlayabildiği bir rakip değil, yenemeyeceği, akıl erdiremediği, lidersiz ve ruhsuz bir sistem vardı.
+            </p>
+            <p>
+                Bu görünürdeki istikrarın ardında ise, Aseria'nın en derin koridorlarında sessiz bir devrim yaşanıyordu. Celestine'in yıllar önce feshettiği EASC'nin hayaleti, küllerinden yeniden doğmuştu. Kendilerini artık ASC (Aserian Supreme Council - Aseria Yüksek Konseyi) olarak adlandıran, Celestine döneminde sistemin en kilit noktalarına yerleşmiş tecrübeli bürokratlar ve teknokratlar, yönetimi sorunsuzca devraldı. Halka bunu bir darbe olarak değil, "Yankı"nın vizyonunun bir sonraki adımı olarak sundular: sistemin, tek bir kişinin iradesine bağımlı kalmasını önleyecek, kolektif bir liderliğe geçiş. Aseria, tek bir beyinle yönetilmekten, bir sinir ağıyla yönetilmeye geçmişti.
+            </p>
+            <p>
+                Bu yeni konsey, Zykrath kadar pragmatikti, ama ondan çok daha kurnazdı. Zykrath'ın askeri gücünün ve Ironheart'ta yükselen Proje Behemoth'un yarattığı varoluşsal tehdidin farkındaydılar. Aseria'nın düzenli ordusu, bu metal canavar karşısında bir hiçti. Geleneksel bir savaşta kaybedeceklerini biliyorlardı. Bu yüzden, geleneksel olmayan bir silaha başvurdular.
+            </p>
+            <p>
+                ASC'nin en gizli oturumlarından birinde karar alındı. Ajanlar, Batı AserLand'in yeraltı dehlizlerine, unutulmuş buhar tünellerine gönderildi. Görevleri savaşmak değil, bir ittifak teklifi sunmaktı. Hedefleri, on yıllardır Zykrath'ın tiranlığına karşı gizlice savaşan, AserTechno'nun ve Elara Ventis'in mirasını taşıyan Teknoloji Özgürlüğü Hareketi'ydi.
+            </p>
+            <p>
+                ASC'nin teklifi basitti: Zykrath, ikisinin de ortak düşmanıydı. Aseria, Harekete neredeyse sınırsız finansal kaynak, gizli teknoloji planları ve "Demir Göz"ün hareketlerine dair en güncel istihbaratı sağlayacaktı. Karşılığında ise Hareket, Hayalet Savaşı'nı Aseria adına yürütecekti. Onlar, Aseria'nın Zykrath'ın krallığının kalbine uzanan hançeri olacaktı.
+            </p>
+            <p>
+                Bu, tarihin en beklenmedik ve en tehlikeli ittifakıydı. Biri mutlak düzeni ve kontrolü, diğeri ise mutlak özgürlüğü ve anarşiyi temsil eden iki güç, ortak bir düşmana karşı birleşmişti. M.S. 80'e gelindiğinde, kıtanın kaderi artık iki tahtın değil, üç gücün oynadığı bir gölge oyununa dönüşmüştü: Zykrath'ın demir yumruğu, ASC'nin görünmez ağı ve Teknoloji Özgürlüğü Hareketi'nin sabotaj hançeri. Yankının mirası, kıtayı topyekûn bir savaştan kurtarmış, ama çok daha sinsi ve öngörülemez bir "Hayalet Savaşı"nın fitilini ateşlemişti.
+            </p>
+
+            <h2>Bölüm 2: Üçüncü Gücün Yükselişi (M.S. 80 - 90)</h2>
+            <p>
+                M.S. 80'e gelindiğinde, Aseria Yüksek Konseyi (ASC) ile Teknoloji Özgürlüğü Hareketi (TÖH) arasındaki gizli ittifak, Batı AserLand'in temellerini sarsmaya başlamıştı. Kral Zykrath, krallığında artan bir "şanssızlık" salgınıyla karşı karşıyaydı. Proje Behemoth için hayati önem taşıyan nadir mineral sevkiyatları, en korunaklı yollarda bile "açıklanamayan" heyelanlar yüzünden vadiye yuvarlanıyordu. Ironheart'ın en yetenekli mühendislerinden bazıları, ailelerine veda mektupları bırakarak bir gecede ortadan kayboluyordu. "Demir Göz"ün en gizli hapishanelerinden birinde çıkan "isyan", sadece TÖH sempatizanı olduğu düşünülen mahkumların kaçmasıyla sonuçlanıyordu.
+            </p>
+            <p>
+                Zykrath aptal değildi. Bu olayların arkasında, sıradan sabotajcılardan daha fazlası olduğunu biliyordu. Bu eylemlerde bir zeka, bir plan ve en önemlisi, Aseria'nın casus ağlarının parmak izleri vardı. Ancak elinde kanıt yoktu. Aseria'ya savaş ilan edemezdi, çünkü ortada bir ordu yoktu; sadece hayaletler vardı. Bu durum, onu kendi krallığında bir avcıdan çok, görünmez avcılar tarafından köşeye sıkıştırılmış bir ava dönüştürüyordu.
+            </p>
+            <p>
+                Bu gölge savaşının zirvesi, M.S. 85 yılının baharında yaşandı. Teknoloji Özgürlüğü Hareketi, varlıklarını tüm kıtaya duyurmak için tarihin gördüğü en cüretkâr mühendislik operasyonlarından birini gerçekleştirdi. ASC'den aldıkları istihbaratla, Batı AserLand'in büyük şehirlerini birbirine bağlayan ve acil durumlarda kullanılan buhar gücüyle çalışan siren kuleleri ağını hedef aldılar. Bir gece, TÖH'ün yüzlerce hücresi aynı anda harekete geçti. Bu kulelere, kendi geliştirdikleri devasa "Akustik Yankılayıcılar"ı gizlice monte ettiler.
+            </p>
+            <p>
+                Şafak sökerken, Batı AserLand'in dört bir yanında, normalde sadece yangın veya saldırı uyarısı için çalan sirenler, eş zamanlı olarak uğuldamaya başladı. Ancak bu bir alarm değildi. Kulelerden yükselen ses, mekanik olarak güçlendirilmiş, metalik ama net bir insan sesiydi. Milyonlarca insan, evlerinden ve iş yerlerinden gökyüzüne yayılan bu inanılmaz sese kulak verdi. Ses, kendini Teknoloji Özgürlüğü Hareketi'nin sözcüsü olarak tanıtıyordu.
+            </p>
+            <p>
+                Yayınlanan manifesto, tüm kıtada şok etkisi yarattı. Hareket, kendilerini AserTechno ve Elara Ventis'in gerçek mirasçıları olarak ilan etti. Hem Zykrath'ın "kan ve demir tiranlığını" hem de Aseria'nın "formül ve dosyalar tiranlığını" reddettiklerini duyurdular. İnsanlığa, teknolojinin devletlerin bir silahı değil, bireylerin özgürlüğünün bir aracı olduğu üçüncü bir yol vaat ediyorlardı. Çağrıları netti: "Zincirleriniz ister demirden ister kağıttan olsun, kırılma vakti gelmiştir. Zihinlerinizi serbest bırakın."
+            </p>
+            <p>
+                Bu, TÖH'ün gölgelerden çıkışıydı. Artık Zykrath'ın paranoyak fısıltıları değil, kıtanın siyasi haritasında hesaba katılması gereken somut bir güçtüler. Bu olayın ardından "Hayalet Savaşı" yeni bir evreye girdi.
+            </p>
+            <ul>
+                <li><strong>Zykrath'ın Tepkisi:</strong> Kamuoyu önünde küçük düşürülen ve teknolojik olarak alt edilen Zykrath, öfkesini krallığından çıkardı. "Demir Göz"ün yetkilerini artırdı, yüzlerce aydını ve mühendisi "TÖH ajanı" şüphesiyle tutuklattı. Batı AserLand, paranoyanın hüküm sürdüğü dev bir hapishaneye dönüştü. Ancak bu baskı, TÖH'e olan gizli halk desteğini artırmaktan başka bir işe yaramadı.</li>
+                <li><strong>Aseria'nın Oyunu:</strong> ASC, her zamanki gibi, olayı kamuoyu önünde kınadı ve TÖH'ün "kaotik yöntemlerini" eleştirdi. Ancak kapalı kapılar ardında, vekillerinin bu cüretkâr hamlesini kutluyorlardı. TÖH'ün artık kendi kimliğiyle ortaya çıkması, Aseria'yı bu gölge savaşında daha da dokunulmaz kılıyordu.</li>
+                <li><strong>Diğer Güçler:</strong> Skarrgard, TÖH'ü hem bir tehdit hem de Zykrath'a karşı potansiyel bir müttefik olarak görmeye başladı. Gecelerin Pelerini ise Konseylerinde bu yeni gücü tartışıyordu. TÖH'ün "özgürlük" ideolojisi, Denge'yi sağlayacak yeni bir unsur mu, yoksa her şeyi yakacak yeni bir Kaos türü müydü?</li>
+            </ul>
+            <p>
+                M.S. 90'a gelindiğinde, kıtanın dengesi tamamen değişmişti. Zykrath, Aseria ve TÖH arasında üçlü bir kilitlenme yaşanıyordu. Zykrath, Proje Behemoth gibi mutlak bir silaha sahip olmasına rağmen, onu hayalet bir düşmana karşı kullanamamanın hüsranını yaşıyordu. Artık soru, kimin ilk hamleyi yapacağı değil, bu kazanılmayan savaşın taraflardan hangisini ilk önce tüketeceğiydi.
+            </p>
+
+            <h2>Bölüm 3: Kazanılmayan Savaş (M.S. 90 - 98)</h2>
+            <p>
+                Teknoloji Özgürlüğü Hareketi'nin (TÖH) sahneye çıkışı, kıtadaki donmuş barışı sona erdirmişti. Ancak bu, Zykrath'ın bildiği türden bir savaş değildi. Orduların çarpıştığı, sancakların dalgalandığı bir savaş değildi bu. Bu, her yerde ve hiçbir yerde olan, kazananı olmayan bir "Hayalet Savaşı"ydı.
+            </p>
+            <p>
+                Zykrath'ın krallığı, TÖH'ün sürekli ve öngörülemez saldırıları altında yavaş yavaş kan kaybediyordu. TÖH, bir ordu gibi savaşmıyordu; bir virüs gibi yayılıyordu. Bir gün, Ironheart'taki ana mühimmat fabrikasının buhar basınç sistemleri, Aseria'dan sızdırılan karmaşık bir planla, içten içe sabote ediliyor ve haftalarca üretimi durduruyordu. Ertesi gün, Zykrath'ın sadık bir valisi, TÖH'ün kontrolündeki yerel bir matbaanın bastığı ve valinin yolsuzluklarını ifşa eden bildiriler yüzünden halkın isyanıyla karşılaşıyordu.
+            </p>
+            <p>
+                Bu savaşın en sinir bozucu yanı, Zykrath'ın elindeki ezici gücün işe yaramazlığıydı. Aserion'daki savaş odasında, generalleri haritaların üzerine orduları temsil eden figürleri yerleştiriyor, TÖH'ün yuvalandığına inandıkları bölgeleri yok etmeyi teklif ediyorlardı. Ama Zykrath biliyordu ki, bir şehri yok etmek, bir fikri yok etmezdi. Aksine, o fikre yeni şehitler ve daha büyük bir nefret kazandırırdı.
+            </p>
+            <p>
+                Ve her şeyin ötesinde, Ironheart'ın vadisinde bir gölge gibi uyuyan Proje Behemoth vardı. O metal canavar, Zykrath'ın en büyük gücü ve aynı zamanda en büyük hapishanesiydi. Onu Aseria'ya karşı kullanabilirdi. Onu Skarrgard'a karşı kullanabilirdi. Ama hayalet bir düşmana karşı kullanamazdı. Daha da önemlisi, Denoistos'u bir gecede yok eden o "Görünmez El"in varlığını asla unutmuyordu. Behemoth'u harekete geçirmek gibi, Denge'yi sarsacak mutlak bir hamle yaparsa, o isimsiz bıçakların bir sonraki hedefinin kendisi olacağından neredeyse emindi. Dünyanın en güçlü silahına sahipti ama onu kullanmaktan ölesiye korkuyordu.
+            </p>
+            <p>Bu kazanılmayan savaş, diğer güçler için de bir satranç oyunuydu:</p>
+            <ul>
+                <li><strong>Aseria (ASC):</strong> Supremia'daki Yüksek Konsey, savaşı bir harita odasından değil, bir istihbarat merkezinden yönetiyordu. TÖH'e sızdırdıkları her bir bilgi, Zykrath'ın krallığında bir kaosa neden oluyor ve Batı AserLand'i ekonomik ve moral olarak tüketiyordu. Onlar savaşı kazanıyorlardı ve bunu tek bir askerlerini bile riske atmadan başarıyorlardı.</li>
+                <li><strong>Gecelerin Pelerini:</strong> Fısıldayan Labirent'teki Konsey, bu üçlü denklemi dikkatle izliyordu. TÖH'ün yükselişi, Zykrath'ın Tiranlık'ını dengeleyen bir unsurdu. Ancak TÖH'ün kontrolsüz "özgürlük" ideolojisinin yeni bir Kaos türü yaratmasından endişe ediyorlardı. Bu yüzden savaşa doğrudan müdahale etmediler, sadece küçük dokunuşlarla hiçbir tarafın mutlak bir zafer kazanmamasını sağladılar.</li>
+            </ul>
+            <p>
+                Yıllar (M.S. 90'dan 98'e kadar) bu sinsi yıpratma savaşıyla geçti. Zykrath, her geçen gün daha da yaşlanıyor, daha da paranoyaklaşıyordu. Krallığı, bitmek bilmeyen "Demir Göz" operasyonları ve TÖH'ün misillemeleri arasında bir terör sarmalına girmişti. Gençliğinde hayalini kurduğu mutlak zafer ve sarsılmaz düzen, yerini bir bataklıkta çırpınma hissine bırakmıştı.
+            </p>
+            <p>
+                M.S. 98'e gelindiğinde, Kral Zykrath artık neredeyse yüz yaşındaydı. Savaş odasındaki haritalara değil, penceresinden görünen sarayın duvarlarına bakıyordu. En güçlü silahına rağmen, en basit savaşı kazanamamıştı. Bu kazanılmayan savaş, onun ruhunu ve iradesini tüketmişti. Ve şimdi, hayatının son perdesi başlamak üzereydi.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
