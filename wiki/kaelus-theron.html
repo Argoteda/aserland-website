@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lord Koruyucu Kaelus Theron | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 40px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.8rem; background: linear-gradient(90deg, #222, transparent); padding: 10px; border-radius: 0 5px 5px 0; }
+        .content h3 { color: var(--ana-renk); margin-top: 25px; font-size: 1.3rem; border-bottom: 1px dashed #333; padding-bottom: 5px; }
+        
+        /* LİSTELER */
+        .content ul { list-style: none; padding-left: 0; }
+        .content li { margin-bottom: 15px; padding-left: 20px; position: relative; }
+        .content li::before { content: '⚔️'; color: var(--ana-renk); font-weight: bold; position: absolute; left: 0; font-size: 0.8rem; top: 5px; }
+        .content li strong { color: var(--ana-renk); }
+
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 220px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details>
+                <summary>1. Kısım: Parçalanmış Taç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details open>
+                <summary>2. Kısım: Tiranların Çağı</summary>
+                <ul>
+                    <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
+                    <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
+                    <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
+                    <li><a href="iki-taht-bir-golge.html">➤ İki Taht, Bir Gölge</a></li>
+                    <li><a href="denoistos-los-aser.html">➤ General Denoistos Los Aser</a></li>
+                    <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
+                    <li><a href="lucian-baron-mhoore.html">➤ Lucian "Baron" Mhoore</a></li>
+                    <li><a href="zykrath-vhalgoroth-aser.html">➤ Kral Zykrath Vhalgoroth Aser</a></li>
+                    <li><a href="kutuphanedeki-sessiz-kanaat.html">➤ Belge: Kütüphanedeki Sessiz Kanaat</a></li>
+                    <li><a href="stellan-korvath.html">➤ Stellan Korvath (Kuzeyin Mimarı)</a></li>
+                    <li><a href="kaelus-theron.html" class="active">➤ Lord Koruyucu Kaelus Theron</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Yaşam Öyküleri</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">KAELUS THERON</div>
+                <div class="infobox-image"><i class="fas fa-fist-raised" style="font-size:4rem;"></i></div>
+                <table class="infobox-table">
+                    <tr><th>Unvan:</th><td>Lord Koruyucu<br>Demir Yumruğun Vârisi</td></tr>
+                    <tr><th>Yaşam:</th><td>M.S. 61 – M.S. 104</td></tr>
+                    <tr><th>Doğum Yeri:</th><td>Batı AserLand Kuzey Sınırları</td></tr>
+                    <tr><th>Ölüm Yeri:</th><td>Aserion Ana Meydanı</td></tr>
+                    <tr><th>Ölüm Nedeni:</th><td>İdam (AserCouncil tarafından)</td></tr>
+                    <tr><th>Görev Süresi:</th><td>M.S. 99 – M.S. 104 (5 Yıl)</td></tr>
+                    <tr><th>Selefi:</th><td>Kral Zykrath Vhalgoroth Aser</td></tr>
+                    <tr><th>Halefi:</th><td>Aserwar Gedian</td></tr>
+                </table>
+            </div>
+
+            <h1>Lord Koruyucu Kaelus Theron</h1>
+
+            <h2>Bölüm 1: Tahtın Gölgesindeki Kılıç (M.S. 61 - M.S. 98)</h2>
+            <p>
+                General Kaelus, Zykrath'ın tiranlığının en karanlık ve en istikrarlı olduğu yıllarda, Aserion'un kalbinde değil, krallığın sert ve affetmez kuzey sınırlarında dünyaya geldi. Babası, Aserilios hanedanının eski zaferlerinde savaşmış bir lejyon komutanıydı. Kaelus, ninnilerle değil, kılıç sesleri ve savaş borularının yankılarıyla büyüdü. Onun için dünya basitti: Güçlü olan hayatta kalır, sadık olan onurlandırılır, düşman ise yok edilirdi.
+            </p>
+            <p>
+                Genç yaşta, Aserwar Kraliyet Savaş Okulu'na gönderildi. Ancak o, buraya bir unvan için değil, bir amaç için gelmişti. Tarih derslerinde, Aser'in bölünmez bütünlüğünü ve askeri gücünün kutsallığını öğrendi. Onun zihninde, Ironheart'taki mühendisler birer dâhi değil, disiplinsiz ve tehlikeli unsurlardı. Skarrgard ve Aseria ise Aser gövdesinden kopmuş, en kısa zamanda ezilmesi gereken hastalıklı uzuvlardı.
+            </p>
+            <p>
+                Okulda yıldızı parladı. Taktiksel zekası keskin, iradesi ise bükülmezdi. Ama onu diğerlerinden ayıran asıl şey, savaşa olan saf ve katıksız inancıydı. Entrikayı, casusluğu ve siyaseti, zayıfların ve korkakların silahı olarak görürdü. Bu yüzden, okulun gölgelerde hareket etmeyi öğreten istihbarat derslerinden nefret eder, tüm zamanını ağır zırhlı lejyonların stratejileri üzerine çalışarak geçirirdi. Bu yıllarda, gelecekteki en büyük rakibi olacak olan, casusluk ve manipülasyon sanatında ustalaşan genç Morvran'ı küçümseyerek izledi. Morvran bir yılandı; Kaelus ise bir aslan. Ve aslanlar, yılanların oyunlarıyla vakit kaybetmezdi.
+            </p>
+            <p>
+                Mezuniyetinin ardından, Kral Zykrath'ın ordusunda hızla yükseldi. Kral, Kaelus'un bu katıksız sadakatini ve kaba kuvvete olan inancını takdir ediyordu. Ancak Zykrath'ın saltanatının son yıllarında, kral Paranoya Kalesi'ne kapandıkça, Kaelus'un sadakati yavaş yavaş bir hüsrana dönüşmeye başladı. O, TÖH'ün sabotajlarını birer askeri sorun olarak görüyordu. Çözümü basitti: TÖH'ün yuvalandığına inanılan şehir bloklarını veya kasabaları yerle bir etmek. Ancak Zykrath, bu "hayalet" düşmana karşı ordusunu tam anlamıyla kullanmayı hep reddetti.
+            </p>
+            <p>
+                Yaşlı kralın yavaş yavaş eridiğini, iradesinin zayıfladığını gördükçe, Kaelus'un zihninde yeni bir düşünce şekillendi. Bu artık sadece sadakat değildi; bu bir sorumluluktu. Krallık, kralının paranoyası yüzünden içten içe çürüyordu. Onu bu çürümeden kurtarabilecek tek şey, korkusuz ve kararlı bir liderin demir yumruğuydu. Ve o lider, kendisiydi.
+            </p>
+
+            <h2>Bölüm 2: Varislerin Savaşı (M.S. 98 - M.S. 99)</h2>
+            <p>
+                Kral Zykrath'ın son nefesini verdiği odadaki sessizlik, bir bıçakla kesilmiş gibiydi. O bıçağı ilk çeken, gölgelerin efendisi General Morvran oldu. Henüz kralın bedeni soğumadan, saraydaki Demir Göz ajanlarına verdiği gizli emirlerle başkentin sinir merkezlerini kontrol altına almaya başladı. Ancak General Kaelus, siyasi oyunlardan anlamazdı. Onun bildiği tek dil, çeliğin diliydi.
+            </p>
+            <p>
+                Kaelus'un ordusu Aserion surlarına dayandığında, beklediği gibi kolay bir zaferle karşılaşmadı. Morvran, şehri dev bir tuzağa çevirmişti. Savaş, haftalar süren, başkenti bir enkaza çeviren acımasız bir yıpratma mücadelesine dönüştü. Tam da bu kanlı çıkmazın ortasında, felaket haberleri diğer cephelerden gelmeye başladı. Skarrgard ordusu sınırı geçmişti ve Ironheart'ta TÖH isyanı başlamıştı.
+            </p>
+            <p>
+                Kaelus, komuta çadırındaki masanın üzerine serilmiş haritaya baktı. Krallığı gözlerinin önünde parçalanıyordu. Geleneksel bir savaşçı olan Kaelus, hayatında ilk kez kendini çaresiz hissetti. O gece, Kaelus'un içindeki onur ve gelenek yerini soğuk, pragmatik bir öfkeye bıraktı. Anladı ki, Aserion'u da, kuzey topraklarını da korumanın bir anlamı yoktu, eğer Proje Behemoth kaybedilirse. O canavarı kontrol eden, tüm kıtayı kontrol ederdi.
+            </p>
+
+            <h2>Bölüm 3: Lord Koruyucu (M.S. 99 - M.S. 103)</h2>
+            <p>
+                Üç cepheli savaşın cehenneminde, General Kaelus'un içindeki son onur kırıntıları da yanıp kül olmuştu. Kaelus bir savaşçı gibi değil, bir kasap gibi düşünmeye başladı. İlk hedefi, Aserion'daki yılan, General Morvran'dı. Kaelus, en iyi bildiği şeyi yaptı ve onu bir tuzağa çekti. Geri çekilen birlikler, şehrin dışındaki harabelerde pusuya yatmış olan Kaelus'un ağır zırhlı lejyonlarının ortasına daldı. O gün güneş batarken, Demir Göz teşkilatı yok oldu.
+            </p>
+            <p>
+                Rakibini ortadan kaldıran Kaelus, Aserion'a bir fatih olarak girdi ve kendini "Lord Koruyucu" ilan etti. Paslanan Taht'a oturduğunda, kutlamalara vakit ayırmadı. Ordusunun ezici çoğunluğunu arkasına alarak Ironheart'a yürüdü. Kuşatma haftalarca sürdü. Kaelus, şehre merhamet göstermedi. Sonunda, TÖH'ün direnişi kırıldı ve Kaelus, Proje Behemoth'u ele geçirdi.
+            </p>
+            <p>
+                Artık dünyanın en güçlü silahına sahipti. Bu gücü, tüm kıtaya hissettirmekte gecikmedi. Behemoth'u kuzey sınırına yürüterek Skarrgard'ı durdurdu. Aseria'ya ise bir uyarı atışıyla TÖH'e olan desteği kestirdi. Ancak Kaelus'un son bir düşmanı kalmıştı: Gecelerin Pelerini. "Gölgelerin Avı"nı başlattı. İstihbaratı onu örgütün kalbine, Ithran Deltası'na götürdü. Kaelus, Behemoth'un ana topunu ateşledi ve deltayı haritadan sildi. Lord Koruyucu Kaelus, artık mutlak güç onundu. O, kıtanın tek efendisiydi.
+            </p>
+
+            <h2>Bölüm 4: Kılıcın Kırılışı (M.S. 103 - M.S. 104)</h2>
+            <p>
+                Ithran Deltası'nın yok edilmesinin üzerinden birkaç yıl geçmişti. Kaelus, tarihin en büyük gücüne ulaştığına ve tüm düşmanlarını yok ettiğine inanıyordu. Kibri, onu kör etmişti. Gecelerin Pelerini'nin küllerinin hala sıcak olduğunu ve küllerin arasından yeni bir gölgenin, Aserwar Gedian'ın doğmakta olduğunu fark edememişti.
+            </p>
+            <p>
+                AserCouncil, Kaelus'un rejimini içeriden parçalamaya başladı. En güvendiği generalleri suikastlarla ortadan kaldırıldı. Sonunda, Aserwar Gedian nihai hamlesini yapmaya karar verdi. Canavarın kalbini sökecekti. Tarihin en cüretkâr sızma operasyonuyla, Gedian ve ekibi Proje Behemoth'un içine sızdı.
+            </p>
+            <p>
+                Savaş kısa ve sessizdi. Zırhlı köprüde, Kaelus kendini elinde kılıcıyla tek başına buldu. Karşısında Aserwar Gedian duruyordu. Kaelus, tüm gücüyle saldırdı ama Gedian bir savaşçı değil, bir yargıçtı. Kaelus'un kılıcını kırdı ve onu esir aldı.
+            </p>
+            <p>
+                Bir hafta sonra, Aserion'un ana meydanında bir idam sehpası kuruldu. Aserwar Gedian, esir Kaelus'u halkın önüne çıkardı. "Mutlak güç, mutlak bir mezar kazar," dedi kalabalığa. Kılıçla yaşayan Lord Koruyucu Kaelus, yine bir kılıçla, celladın darbesiyle can verdi. Demir Yumruğun Vârisi'nin saltanatı sona ermişti.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
