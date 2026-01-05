@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Morvran Corvus (Tepeden Bakan Göz) | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 40px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.8rem; background: linear-gradient(90deg, #222, transparent); padding: 10px; border-radius: 0 5px 5px 0; }
+        .content h3 { color: var(--ana-renk); margin-top: 25px; font-size: 1.3rem; border-bottom: 1px dashed #333; padding-bottom: 5px; }
+        
+        /* LİSTELER */
+        .content ul { list-style: none; padding-left: 0; }
+        .content li { margin-bottom: 15px; padding-left: 20px; position: relative; }
+        .content li::before { content: '👁️'; color: var(--ana-renk); font-weight: bold; position: absolute; left: 0; font-size: 0.8rem; top: 5px; }
+        .content li strong { color: var(--ana-renk); }
+
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 220px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details>
+                <summary>1. Kısım: Parçalanmış Taç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details open>
+                <summary>2. Kısım: Tiranların Çağı</summary>
+                <ul>
+                    <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
+                    <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
+                    <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
+                    <li><a href="iki-taht-bir-golge.html">➤ İki Taht, Bir Gölge</a></li>
+                    <li><a href="denoistos-los-aser.html">➤ General Denoistos Los Aser</a></li>
+                    <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
+                    <li><a href="lucian-baron-mhoore.html">➤ Lucian "Baron" Mhoore</a></li>
+                    <li><a href="zykrath-vhalgoroth-aser.html">➤ Kral Zykrath Vhalgoroth Aser</a></li>
+                    <li><a href="celestine-darvell.html">➤ Celestine D'Arvell</a></li>
+                    <li><a href="kutuphanedeki-sessiz-kanaat.html">➤ Belge: Kütüphanedeki Sessiz Kanaat</a></li>
+                    <li><a href="stellan-korvath.html">➤ Stellan Korvath (Kuzeyin Mimarı)</a></li>
+                    <li><a href="kaelus-theron.html">➤ Lord Koruyucu Kaelus Theron</a></li>
+                    <li><a href="morvran-corvus.html" class="active">➤ General Morvran Corvus</a></li>
+                    <li><a href="behemoth-yapilis-sureci.html">➤ Belge: Behemoth'un İnşası</a></li>
+                    <li><a href="aserwar-gedian.html">➤ Aserwar Gedian (Suikastçı Mimar)</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Yaşam Öyküleri</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">MORVRAN CORVUS</div>
+                <div class="infobox-image"><i class="fas fa-eye" style="font-size:4rem;"></i></div>
+                <table class="infobox-table">
+                    <tr><th>Unvan:</th><td>Tepeden Bakan Göz<br>Demir Göz Lideri</td></tr>
+                    <tr><th>Yaşam:</th><td>M.S. 64 – M.S. 99</td></tr>
+                    <tr><th>Doğum Yeri:</th><td>Aserion / Batı AserLand</td></tr>
+                    <tr><th>Ölüm Yeri:</th><td>Aserion Dışındaki Savaş Alanı</td></tr>
+                    <tr><th>Ölüm Nedeni:</th><td>Savaşta öldürüldü (Kaelus tarafından)</td></tr>
+                    <tr><th>Eğitim:</th><td>Aserwar Savaş Okulu (İstihbarat)</td></tr>
+                    <tr><th>Görev Süresi:</th><td>M.S. 90 – M.S. 98</td></tr>
+                </table>
+            </div>
+
+            <h1>General Morvran Corvus: Tepeden Bakan Göz</h1>
+
+            <h2>Bölüm 1: Gölgelerin Çırağı (M.S. 64 - M.S. 90)</h2>
+            <p>
+                Morvran Corvus, Aserion'un asil konaklarında değil, saray duvarlarının gölgesinde, entrikanın bir sanat, bilginin ise en keskin kılıç olduğu bir ailede dünyaya geldi. Babası, Zykrath'ın babasına hizmet eden küçük rütbeli bir diplomattı. Morvran, bu atmosferde büyüdü. Çocukken, Kaelus gibi yaşıtları tahta kılıçlarla oynarken, o saray hizmetkarlarının dedikodularını dinler, kimin kimle görüştüğünü öğrenirdi. Onun için güç, en gürültülü narayı atanın değil, en sessiz fısıltıyı duyanındı.
+            </p>
+            <p>
+                Aserwar Kraliyet Savaş Okulu'na girdiğinde, fiziksel gücüyle değil, keskin zekasıyla fark edildi. Kaelus Theron gibi kas gücüne tapanlar onu küçümsüyordu. Morvran, pusu kurma, psikolojik savaş ve düşman hatlarına sızma gibi "onursuz" kabul edilen konulara odaklandı. O, bir orduyu cepheden yarmakla değil, o orduyu yönetecek generalin zihnini kırmakla ilgileniyordu.
+            </p>
+            <p>
+                Mezuniyetinin ardından, Kral Zykrath'ın "Hayalet Savaşı" onun için mükemmel bir sahne oldu. Kaelus'un lejyonları devriye gezerken, Morvran TÖH'ün içine ajanlarını sızdırıyor, isyanı içeriden zehirliyordu. Bu yetenekleri, "Demir Göz" teşkilatının dikkatini çekti. Birkaç yıl içinde teşkilatın en korkulan sorgucusu oldu. TÖH'ün birçok hücresini, tek bir kılıç darbesi indirmeden çökertti.
+            </p>
+            <p>
+                Zykrath'ın saltanatının son yıllarında, Morvran artık sadece bir ajan değil, Demir Göz'ün en tepesindeki isimdi: General Morvran Corvus. Kaelus sınırda güç gösterisi yaparken, Morvran başkentin damarlarında dolaşan kanı kontrol ediyordu. İki general arasındaki rekabet, artık saklanamaz bir hale gelmişti. Morvran, yıllardır topladığı sırları birer piyon gibi satranç tahtasına dizdi. Kralın son nefesini vermesini bekliyordu.
+            </p>
+
+            <h2>Bölüm 2: Demir Göz'ün Efendisi (M.S. 90 - M.S. 98)</h2>
+            <p>
+                Zykrath'ın saltanatının son on yılına girilirken, Morvran krallığın en korkulan kurumu olan "Demir Göz" teşkilatının mutlak efendisiydi. Kaelus krallığın kılıcıysa, Morvran da beyni ve sinir sistemiydi. Her gün masasına krallığın dört bir yanından gelen yüzlerce rapor yığılırdı. O, krallığın tüm sırlarının bekçisiydi.
+            </p>
+            <p>
+                M.S. 95'teki "Gümüş Damar Konvoyu" olayında, Kaelus'un kaba kuvvetine karşı Morvran'ın zekası galip geldi. Morvran, bir TÖH ajanına şantaj yaparak isyancı liderleri tuzağa düşürdü ve onları sessizce yakaladı. Bu, Kaelus için büyük bir aşağılanmaydı ve Morvran'ın saraydaki gücünü perçinlemişti.
+            </p>
+            <p>
+                Morvran, yaşlanan ve paranoyası artan Zykrath'ın en güvendiği danışmanı haline geldi. Kralı sürekli besleyerek Kaelus'un etkisini zayıflatıyor, kendi yetkilerini artırıyordu. Kralın sağlığı M.S. 98'de iyice kötüleştiğinde, Morvran son hazırlıklarını tamamlamıştı. Başkentin etrafına, görünmez iplerden oluşan bir ağ örmüştü. "Varislerin Savaşı", daha ilk kılıç çekilmeden, bu karanlık odada çoktan kazanılmıştı. Ya da o, öyle sanıyordu.
+            </p>
+
+            <h2>Bölüm 3: Yılanın Hamlesi (M.S. 98 - M.S. 99)</h2>
+            <p>
+                Kral Zykrath'ın son nefesiyle birlikte Morvran'ın planı işlemeye başladı. "Geçici Konsey"i kurduğunu ilan etti ve Demir Göz ajanlarıyla Aserion'un kontrolünü ele geçirdi. Kaelus'a sadık subaylar tutuklandı. Morvran, Kaelus'u şehrin dışında çaresiz bırakacağına emindi.
+            </p>
+            <p>
+                Ancak Kaelus müzakere etmedi. Ordusuna tek bir emir verdi: "Yürüyün!" Kaelus'un lejyonları Aserion'un surlarına dayandığında, Morvran şehri dev bir tuzağa çevirdi. Demir Göz ajanları çatılardan pusular kurdu, sokaklar barikatlarla kapatıldı. Haftalarca süren mücadelede Kaelus'un ordusu ağır kayıplar verdi.
+            </p>
+            <p>
+                Tam bu sırada, kuzeyden Skarrgard işgalinin ve Ironheart'taki TÖH isyanının haberleri geldi. Kaelus artık üç cephede birden savaşıyordu. Morvran, zamanın kendi lehine işlediğine emindi. M.S. 99'un ilk aylarına gelindiğinde, Morvran zaferin eşiğinde olduğuna inanıyordu. Yılanın hamlesi başarılı olmuş, aslanı tuzağa düşürmüştü. Ancak tuzağa düşmüş bir aslanın, en tehlikeli anının son çırpınışı olduğunu hesaba katmamıştı.
+            </p>
+
+            <h2>Bölüm 4: Kopmuş Ağ (M.S. 99)</h2>
+            <p>
+                M.S. 99 yılının ilk ayları, General Morvran Corvus'un zaferinin habercisi gibiydi. Ancak beklediği haber geldi: Kaelus, Aserion'un güneyindeki birliklerini geri çekmeye başlamıştı. Morvran bunu bir zayıflık ve panik olarak yorumladı. "Aslan, yaralı ve panik içinde," dedi. "Şimdi dişlerini sökme zamanı."
+            </p>
+            <p>
+                Kibir, bir casus ustasının en ölümcül zehridir. Morvran, Demir Göz'ün en seçkin birliklerini şehrin dışına, Kaelus'un peşine gönderdi. Ancak bu bir tuzaktı. Geri çekilen lejyonlar bir anda durdu ve gizlenen ağır süvariler ile topçu bataryaları ortaya çıktı. Morvran'ın hafif zırhlı birlikleri, açık arazide Kaelus'un kaba kuvveti karşısında yok oldu.
+            </p>
+            <p>
+                Morvran, etrafında özenle ördüğü ağın paramparça oluşunu dehşetle izledi. Aserion'a geri çekilmeye çalıştığı sırada, yolu bizzat General Kaelus tarafından kesildi. İki varis karşı karşıya geldi. Morvran kılıcını çektiğinde, Kaelus atından bile inmemişti. "Senin oyunların bitti, yılan," diye kükredi ve atını mahmuzladı.
+            </p>
+            <p>
+                General Morvran Corvus, bir entrikacının hak etmediği bir sonla öldü. Kendi entrika kalesinin duvarları içinde, rakibinin kaba ve ezici gücüyle, kendi kibrinin külleri üzerinde can verdi. Kaelus, Morvran'ın cansız bedeninin başında dururken, Varislerin Savaşı bitmişti.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
