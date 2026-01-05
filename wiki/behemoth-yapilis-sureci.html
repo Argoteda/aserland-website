@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proje Behemoth: Bir Mühendisin Günlüğü | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        
+        /* GÜNLÜK FORMATI */
+        .log-entry {
+            background: #222;
+            border-left: 4px solid var(--ana-renk);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 10px 10px 0;
+            position: relative;
+        }
+        .log-header {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: var(--ana-renk);
+            border-bottom: 1px dashed #444;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .log-content { font-style: italic; color: #ccc; line-height: 1.8; }
+        .log-content p { margin-bottom: 15px; }
+
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 180px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details>
+                <summary>1. Kısım: Parçalanmış Taç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details open>
+                <summary>2. Kısım: Tiranların Çağı</summary>
+                <ul>
+                    <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
+                    <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
+                    <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
+                    <li><a href="iki-taht-bir-golge.html">➤ İki Taht, Bir Gölge</a></li>
+                    <li><a href="denoistos-los-aser.html">➤ General Denoistos Los Aser</a></li>
+                    <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
+                    <li><a href="lucian-baron-mhoore.html">➤ Lucian "Baron" Mhoore</a></li>
+                    <li><a href="zykrath-vhalgoroth-aser.html">➤ Kral Zykrath Vhalgoroth Aser</a></li>
+                    <li><a href="celestine-darvell.html">➤ Celestine D'Arvell</a></li>
+                    <li><a href="kutuphanedeki-sessiz-kanaat.html">➤ Belge: Kütüphanedeki Sessiz Kanaat</a></li>
+                    <li><a href="stellan-korvath.html">➤ Stellan Korvath (Kuzeyin Mimarı)</a></li>
+                    <li><a href="kaelus-theron.html">➤ Lord Koruyucu Kaelus Theron</a></li>
+                    <li><a href="behemoth-yapilis-sureci.html" class="active">➤ Belge: Behemoth'un İnşası</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Yaşam Öyküleri</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">GİZLİ GÜNLÜK</div>
+                <div class="infobox-image"><i class="fas fa-book-dead" style="font-size:4rem;"></i></div>
+                <table class="infobox-table">
+                    <tr><th>Belge Adı:</th><td>İsimsiz Mühendisin Günlüğü</td></tr>
+                    <tr><th>Konum:</th><td>Ironheart / Proje Behemoth Şantiyesi</td></tr>
+                    <tr><th>Tarih Aralığı:</th><td>M.S. 70 – M.S. 104</td></tr>
+                    <tr><th>Konu:</th><td>Behemoth'un İnşası ve Sabotajlar</td></tr>
+                    <tr><th>Önem:</th><td>Canavarın İçindeki "Panzehir"</td></tr>
+                </table>
+            </div>
+
+            <h1>Proje Behemoth: Bir Mühendisin Günlüğü</h1>
+            <p style="color:#888; font-size:0.9rem; margin-bottom:30px;">
+                <em>*Aşağıdaki kayıtlar, Ironheart'ın yıkıntıları arasında bulunan, Teknoloji Özgürlüğü Hareketi'ne (TÖH) bağlı isimsiz bir baş mühendise ait kişisel notlardır.*</em>
+            </p>
+
+            <div class="log-entry">
+                <div class="log-header">M.S. 70 Yılı, 24. Gün | Ironheart Gözetim Kampı (Eski Atölye 7)</div>
+                <div class="log-content">
+                    <p>Ironheart'ın havası... Artık metal ve kömür kokmuyor. Kül ve korku kokuyor.</p>
+                    <p>Büyükbabam, Usta AserTechno'nun yanında çalışırmış. O her zaman, "Bilim ilerlemedir, Elara ise onun en parlak ışığıydı" derdi. Şimdi o ışığın katilleri, bizden, onların torunlarından, o bilimi bir canavara dönüştürmemizi istiyor. Kral Zykrath'ın son paranoyası: Proje Behemoth.</p>
+                    <p>Celestine D'Arvell'in ölümü, kralın zihnindeki son vidayı da gevşetti. Tüm kıtayı susturacak bir çığlık inşa ediyor. Biz mühendisler, Ironheart'ın dökümhanelerinde "çalışmıyoruz". Biz burada esiriz. Her köşede pelerinli bir "Demir Göz" ajanı dikiliyor.</p>
+                    <p>Baskı arttıkça, TÖH daha da derine iniyor. Bu canavarı inşa etmek zorundayız, evet. Ama onu, bizim bildiğimiz gibi inşa ediyoruz. Her zırh plakasının altına, her buhar borusunun eklem yerine, her hidrolik pistonun içine, görülmesi imkansız birer "kusur" ekiyoruz. Bu bir sabotaj değil; bu, geleceğe bırakılmış bir panzehir.</p>
+                    <p>Elara'nın ruhu şahit olsun; Zykrath'a bir silah değil, onun saltanatının tabutunu inşa ediyoruz.</p>
+                </div>
+            </div>
+
+            <div class="log-entry">
+                <div class="log-header">M.S. 85 Yılı, 192. Gün | Ironheart Gözetim Kampı (Revir Bölgesi)</div>
+                <div class="log-content">
+                    <p>On beş yıl. Tam on beş yıldır bu metal mezarlığın içinde nefes alıyoruz. Proje Behemoth artık bir iskelet değil. Ironheart vadisinin üzerindeki güneşi kalıcı olarak karartan, hareket etmeyi bekleyen, paslanan bir canavar.</p>
+                    <p>Geçen hafta kıtanın dört bir yanında duyulan o ses... TÖH'ün manifestosu. Elara'nın idealleri gökyüzünden yankılandı. Ama bedelini ağır ödüyoruz. Zykrath'ın paranoyası artık bir hastalık değil, bir salgın.</p>
+                    <p>Benim görevim ise her zamankinden daha kritik. Canavarın kalbindeyim. Ana hidrolik pompa sistemlerinden sorumluyum. Bugün, o sistemin kalbi olan ana regülatör vanasını monte ettik. Vanayı ben tasarladım. Alaşımı kusursuz görünüyor. Ama içinde, sadece benim bildiğim bir sır var. Döküm sırasında, alaşımın içine yavaş ama istikrarlı etki eden aşındırıcı bir bileşen kattım.</p>
+                    <p>Zykrath'ın hayalini kurduğu o "mutlak gücü" serbest bıraktığı an... O muazzam ısı ve basınç, benim bıraktığım o küçük kusuru bulacak. Regülatör parçalanacak. Soğutma sistemi çökecek. Ve canavar, kendi ateşinde boğulacak.</p>
+                </div>
+            </div>
+
+            <div class="log-entry">
+                <div class="log-header">M.S. 98 Yılı, 342. Gün | Ironheart Proje Alanı, Çekirdek Bakım Tüneli</div>
+                <div class="log-content">
+                    <p>Neredeyse otuz yıl. Dile kolay. Koskoca bir ömür... bir canavarın gölgesinde geçti. Proje Behemoth tamamlandı. Biz inşa ettik. Her perçininde yalanlarımız, her devresinde gizli yeminlerimiz var.</p>
+                    <p>Ve bugün... kilit kırıldı. Haber, Demir Göz'ün kendi şifreli hatlarından sızdı. Kral Zykrath Vhalgoroth Aser öldü. Yatağında. Yaşlılıktan. 61 yıllık tiranlık bir nefesle son buldu. O, ardında bir krallık değil, bir kıyamet makinesi bıraktı.</p>
+                    <p>Paslanan Taht boş. Ve şimdi, o tahta oturmak için generaller birbirine girecek. Kaelus... Morvran.... Hepsi Behemoth'un kontrolünü isteyecek. Benim regülatör vanam, benim gizli çatlağım, Zykrath'ın deliliği için tasarlanmıştı. Ya bu yeni tiranlardan biri onu bizden önce bulursa?</p>
+                    <p>Zykrath'ın ölümü barış getirmedi. O, "Behemoth Savaşları"nı başlattı. TÖH'ün bekleme vakti sona erdi. Zincirler kırıldı.</p>
+                </div>
+            </div>
+
+            <div class="log-entry">
+                <div class="log-header">M.S. 99 Yılı, 45. Gün | Ironheart Yeraltı Tünelleri</div>
+                <div class="log-content">
+                    <p>Kaybettik. Zykrath'ın ölümü bir kurtuluş değil, bir kıyamet sinyaliymiş. Paslanan Taht'ın boşaldığı haberi Ironheart'a ulaştığı an, buradaki "düzen" bir gecede parçalandı.</p>
+                    <p>Joel Van Cortex'in liderliğinde, iki generalin dağınık garnizonlarına karşı savaştık ve kazandık. Bir anlığına... Proje Behemoth'un ana kontrol köprüsünü ele geçirdik. Ama zaferimiz, kuzeyden gelen bir haberle küle döndü. General Kaelus, Morvran'ı yenmiş. "Demir Yumruğun Vârisi" Kaelus, Ironheart'a yürüyor.</p>
+                    <p>Geldiler. Kaba kuvvetin, zekâya karşı acımasız zaferiydi. "Geri çekilin!" emri geldiğinde, kalbim parçalandı. Yenilmiştik. Tünellere kaçarken, son bir görevim vardı. Ana Çekirdek odasına geri döndüm. Son saniyelerimde, o gizli regülatör vanasına ulaştım. Onu patlatmadım. Sadece, TÖH'ün gizli komutlarıyla kilitledim. Kaelus canavarı ele geçirdi, evet. Ama panzehir hala içinde.</p>
+                </div>
+            </div>
+
+            <div class="log-entry">
+                <div class="log-header">M.S. 104 Yılı | Behemoth'un Söküm Alanı</div>
+                <div class="log-content">
+                    <p>Bitti. Kaelus'un tiranlığı, Zykrath'ınkinden daha karanlık, daha acımasızdı. Ama bir gün, bizimle, TÖH ile temasa geçtiler. Pelerin'in küllerinden yeni bir gölge doğdu: Aserwar Gedian.</p>
+                    <p>Gedian'ın ekibi (AserCouncil) birer hayaletti. Onlara, Kaelus'un sensör ağındaki kör noktaları gösterdim. Onları, yıllar önce o gizli çatlağı yerleştirdiğim ana soğutma borularına getirdim. Gedian, Kaelus'u yendi.</p>
+                    <p>Bir hafta sonra, Joel ve ben, Ironheart'taki komuta köprüsünde yeni liderle, Aserwar Gedian'la yüz yüze geldik. O metal canavara, ömrümüzü çalan o demir yığınına nefretle bakıyorduk. Ve Gedian, bize döndü. Tek bir cümle söyledi: "Bunu yok edin."</p>
+                    <p>O an... O an, Elara'nın ve AserTechno'nun ruhunun kazandığını anladım. Bugün, o son cıvatayı sökerken ellerim titredi. Bir ömür harcadığım bu canavar, şimdi TÖH mühendislerinin elinde parçalara ayrılıyor. Benim küçük, gizli kusuruma... o çatlak vanaya... gerek kalmadı. Gedian, makineyi değil, fikri yok etti.</p>
+                    <p>Günlüğüm burada sona eriyor. Zykrath öldü. Kaelus öldü. Behemoth öldü. Biz kazandık.</p>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>
