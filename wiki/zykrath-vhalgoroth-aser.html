@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kral Zykrath Vhalgoroth Aser | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 40px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.8rem; background: linear-gradient(90deg, #222, transparent); padding: 10px; border-radius: 0 5px 5px 0; }
+        .content h3 { color: var(--ana-renk); margin-top: 25px; font-size: 1.3rem; border-bottom: 1px dashed #333; padding-bottom: 5px; }
+        
+        /* LİSTELER */
+        .content ul { list-style: none; padding-left: 0; }
+        .content li { margin-bottom: 15px; padding-left: 20px; position: relative; }
+        .content li::before { content: '👑'; color: var(--ana-renk); font-weight: bold; position: absolute; left: 0; font-size: 0.8rem; top: 5px; }
+        .content li strong { color: var(--ana-renk); }
+
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 220px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details>
+                <summary>1. Kısım: Parçalanmış Taç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details open>
+                <summary>2. Kısım: Tiranların Çağı</summary>
+                <ul>
+                    <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
+                    <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
+                    <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
+                    <li><a href="iki-taht-bir-golge.html">➤ İki Taht, Bir Gölge</a></li>
+                    <li><a href="denoistos-los-aser.html">➤ General Denoistos Los Aser</a></li>
+                    <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
+                    <li><a href="lucian-baron-mhoore.html">➤ Lucian "Baron" Mhoore</a></li>
+                    <li><a href="zykrath-vhalgoroth-aser.html" class="active">➤ Kral Zykrath Vhalgoroth Aser</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Yaşam Öyküleri</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">KRAL ZYKRATH</div>
+                <div class="infobox-image"><i class="fas fa-crown" style="font-size:4rem;"></i></div>
+                <table class="infobox-table">
+                    <tr><th>Tam Adı:</th><td>Zykrath Vhalgoroth Aser</td></tr>
+                    <tr><th>Unvan:</th><td>XXXI. Batı AserLand Kralı<br>Demir Kral</td></tr>
+                    <tr><th>Yaşam:</th><td>M.S. 0 – M.S. 98</td></tr>
+                    <tr><th>Hüküm Süresi:</th><td>M.S. 37 – M.S. 98 (61 Yıl)</td></tr>
+                    <tr><th>Konum:</th><td>Aserion / Batı AserLand</td></tr>
+                    <tr><th>Eseri:</th><td>Proje Behemoth<br>Demir Göz</td></tr>
+                    <tr><th>Selefi:</th><td>Madam Maria Von Cortex</td></tr>
+                    <tr><th>Halefi:</th><td>Kaelus Theron (Lord Koruyucu)</td></tr>
+                </table>
+            </div>
+
+            <h1>Zykrath Vhalgoroth Aser (XVIII. Aser): Kırık Bir Tacın Hiddeti</h1>
+
+            <h2>Bölüm 1: Solan Sancaklar (M.S. 0 - 25)</h2>
+            <p>
+                Milat olarak kabul edilen o yıl, AserLand Merkez Sarayı’nın kadim taşları ne bir zaferi ne de bir kutlamayı fısıldıyordu. Duvarlar, taze bir yenilginin soğukluğunu emmişti. Henüz imzası kurumamış Damethia Anlaşması, imparatorluğun haritasından sadece bir toprak parçasını değil, Aser ruhunun bir kısmını da koparıp almıştı. "Kuzeybatılı İsyancılar" artık onurlu bir isme sahipti: Skarrgardlılar. Ve bu bölünmenin gölgesinde, tahtın koridorlarında demokrasi, reform ve insan hakları gibi yabancı kelimeler yankılanıyordu. Bu kelimelerin sahibi, Aser soyundan gelmeyen bir hukukçu, Madam Maria Von Cortex’ti.
+            </p>
+            <p>
+                İşte bu çalkantılı yılda, sarayın en muhafazakâr kanatlarından birinde, Lord Vhalgoroth Aser’in hanesinde bir erkek çocuk dünyaya geldi. Adını Zykrath koydular. Bu isim, eski Aser dilinde "Kırılmaz İrade" demekti; bir duadan çok, bir meydan okumaydı. Babası için Zykrath, kaybolan bir çağın son umudu, solan sancakların altına doğmuş bir intikam yemininden farksızdı.
+            </p>
+            <p>
+                Zykrath’ın çocukluğu, iki farklı AserLand’de geçti. Gündüzleri, sarayın resmi hocalarından Cortex rejiminin yeni müfredatını öğreniyordu. Geceleri ise gerçek eğitimi başlıyordu. Babası Lord Vhalgoroth, onu meşalelerin aydınlattığı özel kütüphanesine götürürdü. Zykrath burada, Cortex’in yasakladığı tarihi öğreniyordu. O haritalarda AserLand bir bütündü; sınırsız ve sarsılmaz.
+            </p>
+            <p>
+                Zykrath on dört yaşına geldiğinde, bu nefret soyut bir histen çıkıp somut bir yaraya dönüştü. Bir sabah, saraydan gelen düşük rütbeli bir memur, Cortex Yasası’na dayanan resmi bir fermanla kapılarına dayandı. Ferman, Vhalgoroth ailesinin nesillerdir sahip olduğu toprakların "halkın ortak yararı için" kamulaştırıldığını bildiriyordu. Zykrath, babasının o anki yüzünü hayatı boyunca unutmadı. Yüzyılların gururu, sıradan bir memurun uzattığı bir parşömen karşısında tuzla buz olmuştu. O gün, solan sancağın önünde yemin etti. Sadece babasının onurunu değil, Aser’in çalınan tüm onurunu geri alacaktı.
+            </p>
+
+            <h2>Bölüm 2: Kılıcın Yükselişi (M.S. 25 - 37)</h2>
+            <p>
+                Aserwar Kraliyet Savaş Okulu'nun demir kapılarından içeri adım attığında, Zykrath yirmi yıldır içinde biriktirdiği nefreti ve utancı geride bırakıp, ait olduğu dünyaya girdiğini hissetti. Burası, Cortex'in AserLand'inden farklı bir evrendi. Sadece taktik ve strateji öğrenmedi; Aser'in ezici güce dayalı savaş doktrinini ruhuna işledi. Geceleri, kışlanın soğuk taş duvarları arasında, kendisi gibi düşünen genç soylu subaylar ve rejime diş bilemiş eski askerlerle gizli toplantılar düzenliyordu.
+            </p>
+            <p>
+                M.S. 36 yılında, Batı AserLand Kraliçesi Madam Maria Von Cortex'in Doğu AserLand'deki bir reform gezisi sırasında suikasta kurban gittiği haberi kışlasına ulaştığında, yüzünde ne bir sevinç ne de bir hüzün belirdi. Bu, onun için sadece satranç tahtasındaki bir taşın devrilmesiydi. Batı'nın başkenti Aserion'daki müttefiklerinden gelen mesajlar karargâhına yağmur gibi yağmaya başladı: "Başkent başsız. İrade yok. Ordu seni bekliyor."
+            </p>
+            <p>
+                Zykrath bir an bile tereddüt etmedi. En sadık lejyonlarını arkasına alıp başkente doğru yürüyüşe geçti. Aserion'a girdiğinde, onu karşılayan bir direniş değil, bir teslimiyet oldu. O günün akşamında, bir zamanlar Maria Von Cortex'in reformlarını savunduğu saray balkonuna çıktı: "Cortexlerin getirdiği zayıflık ve ihanet dönemi sona ermiştir! Batı AserLand, tek bir sancak altında, tek bir iradeyle yeniden yükselecektir! Bu irade, benim!"
+            </p>
+
+            <h2>Bölüm 3: Demir Yumruk (M.S. 37 - 40)</h2>
+            <p>
+                Zykrath Vhalgoroth Aser, Aserion'daki tahtına oturduğunda, bir kutlama ya da törenle vakit kaybetmedi. İlk icraatı, Cortex rejiminin Batı AserLand'deki tüm kalıntılarını temizlemek oldu. Ancak bu sessizliği bozan, Ironheart şehrinin bacalarından yükselen duman ve atölyelerinden gelen çekiç sesleriydi. Zykrath için Ironheart ve onun lideri AserTechno, vücuttaki bir ur gibiydi.
+            </p>
+            <p>
+                Zykrath, AserTechno'ya son bir şans sundu: Bilimi orduya devret. AserTechno'nun cevabı netti: "Bilim bir kralın mülkü değildir." Bu sözler, onun ölüm fermanı oldu. Emir, Aserion'daki saraydan gizlice verildi. Zykrath'ın suikast timi, Ironheart'a sızdı ve AserTechno'yu öldürdü.
+            </p>
+            <p>
+                Ironheart bu yalana inanmadı. AserTechno'nun en parlak çırağı Elara Ventis, halkı direnişe çağırdı. Zykrath'ın cevabı sert oldu: "O şehrin her dişlisini kendi kanlarında boğun!" Disiplinli ve acımasız Aser lejyonları, Ironheart'ı kuşattı. Savaş, sokaklarda, atölyelerde ve son olarak Elara Ventis ile kalan son mühendislerin sığındığı merkez laboratuvarda devam etti. Zykrath'ın intikamı korkunç oldu. Elara ve direnişin diğer liderleri idam edildi. Demir Yumruk, Batı AserLand'in üzerine inmişti.
+            </p>
+
+            <h2>Bölüm 4: Paranoya Kalesi'nin İlk Taşları (M.S. 40 - 69)</h2>
+            <p>
+                Kral Zykrath Vhalgoroth Aser, mutlak otoritesini kanla mühürlemişti. Ancak zaferin getirdiği o ilk tatmin hissi, yerini hızla kemirgen bir şüpheye bıraktı. Saltanatının takip eden otuz yılı, bu görünmez düşmanlarla dolu bir paranoya kalesinin inşasıyla geçecekti.
+            </p>
+            
+            <h3>İlk Gölge: Ironheart'ın Yeraltı Hayaleti</h3>
+            <p>
+                Elara Ventis'in idamından sağ kurtulmayı başaran mühendisler, "Teknoloji Özgürlüğü Hareketi"ni kurdular. Bu hareket, Zykrath'ın krallığına musallat olan bir hayalete dönüştü. Ordularla savaşmıyorlardı; bir fısıltıyla, bir sabotajla, kırık bir dişliyle savaşıyorlardı. Bu görünmez düşmana karşı Zykrath, "Demir Göz" adını verdiği acımasız bir gizli polis teşkilatı kurdu.
+            </p>
+
+            <h3>İkinci Gölge: Doğudaki Soğuk Ayna</h3>
+            <p>
+                Doğu sınırının ötesinde, Celestine D'Arvell'in demir bir düzenle yönettiği Aseria vardı. Aseria, kendisinin bir yansımasıydı ama çarpık, ruhsuz bir yansıması. Celestine'in düzeni, Zykrath'ınki gibi mutlak bir iradeye dayanıyordu ama Aser'in şanlı savaşçı geçmişini reddediyordu. İki devlet arasında on yıllardır süren bir soğuk savaş vardı.
+            </p>
+
+            <h3>Üçüncü Gölge: İsimsiz Bıçağın Fısıltısı</h3>
+            <p>
+                En karanlık gecelerde Zykrath'ı uykusundan uyandıran asıl korku, isimsiz, yüzü olmayan bir tehditti. Gecelerin Pelerini. Kaderin iplerini elinde tutan, görünmez bir elin varlığını hissediyordu.
+            </p>
+
+            <h2>Bölüm 5: Paranoya Kalesi'nin Duvarları (M.S. 69 - 98)</h2>
+            <p>
+                Celestine D'Arvell'in M.S. 69'da ölümü, Zykrath'ın beklediği kaosu getirmedi. Bu sessiz ve düzenli geçiş, Zykrath'ı daha da dehşete düşürdü. Bu farkındalık, saltanatının son otuz yılını tüketecek olan o büyük takıntıyı ateşledi: Proje Behemoth.
+            </p>
+            <p>
+                Proje, sadece bir silah değil, hareket eden bir kaleydi. Yeraltının en derin katmanlarından çıkarılan minerallerle çalışan, yürüyen bir şehir. Behemoth tamamlandığında, Denge'yi sonsuza dek Tiranlık lehine bükecek olan nihai silahtı. Ancak projesi büyüdükçe, paranoyası da onunla birlikte devleşti. Teknoloji Özgürlüğü Hareketi sabotajlar düzenliyor, Gecelerin Pelerini tedarik hatlarını vuruyordu.
+            </p>
+            <p>
+                Yıllar geçtikçe Zykrath, sarayından neredeyse hiç çıkmaz oldu. En sadık generallerine bile güvenmiyor, onlarla zırhlı bir camın arkasından konuşuyordu. Aserion'daki sarayı, dışarıdan bakıldığında gücünün simgesiydi; içeriden ise kralın kendi hapishanesi.
+            </p>
+
+            <h2>Bölüm 6: Paslanan Taht (M.S. 98)</h2>
+            <p>
+                M.S. 98 yılının ilk kış fırtınaları Aserion'un kulelerini döverken, Kral Zykrath Vhalgoroth Aser ölüm döşeğindeydi. Odası, krallığının bir minyatürü gibiydi: görkemli ama ruhsuz, güvenli ama yapayalnız. Hayatının son günlerinde, Zykrath'ın bir zamanlar çelik gibi keskin olan zihni, yaşlılığın ve bir ömürlük paranoyanın sisi içinde gidip geliyordu. Kırık bir tacın hiddetiyle yola çıkmış, ama sonunda oturduğu tahtı kendi elleriyle paslandırmıştı.
+            </p>
+            <p>
+                Ölümü, fırtınalı hayatının aksine, sessiz ve neredeyse fark edilmeden geldi. Zykrath'ın son düşüncesi, Ironheart'taki devasa metal canavardı. Proje Behemoth. Onun tek gerçek varisi, ölümsüz mirası. Zykrath Vhalgoroth Aser ölmüştü. Ama demir yumruğuyla yarattığı sessizlik, onunla birlikte mezara girdi. Paslanan Taht boştu ve o tahta sahip olmak için verilecek savaş, Zykrath'ın tüm saltanatından daha kanlı olmaya adaydı.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
