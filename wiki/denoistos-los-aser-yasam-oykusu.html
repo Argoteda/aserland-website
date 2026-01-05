@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Denoistos: Yaşam Öyküsü | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN (3 Sütunlu Yapı) */
+        .container { display: flex; max-width: 1600px; margin: 0 auto; width: 100%; position: relative; align-items: flex-start; }
+        
+        /* 1. SOL MENÜ (Standart Wiki Menüsü) */
+        .sidebar { width: 250px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* 2. ORTA İÇERİK (Hikaye Alanı) */
+        .content { flex: 1; padding: 40px; font-size: 1.15rem; line-height: 1.8; max-width: 900px; text-align: justify; }
+        .content h1 { font-size: 3rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-top: 0; text-align: center; }
+        .content h2 { color: #fff; margin-top: 60px; border-left: 5px solid var(--ana-renk); padding-left: 15px; font-size: 2rem; background: linear-gradient(90deg, #222, transparent); padding: 15px; }
+        .content p { margin-bottom: 20px; }
+        
+        /* 3. SAĞ MENÜ (İçindekiler - Sticky TOC) */
+        .toc-sidebar { width: 250px; position: sticky; top: 80px; padding: 20px; border-left: 1px solid var(--border); background: var(--arka-plan); display: block; }
+        .toc-header { font-weight: bold; color: #fff; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--ana-renk); padding-bottom: 5px; }
+        .toc-list { list-style: none; padding: 0; }
+        .toc-list li { margin-bottom: 10px; }
+        .toc-list a { color: #888; text-decoration: none; font-size: 0.9rem; display: block; transition: 0.2s; }
+        .toc-list a:hover { color: var(--ana-renk); transform: translateX(5px); }
+
+        /* INFOBOX */
+        .infobox {
+            width: 100%;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header { background: var(--ana-renk); color: #000; text-align: center; padding: 15px; font-weight: bold; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 2px; }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 15px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 30%; vertical-align: top; }
+        .infobox-table td { padding: 15px; border-bottom: 1px solid #333; color: #ccc; }
+
+        /* RESPONSIVE */
+        @media (max-width: 1200px) { 
+            .toc-sidebar { display: none; } /* Küçük ekranda sağ menüyü gizle */
+            .container { justify-content: center; }
+        }
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .content { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details>
+                <summary>1. Kısım: Parçalanmış Taç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details open>
+                <summary>2. Kısım: Tiranların Çağı</summary>
+                <ul>
+                    <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
+                    <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
+                    <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi</a></li>
+                    <li><a href="iki-taht-bir-golge.html">➤ İki Taht, Bir Gölge</a></li>
+                    <li><a href="denoistos-los-aser.html">➤ General Denoistos Los Aser</a></li>
+                    <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
+                    <li><a href="lucian-baron-mhoore.html">➤ Lucian "Baron" Mhoore</a></li>
+                    <li><a href="zykrath-vhalgoroth-aser.html">➤ Kral Zykrath Vhalgoroth Aser</a></li>
+                    <li><a href="celestine-darvell.html">➤ Celestine D'Arvell</a></li>
+                    <li><a href="kutuphanedeki-sessiz-kanaat.html">➤ Belge: Sessiz Kanaat</a></li>
+                    <li><a href="stellan-korvath.html">➤ Stellan Korvath (Kuzeyin Mimarı)</a></li>
+                    <li><a href="kaelus-theron.html">➤ Lord Koruyucu Kaelus Theron</a></li>
+                    <li><a href="behemoth-yapilis-sureci.html">➤ Belge: Behemoth'un İnşası</a></li>
+                    <li><a href="aserwar-gedian.html">➤ Aserwar Gedian (Özet)</a></li>
+                    <li><a href="morvran-corvus.html">➤ General Morvran Corvus</a></li>
+                    <li><a href="silus-praxton.html">➤ Silus Praxton</a></li>
+                    <li><a href="sapan-disliler.html">➤ Hikaye: Sapan Dişliler</a></li>
+                </ul>
+            </details>
+            <details open>
+                <summary>Yaşam Öyküleri</summary>
+                <ul>
+                    <li><a href="aserwar-gedian-yasam-oykusu.html">➤ Aserwar Gedian: Yaşam Öyküsü</a></li>
+                    <li><a href="denoistos-los-aser-yasam-oykusu.html" class="active">➤ General Denoistos: Yaşam Öyküsü</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+            <h1>General Denoistos: İmparatorluğun Kasabı</h1>
+            
+            <div class="infobox">
+                <div class="infobox-header">KİMLİK KARTI</div>
+                <table class="infobox-table">
+                    <tr><th>Doğum:</th><td>M.Ö. 28 (Aserion)</td></tr>
+                    <tr><th>Ölüm:</th><td>M.S. 51 (Kuzey Ithran)</td></tr>
+                    <tr><th>Unvanlar:</th><td>İmparatorluğun Kasabı<br>I. Skarrgard Generali<br>Prens Komutan</td></tr>
+                    <tr><th>Eğitim:</th><td>Aserwar Kraliyet Savaş Okulu</td></tr>
+                    <tr><th>Özel Silah:</th><td>Ağır Çift El Kılıç</td></tr>
+                    <tr><th>Dönüm Noktası:</th><td>Kıyamet Suları Seferi</td></tr>
+                    <tr><th>Sonu:</th><td>Gecelerin Pelerini Suikastı</td></tr>
+                </table>
+            </div>
+
+            <h2 id="bolum1">Altın Kafes ve İlk İsyan</h2>
+            <p>
+                Denoistos on iki yaşındaydı ve dünya, odasının mazgallı penceresinden görünen gökyüzü kadar gri ve sınırlıydı. Aserion Sarayı'nın taş duvarları, atalarının zaferlerini ve Aser kanının kutsallığını anlatan solgun duvar halılarıyla kaplıydı. Ancak genç prens için bu halılar, birer onur nişanı değil, omuzlarına çöken asırların ağırlığıydı. Her koridor fısıltılarla, her oda ise beklentilerle doluydu. O, bir Aser'di. O, geleceğin liderlerinden biriydi. Ve bu, özgür olamayacağı anlamına geliyordu.
+            </p>
+            <p>
+                Özel ders odası, sarayın geri kalanı gibi görkemli ama bir o kadar da soğuktu. Yüksek tavanı, geçmiş kralların bakışlarını taklit eden grotesk taş oymalarla süslüydü. Denoistos, masif meşe masanın başında dimdik otururken, elleri dizlerinin üzerinde birleşmiş, bakışları ise hocası Üstat Valerius'un parşömenler arasında gezinen kemikli parmaklarındaydı. Üstat Valerius, damarlarında mürekkep aktığına inanılan, hanedanın yaşayan hafızasıydı. Sesi, kuru bir yaprağın hışırtısı gibiydi.
+            </p>
+            <p>
+                "Bir toprağı yönetmek," diye başladı Valerius, gözlerini parşömenden ayırmadan, "o toprağın halkını tanımakla başlar, Prens Denoistos. Ama tanımak, sevmek demek değildir. Tanımak, zayıflıklarını bilmek demektir." Denoistos sessiz kaldı. Bu derslerin kuralı buydu. Hoca konuşur, prens dinlerdi. Valerius, masanın üzerindeki AserLand haritasında kuzeybatıdaki o haşin, dağlık bölgeyi işaret etti. AserNorthia. "Mesela kuzeyliler," diye devam etti. "Sert mizaçlı, inatçı bir halktır. Soğuk ve verimsiz topraklar onları zayıf değil, aksine dayanıklı kılmıştır. Bu, bir yönetici için tehlikeli bir özelliktir."
+            </p>
+            <p>
+                Genç prensin zihninde, okuduğu kahramanlık destanlarındaki kuzeyli savaşçıların görüntüleri canlandı. Onlar her zaman Aser krallarının yanında, onurlu ve sadık müttefikler olarak tasvir edilirdi. Ama hocasının sesi, o destanları yalanlıyordu. "Onlara asla tam bir refah vermeyeceksin," dedi Valerius, sesi bir doktorun teşhis koyarkenki duygusuzluğuna bürünmüştü. "Karınları doyacak kadar, ama asla bir sonraki kışı garanti edecek kadar değil. Ambarları her zaman merkezden, yani Aserion'dan gelecek tahıla muhtaç kalmalıdır. Bağımlılık, sadakatin en sağlam zinciridir."
+            </p>
+            <p>
+                Denoistos'un midesinde soğuk bir düğüm oluştu. Bu, bir halkı yönetmek değil, bir hayvanı terbiye etmek gibiydi. "Ve onlara her zaman bir düşman vereceksin," diye ekledi Üstat. "Dışarıdaki yağmacıları, dağlardaki haydutları... Onlara, Aserion'un güçlü orduları olmadan ne kadar savunmasız olduklarını sürekli hatırlatacaksın. Korku, bağımlılıktan bile daha güçlü bir zincirdir. Unutma prens, AserNorthia'daki halk bir bahçe değildir ki sevgiyle büyüsün. Onlar, düzenli olarak budanması gereken, vahşi ve dikenli bir ormandır."
+            </p>
+            <p>
+                Dersin sonuna gelmişlerdi. Valerius, sonunda gözlerini Denoistos'a dikti. Tozlu, beklenti dolu bir bakıştı bu. "Anladın mı, prens? Kuzey'i yönetmenin sırrı nedir?" Denoistos bir an duraksadı. Gözlerini pencereye çevirdi. O gri gökyüzünün ardında, haritada gördüğü o dağların yükseldiğini hayal etti. Orada yaşayan, yüzlerini hiç görmediği, seslerini hiç duymadığı o "dikenli orman"ı düşündü. Onlar gerçekten böyle miydi? Yoksa sadece böyle görülmeleri mi isteniyordu? Bakışlarını yeniden hocasına çevirdi. Yüzünde, bir prensten beklenen o kusursuz, ifadesiz maske vardı. Sesi net ve soğuktu. "Anladım, üstat," dedi. "Kuzey'in sırrı, onların gücünü, onlara karşı kullanmaktır. Onları zayıf tutmak, aslında onları yönetilebilir kılmaktır."
+            </p>
+            <p>
+                Üstat Valerius, memnuniyetle başını salladı. Prens dersi anlamıştı. Ama anlamadığı bir şey vardı: Denoistos, o gün o dersten nefret etmişti. O altın kafesin içinde, kendi halkına karşı kurulacak bir tuzağın inceliklerini öğrenmek, ruhunda ilk derin yarayı açmıştı. Ve o yara, yıllar sonra bütün bir hanedanlığı kanatacak olan isyanın ilk tohumuydu.
+            </p>
+
+            <h2 id="bolum2">Kuzeyin Çağrısı ve Kurt Kalesi</h2>
+            <p>
+                Üstat Valerius'un dersinin üzerinden günler geçmiş, ancak kelimeleri genç prensin zihninde zehirli bir sarmaşık gibi dolanmaya devam etmişti. Denoistos, atalarının onurlu mirasının bu kadar soğuk ve hesapçı bir stratejiye indirgenmiş olmasını kabullenemiyordu. Bu düşüncelerle boğuşurken, ağabeyi Vorian ile yüzleşmeye karar verdi. Vorian, Denoistos'un on altı yaşındaki haliydi; daha uzun, daha geniş omuzlu ve şimdiden bir kralın kendinden emin duruşuna sahip. O, Aser hanedanının olması gereken her şeyi temsil ediyordu: Güçlü, kararlı ve pragmatik.
+            </p>
+            <p>
+                "Bir aslan, sürüsündeki ceylanları sevmek zorunda değildir," dedi Vorian, kardeşinin itirazlarına cevaben. "Biz aslanız. Onlar ise sürü. Bazen sürü, kendi iyiliği için neyin gerekli olduğunu anlamaz. İşte o zaman aslan, dişlerini göstermek zorunda kalır. Anlıyor musun?" Denoistos, ağabeyinin gözlerinin içine baktı. Orada ne bir kötülük ne de bir zalimlik gördü. Sadece, dört yüz yıllık bir hanedanlığın ruhuna işlediği, sarsılmaz ve soğuk bir mantık vardı. O an anladı ki, ağabeyi, hocasının söylediklerine sadece inanmıyor, aynı zamanda o inancın ta kendisiydi. "Hayır," diye fısıldadı. "Anlamıyorum. Ve sanırım hiçbir zaman da anlamayacağım."
+            </p>
+            <p>
+                Denoistos on altı yaşındaydı ve bir prens olarak babasının yanında, resmi kabullerde bulunma görevini yerine getiriyordu. O gün, kuzeyden bir heyet gelmişti. Heyetin lideri, adının Bjorn olduğunu öğrendiği yaşlı adam, titreyen ama onurlu bir sesle konuşmaya başladı. İsyan etmiyorlardı. Af dilemiyorlardı. Sadece adalet istiyorlardı. Ancak Kral, danışmanlarının ve Vorian'ın baskısıyla, heyeti reddetti. "Bu bir dilekçe değil, gizli bir tehdittir," dedi Üstat Valerius. Kral, muhafızlara işaret etti. "Bu adamların silahlarını alın. Dilekçeleri, ayaklarının dibine atılsın. Liderleri ise, krala karşı nifak tohumları ekme cüretinden dolayı zindana atılsın."
+            </p>
+            <p>
+                O gün, o taht odasında, onurlu bir adamın haksız yere sürüklenişini izlerken, Prens Denoistos öldü. O an sessizce bir yemin etti. Bu sarayda kalarak bu zulmün bir parçası olmayacaktı. Bu yaldızlı mezarda çürümeyecekti. O yaşlı adamın gözlerindeki sorunun cevabını bulmak için buradan gidecekti. Kuzeye gidecekti. O dikenli ormanın bir parçası olacaktı.
+            </p>
+            <p>
+                On sekizinci yaş gününden bir hafta sonra, bir prens için eşi benzeri görülmemiş bir cüretle, abisinden ve AserCouncil'den resmi bir görüşme talep etti. AserNorthia garnizonunun komutasını istedi. Konsey ilk başta reddetti, ama Denoistos zekice bir hamle yaptı. "O topraklarda bir Aser prensinin, bir komutanın varlığı, tacın gücünü ve otoritesini her gün onlara hatırlatacaktır," dedi. Vorian, kardeşini başkentten uzaklaştırma fikrini cazip buldu ve onay verdi. Denoistos kazanmıştı. İdealleriyle değil, ağabeyinin kibrini manipüle ederek istediğini almıştı.
+            </p>
+            <p>
+                Denoistos, Aserion'dan ayrılıp Kurt Kalesi'ne vardığında, gördüğü manzara sarayın zıttıydı. Burası, güzellik için değil, hayatta kalmak için inşa edilmiş bir kaleydi. Kalede, Yüzbaşı Torvin ile tanıştı. Torvin, dürüst bir adamdı. "Burada rütbenizden veya kanınızdan önce, yaklaşan kışa dayanıp dayanamayacağınızı görmek isterler, komutanım," dedi. "Kış, herkesi eşitler."
+            </p>
+            <p>
+                İlk sınavı, kış öncesi bir haydut saldırısı oldu. Bir tahıl kervanı pusuya düşürülmüştü. Denoistos, sarayın prosedürlerini reddetti ve bizzat peşlerine düştü. Yılan Geçidi'nin buz gibi yamaçlarında, haydutları bir pusuya düşürdü ve bizzat savaştı. Tahılı geri aldığında, adamlarının ve halkın saygısını kazandı. Denoistos, o an anladı. Kuzey'in buzdan duvarındaki ilk çatlağı açmıştı. Ve bunu kanının asaletiyle değil, kendi döktüğü ter ve kanla başarmıştı.
+            </p>
+
+            <h2 id="bolum3">Tiranın Yükselişi ve İttifak</h2>
+            <p>
+                O kış, öncekilerin hepsinden daha sert vurmuştu. Kurt Kalesi, haftalardır dinmeyen bir kar fırtınasının esiriydi. İşte tam o anda, gözcü kulesinden gelen borazan sesi, kalenin taş duvarlarında bir çığlık gibi yankılandı. Yarım saat sonra, kale kapıları gıcırdayarak açıldığında içeri giren şey bir insandan çok, bir buz heykeline benziyordu. Kraliyet postası olduğu anlaşılan adam, Denoistos'a bir parşömen uzattı. Haber korkunçtu: Kral Vorian ölmüştü. General Nevery Aserilios, bir darbe ile tahtı ele geçirmiş ve IV. Aserilios unvanını almıştı.
+            </p>
+            <p>
+                Denoistos, Nevery'i okuldan tanıyordu. Soğuk, hesapçı ve acımasızdı. "Bu darbe, sadece bir kralın değişmesi değil, Torvin," dedi Denoistos. "Bu, AserLand'in üzerine çökecek uzun, karanlık bir kışın başlangıcı." Nevery'nin ilk icraatı, kuzeye ağır vergiler getiren "Demir Vergi" oldu. Denoistos, vergi memuru Lord Corvin'e kafa tuttu ve zaman kazandırdı. Bu, açık bir isyan değildi ama bir boyun eğiş de değildi.
+            </p>
+            <p>
+                Bu belirsizlik ortamında, Yüzbaşı Torvin, Denoistos'a kasabada gizli bir matbaanın çalıştığını bildirdi. Denoistos, küçük bir birlikle baskın düzenledi. İçeride, komplo kuran hainler değil, harıl harıl çalışan devrimciler buldu. Odanın ortasında, gözlüklü bir adam duruyordu: Skarryion Damethsizi. Skarryion, Denoistos'a bir ittifak teklif etti. "Ben halkın ruhu olurum, siz ise yumruğu," dedi. Denoistos, o gece kararını verdi. Bir prens ve bir gazeteci, bir imparatorluğa meydan okuyacak o tehlikeli ittifakı sessizce mühürledi.
+            </p>
+            <p>
+                Denoistos, artık iki maske takmak zorundaydı. Gündüzleri Aserion'a sadık bir komutan, geceleri ise devrimin askeri lideriydi. Askerlerini eğitti, onlara Aserion ordusunun asla anlayamayacağı gerilla taktiklerini öğretti. "Size onlar gibi savaşmayı öğretmeyeceğim," dedi. "Çünkü onlar gibi savaşırsanız, ölürsünüz. Ben size, onları nasıl öldüreceğinizi öğreteceğim."
+            </p>
+            <p>
+                Beklenen gün geldi. Aserion'dan bir barış elçisi, Dunas Zia geldi. Denoistos, onu oyalasa da Zia, Skarryion'un dağlarda inşa ettiği devasa "Skarrgard Duvarı"nı gördü. Artık savaş kaçınılmazdı. Zia, Aserion'a dönerken, Denoistos ve Torvin, Skarryion'un yanına gittiler. Denoistos, hanedan hançerini haritaya sapladı. "Ben artık bir Aser prensi değilim," dedi. "Ben, Kuzey'in bir generaliyim."
+            </p>
+
+            <h2 id="bolum4">Bağımsızlık Savaşı ve Zafer</h2>
+            <p>
+                Denoistos, Skarryion'un topladığı gönüllüleri gerçek bir orduya dönüştürdü. Onlara dağları, vadileri ve kışı bir silah olarak kullanmayı öğretti. Aserion ordusu, devasa topları "Cañón de los Aseros" ile geldiğinde, Denoistos hazırdı. "O duvar bizim savunmamız değil, yemimiz," dedi.
+            </p>
+            <p>
+                Savaş dört gün sürdü. Denoistos, Aserion ordusunu dar vadilere çekti, ikmal hatlarını kesti ve onları parça parça yok etti. Nevery Aserilios, sabırsızlanarak ordusunu tuzağa sürdü. Denoistos, en seçkin birliğiyle Nevery'nin karargahına baskın düzenledi. İki eski okul arkadaşı, çamurun içinde savaştı. Denoistos kazandı. Nevery'i esir aldı ve Skarryion'un ayaklarına fırlattı.
+            </p>
+            <p>
+                Savaşın sona ermesiyle AserNorthia'nın dağlarında yankılanan zafer çığlıkları, yerini yeni bir ulusun doğum sancılarına bırakmıştı. IV. Aserilios'un esir alınmasıyla Aserion'un otoritesi bir anda buharlaşmış, Kurt Kalesi ve çevresi özgürlüğün kaotik ama umut dolu ilk günlerini yaşamaya başlamıştı. Kasabanın adı artık Kurt Kalesi değil, zaferin ve geleceğin simgesi olarak Damethia idi. Denoistos, "Genel Kuvvetlerin Generali" ilan edildi.
+            </p>
+
+            <h2 id="bolum5">Kıyamet Suları ve Kasabın Doğuşu</h2>
+            <p>
+                Zaferin üzerinden on iki yıl geçmişti. Barış, zordu ama gerçekti. Ancak güneydeki sahil kasabalarından, The Doom Waters'ın (Kıyamet Suları) puslu kıyılarından korkunç haberler gelmeye başladı. Yaratıklar saldırıyordu. Kral Skarryion, bu tehdide karşı orduya bizzat liderlik etmek istedi. Denoistos karşı çıksa da, Skarryion kararlıydı.
+            </p>
+            <p>
+                Haftalar sonra, tek bir atlı Damethia'ya ulaştı. Haber korkunçtu: Skarryion, askerlerini kurtarmak için yaptığı son bir saldırıda ölmüştü. Denoistos, bu haberi aldığında yıkıldı. Yas tutmadı; bilendi. "Bu kör bir canavar saldırısı değildi," dedi. "Birileri onları gönderdi." İntikam yemini etti.
+            </p>
+            <p>
+                Yeni Kral Eumandarg'ın emriyle, Denoistos büyük bir orduyla güneye indi. Bu bir savaş değil, bir imha seferiydi. The Doom Waters kıyılarını yaktı, yıktı ve canlı hiçbir şey bırakmadı.
+                
+                Denoistos, bu süreçte tamamen değişti. Geceleri uyumuyor, sadece denizin karanlık sularına bakarak nöbet tutuyordu. "Devrimcinin Kılıcı" o gün ölmüştü. Ve onun yerine, çok daha karanlık bir şey doğmuştu: İmparatorluğun Kasabı.
+            </p>
+            <p>
+                Damethia'ya döndüğünde, Eumandarg'ın da öldüğünü ve yerine oğlu, "toy" Kaelen'in geçtiğini öğrendi. Denoistos, yeni kralı zayıf ve yetersiz buluyordu. Kaelen, diplomasi ve barış istiyordu; Denoistos ise güç ve eylem.
+            </p>
+
+            <h2 id="bolum6">Aldewood Katliamı ve Kırılma</h2>
+            <p>
+                O kış, Skarrgard donuyordu. Odun yoktu. Kaelen, Batı AserLand'den yardım istedi ama cevap alamadı. Denoistos, konseyde isyan etti. "Diplomasi öldü," dedi. "Gidip alacağız." Kaelen, çaresizce sınırlı bir operasyona izin verdi. Sivillere dokunulmayacaktı.
+            </p>
+            <p>
+                Denoistos, ordusuyla Aldewood'a girdi. Başta sessizce odun topladılar. Ancak Denoistos, refah içindeki bir AserLand köyünü gördüğünde, içindeki nefret patladı. Halkı donarken, bu insanların sıcak evlerinde oturmasına dayanamadı. "O köyü yakacağız," emrini verdi. Yüzbaşı Torvin itiraz etse de, Denoistos durmadı. Köy yakıldı, yağmalandı.
+            </p>
+            <p>
+                Kral Kaelen haberi aldığında öfkeden deliye döndü. Denoistos'a derhal geri dönmesini emretti. Denoistos ilk başta reddetti, ancak Torvin onu stratejik bir intihar olacağı konusunda ikna etti. Geri döndüler. Ama artık kral ve general arasındaki bağ kopmuştu.
+            </p>
+
+            <h2 id="bolum7">Sonun Başlangıcı ve İhanet</h2>
+            <p>
+                Yirmi yıl süren "Uzun Kış" boyunca Denoistos, sarayda bir hayalet gibi yaşadı. M.S. 50'de, Aseria sınırında Skarrgardlı diplomatların öldürülmesi, bardağı taşıran son damla oldu. Kaelen savaş istedi, ama Denoistos onu "Gizli İşgal" planına ikna etti. Hedef, Aseria'nın kuzeyi, Ithran bölgesiydi.
+            </p>
+            <p>
+                Denoistos, ordusuyla sınırı geçtiğinde, artık emirleri dinlemiyordu. Oakhaven kasabasını yerle bir etti. Bu bir savaş değil, bir katliamdı. Kral Kaelen, bu vahşeti öğrendiğinde, Denoistos'u vatan haini ilan etti. Arkasından bir ordu gönderdi. Aynı anda, Aseria ordusu da doğudan geliyordu. Denoistos kapana kısılmıştı.
+            </p>
+            <p>
+                Denoistos, teslim olmayı reddetti. Ordusuna, Aseria ordusunun üzerine, Nehir Geçidi'ne yürüme emri verdi. "Hikayemiz, ateşin ve çeliğin içinde bitecek!" dedi. Bu, bir intihar yürüyüşüydü.
+            </p>
+
+            <h2 id="bolum8">Sessiz Ölüm</h2>
+            <p>
+                Kuzey Ithran'ın sisli ormanlarında ilerlerken, Denoistos ve ordusu görünmez bir düşmanla karşılaştı. Oklar değil, zehirli iğneler yağıyordu. Askerler sessizce yere yığılıyordu. Gecelerin Pelerini, Denge'yi bozan bu Kaos unsurunu avlamak için gelmişti.
+            </p>
+            <p>
+                Denoistos, son ana kadar savaştı. Ama karşısında bir ordu yoktu; gölgeler vardı. Pelerin üyeleri, onun kaba gücüne karşı dans eder gibi savaştılar. Sonunda, bacağına saplanan bir bıçakla diz çöktü. Pelerin lideri, ona son darbeyi indirdi. İmparatorluğun Kasabı, sessizce, bir savaş alanında değil, bir av sahasında can verdi.
+            </p>
+            <p>
+                Ertesi gün, Skarrgard ve Aseria orduları kanyona vardıklarında, sadece Denoistos'un ve ordusunun cesetlerini buldular. Yüzbaşı Torvin, hayatta kalan tek kişiydi. Denoistos'un naaşı Skarrgard'a getirildi ve sessiz bir törenle gömüldü. O, ülkesinin tarihinde hem en büyük kahraman hem de en büyük hain olarak, sonsuz bir tartışmanın merkezine oturdu.
+            </p>
+
+        </main>
+
+        <aside class="toc-sidebar">
+            <div class="toc-header">İÇİNDEKİLER</div>
+            <ul class="toc-list">
+                <li><a href="#bolum1">Bölüm 1: Altın Kafes</a></li>
+                <li><a href="#bolum2">Bölüm 2: Kuzeyin Çağrısı</a></li>
+                <li><a href="#bolum3">Bölüm 3: Tiranın Yükselişi</a></li>
+                <li><a href="#bolum4">Bölüm 4: Bağımsızlık Savaşı</a></li>
+                <li><a href="#bolum5">Bölüm 5: Kıyamet Suları</a></li>
+                <li><a href="#bolum6">Bölüm 6: Aldewood Katliamı</a></li>
+                <li><a href="#bolum7">Bölüm 7: Sonun Başlangıcı</a></li>
+                <li><a href="#bolum8">Bölüm 8: Sessiz Ölüm</a></li>
+            </ul>
+        </aside>
+    </div>
+
+</body>
+</html>
