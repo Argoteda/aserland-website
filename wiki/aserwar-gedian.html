@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aserwar Gedian (Suikastçı Mimar) | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 40px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.8rem; background: linear-gradient(90deg, #222, transparent); padding: 10px; border-radius: 0 5px 5px 0; }
+        .content h3 { color: var(--ana-renk); margin-top: 25px; font-size: 1.3rem; border-bottom: 1px dashed #333; padding-bottom: 5px; }
+        
+        /* LİSTELER */
+        .content ul { list-style: none; padding-left: 0; }
+        .content li { margin-bottom: 15px; padding-left: 20px; position: relative; }
+        .content li::before { content: '⚖️'; color: var(--ana-renk); font-weight: bold; position: absolute; left: 0; font-size: 0.8rem; top: 5px; }
+        .content li strong { color: var(--ana-renk); }
+
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 220px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details>
+                <summary>1. Kısım: Parçalanmış Taç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details open>
+                <summary>2. Kısım: Tiranların Çağı</summary>
+                <ul>
+                    <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
+                    <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
+                    <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
+                    <li><a href="iki-taht-bir-golge.html">➤ İki Taht, Bir Gölge</a></li>
+                    <li><a href="denoistos-los-aser.html">➤ General Denoistos Los Aser</a></li>
+                    <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
+                    <li><a href="lucian-baron-mhoore.html">➤ Lucian "Baron" Mhoore</a></li>
+                    <li><a href="zykrath-vhalgoroth-aser.html">➤ Kral Zykrath Vhalgoroth Aser</a></li>
+                    <li><a href="celestine-darvell.html">➤ Celestine D'Arvell</a></li>
+                    <li><a href="kutuphanedeki-sessiz-kanaat.html">➤ Belge: Kütüphanedeki Sessiz Kanaat</a></li>
+                    <li><a href="stellan-korvath.html">➤ Stellan Korvath (Kuzeyin Mimarı)</a></li>
+                    <li><a href="kaelus-theron.html">➤ Lord Koruyucu Kaelus Theron</a></li>
+                    <li><a href="behemoth-yapilis-sureci.html">➤ Belge: Behemoth'un İnşası</a></li>
+                    <li><a href="aserwar-gedian.html" class="active">➤ Aserwar Gedian (Suikastçı Mimar)</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Yaşam Öyküleri</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">ASERWAR GEDIAN</div>
+                <div class="infobox-image"><i class="fas fa-user-ninja" style="font-size:4rem;"></i></div>
+                <table class="infobox-table">
+                    <tr><th>Unvan:</th><td>Suikastçı Mimar<br>Dengenin Mimarı</td></tr>
+                    <tr><th>Yaşam:</th><td>M.S. 68 – M.S. 120</td></tr>
+                    <tr><th>Doğum Yeri:</th><td>Ithran / Aseria</td></tr>
+                    <tr><th>Eğitim:</th><td>Yatılı Savaş Okulu / Gecelerin Pelerini</td></tr>
+                    <tr><th>Görev Süresi:</th><td>M.S. 104 – M.S. 120 (16 Yıl)</td></tr>
+                    <tr><th>Selefi:</th><td>Lord Koruyucu Kaelus Theron</td></tr>
+                    <tr><th>Halefi:</th><td>AserCouncil (Kurumsal)</td></tr>
+                    <tr><th>Eseri:</th><td>AserCouncil<br>Ithran Bağımsızlığı</td></tr>
+                </table>
+            </div>
+
+            <h1>Aserwar Gedian: Suikastçı Mimar</h1>
+
+            <h2>Bölüm 1: İlk Yara (M.S. 68 - M.S. 78)</h2>
+            <p>
+                Onun bir adı yoktu. En azından, kimsenin hatırlamadığı bir adı vardı. Ithran'ın nemli ve sisli havasını ciğerlerine çektiği ilk günden itibaren, o sadece bir "çocuk"tu. Deltanın merkezine yakın, kanalların kıyısına kurulmuş küçük bir köyde doğdu. Babası, köyün berberiydi; keskin usturası ve daha keskin yargıları olan bir adam. Annesi ise Ithran belediyesinde, her gün sayısız evrakın arasında kaybolan sessiz bir görevliydi.
+            </p>
+            <p>
+                Çocuk, diğerleri gibi değildi. Kelimeler, ağzından 4 yaşına kadar dökülmedi. Ama gözleri, her zaman konuşuyordu. Sessizdi, ama bir gözlemciydi. Okuma-yazmayı, okula başlamadan çok önce, ona eski masal kitaplarını heceleten büyük kuzeni sayesinde öğrendiğinde, harfler onun ilk ve en sadık dostları oldu.
+            </p>
+            <p>
+                10 yaşındayken, hayatının akışını sonsuza dek değiştirecek o gün geldi. İki serseri tarafından dövüldü ve annesinin verdiği parayı çaldırdı. Ancak asıl yara, eve döndüğünde babasının gözlerindeki tiksintiyle açıldı. "Bu yediğin kaçıncı dayak lan!" diye bağıran babası, ona acımamış, onu aşağılamıştı. O gün anladı ki, dayak yemekten daha kötü bir şey vardı: Zayıflık. Ve o, bu suçu bir daha asla işlememeye yemin etti.
+            </p>
+
+            <h2>Bölüm 2: Sınırları Olmayan Savaşçı (M.S. 78 - M.S. 80)</h2>
+            <p>
+                Babası, onu kolundan tuttuğu gibi köyün dışına, dağların eteklerindeki tekinsiz bir yapıya sürükledi. "Eti senin kemiği benim," diyerek onu sert yüzlü bir hocaya teslim etti. İçeri ilk adımını attığında, buranın bildiği hiçbir yere benzemediğini anladı. Havadaki ter ve kan kokusu midesini bulandırdı.
+            </p>
+            <p>
+                Hocası onu "Ekipman Odası"na götürdü. Çocuğun gözü, diğerlerinin yanında neredeyse zayıf duran, ikonik bir silaha takıldı. Pürüzsüz ve siyah ahşaptan yapılmış, iki ucuna da hilal şeklinde, keskin bıçaklar takılmış düz bir sopa. Kaba kuvvetin değil, zarafetin silahıydı.
+                
+            </p>
+            <p>
+                Avluya çıktıklarında hocası, elindeki sopayı nasıl kullanacağına dair birkaç temel hareket gösterdi. O an, çocuğun kafasında üçüncü bir göz açılmış gibiydi. Dövüş sopasıyla savaşılmazdı; onunla dans edilirdi. Eğitimi o gün başladı. "Sınırları olmayan bir insan savaşçı olur!" diyen hocasının gözetiminde sopayı çevirmeyi, bir bumerang gibi fırlatıp geri çağırmayı öğrendi.
+            </p>
+            <p>
+                Bu acı dolu süreçte, kendisi gibi oraya atılmış diğer çocuklarla bir kardeşlik bağı kurdu: AserFire, AserIce, AserStick ve AserSpace. Üç aylık zorlu bir sürecin ardından, Aserwar artık o eski, çelimsiz çocuk değildi. Kursun sonunda hocası ona "Sopa Ustası" unvanını verdi.
+            </p>
+
+            <h2>Bölüm 3: Baron'un Gölgesi (M.S. 80 - M.S. 100)</h2>
+            <p>
+                Ithran'a döndüklerinde, Aserwar ve arkadaşları "Güneyin Hayaletleri" olarak anılmaya başladı. Geceleri çatılarda geziniyor, zorbalara kan kusturuyorlardı. Ancak zamanla grup dağıldı ve Aserwar yalnız kaldı. O artık Ithran'ın yeraltı dünyasında bir efsaneydi.
+            </p>
+            <p>
+                İşte tam o sıralarda, uyuşturucu baronu Lucian Mhoore onu fark etti. Bir tuzakla Aserwar'ı yakaladı ve ona bir teklif sundu: "Sende intikamdan daha fazlası var. Sende kâr potansiyeli var." Aserwar, içindeki idealist çocuğu gömerek işi kabul etti. Artık o, Baron'un gölgesi, kıtanın en tehlikeli kuryesiydi.
+            </p>
+
+            <h2>Bölüm 4: Küllerin Yemini (M.S. 100 - M.S. 103)</h2>
+            <p>
+                Yıllar sonra, Batı AserLand sınırlarında bir pusuya düştüğünde, onu kurtaranlar "Gecelerin Pelerini" oldu. Onu Fısıldayan Labirent'e götürdüler ve ona paradan daha büyük bir amaç sundular: Denge. Aserwar, Pelerin'in arasında dövüş sanatını bir felsefeye dönüştürdü. Ancak Kaelus'un "Gölgelerin Avı" başladığında, Pelerin'in pasifliği ile kendi ateşi çatıştı.
+            </p>
+            <p>
+                Kaelus, Proje Behemoth'u Ithran Deltası'na getirdiğinde kaçış yoktu. Ustası onu gizli bir tünele itti ve Aserwar, tünelin diğer ucundan çıktığında Behemoth'un ana topunun ateşlenişini izledi. Fısıldayan Labirent ve bildiği her şey buharlaştı. Camlaşmış bir kraterin kenarında tek başına kalan Aserwar, yemin etti. O, Denge'nin kendisi olacaktı. Bir bahçıvan değil, bir cellat.
+            </p>
+
+            <h2>Bölüm 5: Tiran'ın Hükmü (M.S. 103 - M.S. 104)</h2>
+            <p>
+                Aserwar Gedian, eski kardeşlerini (AserFire, Ice, Stick, Space) buldu ve yeni **AserCouncil**'i kurdu. İlk hedefleri Kaelus'tu. Onun rejimini içeriden çökerttikten sonra, tarihin en cüretkâr sızma operasyonunu başlattılar: Proje Behemoth'u içeriden fethetmek.
+            </p>
+            <p>
+                Makinenin kalbine ulaştıklarında, Aserwar ile Kaelus karşı karşıya geldi. Kaelus'un kaba gücü, Aserwar'ın hızı ve "dansı" karşısında çaresiz kaldı. Aserwar, Kaelus'un kılıcını kırdı ve onu esir aldı. Aserion meydanında, "Tiranlık, kendi varisini yaratır. Ama her zincir, bir gün kırılır," diyerek Kaelus'u idam etti. Behemoth Savaşları sona ermişti.
+            </p>
+
+            <h2>Bölüm 6: Dengenin Mimarı (M.S. 104 - M.S. 120)</h2>
+            <p>
+                Gedian'ın ilk emri, Behemoth'u yok etmek oldu. "Mutlak güç, sadece mutlak tiranlık doğurur," dedi. Makine söküldü, parçaları halka dağıtıldı. Ardından Aseria ve Skarrgard ile masaya oturarak barışı sağladı.
+            </p>
+            <p>
+                Gedian, bir dizi radikal reformla AserLand'i yeniden şekillendirdi:
+            </p>
+            <ul>
+                <li><strong>Teknoloji Bağımsızlığı Fermanı:</strong> TÖH özerk bir kurum oldu.</li>
+                <li><strong>"Aser" Kimliği:</strong> Kan bağı değil, liyakat ve hizmetle kazanılan bir unvan oldu.</li>
+                <li><strong>Ithran'ın Bağımsızlığı:</strong> Ithran, bağımsız bir şehir devleti oldu.</li>
+            </ul>
+            <p>
+                En büyük mirası ise AserCouncil'i anayasal bir kuruma dönüştürmesiydi. Yıllar sonra, M.S. 120'de, arkasında bir tiranın korku dolu mirasını değil, bir mimarın inşa ettiği dengeli bir düzeni bırakarak huzur içinde öldü.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
