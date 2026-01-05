@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellan Korvath (Kuzeyin Mimarı) | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 40px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.8rem; background: linear-gradient(90deg, #222, transparent); padding: 10px; border-radius: 0 5px 5px 0; }
+        .content h3 { color: var(--ana-renk); margin-top: 25px; font-size: 1.3rem; border-bottom: 1px dashed #333; padding-bottom: 5px; }
+        
+        /* LİSTELER */
+        .content ul { list-style: none; padding-left: 0; }
+        .content li { margin-bottom: 15px; padding-left: 20px; position: relative; }
+        .content li::before { content: '⚙️'; color: var(--ana-renk); font-weight: bold; position: absolute; left: 0; font-size: 0.8rem; top: 5px; }
+        .content li strong { color: var(--ana-renk); }
+
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 220px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details>
+                <summary>1. Kısım: Parçalanmış Taç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details open>
+                <summary>2. Kısım: Tiranların Çağı</summary>
+                <ul>
+                    <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
+                    <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
+                    <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
+                    <li><a href="iki-taht-bir-golge.html">➤ İki Taht, Bir Gölge</a></li>
+                    <li><a href="denoistos-los-aser.html">➤ General Denoistos Los Aser</a></li>
+                    <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
+                    <li><a href="lucian-baron-mhoore.html">➤ Lucian "Baron" Mhoore</a></li>
+                    <li><a href="zykrath-vhalgoroth-aser.html">➤ Kral Zykrath Vhalgoroth Aser</a></li>
+                    <li><a href="stellan-korvath.html" class="active">➤ Stellan Korvath (Kuzeyin Mimarı)</a></li>
+                    <li><a href="kutuphanedeki-sessiz-kanaat.html">➤ Belge: Kütüphanedeki Sessiz Kanaat</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Yaşam Öyküleri</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">STELLAN KORVATH</div>
+                <div class="infobox-image"><i class="fas fa-drafting-compass" style="font-size:4rem;"></i></div>
+                <table class="infobox-table">
+                    <tr><th>Unvan:</th><td>SRC İlk Başbakanı<br>Kuzeyin Mimarı</td></tr>
+                    <tr><th>Yaşam:</th><td>M.S. 75 – M.S. 121</td></tr>
+                    <tr><th>Doğum Yeri:</th><td>Damethia / Skarrgard</td></tr>
+                    <tr><th>Görev Süresi:</th><td>M.S. 100 – M.S. 121 (21 Yıl)</td></tr>
+                    <tr><th>Selefi:</th><td>Kral Kaelen Damethsizi</td></tr>
+                    <tr><th>Halefi:</th><td>Başbakan Soren Valerius</td></tr>
+                    <tr><th>Önemli Eylemler:</th><td>Üçlü Pakt<br>Demir Hükümet<br>Kuzey Ambargosu</td></tr>
+                </table>
+            </div>
+
+            <h1>Stellan Korvath: Kuzeyin Mimarı</h1>
+
+            <h2>1. Buzdan Doğan Ateş ve Uzun Kış'ın Son Çocukları (M.S. 75 – M.S. 100)</h2>
+            <p>
+                Stellan Korvath, M.S. 75 yılında, Skarrgard’ın başkenti Damethia’nın (eski Kurt Kalesi) surları içinde, sert bir kış sabahında dünyaya geldi. Damarlarında Aser hanedanının ya da Damethsizi soyunun asil kanı dolaşmıyordu; o, Skarrgard devriminin "halktan" gelen çocuklarından biriydi. Ailesi, Kral Eumandarg döneminde kurulan bürokrasi çarklarında çalışan, orta halli devlet memurlarıydı. Stellan’ın çocukluğu, Kral III. Kaelen Damethsizi’nin "Uzun Kış" (Long Winter) olarak adlandırdığı, 50 yıl süren mutlak izolasyon ve tarafsızlık döneminin tam ortasında geçti.
+            </p>
+            <p>
+                Gençliğinde, Kaelen’in kurduğu liyakate dayalı askeri akademilerin en iyisi olan “Damethia Liyakat, Askeriye ve Devlet Yönetimi Baş Okulu”nda eğitim gördü. Strateji derslerinde parlak zekasıyla dikkat çekti ve Kral Kaelen’in kişisel strateji ekibine dahil edildi. Kaelen ile Stellan arasındaki ilişki, usta ile çırak ilişkisinden çok, fren ile gaz pedalı arasındaki gerilime benziyordu.
+            </p>
+            <p>
+                M.S. 100 yılında Kaelen Damethsizi’nin ölümüyle birlikte, Kaelen’in yıllar önce tasarladığı yeni yönetim sistemi devreye girdi. Monarşi, yetkilerini "Skarrgard Devrim Konseyi"ne (SRC) devretti. Gözler, stratejik zekası ve hırsıyla bilinen Stellan’a çevrildi ve oylama sonucunda Stellan Korvath, Skarrgard Devrim Konseyi’nin ilk "Başbakanı" seçildi. Stellan'ın ilk emri şuydu: "Gözlem devri bitti. Skarrgard artık sadece izlemeyecek, tarihe yön verecek."
+            </p>
+
+            <h2>2. Güneye Yürüyüş ve Metal Dağın Gölgesi (M.S. 100 – M.S. 103)</h2>
+            <p>
+                Stellan'ın stratejisi basitti: Güneydeki Batı AserLand, generaller Kaelus ve Morvran arasındaki kanlı iç savaşla paramparça olmuştu. Stellan, konseye sunduğu planda, "Güney kanarken, biz damarlarını keseceğiz," demişti. İşgal, bir yıldırım hızıyla başladı. Skarrgard ordusu, direnişle karşılaşmadan sınırı geçti. M.S. 102 yılına gelindiğinde, Skarrgard ordusu Batı AserLand'in içlerine kadar girmişti.
+            </p>
+            <p>
+                Ancak M.S. 103 yılının baharında, Skarrgard ordusu güneye doğru son bir hamle yapmaya hazırlanırken, ufukta garip bir silüet belirdi. Karşılarında bir ordu değil, yürüyen bir metal dağ vardı:  **Proje Behemoth**. Lord Koruyucu Kaelus, iç savaşı kazandıktan sonra ordusunu dinlendirmemiş, ele geçirdiği bu devasa savaş makinesini kuzey sınırına sürmüştü.
+            </p>
+            <p>
+                Stellan Korvath, hayatının en zor anını o gün yaşadı. Kaelen'in "Demir yığınına ilk atlayan siz olmayın" uyarısı zihninde yankılandı. Stellan, Kaelen'in öğrencisi olduğunu o an kanıtladı. Kaelus'un elçileriyle bir çadırda buluştu ve aşağılayıcı ama yok olmaktan kurtaran bir barış antlaşması imzaladı. Skarrgard ordusu, Behemoth'un gölgesinde sessizce geri çekildi.
+            </p>
+
+            <h2>3. Tiranın Çöküşü ve Üçlü Pakt Masası (M.S. 103 – M.S. 104)</h2>
+            <p>
+                M.S. 104 yılının başlarında, Lord Koruyucu Kaelus düşmüştü. Aserion meydanında idam edilmişti. Onu deviren kişi Aserwar Gedian'dı. Gedian'ın hamlesi, Stellan'ın tüm askeri hesaplarını altüst etti. Güneyden gelen elçiler, bir savaş ilanı değil, akıl almaz bir haber getirdiler: "Proje Behemoth imha ediliyor."
+            </p>
+            <p>
+                Kısa süre sonra, Gedian'dan resmi bir davet geldi. Barış görüşmeleri için Ithran'a çağrılıyordu. Masada sadece Batı AserLand değil, Aseria'nın Baş Konsülü Silus Praxton da olacaktı. M.S. 104 yılında, **Üçlü Pakt (Tripartite Pact)** imzalandı. Bu anlaşma ile:
+            </p>
+            <ul>
+                <li>Yıllardır süren düşmanlıklar ve "Sessizlik Duvarı" resmen sona erdi.</li>
+                <li>Ticaret yolları yeniden açıldı.</li>
+                <li>En önemlisi: Stellan Korvath, savaş meydanında kazanamadığı zaferi diplomasi masasında kazandı. Skarrgard'ın sınırları güneye doğru genişlemiş ve bu genişleme uluslararası hukukla tanınmıştı.</li>
+            </ul>
+
+            <h2>4. Barışın İnşası ve Demir Hükümet (M.S. 104 – M.S. 110)</h2>
+            <p>
+                Paktın mürekkebi henüz kurumadan, Stellan Korvath, Skarrgard'ın iç yapısını dönüştürecek radikal bir reform sürecine girişti. Stellan, Skarrgard Devrim Konseyi'ni (SRC) topladı ve "Demir Hükümet" (Iron Government) doktrinini ilan etti.
+            </p>
+            <ul>
+                <li><strong>Ekonomik Entegrasyon:</strong> "Kuzey Ticaret Loncası"nı kurdu ve bu loncayı doğrudan kendisine bağladı. Artık her kervan, her gemi ve her altın, Stellan'ın onayından geçiyordu.</li>
+                <li><strong>İç Muhalefetin Bastırılması:</strong> "Barışın bedeli disiplindir," diyerek, kendisine muhalif olan generalleri emekliye ayırdı veya uzak garnizonlara sürdü.</li>
+                <li><strong>Teknolojik Sıçrama:</strong> Batı AserLand'den TÖH (Teknoloji Özgürlüğü Hareketi) ile yakın ilişkiler kurdu. Damethia'nın surları güçlendirildi, maden ocaklarında verimlilik arttı.</li>
+            </ul>
+
+            <h2>5. Kuzeyin Huzursuzluğu ve Metalin Yorgunluğu (M.S. 110 – M.S. 115)</h2>
+            <p>
+                M.S. 110 yılına gelindiğinde, Stellan Korvath'ın "Demir Hükümeti", Damethia ve güney sınırındaki ilhak edilmiş bölgelerde tartışılmaz bir otorite kurmuştu. Ancak başkent Damethia'nın bu hızlı modernleşmesi, ülkenin köklerini oluşturan derin kuzey bölgelerinde, sessiz ama tehlikeli bir öfkenin birikmesine neden oluyordu.
+            </p>
+            <p>
+                Huzursuzluk, M.S. 112 yılında, Skarrgard'ın en eski demir madenlerinden biri olan "Eski Ocak"ta patlak verdi. Madenciler, Stellan'ın emriyle getirilen yeni buharlı kazı makinelerini kullanmayı reddettiler. Stellan'ın cevabı acımasızdı: "Buzdan Ambargo". Kuzey bölgelerine giden tahıl, kumaş ve yakıt sevkiyatını kesti. İsyan bir yıl içinde kırıldı ama Stellan halkın sevgisini kaybetti.
+            </p>
+
+            <h2>6. Varis Sorunu ve Paslanan İktidar (M.S. 115 – M.S. 120)</h2>
+            <p>
+                M.S. 118 yılında güneyden gelen bir haber, Stellan’ı derinden sarstı: Aseria’nın Baş Konsülü ve "Üçlü Pakt"ın mimarlarından Silus Praxton, tüberkülozdan ölmüştü. Praxton’un ölümü, Stellan’a kendi ölümlülüğünü hatırlattı. Stellan, bir halef belirlemek zorundaydı. Ancak önündeki seçenekler, ülkenin bölünmüşlüğünü yansıtıyordu:
+            </p>
+            <ul>
+                <li><strong>Güneyin Adayı:</strong> Bürokrat Valerius (Ekonomi ve diplomasi yanlısı).</li>
+                <li><strong>Ordunun Adayı:</strong> General Korg (Sert, askeri vizyon).</li>
+            </ul>
+            <p>
+                Stellan biliyordu ki, Valerius'u seçerse ordu darbe yapabilir; Korg'u seçerse zaten barut fıçısı olan Kuzey bölgeleri tamamen kopabilirdi.
+            </p>
+
+            <h2>7. Son Nefes ve Kırık Çarklar (M.S. 120 – M.S. 121)</h2>
+            <p>
+                M.S. 120 yılının sonlarına doğru, Stellan Korvath ölüm döşeğindeydi. Son bir irade gösterisiyle, titreyen elini kaldırdı ve SRC’nin kâtibini yanına çağırdı. "Mühür..." diye hırıldadı. "Mührü Valerius'a verin. Skarrgard kılıçla kuruldu ama... ancak kalemle yaşayabilir."
+            </p>
+            <p>
+                Stellan can çekişirken, güneyden Aserwar Gedian'ın öldüğü haberi geldi. "Biz..." diye fısıldadı, "...biz fırtınayı şişeye hapsetmiştik. Şimdi şişe kırılıyor."
+            </p>
+            <p>
+                M.S. 121 yılının ilk günlerinde, Stellan Korvath son nefesini verdi. Stellan Korvath, güçlü bir Skarrgard inşa etmişti ama temellerine kendi hırsının çatlaklarını ekmişti. Arkasında bıraktığı şey, muazzam bir zenginlik, güçlü bir ordu ve patlamaya hazır, bölünmüş bir ulustu. Skarrgard’ın "Altın Çağı" bitmiş, belirsizlik çağı başlamıştı.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
