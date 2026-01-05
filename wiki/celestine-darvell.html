@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestine D'Arvell | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 40px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.8rem; background: linear-gradient(90deg, #222, transparent); padding: 10px; border-radius: 0 5px 5px 0; }
+        
+        /* LİSTELER */
+        .content ul { list-style: none; padding-left: 0; }
+        .content li { margin-bottom: 15px; padding-left: 20px; position: relative; }
+        .content li::before { content: '🎼'; color: var(--ana-renk); font-weight: bold; position: absolute; left: 0; font-size: 0.8rem; top: 5px; }
+        .content li strong { color: var(--ana-renk); }
+
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 220px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details>
+                <summary>1. Kısım: Parçalanmış Taç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details open>
+                <summary>2. Kısım: Tiranların Çağı</summary>
+                <ul>
+                    <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
+                    <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
+                    <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
+                    <li><a href="iki-taht-bir-golge.html">➤ İki Taht, Bir Gölge</a></li>
+                    <li><a href="denoistos-los-aser.html">➤ General Denoistos Los Aser</a></li>
+                    <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
+                    <li><a href="lucian-baron-mhoore.html">➤ Lucian "Baron" Mhoore</a></li>
+                    <li><a href="zykrath-vhalgoroth-aser.html">➤ Kral Zykrath Vhalgoroth Aser</a></li>
+                    <li><a href="celestine-darvell.html" class="active">➤ Celestine D'Arvell</a></li>
+                    <li><a href="kutuphanedeki-sessiz-kanaat.html">➤ Belge: Kütüphanedeki Sessiz Kanaat</a></li>
+                    <li><a href="stellan-korvath.html">➤ Stellan Korvath (Kuzeyin Mimarı)</a></li>
+                    <li><a href="kaelus-theron.html">➤ Lord Koruyucu Kaelus Theron</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Yaşam Öyküleri</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">CELESTINE D'ARVELL</div>
+                <div class="infobox-image"><i class="fas fa-music" style="font-size:4rem;"></i></div>
+                <table class="infobox-table">
+                    <tr><th>Unvan:</th><td>II. Aseria Lideri<br>Mutlak Olanın Yankısı</td></tr>
+                    <tr><th>Yaşam:</th><td>M.S. 3 – M.S. 69</td></tr>
+                    <tr><th>Doğum Yeri:</th><td>Skinnyleg / Aseria</td></tr>
+                    <tr><th>Ölüm Yeri:</th><td>Supremia (Aseria)</td></tr>
+                    <tr><th>Ölüm Nedeni:</th><td>Yaşlılık</td></tr>
+                    <tr><th>Eğitim:</th><td>Skinnyleg Müzik Okulu</td></tr>
+                    <tr><th>Görev Süresi:</th><td>M.S. 37 – M.S. 69 (32 Yıl)</td></tr>
+                    <tr><th>Selefi:</th><td>Madam Elena Von Cortex</td></tr>
+                    <tr><th>Halefi:</th><td>ASC (Aserian Supreme Council)</td></tr>
+                </table>
+            </div>
+
+            <h1>Celestine D'Arvell: Mutlak Olanın Yankısı</h1>
+
+            <p>
+                M.S. 3 yılının sonbaharında, Skinnyleg’in kuzeyinde, Doğu AserLand taşrasında haritalarda yeri dahi işaretlenmeyen bir köyde bir kız çocuğu doğdu. Ne doğumu müjdelenmişti, ne de soyuna şarkılar söylenmişti. Fakat herkes şunu fark etti: bu çocuk ağlamıyordu.
+            </p>
+            <p>
+                Celestine adını ona annesi koydu. Tılsımlı ya da kutsal bir anlamı yoktu bu adın. Sadece sertti. Tek hecelik bir balta darbesi gibi iniyordu insanın dilinden. “Ce-les-tine.” Üç parçalı, ama bütün bir yargı gibi.
+            </p>
+            <p>
+                Henüz bebekken bile gözleri hep açıktı. Gece karanlığına alışacak sabrı vardı; sessizliğin içinden ses çekmeyi öğrenmiş gibiydi. Komşular “diğer bebekler ağlardı, bu sadece bakar” derdi. Kimi korkar, kimi hayran kalırdı. Ama herkes bir şekilde ona dikkat ederdi. Çocukluğu boyunca diğer çocuklarla oynamaz, kendi dünyasında devlet kurardı. Düzensiz taşları bir araya dizer, onları “asker”, “vergi görevlisi”, “emir subayı” olarak adlandırırdı. Oyun bitmeden herkesin dizilişi eksiksiz olmak zorundaydı. Bir taş yanlış yerleştirilirse, oyun yıkılır, yeniden başlanırdı—tıpkı ileride ülkenin yönetimi gibi.
+            </p>
+
+            <h2>Müzik ve Sessiz Yükseliş</h2>
+            <p>
+                İlkokul düzey eğitimi almak üzere Doğu AserLand’ın merkezine gönderildiğinde öğretmenlerinden birinin annesine verdiği notta: “Sorular sormuyor; yanıtları kendi içinde ölçüp biçiyor.” yazıyordu. Celestine hiçbir zaman zeki olmak için kütüphaneye gidip harıl harıl ders çalışanlardan olmadı. Bilgi onun için bir araçtı, amaç değil.
+            </p>
+            <p>
+                Henüz daha gençken verilen iktisadi ve siyasi eğitimlerin yetersizliğini farkederek kendisini müziğe verdi. İlk başta her ne kadar haz etmese de Skarrgard’da o dönemde hüküm süren Eumandarg Damethsizi, sanatçıları kendi ülkesine davet ediyor ve onları finanse ediyordu. Ancak Celestine’in başvurusu, Skarrgard’ın Doğu AserLand’ın bir siyasi hamlesi olarak kabul gören The Doom Waters yaratıklarının kuzeybatı bölgesine salınması olayının daha çok taze olmasından ötürü çok ağır ithamlar ile reddedildi. Celestine’in dünyası bir anda başına yıkıldı. Ancak annesi dişini tırnağına katarak onu civarın en iyi müzik okulu olan Skinnyleg Müzik Okulu’na yazdırdı. Orada aldığı eğitimler ile okulunu birincilik ile bitirdi.
+            </p>
+            <p>
+                Celestine, Madam Maria Von Cortex’in “Unyielding Dawn of Freedom” adlı tema müziğini bizzat kendisi yaptı. Daha sonrasında başa geçtiğinde ise üstünde onca mesuliyet olmasına rağmen kendi adına olan müziklerini de yapmıştı. Kendisine ise tarihlerinin ilk kayıtlı müzisyeni olan Eldorin Valtas Aser’i örnek alıyordu.
+            </p>
+            <p>
+                Celestine’in kamuoyu tarafından tanınması çok sonradan olacaktı ama EASC’nin içi, onun varlığını çok önceden hissetmeye başlamıştı. Siyaset koridorlarında adı geçmeyen ama önerileri sızdırılan bir figürdü. Konsey üyelerinin not defterlerinde “C.D.” harfleri sık sık görülürdü—bir isim değil, bir kanaat gibiydi o zamanlar.
+            </p>
+
+            <h2>Aseria'nın Doğuşu ve Düzen</h2>
+            <p>
+                M.S. 37'nin yazında, devletin kalbindeki o yorgun salonlarda Celestine D’Arvell, konseyi feshederek hükümdarlık merdiveninin ilk basamağına adım atmıştı. Sessizce, çığlık atmadan, kılıç çekmeden. Ama o adım, Doğu AserLand’ın kader haritasını yeniden çizecekti. “Karar tek ağızdan çıkmadığı sürece, sorumluluk hiçbir ağıza yüklenemez,” dedi. Bu söz, Aser topraklarında yankılandı. Celestine, tartışma değil düzen istiyordu.
+            </p>
+            <p>
+                Aynı yıl içinde, çok daha sembolik ama belki de daha büyük bir adım geldi: ülkenin adı değiştirildi. “Doğu AserLand”, artık yoktu. Artık dünya haritalarında “Aseria” yazıyordu. Aseria’nın bağımsızlığının pekiştirilmesi ve sembolize edilmesi için bizzat Celestine, “Echoes of Democracy” adındaki parçayı besteledi ve ülkenin marşı olarak ilan etti.
+            </p>
+            <p>
+                Bir devletin yalnızlaşması, çoğu zaman çöküşle özdeşleştirilir. Celestine içinse yalnızlık, temizlikti. M.S. 39’da aldığı ani kararla Skarrgard ile tüm ekonomik ilişkileri kesti. Bu hamlesi vaktinde Skarrgard’a başvurusunun reddedilmesine ithafendi. Ticarete dair anlaşmalar feshedildi, diplomatik heyet geri çağrıldı. Limanlar suskunlaştı ama ticarete bağlı iç üretim zorluklara rağmen yeniden doğdu.
+            </p>
+
+            <h2>Kuzeyin İhlali ve Görünmez El</h2>
+            <p>
+                M.S 50’de Skarrgard; artık Aseria ile yapılmayan ticaretten rahatsız olduğunu belirterek Aseria’ya diplomatik bir elçi gönderdi. Ancak Celestine’in radikal emirleri sonucu sınır muhafızları elçiyi öldürdü. Bu olay, General Denoistos'un "Gizli İşgal" planını devreye sokmasına neden oldu.
+            </p>
+            <p>
+                Aseria’nın kuzeyinde bulunan Ithran şehrinin kuzey koridoru bağlantı yolunda Denoistos, şehre doğru hareketine başlamış ve yolundaki kasabaları ise yağmalamaktaydı. Celestine bu haberi alır almaz kendisine yakışmayan bir şekilde panik yaptı ancak panik yaptığını kimseye belli etmek istemedi. Hemen merkezi ordu hazırlamaya başlandı.
+            </p>
+            <p>
+                Tüm bunlar yaşanırken, III. Damethsizi’den gelen bir not Celestine’in eline ulaşmıştı: “General Denoistos’un sizin sınırlarınızı tecavüz etmesi tamamen kendi iradesi altında gerçekleşmekte olan bir hadisedir... Denoistos resmi olarak yozlaştığını bu eylemi ile kanıtlamıştır.”
+            </p>
+            <p>
+                Bu mektup ile Celestine hem rahatlamıştı hem de biraz daha radikalleşmişti. Aseria ordusu, Kuzey Ithran’a vardığında Denoistos, yağmasını yapmış ancak kendisi ve ordusu gizemli bir şekilde öldürülmüştü. Celestine hiçbir çaba sarf etmeden bu belayı atlatmıştı.
+            </p>
+
+            <h2>Sessiz Veda</h2>
+            <p>
+                Celestine yaş aldıkça sesini daha az kullanmaya başladı; çünkü artık onun adına konuşan bir sistem vardı. Aseria, onun vizyonuna göre döşenmiş bir makineydi: çarkları katıydı ama tıkır tıkır işlerdi. O yıllarda artık bir karar mercîinden çok bir sembole dönüşmüştü.
+            </p>
+            <p>
+                Celestine D’Arvell, M.S. 69 yılında sabaha karşı odasında, yalnız ama eksiksiz bir sessizlik içinde hayata gözlerini yumdu. Öldüğü gün ülke çapında hiçbir duyuru yapılmadı. Çünkü Celestine'in inandığı şey şuydu: “Bir sistem, kurucusunun ölümüyle sarsılıyorsa, henüz kurulmamıştır.”
+            </p>
+            <p>
+                Ama halk şunu biliyordu: Celestine gitmişti. Ama o gitmiş olsa da Aseria hâlâ onun düzeninde nefes almaya devam ediyordu.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
