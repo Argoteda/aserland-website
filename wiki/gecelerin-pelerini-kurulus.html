@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gecelerin Pelerini: Kuruluş ve Felsefe | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 40px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.8rem; background: linear-gradient(90deg, #222, transparent); padding: 10px; border-radius: 0 5px 5px 0; }
+        .content h3 { color: var(--ana-renk); margin-top: 25px; font-size: 1.3rem; border-bottom: 1px dashed #333; padding-bottom: 5px; }
+
+        /* LİSTELER */
+        .content ul { list-style: none; padding-left: 0; }
+        .content li { margin-bottom: 15px; padding-left: 20px; position: relative; }
+        .content li::before { content: '🌑'; color: var(--ana-renk); font-weight: bold; position: absolute; left: 0; font-size: 0.8rem; top: 5px; }
+        .content li strong { color: var(--ana-renk); }
+
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 220px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details>
+                <summary>1. Kısım: Parçalanmış Taç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details open>
+                <summary>2. Kısım: Tiranların Çağı</summary>
+                <ul>
+                    <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
+                    <li><a href="gecelerin-pelerini-kurulus.html" class="active">➤ Gecelerin Pelerini: Kuruluş</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Yaşam Öyküleri</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">GECELERİN PELERİNİ</div>
+                <div class="infobox-image"><i class="fas fa-moon" style="font-size:4rem;"></i></div>
+                <table class="infobox-table">
+                    <tr><th>Kuruluş:</th><td>M.Ö. 400'lü Yıllar</td></tr>
+                    <tr><th>Köken:</th><td>Ithran Deltası / Fısıldayan Labirent</td></tr>
+                    <tr><th>Kurucu:</th><td>İsimsiz Aser Soylusu</td></tr>
+                    <tr><th>Felsefe:</th><td>Denge (Kaos vs Tiranlık)</td></tr>
+                    <tr><th>Türü:</th><td>İstihbarat, Arşiv ve Suikast Örgütü</td></tr>
+                    <tr><th>Durum:</th><td>Yüzyıllarca Gizli (Aktif)</td></tr>
+                    <tr><th>Dönüm Noktası:</th><td>IV. Aserilios Dönemi (Aktif Müdahale)</td></tr>
+                </table>
+            </div>
+
+            <h1>Gecelerin Pelerini: Kuruluş ve Felsefe</h1>
+
+            <h2>Bölüm 1: İlk Gölgenin Kaçışı</h2>
+            <p>
+                Gecelerin Pelerini'nin tohumları, M.Ö 400’lü yıllarda AserLand'in krallıklar ve kahramanlarla anıldığı parlak çağlarda değil, tarihin en kanlı ve en kaotik dönemlerinden birinde atıldı. Aser ve Asrier hanedanlarının ülkeyi bir uçtan bir uca yakan bitmek bilmez savaşları sırasında, Aser hanedanlığının sayısız kolundan birine mensup, adı tarihin tozlu sayfalarında kasıtlı olarak silinmiş genç bir soylu, gördüğü vahşetten ve anlamsız güç arzusundan tiksinerek her şeyini geride bıraktı.
+            </p>
+            <p>
+                Bu isimsiz adam, ne bir savaşçı ne de bir liderdi. O bir alim, bir vakanüvisti (tarih yazıcısı). Ailesinin ve düşmanlarının, kendi zaferlerini haklı çıkarmak için tarihi nasıl eğip büktüğünü, yalanları nasıl gerçek gibi dokuduğunu ve bu yalanlar uğruna binlerce masumun nasıl öldüğünü görmüştü. Onun için en büyük günah, bir insanı öldürmek değil, gerçeği öldürmekti. Bu yüzden kaçtı. Adını, unvanını, armasını ve geçmişini Aser kalesinin duvarları ardında bırakarak, medeniyetin ulaşamadığı, haritaların son bulduğu bir yere doğru yola çıktı.
+            </p>
+            <p>
+                Yolculuğu onu, AserLand'in geri kalanının unuttuğu, sislerle örtülü, sayısız kanal ve adacıktan oluşan Ithran Deltası'na getirdi. Burası, ne Aser ne de Asrier ordularının kontrol etmeye tenezzül ettiği, kendi kuralları ve kendi kadim yaşam biçimi olan bir yerdi. Deltanın labirentimsi su yollarında, dış dünyadan izole yaşayan, kendilerine "Su Halkı" diyen küçük bir toplulukla karşılaştı. Onlar için tarih, kitaplara yazılan zaferler değil, nesilden nesile aktarılan fısıltılar, suyun ve rüzgarın anlattığı hikayelerdi.
+            </p>
+            <p>
+                İsimsiz Aser soylusu, aradığı sığınağı bulmuştu. Su Halkı'nın arasında yaşamaya başladı ve hayatının geri kalanını tek bir amaca adadı: AserLand'in "gerçek" tarihini yazmak. Kralların propagandalarından arınmış, hem Aser'in hem de Asrier'in zulmünü, kahramanlıklarını, zaferlerini ve yenilgilerini olduğu gibi kaydeden bir arşiv oluşturmaya başladı. O, bir suikastçı birliği değil, gerçeğin ve hafızanın son kalesini inşa ediyordu. Amacı öldürmek değil, unutulmamasını sağlamaktı.
+            </p>
+            <p>
+                Ancak zamanla etrafına, onun gibi savaşlardan ve yalanlardan kaçan başkaları da toplanmaya başladı. Ordudan kaçan askerler, kütüphaneleri yakılan alimler, aileleri katledilen köylüler, unvanları elinden alınan küçük soylular... Hepsi, isimsiz alimin Ithran'daki saklı sığınağında bir araya geldi. Bu farklı insanlar, onun başlattığı arşiv çalışmasına yardım ederken, yavaş yavaş basit bir topluluktan daha fazlasına dönüştüler. Onlar, tarihin sadece kaydedilmekle kalmayıp, bazen korunması da gerektiğini anlayanlardı. Ve korumanın, bazen müdahale etmeyi gerektirdiğini…
+            </p>
+
+            <h2>Bölüm 2: Yeminin Edilmesi ve Felsefenin Doğuşu</h2>
+            <p>
+                Ithran Deltası'ndaki sığınak, artık sadece bir arşiv değil, aynı zamanda AserLand'in kanlı tarihinden damıtılmış bir felsefenin de doğum yeriydi. İsimsiz kurucu ve etrafındakiler, binlerce parşömeni dolduran savaşları, ihanetleri, tiranlıkları ve devrimleri incelerken, acı bir gerçeği fark ettiler: Tarih tekerrürden ibaretti. Güç, sürekli olarak iki tehlikeli uç arasında gidip geliyordu. Bu kavrayış, onların manifestosunu ve varoluş amacını oluşturdu: Denge Felsefesi.
+            </p>
+            <p>
+                Onlara göre AserLand'in tarihi, devasa bir sarkacın salınımından ibaretti. Bu sarkacın bir ucunda, daha sonrasında Aserilios hanedanlığının da katıldığı Aser ve Asrier hanedanlarının temsil ettiği, soylu ailelerin bitmek bilmeyen savaşlarının, komplolarının ve kişisel hırslarının beslediği Kaos vardı. Bu uçta kan, onur kisvesi altında anlamsızca dökülüyor, istikrar yok oluyor ve halk sürekli bir belirsizlik içinde yaşıyordu. Sarkacın diğer ucunda ise, Kaos'a bir tepki olarak doğan, her şeyi ve herkesi tek bir irade altında ezmeye çalışan Tiranlık vardı. Bu uçta ise kan, düzen adına dökülüyor, özgür düşünce ve kültür yok ediliyor, halk bir köle sürüsü gibi tek tipleştiriliyordu.
+            </p>
+            <p>
+                İsimsiz kurucu, bu iki ucun da aynı derecede yıkıcı olduğunu anladı. Gerçek barış ve bilginin yeşerebileceği tek yer, sarkacın bu iki uç arasında gidip geldiği o anlık, hassas denge noktasıydı. İşte o an, Gecelerin Pelerini'nin görevi de belirlendi: Onlar sarkacın bir tarafını tutmayacaklardı. Onlar, sarkacı aşırı uçlara çeken en ağır "ağırlıkları", yani dengeyi bozan kilit figürleri ortadan kaldırarak salınımı yavaşlatmaya ve denge anını mümkün olduğunca uzatmaya çalışacaklardı.
+            </p>
+            <p>Bu felsefe, topluluğun yeminine dönüştü. Yeni katılan her üye, geçmişini ve kimliğini bir kenara bırakarak üç temel yemini etmek zorundaydı:</p>
+            <ul>
+                <li><strong>İsimsizlik Yemini:</strong> "Biz tarihin özneleri değil, hizmetkârlarıyız." Dengeye tarafsız bir şekilde hizmet edebilmek için, bir Pelerin'in geçmişteki adı, ailesi, unvanı ve hırsları Ithran sularına gömülürdü. Onlar artık isimsiz, yüzü olmayan, sadece yemine sadık birer gölgeydiler. Bu, kurucularının kendi geçmişini silme eylemini onurlandırıyordu.</li>
+                <li><strong>Gözlem Yemini:</strong> "En keskin bıçak, kınında kalandır." Birliğin birincil görevi müdahale etmek değil, gözlemlemek, dinlemek ve kaydetmekti. Onlar, AserLand'in en kapsamlı ve en gizli istihbarat ağı haline geldiler. Eyleme geçmek, sadece ve sadece denge kritik bir şekilde tehdit edildiğinde ve başka hiçbir çözüm kalmadığında başvurulan son çareydi.</li>
+                <li><strong>Denge Yemini:</strong> "Biz krallara ya da isyancılara değil, dengeye hizmet ederiz." Eylemleri asla kişisel intikam, siyasi kazanç veya servet için olamazdı. Hedefler, birliğin en yaşlı üyelerinden oluşan bir konsey tarafından tek bir kritere göre belirlenirdi: Bu kişinin varlığı, dengeyi geri dönülmez bir şekilde bozuyor ve yaygın bir yıkıma sebep oluyor mu?</li>
+            </ul>
+            <p>
+                İsimleri de bu felsefeden doğdu: Gecelerin Pelerini. Onlar için "Gece", iki farklı karanlığı temsil ediyordu: Kaos'un yıldızsız, fırtınalı gecesi ve Tiranlık'ın soğuk, sessiz ve aysız gecesi. Kendileri ise bu iki karanlığın içinde hareket eden, kimsenin görmediği, varlığını hissetmediği ama aslında o karanlıkların arasında filizlenmeye çalışan o kırılgan şafağı koruyan bir "Pelerin" idiler.
+            </p>
+
+            <h2>Bölüm 3: Eğitim: Suyun ve Sis'in Yolu</h2>
+            <p>
+                Gecelerin Pelerini'nin bir üyesi olmak, bir orduya katılmaya benzemezdi. Bu, bir yeniden doğuş süreciydi; eski benliğin ölümü ve yemine adanmış yeni bir varlığın yaratılışıydı. Bu süreç, onların Ithran Deltası'nın kalbinde, dış dünyadan tamamen soyutlanmış, su yolları ve asma köprülerle birbirine bağlı, ağaçların ve kayalıkların üzerine kurulmuş gizli yerleşimleri olan "Fısıldayan Labirent"te gerçekleşirdi.
+            </p>
+            
+            <h3>Aşama 1: Sis'in Kucağı (Benliğin Kırılışı)</h3>
+            <p>
+                Birliğe kabul edilen acemi, eğitimine bir kılıç veya hançerle başlamazdı. Üzerindeki basit giysiler ve bir su matarasıyla, labirentin en tekinsiz ama en öğretici noktalarından birinde tek başına bırakılırdı. Bu aşamanın amacı hayatta kalmaktı, ama daha da önemlisi, medeniyetin getirdiği her şeyi unutmaktı. Acemi, haftalar, bazen aylar boyunca deltanın dilini öğrenmek zorunda kalırdı. Suyun akıntısından yönünü bulmayı, sisin yoğunluğundan havanın nasıl değişeceğini tahmin etmeyi, hangi bitkinin yeneceğini, hangi böceğin ölümcül olduğunu, hangi çamurun yaraları iyileştirdiğini ve hangisinin ateşi düşürdüğünü yaşayarak öğrenirdi. Yalnızlığın getirdiği korkuyla yüzleşir, sabretmenin bir erdem değil, bir hayatta kalma aracı olduğunu kavrardı. Bu süreç, kibirli bir soyluyu alçakgönüllü bir gölgeye, aceleci bir askeri sabırlı bir avcıya dönüştürürdü. Fısıldayan Labirent'e kendi başına dönebildiğinde, eski kimliği çoktan Ithran sularına karışmış olurdu.
+            </p>
+
+            <h3>Aşama 2: Üç Disiplin (Gölgenin Yaratılışı)</h3>
+            <p>Benliği kırılan ve artık deltanın bir parçası olan acemi, birliğin üç temel disiplininde ustalaşmaya başlardı:</p>
+            
+            <ul>
+                <li><strong>Sessiz Yol (Görünmezlik Sanatı):</strong> Bu, sadece gizlenmekten ibaret değildi; bu, var olmamayı öğrenmekti.
+                    <ul>
+                        <li><em>Dalgasız Adım:</em> Bel hizasındaki suda, yüzeyde tek bir dalgacık bile yaratmadan hareket etme tekniği.</li>
+                        <li><em>Sazlığın Nefesi:</em> İçi boş su sazlıklarını şnorkel gibi kullanarak su altında dakikalarca kalabilme.</li>
+                        <li><em>Koku Perdeleme:</em> Bitki özleri ve çamurla insan kokusunu maskeleme.</li>
+                    </ul>
+                </li>
+                <li><strong>Dokuyucunun Eli (Zehir ve Simya Sanatı):</strong> Gecelerin Pelerini'nin en korkulan silahı, kılıçları değil, delta florasından damıttıkları bilgilerdi.
+                    <ul>
+                        <li><em>Hayalet Zambak Öpücüğü:</em> Halüsinasyon gördüren polen.</li>
+                        <li><em>Kızıl Yosun Tentürü:</em> Kasları gevşeten ve geçici felç yaratan zehir.</li>
+                        <li><em>Engerek Uykusu:</em> Kalp krizini taklit eden, iz bırakmayan ölümcül nörotoksin.</li>
+                    </ul>
+                </li>
+                <li><strong>Sabırlı Bıçak (Öldürme Sanatı):</strong> Bu disiplin, dövüşmeyi değil, öldürmeyi öğretirdi. Düellolar, kahramanca çarpışmalar yoktu. Sadece etkinlik ve kesinlik vardı. Eğitimleri, bir kılıç ustasınınki gibi değil, bir cerrahınki gibiydi.</li>
+            </ul>
+
+            <h3>Aşama 3: Gölgenin Sınavı (Ustalığın Kanıtı)</h3>
+            <p>
+                Eğitimini tamamlayan aceminin son sınavı, bir hedefe suikast düzenlemek değildi. Sınav, Fısıldayan Labirent'in içinde, birliğin en tecrübeli ustalarından birini "avlamaktı". Amaç öldürmek değil, ustanın haberi olmadan üzerine sadece zehirsiz bir iğneyle bir iz bırakmaktı. Acemi, kendisi gibi deltanın her sırrını bilen bir ustayı, kendi evinde avlamak zorundaydı. Aylarca sürebilen bu kedi-fare oyununda başarılı olursa, artık bir acemi değil, Gecelerin Pelerini'nin isimsiz bir bıçağı olurdu.
+            </p>
+
+            <h2>Bölüm 4: Evrim: Gözlemcilerden Aktörlere</h2>
+            <p>
+                Yüzyıllar boyunca Gecelerin Pelerini, yeminlerine sadık kaldı. Fısıldayan Labirent'teki gizli kütüphaneleri, AserLand'in her hanedanının, her savaşının ve her barışının tarafsız kayıtlarıyla dolup taştı. Krallar yükselip düştü, sınırlar yeniden çizildi; Pelerin ise sadece izledi ve not aldı. Müdahaleleri o kadar nadirdi ki, nesiller geçtikçe varlıkları bile unutuldu.
+            </p>
+            <p>
+                Ta ki IV. Aserilios'un tahta çıkışına kadar. Pelerin'in Konseyi, Aserilios'u ilk başta ataları gibi bir başka tiran adayı olarak gördü. Ancak Aserilios'un saltanatı ilerledikçe, Konsey onun farklı ve çok daha tehlikeli bir şey olduğunu anladı. Aserilios, sarkacı sadece kendi tarafına çekmiyordu; o, sarkacın kendisini kırmaya çalışıyordu. Onun "Büyük Sessizlik" projesi, sadece bir baskı rejimi değildi; bu, tarihin ve kültürün kökünü kazımayı amaçlayan bir soykırımdı.
+            </p>
+            <p>
+                Bu varoluşsal tehdit, birlik tarihinde ilk kez Gözlem Yemini'nin sorgulanmasına neden oldu. Fısıldayan Labirent'te toplanan konsey, haftalarca tartıştı. Sonunda karar verildi: Gözlem Yemini, tarihte ilk kez askıya alındı. Pelerin, mitlerin arasından sıyrılıp gölgelere geri dönecekti. Konsey, Aserilios rejimine karşı bir "Sessiz Savaş" ilan etti. Bu, Skarrgard'ın başlatacağı gibi gürültülü bir savaş değildi. Pelerin'in savaşı, cerrahi bir operasyon gibiydi. Hedefleri kaleler veya ordular değil, "Büyük Sessizlik" projesini yürüten kilit kişilerdi.
+            </p>
+            <p>
+                Gecelerin Pelerini, artık AserLand'in kaderinde aktif bir rol oynamaya başlamıştı. Onlar ne kralın ne de devrimin yanında, sadece Denge'nin tarafındaydı. Ve şimdi; General Denoistos Los Aser gibi tehditlerin susturulmasından hemen sonra, ufukta Celestine D'Arvell gibi Tiranlık ve Kaos'un tehlikeli bir sentezini vaat eden yeni bir güç yükseliyordu. Pelerin'in Sessiz Savaşı'nın daha yeni başladığını sadece onlar biliyordu.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
