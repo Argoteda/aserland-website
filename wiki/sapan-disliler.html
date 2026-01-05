@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapan Dişliler: Aseria'da Bir Gün | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        
+        /* ZAMAN ÇİZELGESİ FORMATI */
+        .time-block {
+            border-left: 2px dashed #444;
+            padding-left: 25px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .time-block::before {
+            content: '\f017'; /* Saat İkonu */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            background: #222;
+            color: var(--ana-renk);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: -21px;
+            top: 0;
+            border: 1px solid var(--ana-renk);
+        }
+        .time-title { font-weight: bold; color: var(--ana-renk); font-size: 1.2rem; margin-bottom: 10px; display: block; }
+        
+        /* RESMİ RAPOR FORMATI */
+        .official-form {
+            background: #1e1e1e;
+            border: 1px solid #555;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            margin: 20px 0;
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+        .form-header { text-align: center; border-bottom: 1px solid #555; padding-bottom: 10px; margin-bottom: 15px; font-weight: bold; color: #fff; text-transform: uppercase; }
+        .stamp { color: red; font-weight: bold; border: 2px solid red; display: inline-block; padding: 5px; transform: rotate(-10deg); float: right; opacity: 0.7; }
+
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 180px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details>
+                <summary>1. Kısım: Parçalanmış Taç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details open>
+                <summary>2. Kısım: Tiranların Çağı</summary>
+                <ul>
+                    <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
+                    <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
+                    <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
+                    <li><a href="iki-taht-bir-golge.html">➤ İki Taht, Bir Gölge</a></li>
+                    <li><a href="denoistos-los-aser.html">➤ General Denoistos Los Aser</a></li>
+                    <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
+                    <li><a href="lucian-baron-mhoore.html">➤ Lucian "Baron" Mhoore</a></li>
+                    <li><a href="zykrath-vhalgoroth-aser.html">➤ Kral Zykrath Vhalgoroth Aser</a></li>
+                    <li><a href="celestine-darvell.html">➤ Celestine D'Arvell</a></li>
+                    <li><a href="sapan-disliler.html" class="active">➤ Hikaye: Sapan Dişliler</a></li>
+                    <li><a href="kutuphanedeki-sessiz-kanaat.html">➤ Belge: Kütüphanedeki Sessiz Kanaat</a></li>
+                    <li><a href="stellan-korvath.html">➤ Stellan Korvath (Kuzeyin Mimarı)</a></li>
+                    <li><a href="kaelus-theron.html">➤ Lord Koruyucu Kaelus Theron</a></li>
+                    <li><a href="behemoth-yapilis-sureci.html">➤ Belge: Behemoth'un İnşası</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Yaşam Öyküleri</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">VATANDAŞ PROFİLİ</div>
+                <div class="infobox-image"><i class="fas fa-user-clock" style="font-size:4rem;"></i></div>
+                <table class="infobox-table">
+                    <tr><th>Adı:</th><td>Elian</td></tr>
+                    <tr><th>Görevi:</th><td>3. Seviye Kayıt Memuru</td></tr>
+                    <tr><th>Kurum:</th><td>İskan Bakanlığı</td></tr>
+                    <tr><th>Konum:</th><td>Supremia / Aseria</td></tr>
+                    <tr><th>Durum:</th><td>Aktif (Gözetim Altında)</td></tr>
+                    <tr><th>Tema:</th><td>Düzen vs. Kaos</td></tr>
+                </table>
+            </div>
+
+            <h1>Sapan Dişliler: Bir Aseria Vatandaşının Günü</h1>
+            <p style="color:#888; font-size:0.9rem; margin-bottom:30px;">
+                <em>*Bu metin, Celestine D'Arvell yönetimindeki Aseria'da yaşayan sıradan bir memurun, "kusursuz düzen" içindeki bir gününü anlatmaktadır.*</em>
+            </p>
+
+            <div class="time-block">
+                <span class="time-title">06:00 | Şafak Vuruşu</span>
+                <p>
+                    Gün, güneşle değil, çanla başlar. Sabahın tam 6'sındaki belediye çanı. Neşeli bir çınlama değil, Supremia'nın gri şafağını yaran tek ve kusursuz bir vuruş. Celestine D’Arvell’in Aseria’sında sapmaya yer yoktur.
+                </p>
+                <p>
+                    Adım Elian. İskan Bakanlığı'nda 3. Seviye Kayıt Memuruyum. Dairem, bloktaki diğer 50 daireyle aynı. Giysilerim -gri, dayanıklı bir tunik- komşularımınkiyle aynı. Evlerimizden aynı anda çıkarız. Temiz, süpürülmüş sokaklarda sessizlik içinde yürürüz. Burada suç yoktur. Çöp yoktur. Kahkaha da yoktur.
+                </p>
+                <p>
+                    Mutsuz değiliz. Mutsuzluk bir kaos biçimidir, normdan bir sapmadır. Biz sadece... işlevseliz. Büyük meydandan geçerim. Burada Celestine'in bir heykeli yok. Onun anıtlara ihtiyacı yok. Onun anıtı, düzenin kendisidir.
+                </p>
+            </div>
+
+            <div class="time-block">
+                <span class="time-title">12:00 | Öğle Arası</span>
+                <p>
+                    Öğle arası çanı saat tam 12:00'de çalar. Masamdan kalkarım. Koridorda, adı Rila olan başka bir 3. Seviye memurla aynı anda yemekhaneye doğru yürürüz.
+                </p>
+                <p>
+                    "Hava bugün... istikrarlı," der Rila. Sesi, ne sıcak ne de soğuktur; bir raporu okur gibidir.<br>
+                    "Evet," diye cevap veririm. "Nem oranı dünkü tahminle uyumlu."
+                </p>
+                <p>
+                    Yemekhanede tayınımızı alırız. Besleyici, ölçülü ve her gün aynı. Masamıza otururuz. Birkaç dakika sessizlik olur. Aseria'da sessizlik, verimli bir eylemdir. Doldurulması gereken bir boşluk değildir.
+                </p>
+                <p>
+                    "Akşamki konsere bilet bulabildin mi?" diye sorar Rila. "Merkezi Orkestra'nın 'Düzenin Armonisi' performansına mı? Evet, 4. Sektör oturma iznim onaylandı."
+                </p>
+            </div>
+
+            <div class="time-block">
+                <span class="time-title">17:00 | İş Çıkışı ve Sapma</span>
+                <p>
+                    İş günü çanı saat tam 17:00'de çalar. Belgelerimi düzgünce istifler, masamı siler ve sandalyemi tam olarak masanın altına iterim. Rila ile birlikte, akşamın serinliğine doğru sessizce yürürüz.
+                </p>
+                <p>
+                    Tam o sırada, bir ara sokaktan tiz bir ses duyulur. Bir çığlık değil, bir kahkaha. Duraksarız. İki küçük çocuk, bir topun peşinden koşarak sokağın köşesinden fırlarlar ve bana çarparlar. Dengemi kaybederim. Elimdeki günlük tayın fişi yere düşer ve bir su birikintisine bulanır.
+                </p>
+                <p>
+                    Donakalırım. Çocuklar kıkırdayarak kaçışır. Elimde ıslanmış, mürekkebi akmış bir form... Düzensizlik... Rila'nın yüzündeki o sakin ifade anlık olarak çatlamıştır. Rila benden bir adım uzaklaştı. Hızlı, içgüdüsel bir hareketti. Sanki az önce bana çarpan çocuklar bulaşıcı bir hastalık taşıyormuş ve ben artık kirlenmişim gibi.
+                </p>
+                
+                <div class="official-form">
+                    <div class="form-header">OLAY RAPORU: KATEGORİ 7B <span class="stamp">İŞLENDİ</span></div>
+                    <p><strong>BİRİM:</strong> 1. Sektör İdari Soruşturma Bürosu</p>
+                    <p><strong>KONU:</strong> Sivil Mülkiyete İhmalkâr Zarar</p>
+                    <p><strong>ÖZET:</strong> Vatandaş Elian, sokak düzensizliği sırasında kamu malı olan tüketim fişini koruyamamıştır. Sistem kazalara yer bırakmaz, sadece sorumlulara yer bırakır. Zarar, bir sonraki üretim döngüsü maaşından tahsil edilecektir.</p>
+                    <p><strong>KARAR:</strong> Sapma not edildi ve düzeltildi.</p>
+                </div>
+
+                <p>
+                    Bürodan çıktım. Yeni fişi elimde o kadar sıkı tutuyordum ki, kenarları avucuma batıyordu. Kurtulmuştum. Hayır, kurtulmamıştım. Sadece yeniden hizalanmıştım.
+                </p>
+            </div>
+
+            <div class="time-block">
+                <span class="time-title">18:00 | Yeniden Akort</span>
+                <p>
+                    Dışarıda, çan akşam 18:00 için çaldı. Tam zamanında. Konserde, "Echoes of Democracy"nin o kusursuz, yükselen notalarını dinlerken, her bir keman yayının birlikte hareket edişini izledim. Her şey yerli yerindeydi.
+                </p>
+                <p>
+                    O an, gün içinde yaşadığım o kaotik sarsıntıyı, o çamurlu fişi, o kontrolsüz çocuk kahkahasını zihnimden sildim. Bunlar, sistemin tolere edemeyeceği, düzensiz, kirli notalardı. Ben, kusursuz bir dişliydim. Ben, düzenin bir parçasıydım. Aseria'da sapmaya yer yoktu. Ve ben, bir daha asla sapmayacaktım.
+                </p>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>
