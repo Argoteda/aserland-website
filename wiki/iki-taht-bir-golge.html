@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İki Taht, Bir Gölge | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 40px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.8rem; background: linear-gradient(90deg, #222, transparent); padding: 10px; border-radius: 0 5px 5px 0; }
+        
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 220px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details>
+                <summary>1. Kısım: Parçalanmış Taç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details open>
+                <summary>2. Kısım: Tiranların Çağı</summary>
+                <ul>
+                    <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
+                    <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
+                    <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
+                    <li><a href="iki-taht-bir-golge.html" class="active">➤ İki Taht, Bir Gölge</a></li>
+                    <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Yaşam Öyküleri</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">İKİ TAHT, BİR GÖLGE</div>
+                <div class="infobox-image"><i class="fas fa-balance-scale-left" style="font-size:4rem;"></i></div>
+                <table class="infobox-table">
+                    <tr><th>Dönem:</th><td>M.S. 37 - M.S. 69</td></tr>
+                    <tr><th>Olay Türü:</th><td>Soğuk Savaş / Jeopolitik Gerilim</td></tr>
+                    <tr><th>Ana Karakterler:</th><td>Kral Zykrath (Batı)<br>Celestine D'Arvell (Doğu)<br>Gen. Denoistos (Skarrgard)</td></tr>
+                    <tr><th>Önemli Olaylar:</th><td>Sessizlik Duvarı'nın İnşası<br>Kuzeydeki Kriz<br>Denoistos'un Ölümü</td></tr>
+                    <tr><th>Sonuç:</th><td>Proje Behemoth'un Hızlanması<br>Aseria'nın İzolasyonu</td></tr>
+                </table>
+            </div>
+
+            <h1>İki Taht, Bir Gölge</h1>
+
+            <h2>Bölüm 1: İki Kutbun Doğuşu (M.S. 37 - 39)</h2>
+            <p>
+                M.S. 37 yılı, Aser tarihinin bir bıçakla ikiye ayrıldığı, tek bir bedenin iki farklı ruha büründüğü bir an oldu. Batı'da, Ironheart şehrinin isyanı, Zykrath Vhalgoroth Aser'in demir yumruğu altında ezilmişti. Şehrin semalarını artık özgür icatların dumanı değil, askeri dökümhanelerin isli sisi kaplıyordu. Zykrath, Aserion'daki tahtında, atalarının kan ve fetih üzerine kurduğu mirası yeniden canlandırıyordu. Onun krallığı, çeliğin şakırtısı, orduların uygun adımları ve tek bir iradeye edilen mutlak sadakat yeminleriyle yankılanıyordu. Sarayın koridorları, Cortex rejiminin reformist fısıltılarından arındırılmış, yerini zırhların ve postalların sert sesine bırakmıştı.
+            </p>
+            <p>
+                Aynı yılın yazında, Doğu'nun kalbi Supremia'da ise bambaşka bir devrim yaşanıyordu; sessiz, kansız ve bir o kadar da keskin. Yıllardır EASC koridorlarında "C.D." imzalı notlarla bir hayalet gibi dolaşan Celestine D'Arvell, Elena Von Cortex'in düşüşünün ardından ortaya çıkmıştı. İktidara geldiği ilk hafta, kendisini seçen o yorgun ve çok sesli konseyi, tek bir kararname ile tarihin tozlu raflarına kaldırdı. Ardından ikinci, daha sembolik darbesini vurdu: "Doğu AserLand" adını haritalardan sildi ve yerine tek, net ve soğuk bir kelime yazdırdı: "Aseria". Bu, bir isim değişikliği değil, bir kimlik ilanıydı. Aseria, artık Aser soyunun duygusal mirasından değil, Celestine'in rasyonel ve kusursuz sisteminden güç alacaktı.
+            </p>
+            <p>
+                İki yeni hükümdar, tahtlarına oturduklarında ilk iş olarak birbirlerinin varlığını tarttılar. Aralarında ne bir dostluk mesajı ne de bir savaş ilanı teatisi oldu. Bunun yerine, aralarında AserLand'in gördüğü en aşılmaz sınırı inşa ettiler: Sessizlik Duvarı.
+            </p>
+            <p>
+                Bu, harç ve taştan bir duvar değildi. Bu, iradelerden örülmüş bir duvardı. Sınır kapıları kapatıldı, ticaret kervanları geri çevrildi, diplomatik kanallar sonsuza dek susturuldu. Aileleri sınırın iki yakasında kalanlar, bir daha birbirlerinden haber alamadı. Zykrath, Aseria'yı yozlaşmış bir uzuv olarak görüyordu ve kangrenin yayılmasını önlemek için onu kesip atmıştı. Celestine ise Batı'yı, kendi mükemmel makinesini bozabilecek kaotik, ilkel ve öngörülemez bir virüs olarak görüyordu ve sistemini bu virüsten tamamen izole etmişti.
+            </p>
+            <p>
+                Ancak bu mutlak sessizliğin ardında, gölgelerde hummalı bir faaliyet başladı. İki kutup, birbirini anlamak için casuslarını sınırdan sızdırdı. Amaçları aynı değildi. Zykrath'ın "Demir Göz" ajanları, Aseria'nın askeri gücünü, zayıf noktalarını, isyan çıkarılabilecek bir hoşnutsuzluk olup olmadığını arıyordu. Celestine'in casusları ise farklıydı. Onlar orduları ya da kaleleri değil, kalıpları ve alışkanlıkları arıyordu. Zykrath'ın öfkesinin ne zaman zirve yaptığını, hangi generallerine güvendiğini, krallığının ekonomik ritmini... Celestine, rakibini yenmek için değil, onu bir matematik problemi gibi çözmek için bilgi topluyordu.
+            </p>
+            <p>
+                M.S. 39 yılına gelindiğinde, iki kutbun doğuşu tamamlanmıştı. Batı'da, geçmişin öfkesiyle dövülmüş bir demir yumruk; Doğu'da ise geleceği formüllerle yazan soğuk bir zihin vardı. Aralarındaki Sessizlik Duvarı, kıtanın tam ortasında, iki farklı dünyanın sınırı olarak duruyordu. Henüz birbirlerine dokunmamışlardı, ama her ikisi de biliyordu ki bu sessizlik, tarihin en büyük fırtınalarından birinin habercisiydi.
+            </p>
+
+            <h2>Bölüm 2: Sessizlik Duvarı ve İlk Çatlaklar (M.S. 39 - 50)</h2>
+            <p>
+                İki yıl boyunca, Aseria ve Batı AserLand arasındaki sınır, dünyanın en sessiz ama en gerilimli hattı oldu. İki hükümdar, kendi krallıklarını kendi suretlerinde yeniden şekillendirirken, birbirlerini gölgelerin arasından izlediler. Bu sessizliği ilk bozan, bir kılıç sesi ya da savaş borusu değil, Aseria'nın başkenti Supremia'dan yayılan tek satırlık, soğuk bir kararname oldu.
+            </p>
+            <p>
+                M.S. 39 yılında, Celestine D'Arvell, Aseria'nın Skarrgard ile tüm ekonomik ve diplomatik ilişkilerini tek taraflı olarak kestiğini ilan etti. Haber, Zykrath'ın Aserion'daki savaş konseyine ulaştığında, generalleri bunu bir acizlik göstergesi olarak yorumladı. Onlara göre Celestine, Skarrgard'ı askeri olarak ilhak etmekten korkuyor, bu yüzden onu ekonomik olarak boğmaya çalışıyordu. Ama Zykrath, bu hamlede acizlikten daha fazlasını, anlam veremediği bir anormallik seziyordu.
+            </p>
+            <p>
+                Zykrath'ın savaş felsefesi basitti: Düşmanını zayıflatır, sonra yok edersin. Celestine ise düşmanını zayıflatıyor, ama sonra onu görmezden geliyordu. Bu, Aser'in bin yıllık strateji kitaplarında yazmayan bir hamleydi. Zykrath, casuslarına Aseria'nın niyetini çözmelerini emretti. Gelen raporlar, şüphelerini daha da artırdı. Aseria, Skarrgard'ı zayıflattıktan sonra yerine yeni bir pazar ya da müttefik aramıyordu; aksine, kendi içine daha da kapanıyor, yerli üretimi artırıyor ve dış dünyaya olan bağımlılığını sıfırlamaya çalışıyordu. Celestine, bir imparatorluk kurmuyordu; kusursuz, sızdırmaz bir makine inşa ediyordu.
+            </p>
+            <p>
+                Bu hamle, Zykrath'a bir propaganda fırsatı verdi. Batı AserLand'in yayın organları, Aseria'nın "güvenilmez ve mantıksız" bir komşu olduğunu, kendi Aser kanından olanlara bile sırtını döndüğünü yaymaya başladı. Zykrath, Aseria'yı daha da izole etmek için, nefret ettiği Skarrgard'a gayriresmi kanallardan küçük ticari tavizler bile sızdırdı. Amacı dostluk değil, Aseria'nın etrafındaki çemberi daraltmaktı.
+            </p>
+            <p>
+                Ancak on yıl boyunca, Sessizlik Duvarı'ndaki asıl çatlaklar Aseria'dan değil, Skarrgard'ın çaresizliğinden gelmeye başladı. Ambargo yüzünden ekonomisi çöken Kral III. Damethsizi, Aseria ile yeniden diyalog kurmak için defalarca girişimde bulundu. Her mektup cevapsız kaldı, her elçi sınırdan geri çevrildi. Skarrgard'ın sabrı tükeniyordu.
+            </p>
+            <p>
+                M.S. 50 yılında, bu çaresizlik bir felaketle sonuçlandı. III. Damethsizi'nin gönderdiği son bir diplomatik heyet, Celestine'in emirlerini fanatikçe uygulayan Aseria sınır muhafızları tarafından pusuya düşürülerek katledildi.
+            </p>
+            <p>
+                Bu haber Aserion'a ulaştığında, Zykrath tahtında zaferle gülümsedi. İşte beklediği an gelmişti. Celestine'in soğuk mantığı, en sonunda bir hataya yol açmıştı. Artık Skarrgard'ın kan davası başlamıştı ve bu kaos, Aseria'nın o kusursuz makinesinin dişlilerine atılmış ilk kum tanesiydi. Zykrath, ordularını sınıra kaydırmaya gerek görmedi. Sadece arkasına yaslandı ve iki düşmanının birbirini yemesini izlemeye hazırlandı. Ancak bilmediği şey, bu krizin başrolünde ne kendisinin ne de Celestine'in olacağıydı. Sahneye, tüm kuralları yıkacak olan üçüncü ve en kanlı oyuncu çıkmak üzereydi: General Denoistos.
+            </p>
+
+            <h2>Bölüm 3: Kuzeydeki Kriz ve Görünmez El (M.S. 50 - 51)</h2>
+            <p>
+                On yıllık gergin sessizlik, M.S. 50 yılında Aseria sınırından gelen bir haberle kanlı bir şekilde parçalandı. Skarrgard Kralı III. Damethsizi'nin Aseria'ya gönderdiği diplomatik heyet, yanlarındaki on askerle birlikte pusuya düşürülerek katledilmişti. Haber, Damethia'nın sarayına ulaştığında, genç kral öfkeden deliye döndü. Bu, Celestine'in affedilmez bir hakareti, bir savaş sebebiydi. Savaş meclisini topladı ve Aseria'ya karşı derhal seferberlik ilan edilmesini emretti.
+            </p>
+            <p>
+                Ancak meclisin en sakin ve en tehlikeli üyesi General Denoistos Los Aser, kralı durdurdu. "Majesteleri," dedi buz gibi bir sesle, "savaş açmak, Zykrath'ı Aseria'nın safına çekebilir. Celestine'in istediği de budur. Bizi Batı'ya karşı da yalnız bırakmak." Denoistos, krala daha zekice bir plan sundu: "Gizli İşgal". Ordunun küçük ama en seçkin birliğiyle Aseria'nın kuzeyine sızacak, diplomatların kanının bedelini ödetecek ve Celestine'i masaya oturmaya zorlayacaktı. Kral, bu intikam planını onayladı.
+            </p>
+            <p>
+                M.S. 51 baharında Denoistos, Aseria'nın kuzeyindeki Ithran topraklarına girdi. Ancak onun amacı diplomatik bir kriz çıkarmak değildi; o, içindeki kaosun zincirlerini koparmıştı. Girdiği her kasabayı yağmalıyor, kadınlara tecavüz ediyor, çocukları ailelerinden ayırıyordu. Bu bir askeri operasyon değil, saf bir vahşetti. Denoistos, ne Skarrgard'ın ne de Aseria'nın kurallarına uymuyordu; o, savaşın kendisi olmuştu.
+            </p>
+            <p>
+                Haberler güneye ulaştığında, iki tahtta iki farklı tepki doğdu. Aserion'da Kral Zykrath, harita odasında keyifle gülümsüyordu. Kaos, kuzeyde bir veba gibi yayılıyordu. Supremia'da ise Celestine'in sarayında panik değil, soğuk bir hesaplama vardı. Denoistos'un eylemleri, onun sistemine karşı bir anomaliydi; çözülmesi gereken bir problem.
+            </p>
+            <p>
+                Ancak bu krizi ne Zykrath'ın beklentileri ne de Celestine'in hesapları çözecekti. Ithran Deltası'nın kalbinde, Fısıldayan Labirent'te toplanan Gecelerin Pelerini Konseyi, durumu çok daha farklı bir açıdan değerlendiriyordu. Onların Denge Felsefesi'ne göre, Zykrath Tiranlık'ın, Celestine ise Düzen'in tehlikeli birer ucuydu. Denoistos ise bambaşka bir şeydi; o, sarkacın kendisini kırabilecek, tüm kıtayı anlamsız bir yıkıma sürükleyebilecek saf Kaos'tu. Karar netti: Denoistos durdurulmalıydı.
+            </p>
+            <p>
+                Denoistos, Kuzey Ithran'ın sık ormanlarında ilerlerken zafer sarhoşuydu. Hem arkasından gelen Skarrgard birliklerinden hem de önünü kesmeye hazırlanan Aseria ordusundan habersizdi. Ama onu bulanlar onlar olmadı. Bir gece, ordusuyla birlikte kamp kurduğunda, ormanın sessizliği aniden bozuldu. Ağaçlardan, çalılıklardan, hatta nehir yatağından çıkan 30-40 kadar gölge figür, binlerce kişilik ordusunun içine bir hayalet gibi daldı. Bu bir savaş değil, bir hasattı. Sessiz bıçaklar, zehirli iğneler ve insanüstü bir hızla hareket eden suikastçılar, dakikalar içinde Denoistos'un ordusunu yok etti. En sonunda, General Denoistos, ne olduğunu anlayamadan, boğazında hissettiği soğuk çelikle can verdi.
+            </p>
+            <p>
+                Bu olay, Zykrath'ın zafer hayallerini yıktı ve Celestine'in planlarını alt üst etti. İkisi de bu işte birbirlerinin parmağı olmadığını biliyordu. Sınırlarında, her ikisinin de ordularını aşan, görünmez ve acımasız üçüncü bir güç vardı. Kuzeydeki Kriz, başlamadan bitmişti ama arkasında, iki liderin de zihnine kazınan çok daha büyük bir korku bırakmıştı: Bilinmeyenin korkusu.
+            </p>
+
+            <h2>Bölüm 4: İki Canavarın Bekleyişi (M.S. 51 - 69)</h2>
+            <p>
+                Kuzey Ithran'daki ormanlık alanda General Denoistos'un ordusundan geriye kalan sessizlik, tüm kıtaya yayıldı. Bu, barışın değil, iki canavarın birbirini ölçtüğü, nefeslerin tutulduğu bir av anının sessizliğiydi. Görünmez El'in müdahalesi, hem Zykrath'ın hem de Celestine'in satranç tahtasındaki tüm taşları devirmişti. Artık kurallar değişmişti. Bu yeni çağ, ordularla değil, takıntılarla şekillenecekti.
+            </p>
+            <p>
+                Aserion'da Kral Zykrath, harita odasına kapandı. Denoistos'un ortadan kaldırılışı, ona acı bir gerçeği öğretmişti: Kaba kuvvet, anlamadığı bir düşman karşısında işe yaramazdı. Celestine'in bürokratik makinesi ve gölgelerde gezinen bu isimsiz bıçaklar, onun lejyonlarının ulaşamayacağı yerlerdeydi. Geleneksel savaş artık anlamsızdı. Cevap, geleneksel olmayan, mantığın sınırlarını zorlayan bir güç olmalıydı. O gün, Zykrath generallerini değil, Ironheart'ın hayatta kalan en yetenekli mühendislerini topladı. Ve onlara emrini verdi: Proje Behemoth artık bir öncelik değil, krallığın tek amacıydı.
+            </p>
+            <p>
+                Supremia'da ise Celestine, Denoistos krizini bir zafer olarak değil, sistemindeki bir kusurun kanıtı olarak gördü. Denoistos gibi kaotik bir unsur, sınırlarına kadar sızabilmişti. Bu bir daha asla tekrarlanmamalıydı. Onun cevabı demir ve ateş değil, mürekkep ve formüllerdi. Aseria'yı, her türlü dış şoka karşı tamamen bağışık, kusursuz bir bürokratik makineye dönüştürmeye karar verdi. Sınırlar sadece askerlerle değil, her bir yabancıyı, her bir malı, her bir fikri analiz eden karmaşık bir izin ve gözetleme ağıyla mühürlendi.
+            </p>
+            <p>
+                Sonraki on sekiz yıl, kıtanın bu iki canavarın gölgesindeki uzun bekleyişiyle geçti. Batı'da, Batı AserLand'in tüm damarları Proje Behemoth'u beslemek için akıyordu. Tarlalardaki hasat, önce Behemoth'un devasa fırınlarını besleyen binlerce işçinin karınlarını doyurmak için ayrıldı. Zykrath, halkının sefaletini, daha büyük bir zafer için ödenmesi gereken küçük bir bedel olarak görüyordu. Doğu'da ise Aseria, dışarıdan bakıldığında bir refah ve düzen cennetiydi. Sokaklar temizdi, suç oranı sıfırdı, herkesin bir işi vardı. Ama bu düzenin bedeli, bireyselliğin tamamen yok olmasıydı.
+            </p>
+            <p>
+                Bu donmuş barış, M.S. 69 yılının sonbaharında, Zykrath'ın sarayına ulaşan bir haberle aniden sona erdi. Haber, bir casusun getirdiği şifreli bir notla geldi. Tek bir cümle yazıyordu: "Yankı sustu."
+            </p>
+            <p>
+                Celestine D'Arvell, yetmişine merdiven dayamışken, kusursuz bir düzenle planladığı hayatının sonuna gelmiş ve yatağında yaşlılıktan ölmüştü. Zykrath haberi aldığında, zırhlı camın arkasındaki harita odasında tek başınaydı. On sekiz yıldır beklediği an gelmişti. Rakibi masadan kalkmıştı. Ama bir zafer hissetmedi. Sadece boşluk hissetti. Çünkü artık karşısında öngörülebilir bir düşman yoktu; sadece kendi yarattığı kusursuz düzenin içinde ne yapacağı belli olmayan, başsız bir canavar vardı.
+            </p>
+            <p>
+                Uzun bekleyiş sona ermişti. Aseria'nın sessizliği artık bir düzenin değil, bir belirsizliğin sessizliğiydi. Ve Zykrath, Ironheart'taki kendi canavarının neredeyse tamamlandığını biliyordu. Buzlar çözülüyordu ve yaklaşan bahar, barışı değil, tüm kıtayı yutacak olan kaçınılmaz savaşı getirecekti.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
