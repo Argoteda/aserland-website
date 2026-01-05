@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucian "Baron" Mhoore | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 40px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.8rem; background: linear-gradient(90deg, #222, transparent); padding: 10px; border-radius: 0 5px 5px 0; }
+        .content h3 { color: var(--ana-renk); margin-top: 25px; font-size: 1.3rem; }
+        
+        /* LİSTELER */
+        .content ul { list-style: none; padding-left: 0; }
+        .content li { margin-bottom: 15px; padding-left: 20px; position: relative; }
+        .content li::before { content: '💰'; color: var(--ana-renk); font-weight: bold; position: absolute; left: 0; font-size: 0.8rem; top: 5px; }
+        .content li strong { color: var(--ana-renk); }
+
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 220px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details>
+                <summary>1. Kısım: Parçalanmış Taç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details open>
+                <summary>2. Kısım: Tiranların Çağı</summary>
+                <ul>
+                    <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
+                    <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
+                    <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
+                    <li><a href="iki-taht-bir-golge.html">➤ İki Taht, Bir Gölge</a></li>
+                    <li><a href="denoistos-los-aser.html">➤ General Denoistos Los Aser</a></li>
+                    <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
+                    <li><a href="lucian-baron-mhoore.html" class="active">➤ Lucian "Baron" Mhoore</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Yaşam Öyküleri</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">BARON MHOORE</div>
+                <div class="infobox-image"><i class="fas fa-sack-dollar" style="font-size:4rem;"></i></div>
+                <table class="infobox-table">
+                    <tr><th>Tam Adı:</th><td>Lucian Mhoore</td></tr>
+                    <tr><th>Unvan:</th><td>Kaosun Tüccarı / Baron<br>"Şirket" CEO'su</td></tr>
+                    <tr><th>Yaşam:</th><td>M.S. 40 – M.S. 104</td></tr>
+                    <tr><th>Doğum Yeri:</th><td>Ithran / Aseria</td></tr>
+                    <tr><th>Ölüm Yeri:</th><td>Ithran Mahzeni</td></tr>
+                    <tr><th>Ölüm Nedeni:</th><td>Tasfiye (Gedian Tarafından)</td></tr>
+                    <tr><th>Vasfı:</th><td>Kaçakçı / Bilgi Simsarı</td></tr>
+                </table>
+            </div>
+
+            <h1>Lucian "Baron" Mhoore: Kaosun Tüccarı</h1>
+
+            <h2>Fırsatın Doğuşu</h2>
+            <p>
+                Onun adı Lucian Mhoore'du. O, AserLand tarihinin büyük kahramanları ya da trajik anti-kahramanları gibi kan, yemin veya intikam üzerine doğmadı. Lucian, M.S. 40'lı yıllarda, Aseria'nın (o zamanlar hala Doğu AserLand olarak anılan bölgenin) nemli ve sisli liman bölgesi olan Ithran'da, basit bir gerçeğin içine doğdu: Fırsat.
+            </p>
+            <p>
+                Ithran, Supremia'nın steril ve düzenli koridorlarına ya da Aserion'un şanlı askeri kışlalarına benzemezdi. Ithran, sisle örtülü kanalların, çürüyen iskelelerin ve her köşesi gizli bir anlaşmanın fısıltısıyla dolu bir ara bölgeydi. Lucian'ın babası, bu bölgenin ruhunu yansıtan bir adamdı; limanın hem yasal hem de yasadışı yüklerini taşıyan, küçük ama etkili bir kurye ağının başındaydı. Lucian, bir okul sırasına hiç oturmadı. Onun eğitimi rıhtımlarda, balık kokusu ve tuzlu havanın içinde geçti. O, Aserwar'daki askeri stratejileri değil, liman vardiyalarının ritmini öğrendi. Celestine'in Müzik Okulu'ndaki armonileri değil, bir gümrük memurunun ses tonundaki açgözlülüğü veya korkuyu öğrendi. O, bir dövüşçü değil, kusursuz bir gözlemciydi.
+            </p>
+            <p>
+                Lucian'ın çocukluğu, kıtanın en büyük jeopolitik kırılmasının gölgesinde geçti. M.S. 37'de, Kral Zykrath ve Celestine D'Arvell'in iktidara gelmesiyle örülen "Sessizlik Duvarı", AserLand'i ikiye böldü. Ithran'daki çoğu tüccar ve kurye için bu bir felaketti; ticaret durmuş, sınırlar mühürlenmişti. Ancak on beş yaşına gelen Lucian Mhoore için bu duvar, bir engel değil, bir pazar açığıydı. Bu duvar, onun babası gibi küçük kaçakçıların riskini artırmıştı. Ve artan risk, artan kâr demekti.
+            </p>
+            <p>
+                O, babasının ağını devraldığında bir felsefesi vardı: Kaba kuvvet dikkat çeker, bilgi ise servet getirir.
+            </p>
+
+            <h2>"Baron" Unvanı ve Şirket</h2>
+            <p>
+                M.S. 60'lara gelindiğinde, Lucian Mhoore henüz "Baron" unvanını almamıştı, ancak Ithran'ın sisli kanallarının tartışmasız efendisi oydu. Ve tam o sırada, Aseria'nın iç bölgelerinden gelen bir tüccar, ona lüks gıdalardan ve ilaçlardan çok daha kârlı, çok daha tehlikeli yeni bir "mal" teklif etti. Tüccarın masaya sürdüğü o küçük, kurşun kutu, Lucian Mhoore ile odadaki sisli hava arasında asılı kalmış bir kader anıydı. Kutunun içindeki soluk, kristalize toza kilitlendi. Ahlaki bir duraksama yaşamadı. Zihni, bir muhasebecinin defteri gibi, anında risk ve kâr hesabı yaptı.
+            </p>
+            <p>
+                Lucian Mhoore kutuyu sakince kapattı. Gözlerini, nefesini tutmuş onu izleyen tüccara dikti. "Fiyatı nedir?" Bu basit soru, onun kaderini mühürledi. O geceden sonra, Lucian'ın ağı üzerinden artık sadece ilaç ve lüks gıdalar akmıyordu; şimdi damarlara işleyen bir zehir taşıyordu. Bu karar, onu bir kaçakçıdan bir "Baron"a dönüştürdü. Bu unvanı ona bir kral vermemişti; bu unvanı, Aserion'un yozlaşmış generallerinden Skarrgard'ın karanlık sokak çetelerine kadar, onun ağına bağımlı hale gelen yeraltı dünyası, korku ve saygıyla takmıştı.
+            </p>
+            <p>
+                Baron Mhoore'un "Şirket"i, AserLand'in kanlı tarihini yazan diğer güçlere benzemiyordu. Zykrath'ın Batı AserLand'i demir yumruğa, Celestine'in Aseria'sı ise sorgusuz bir düzene dayanıyordu. Lucian'ın imparatorluğu ise çok daha temel ve sarsılmaz bir olgu üzerine kuruluydu: İnsan zaafı. O, bir "Baron" unvanı taşıyabilirdi ama bir feodal bey gibi davranmıyordu. Lucian Mhoore, modern bir "CEO" (Yönetici) zihniyetine sahipti. Onun felsefesi, üç temel sütun üzerine inşa edilmişti:
+            </p>
+            <ul>
+                <li><strong>İstihbarat Savaşları (Bilgi, En Değerli Kârdır):</strong> Lucian için uyuşturucu, sadece yüksek kârlı bir üründü; asıl işi ise bilgi simsarlığıydı. "Şirket"in operasyonları, onu kıtanın en kapsamlı gayriresmi istihbarat ağına dönüştürmüştü. Lucian, bu bilgiyi sadece kendi sevkiyatlarını korumak için kullanmıyordu. O, bu bilgiyi rakiplerini yok etmek için de kullanıyordu.</li>
+                <li><strong>"Sıfır Şiddet" Prensibi (Savaş Kâra Zararlıdır):</strong> Yeraltı dünyasının aksine, Baron Mhoore şiddetten nefret ederdi. Şiddet gürültülüydü, dikkat çekerdi. Onun yöntemi savaşmak değil, satın almaktı. Bir rakibi yok etmek yerine, ona "Şirket"in bir "taşeronu" olmayı teklif ederdi.</li>
+                <li><strong>Kaosun Yöneticisi:</strong> Lucian Mhoore, AserLand'in büyük liderlerini küçümseyen bir sükunetle izliyordu. Zykrath ve Celestine'i, bir çitin iki yanını koruyan, birbirine hırlayan ama birbirini asla ısıramayan iki devasa bekçi köpeği olarak görüyordu. Bu iki tiranın yarattığı "Sessizlik Duvarı", onun imparatorluğunu besleyen en büyük kaynaktı.</li>
+            </ul>
+
+            <h2>Gölge ile Tanışma</h2>
+            <p>
+                M.S. 80'lere yaklaşırken, Baron Lucian Mhoore'un "Şirket"i kıtanın damarlarında dolaşan zehirli bir kan gibiydi. Ancak Mhoore'un kuryeleri yakalanmaya başlamıştı. "Şirket"in, "gölgeler kadar sessiz ve bir o kadar da ölümcül kuryelere" ihtiyacı vardı. Cevabı, Ithran'ın arka sokaklarında buldu. "Sopa Ustası" dedikleri, "Gedian" adını kullanan bir genç.
+            </p>
+            <p>
+                Tuzak, bir gece yarısı, Ithran'ın en eski mahzenlerinin bulunduğu bir bölgede kuruldu. Gedian, Baron'un adamlarını birer birer yere serdi ama sayı üstünlüğü karşısında yenildi. Uyandığında, nemli bir mahzenin ortasında, bir sandalyeye sıkıca bağlanmış haldeydi. Gölgelerin arasından, ipek bir cübbe giymiş, sakin tavırlı bir adam çıktı. Baron Lucian Mhoore, kurbanını değil, potansiyel bir çalışanını inceliyordu.
+            </p>
+            <p>
+                "Sakin ol genç adam. Ben Baron Mhoore," dedi, sesi bir muhasebecininki kadar sakindi. "Seni buraya, senin tabirinle kaçırdık, evet. Ama sana zarar vermek için değil. Sadece sana bir iş teklifinde bulunmak için. Sende intikamdan daha fazlası var. Sende kâr potansiyeli var."
+            </p>
+            <p>
+                Gedian, "Ben tam olarak ne ürünü taşıyacağım?" diye sordu. Mhoore'un gülümsemesi genişledi. Ortamın soğukluğu ve sessizliği gence gereken cevabı vermişti. Gedian, sandalyede bağlı haldeyken hayatının muhasebesini yaptı. Para, intikamdan daha güçlü bir motivasyondu. Hayatta kalmak, adaletten daha somut bir hedefti. Gözlerini Baron'a kaldırdı ve işi kabul etti.
+            </p>
+            <p>
+                "Sopa Ustası"nın, "Şirket"e katılmasıyla Baron Lucian Mhoore'un operasyonları bir kaçakçılık ağından, kıtalararası bir imparatorluğa dönüştü. Gedian, onun en değerli varlığıydı. Zykrath'ın devriyelerini, Celestine'in bürokrasisini ve Skarrgard'ın kışını aşan insanüstü bir lojistik aracıydı. Lucian Mhoore, krallara hizmet etmiyordu; kralların generallerine, bakanlarına ve casuslarına hizmet veriyordu.
+            </p>
+
+            <h2>İmparatorluğun Çöküşü ve Son Muhasebe</h2>
+            <p>
+                M.S. 100 yılında, Baron her zamankinden daha cüretkâr bir operasyon planladı: Proje Behemoth'un şantiyesine yapılacak büyük bir sevkiyat. Gedian yola çıktı ama geri dönmedi. Raporlar korkunçtu: Parçalanmış "Demir Göz" ajanları vardı ama Gedian yoktu. Ve bölgede "Gecelerin Pelerini"ne benzeyen figürler görülmüştü. Lucian Mhoore, o gece yas tutmadı. Muhasebe defterini açtı ve "Gölge" kaleminin üzerini kırmızı bir çizgiyle çizdi.
+            </p>
+            <p>
+                Ve M.S. 104 yılında, kıtayı sarsan haber Ithran'ın sisli sokaklarına ulaştı: Lord Koruyucu Kaelus idam edilmişti. Batı AserLand'in yeni, sorgulanamaz lideri... Aserwar Gedian'dı. Lucian Mhoore, bu haberi duyduğunda, ömründe ilk kez stratejik bir hata yaptığını anladı. O, Gedian'ı bir "varlık" olarak görmüştü; oysa Gedian bir rakipti, üstelik oyunu kazanmıştı. Lucian, yeni güce ortaklık teklif etti. Cevap gelmedi. Bunun yerine, tasfiye başladı.
+            </p>
+            <p>
+                Lucian kendini başladığı yerde buldu: Ithran'daki ilk ve en korunaklı sığınağında. Kapı gıcırtıyla açıldı. İçeri giren, ipek cübbeli bir tüccar değil, yüzü maskeli, sırtında o ikonik çift taraflı sopayı taşıyan bir figürdü.
+            </p>
+            <p>
+                "Baron Mhoore," dedi maskeli figürün sesi.
+            </p>
+            <p>
+                "Gölge?" diye fısıldadı. "Sana 'Sopa Ustası' diyorlardı."
+            </p>
+            <p>
+                "Eski günlerin hatırına," dedi Baron çaresizce, son kartını oynayarak. "Bir anlaşma yapabiliriz. Sana Zykrath'ın hazinelerinden daha fazlasını sunabilirim..."
+            </p>
+            <p>
+                "Ben buraya anlaşma yapmaya gelmedim, Lucian," dedi Gedian. Sesi duygusuzdu. "Benim görevim Denge'yi kurmak. Sen ise bu dengeyi zehirliyorsun. Sen bir Kaos unsurusun."
+            </p>
+            <p>
+                "İş, iştir evlat..." diye fısıldadı Baron.
+            </p>
+            <p>
+                "Hayır," dedi Gedian. "Bu bir iş değil."
+            </p>
+            <p>
+                Gedian'ın elindeki çift taraflı bıçaklı sopa, yıllar önce Baron'un hizmetine girdiği o mahzende, eski efendisinin hayatına son vermek için bir kez vınladı. Lucian Mhoore'un ölümü, bir imparatorluğun çöküşü değil, bir "Şirket"in iflası gibi sessiz ve idariydi. Lucian Mhoore, ideallerin, tiranlıkların ve devrimlerin çarpıştığı bir çağda, tüm bu büyük felsefeleri bir pazar açığı olarak gören tek adamdı. O, kanı değil, kârı takip etti. Ve sonunda, kâr-zarar tablosu, hesaba katmadığı tek bir kalem tarafından dengelendi: "Denge"nin kendisi.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
