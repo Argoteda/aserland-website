@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silus Praxton (Yankı'nın Mirasçısı) | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; --border: #333; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: var(--ana-renk); transition: 0.3s; }
+        
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; }
+
+        /* DÜZEN */
+        .container { display: flex; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; position: relative; }
+        
+        /* SOL MENÜ */
+        .sidebar { width: 300px; background: var(--panel); padding: 20px; border-right: 1px solid var(--border); height: 100vh; position: sticky; top: 60px; overflow-y: auto; flex-shrink: 0; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; color: #fff; padding: 10px; background: #222; border-radius: 5px; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { color: var(--ana-renk); }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        
+        .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { color: #888; font-size: 0.9rem; display: block; }
+        .sidebar a:hover { color: #fff; }
+        .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
+
+        /* İÇERİK ALANI */
+        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
+        .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 40px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.8rem; background: linear-gradient(90deg, #222, transparent); padding: 10px; border-radius: 0 5px 5px 0; }
+        .content h3 { color: var(--ana-renk); margin-top: 25px; font-size: 1.3rem; border-bottom: 1px dashed #333; padding-bottom: 5px; }
+        
+        /* LİSTELER */
+        .content ul { list-style: none; padding-left: 0; }
+        .content li { margin-bottom: 15px; padding-left: 20px; position: relative; }
+        .content li::before { content: '📊'; color: var(--ana-renk); font-weight: bold; position: absolute; left: 0; font-size: 0.8rem; top: 5px; }
+        .content li strong { color: var(--ana-renk); }
+
+        /* INFOBOX */
+        .infobox {
+            float: right;
+            width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--ana-renk);
+            margin: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+        }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 220px;
+            display: flex; align-items: center; justify-content: center; color: #333;
+        }
+        .infobox-table { width: 100%; border-collapse: collapse; }
+        .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
+        .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
+
+        @media (max-width: 900px) { 
+            .container { flex-direction: column; } 
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
+            .infobox { float: none; width: 100%; margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <details>
+                <summary>1. Kısım: Parçalanmış Taç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details open>
+                <summary>2. Kısım: Tiranların Çağı</summary>
+                <ul>
+                    <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
+                    <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
+                    <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
+                    <li><a href="iki-taht-bir-golge.html">➤ İki Taht, Bir Gölge</a></li>
+                    <li><a href="denoistos-los-aser.html">➤ General Denoistos Los Aser</a></li>
+                    <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
+                    <li><a href="lucian-baron-mhoore.html">➤ Lucian "Baron" Mhoore</a></li>
+                    <li><a href="zykrath-vhalgoroth-aser.html">➤ Kral Zykrath Vhalgoroth Aser</a></li>
+                    <li><a href="celestine-darvell.html">➤ Celestine D'Arvell</a></li>
+                    <li><a href="kutuphanedeki-sessiz-kanaat.html">➤ Belge: Kütüphanedeki Sessiz Kanaat</a></li>
+                    <li><a href="stellan-korvath.html">➤ Stellan Korvath (Kuzeyin Mimarı)</a></li>
+                    <li><a href="kaelus-theron.html">➤ Lord Koruyucu Kaelus Theron</a></li>
+                    <li><a href="behemoth-yapilis-sureci.html">➤ Belge: Behemoth'un İnşası</a></li>
+                    <li><a href="aserwar-gedian.html">➤ Aserwar Gedian (Suikastçı Mimar)</a></li>
+                    <li><a href="morvran-corvus.html">➤ General Morvran Corvus</a></li>
+                    <li><a href="silus-praxton.html" class="active">➤ Silus Praxton (Yankı'nın Mirasçısı)</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Yaşam Öyküleri</summary>
+                <ul>
+                    <li><a href="#">(Yakında)</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main class="content">
+
+            <div class="infobox">
+                <div class="infobox-header">SILUS PRAXTON</div>
+                <div class="infobox-image"><i class="fas fa-chart-line" style="font-size:4rem;"></i></div>
+                <table class="infobox-table">
+                    <tr><th>Unvan:</th><td>Yankı'nın Mirasçısı<br>ASC Baş Konsülü</td></tr>
+                    <tr><th>Yaşam:</th><td>M.S. 37 – M.S. 118</td></tr>
+                    <tr><th>Doğum Yeri:</th><td>Supremia / Aseria</td></tr>
+                    <tr><th>Ölüm Yeri:</th><td>Supremia</td></tr>
+                    <tr><th>Ölüm Nedeni:</th><td>Tüberküloz</td></tr>
+                    <tr><th>Eğitim:</th><td>Supremia Analitik Bilimler Akademisi</td></tr>
+                    <tr><th>Görev Süresi:</th><td>M.S. 69 – M.S. 118 (49 Yıl)</td></tr>
+                    <tr><th>Selefi:</th><td>Celestine D'Arvell</td></tr>
+                    <tr><th>Halefi:</th><td>Aseria Yüksek Konseyi (Kolektif)</td></tr>
+                </table>
+            </div>
+
+            <h1>Silus Praxton: Yankı’nın Mirasçısı</h1>
+
+            <p>
+                Kıtanın M.S. 37 yılında kan ve ateşle yeniden şekillendiği, AserLand tarihinin miladının hemen sonrasında, Silus Praxton Aseria'nın kalbi Supremia'da doğdu. O, ne Batı'daki Zykrath gibi "Kırık Bir Tacın Hiddeti" ile dolu bir Aser kanı ne de Kuzey'deki Denoistos gibi "İmparatorluğun Kasabı"na dönüşecek trajik bir soyluluk mirası taşıyordu.
+            </p>
+            <p>
+                Silus'un ailesi, Celestine D'Arvell'in "Doğu AserLand" adını "Aseria" olarak değiştirdiği o büyük idari devrimin ilk ve en sadık teknokratlarındandı. Silus'un çocukluğu, Aserwar Savaş Okulu'nun kan ve ter kokan avlularında değil, Supremia'nın steril ve sessiz arşiv odalarında geçti. O, Celestine'in "Mutlak Olanın Yankısı" felsefesinin ideal ürünüydü: Duygular verimsizdi. Kaos bir hastalıktı. Düzen ise matematiksel bir kesinlikti.
+            </p>
+
+            <h2>Genç Analist ve Denoistos Krizi</h2>
+            <p>
+                Eğitimini Skinnyleg'in en iyi analitik okullarında aldı. Askeri strateji yerine "veri analizi" dersleri gördü. Silus Praxton yaklaşık 13-14 yaşlarındayken, M.S. 51 yılında gerçekleşen Kuzey Ithran Krizi, Aseria'nın askeri komutanları için bir utanç olarak görülürken, Praxton için bu bir veri setinden ibaretti. General Denoistos'un vahşeti, Praxton'un analizlerinde "kontrolsüz bir Kaos unsuru" olarak etiketlendi.
+            </p>
+            <p>
+                Krizin en can alıcı noktası onun için Denoistos'un ölümüydü. Aseria ordusu daha Kuzey Ithran'a varamadan, "Gecelerin Pelerini" denilen görünmez bir el, Denoistos'un ordusunu sessizce ortadan kaldırmıştı. Praxton, hazırladığı raporda şu sonuca vardı: "Aseria'nın gelecekteki güvenliği, ağır lejyonlarda değil, görünmez operasyonlarda ve mutlak bilgi hâkimiyetindedir."
+            </p>
+            <p>
+                Bu rapor, Celestine D'Arvell'in dikkatini çekti. Celestine, karşısındaki bu genç adamda ne askeri bir hırs ne de siyasi bir kibir gördü. O gün, Silus Praxton, Aseria'nın görünmez yönetiminin başına geçti. Celestine'in "Sessizlik Duvarı" politikasının gerçek mimarı oldu.
+            </p>
+
+            <h2>Baş Konsül ve Hayalet Savaşı</h2>
+            <p>
+                M.S. 69 yılının sonbaharında, Celestine D'Arvell yatağında yaşlılıktan öldü. Aseria çökmedi. Celestine'in kurduğu sistem işlemeye devam etti ve Silus Praxton, Aseria Yüksek Konseyi'nin (ASC) "Baş Konsül"ü olarak seçildi. O, bir kral değil, makinenin baş operatörüydü.
+            </p>
+            <p>
+                Praxton'un önündeki ilk sorun, Kral Zykrath'ın inşa ettirdiği Proje Behemoth'tu. Aseria'nın düzenli ordusunun bu metal canavar karşısında şansı yoktu. Praxton, çözümü "Vekalet Savaşı"nda buldu. Batı AserLand'i içeriden çökertecek bir vekil güç: "Teknoloji Özgürlüğü Hareketi" (TÖH).
+            </p>
+            <p>
+                Praxton, TÖH lideri Joel Van Cortex ile tarihin en beklenmedik ittifakını kurdu. ASC, TÖH'e finansman ve istihbarat sağladı. "Hayalet Savaşı" (M.S. 80 - 98) resmen başlamıştı. Praxton, tek bir Aseria askerini bile riske atmadan, Zykrath'ın rejimini ekonomik ve moral olarak tüketti.
+            </p>
+
+            <h2>Behemoth Savaşları ve İzolasyon</h2>
+            <p>
+                M.S. 98 yılında Kral Zykrath'ın ölümü, Praxton'un satranç tahtasındaki ikinci fazı başlattı: "Behemoth Savaşları". Batı AserLand, generaller Kaelus ve Morvran arasında bir iç savaşa sürüklendi. Praxton, vekil gücü TÖH'ü harekete geçirdi. Ancak Praxton'un hesaplamaları, Kaelus Theron'un kaba kuvvetini hafife almıştı. Kaelus, iç savaşı kazandı, TÖH isyanını bastırdı ve Behemoth'u ele geçirdi.
+            </p>
+            <p>
+                Kaelus, Behemoth'u bir silah olarak değil, dev bir sensör ağı olarak kullanarak Gecelerin Pelerini'ni buldu ve yok etti. Kaelus artık sadece bir tiran değil, Denge'yi bozan bir Kaos unsuruydu ve elinde mutlak güç vardı. Praxton, Aseria'yı mutlak bir izolasyona sokarak hayatta kalmayı seçti.
+            </p>
+
+            <h2>Üçlü Pakt ve Barış</h2>
+            <p>
+                M.S. 104 yılında kıtayı sarsan haber geldi: Lord Koruyucu Kaelus idam edilmişti. Onu deviren Aserwar Gedian, Behemoth'u yok etme emri vermişti. Bu hamle, Praxton'a Gedian'ın mantıklı biri olduğunu gösterdi. Barış zirvesi Ithran'da yapıldı. Masada Praxton, Stellan Korvath ve Aserwar Gedian vardı.
+            </p>
+            <p>
+                Gedian, "Teknoloji Bağımsızlığı Fermanı" ve yeni AserCouncil anayasası ile Praxton'a "öngörülebilirlik" vaat etti. Praxton, Aseria'nın güvenliğini bu yeni "Denge" felsefesinde görerek "Üçlü Pakt"ı imzaladı.
+            </p>
+
+            <h2>Sessiz Veda</h2>
+            <p>
+                Hayatının son yıllarında, Silus Praxton tüberkülozla mücadele etti. Bu savaşı da bir devlet meselesi gibi, soğuk bir mantıkla yönetti. Zayıflığını bir "sapma" olarak gördü ve sistemin bunu fark etmesine izin vermedi. M.S. 118 yılında sessizce öldüğünde, Aseria makinesi bir an bile duraksamadı. O, Celestine'in mirasını kusursuzca yaşatan bir Baş Konsül olarak tarihe geçti.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
