@@ -3,257 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AserLand Studio | Argoteda</title>
-    <meta name="description" content="AserLand Studio resmi web sitesi. Argoteda tarafından geliştirilen AserPermissions, RPG oyun projeleri ve DarkSynth müzik prodüksiyonları.">
-    <meta name="keywords" content="AserLand, Argoteda, Enes, AserPermissions, Minecraft Plugin, Unity RPG, Skarrgard, DarkSynth, Oyun Geliştirme, Yazılım">
-    <meta name="author" content="Enes 'Argoteda'">
-    <meta name="theme-color" content="#FFD700">
-    <meta name="google-site-verification" content="WlbkOku9j2phaQLCeHoLywOCBmJtJ7R4vjoyOXJmhOA" />
-    <link rel="icon" type="image/png" href="favicon.png">
+    <title>AserLand: Skarrgard Revolution</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="wiki/favicon.png">
     <style>
-        /* GENEL TASARIM AYARLARI */
-        :root {
-            --ana-renk: #FFD700; /* Endüstriyel Sarı */
-            --arka-plan: #0f0f0f; /* Tam Siyah */
-            --kart-rengi: #1a1a1a; /* Koyu Gri */
-            --yazi-rengi: #e0e0e0;
-        }
+        :root { --ana-renk: #FFD700; --arka-plan: #050505; --yazi: #e0e0e0; --panel: #111; }
         
-        body {
-            background-color: var(--arka-plan);
-            color: var(--yazi-rengi);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            background-color: var(--arka-plan); 
+            color: var(--yazi); 
+            font-family: 'Segoe UI', sans-serif; 
+            overflow-x: hidden;
         }
 
-        /* HEADER (ÜST KISIM) */
-        header {
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('arkaplan.png');
-            background-size: cover;
-            background-position: center;
-            height: 60vh;
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* HERO SECTION (GİRİŞ) */
+        .hero {
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            border-bottom: 4px solid var(--ana-renk);
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+            position: relative;
+            padding: 20px;
         }
 
-        h1 {
-            font-size: 3.5rem;
-            margin: 0;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/dark-matter.png'); /* Hafif doku */
+            opacity: 0.3;
+        }
+
+        .hero-title {
+            font-size: 5rem;
             text-transform: uppercase;
             letter-spacing: 5px;
             color: var(--ana-renk);
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
         }
 
-        .subtitle {
-            font-size: 1.2rem;
-            color: #fff;
-            margin-top: 10px;
-            border: 1px solid var(--ana-renk);
-            padding: 5px 15px;
-            border-radius: 20px;
-        }
-
-        /* MENÜ */
-        nav {
-            background-color: #000;
-            position: sticky;
-            top: 0;
-            padding: 15px;
-            text-align: center;
-            z-index: 1000;
-            border-bottom: 1px solid #333;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--ana-renk);
-        }
-
-        /* İÇERİK KUTULARI */
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        section {
-            margin-bottom: 60px;
-            padding: 25px;
-            background-color: var(--kart-rengi);
-            border-radius: 5px;
-            border-left: 5px solid var(--ana-renk);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.5);
-        }
-
-        h2 {
-            color: var(--ana-renk);
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-            text-transform: uppercase;
+        .hero-subtitle {
             font-size: 1.5rem;
+            color: #888;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 2;
         }
 
-        /* PROJE KARTLARI */
-        .project-grid {
+        .cta-button {
+            padding: 15px 40px;
+            border: 2px solid var(--ana-renk);
+            color: var(--ana-renk);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            background: var(--ana-renk);
+            color: #000;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+        }
+
+        /* SECTIONS (BÖLÜMLER) */
+        .section-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 30px;
+            max-width: 1200px;
+            margin: -50px auto 50px; /* Hero'nun içine biraz girsin */
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
         }
 
         .card {
-            background-color: #222;
-            padding: 20px;
+            background: var(--panel);
+            border: 1px solid #333;
+            padding: 40px;
+            text-align: center;
             border-radius: 5px;
-            transition: transform 0.3s, border 0.3s;
-            border: 1px solid transparent;
+            transition: 0.4s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             border-color: var(--ana-renk);
         }
 
-        .btn {
-            display: inline-block;
-            background-color: transparent;
+        .card-icon {
+            font-size: 3rem;
             color: var(--ana-renk);
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 3px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #fff; }
+        .card p { color: #aaa; margin-bottom: 20px; line-height: 1.6; }
+
+        .card-link {
+            color: var(--ana-renk);
             font-weight: bold;
-            margin-top: 10px;
-            border: 2px solid var(--ana-renk);
-            transition: 0.3s;
-            margin-right: 10px; /* Butonlar arası boşluk */
+            text-transform: uppercase;
+            font-size: 0.9rem;
         }
-        
-        .btn:hover {
-            background-color: var(--ana-renk);
-            color: #000;
-        }
+        .card-link:hover { letter-spacing: 1px; }
 
         /* FOOTER */
         footer {
             text-align: center;
             padding: 40px;
-            background-color: #050505;
-            color: #666;
-            margin-top: 50px;
-            border-top: 2px solid #222;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 0.9rem;
         }
 
-        footer a {
-            color: #888;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: 0.3s;
-        }
-
-        footer a:hover {
-            color: var(--ana-renk);
-        }
-
-        /* MOBİL UYUMLULUK */
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            nav a { display: block; margin: 10px 0; }
-            header { height: 40vh; }
+            .hero-title { font-size: 3rem; }
+            .section-grid { margin-top: 50px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>ASERLAND</h1>
-        <div class="subtitle">Müzik • Yazılım • Oyun Geliştirme</div>
+    <header class="hero">
+        <h1 class="hero-title">ASERLAND</h1>
+        <p class="hero-subtitle">SKARRGARD REVOLUTION</p>
+        <a href="wiki/index.html" class="cta-button">Külliyata Gir</a>
     </header>
 
-    <nav>
-        <a href="#hakkimda">Hakkımda</a>
-        <a href="#projeler">Projeler</a>
-        <a href="#muzik">Müzik</a>
-        <a href="wiki/index.html">AserLand Wiki</a>
-    </nav>
+    <div class="section-grid">
+        
+        <div class="card">
+            <i class="fas fa-book-atlas card-icon"></i>
+            <h3>Evren Wiki</h3>
+            <p>95.000+ kelimelik devasa arşiv. Tiranlar, devrimciler ve imparatorlukların yükselişi. AserLand'ın tüm tarihi burada.</p>
+            <a href="wiki/index.html" class="card-link">Okumaya Başla →</a>
+        </div>
 
-    <div class="container">
+        <div class="card">
+            <i class="fas fa-music card-icon"></i>
+            <h3>Soundtrack</h3>
+            <p>Argoteda tarafından bestelenen, AserLand'ın atmosferini yansıtan özgün müzikler ve albümler.</p>
+            <a href="#" class="card-link" onclick="alert('Müzik sayfası yapım aşamasında!'); return false;">Dinle (Yakında) →</a>
+        </div>
 
-        <section id="hakkimda">
-            <h2><i class="fas fa-user-astronaut"></i> Hakkımda</h2>
-            <p>
-                Merhaba, ben <strong>Enes "Argoteda"</strong>. İzmir'de yaşayan bir müzik yapımcısı, oyun geliştiricisi ve yazılımcıyım. 
-                Turizm ve Otel İşletmeciliği bölümünde öğrenim görmekteyim. Aynı zamanda kendi kurgusal evrenim olan <strong>AserLand</strong> üzerine hikayeler ve oyunlar geliştiriyorum.
-            </p>
-            <p>
-                DarkSynth, Industrial ve Orchestral Metal türlerinde müzikler üretiyor; Unity (C#) ve Java dilleriyle projeler geliştiriyorum.
-            </p>
-        </section>
-
-        <section id="projeler">
-            <h2><i class="fas fa-code"></i> Yazılım ve Oyunlar</h2>
-            <div class="project-grid">
-                
-                <div class="card">
-                    <h3>🛠️ AserPermissions</h3>
-                    <p>Minecraft sunucuları için geliştirdiğim özel yetki ve GUI yönetim sistemi. EssentialsChat, Vault ve TAB özelliklerini tek çatıda toplar.</p>
-                    <a href="https://github.com/Argoteda" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub'da İncele</a>
-                </div>
-
-                <div class="card">
-                    <h3>🎮 AserLand: Skarrgard Revolution</h3>
-                    <p>Unity ve C# kullanılarak geliştirilen 2D sıra tabanlı RPG oyunu. AserLand evreninin derin hikayesini keşfedin.</p>
-                    <a href="https://github.com/Argoteda" target="_blank" class="btn"><i class="fas fa-gamepad"></i> Geliştirici Profili</a>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="muzik">
-            <h2><i class="fas fa-music"></i> Müzik: Argoteda</h2>
-            <p>"AserLand Pt.2" ve diğer çalışmalarım. Atmosferik, karanlık ve endüstriyel tınılar.</p>
-            
-            <div style="background:#222; padding:20px; border-radius:5px; text-align:center; border: 1px dashed #444;">
-                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/5kEyYTIjjS3Qhn2JnHjYWX?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
-        </section>
-
-        <section id="evren">
-            <h2><i class="fas fa-book-open"></i> AserLand Evreni</h2>
-            <p>
-                AserLand, savaşların, teknolojinin ve büyünün iç içe geçtiği kurgusal bir evrendir. 
-                Skarrgard devrimi, uluslar ve kasabaların hikayesi burada şekillenir.
-            </p>
-            <p><strong>95.000+ kelimelik devasa külliyat, karakter hikayeleri ve evrenin tarihi artık yayında.</strong></p>
-            
-            <a href="wiki/index.html" class="btn"><i class="fas fa-book"></i> Wiki'yi Oku</a>
-            
-            <a href="https://discord.gg/UA6dZjvg3v" target="_blank" class="btn"><i class="fab fa-discord"></i> Discord</a>
-        </section>
+        <div class="card">
+            <i class="fas fa-gamepad card-icon"></i>
+            <h3>Oyun</h3>
+            <p>Skarrgard Revolution. Strateji ve RPG öğelerini birleştiren, kendi kaderini tayin edeceğin o büyük proje.</p>
+            <a href="#" class="card-link" onclick="alert('Oyun geliştirme aşamasında!'); return false;">Detaylar (Yakında) →</a>
+        </div>
 
     </div>
 
     <footer>
-        <p>© 2026 AserLand Studio. Tüm Hakları Saklıdır.</p>
-        <p>
-            <a href="https://discord.gg/UA6dZjvg3v" target="_blank"><i class="fab fa-discord"></i></a>
-            <a href="https://www.instagram.com/argoteda.mp3/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://github.com/Argoteda" target="_blank"><i class="fab fa-github"></i></a>
+        <p>&copy; 2026 Argoteda Studios. Tüm hakları saklıdır.</p>
+        <p style="margin-top:10px;">
+            <a href="#"><i class="fab fa-discord"></i></a> &nbsp; 
+            <a href="#"><i class="fab fa-twitter"></i></a> &nbsp; 
+            <a href="#"><i class="fab fa-youtube"></i></a>
         </p>
     </footer>
 
