@@ -35,34 +35,8 @@
         /* İÇERİK ALANI */
         .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
         .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
+        .content h2 { color: #fff; margin-top: 40px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.8rem; background: linear-gradient(90deg, #222, transparent); padding: 10px; border-radius: 0 5px 5px 0; }
         
-        /* ÖZEL GÜNLÜK FORMATI */
-        .journal-entry {
-            background: #1a1a1a;
-            border-left: 5px solid var(--ana-renk);
-            padding: 30px;
-            margin-top: 30px;
-            font-style: italic;
-            color: #ccc;
-            font-family: 'Georgia', serif; /* Daha edebi bir font */
-            line-height: 1.8;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            position: relative;
-        }
-        .journal-entry::before {
-            content: '\f10d'; /* Tırnak işareti ikonu */
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            font-size: 3rem;
-            color: #333;
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            opacity: 0.5;
-        }
-        .journal-entry p { margin-bottom: 20px; position: relative; z-index: 1; }
-        .signature { text-align: right; font-weight: bold; color: var(--ana-renk); margin-top: 20px; }
-
         /* INFOBOX */
         .infobox {
             float: right;
@@ -72,32 +46,34 @@
             margin: 0 0 20px 20px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.5);
             font-size: 0.95rem;
-            /* İçeriğin üstte kalmasını sağlar */
-            position: relative; 
-            z-index: 10; 
+            position: relative;
+            z-index: 10;
         }
-        
-        /* EKRAN KÜÇÜLDÜĞÜNDE (Laptop ve Tablet) KUTUYU DÜZELTME */
-        @media (max-width: 1300px) { 
-            .infobox { 
-                float: none; /* Sağa yaslamayı iptal et */
-                width: 100%; /* Tam genişlik yap */
-                max-width: 100%;
-                margin: 0 0 30px 0; /* Alta boşluk bırak */
-                display: table; /* İçeriği toparla */
-            }
-            .infobox-image {
-                height: 250px; /* Görseli biraz büyüt */
-            }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 220px;
+            display: flex; align-items: center; justify-content: center; color: #333;
         }
         .infobox-table { width: 100%; border-collapse: collapse; }
         .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
         .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
 
-        @media (max-width: 900px) { 
+        @media (max-width: 1300px) { 
             .container { flex-direction: column; } 
             .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
-            .infobox { float: none; width: 100%; margin: 20px 0; }
+            .infobox { float: none; width: 100%; margin: 0 0 30px 0; }
         }
     </style>
 </head>
@@ -110,102 +86,89 @@
 
     <div class="container">
         <aside class="sidebar">
-    <details>
-        <summary>1. Kısım: Parçalanmış Taç</summary>
-        <ul>
-            <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
-            <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
-            <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
-            <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
-            <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
-            <li><a href="asertechno.html">➤ AserTechno</a></li>
-            <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
-            <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
-            <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
-        </ul>
-    </details>
-    <details open>
-        <summary>2. Kısım: Tiranların Çağı</summary>
-        <ul>
-            <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
-            <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
-            <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
-            <li><a href="iki-taht-bir-golge.html">➤ İki Taht, Bir Gölge</a></li>
-            <li><a href="denoistos-los-aser.html">➤ General Denoistos Los Aser</a></li>
-            <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
-            <li><a href="lucian-baron-mhoore.html">➤ Lucian "Baron" Mhoore</a></li>
-            <li><a href="zykrath-vhalgoroth-aser.html">➤ Kral Zykrath Vhalgoroth Aser</a></li>
-            <li><a href="celestine-darvell.html">➤ Celestine D'Arvell</a></li>
-            <li><a href="kutuphanedeki-sessiz-kanaat.html" class="active">➤ Belge: Kütüphanedeki Sessiz Kanaat</a></li>
-            <li><a href="stellan-korvath.html">➤ Stellan Korvath (Kuzeyin Mimarı)</a></li>
-            <li><a href="kaelus-theron.html">➤ Lord Koruyucu Kaelus Theron</a></li>
-            <li><a href="behemoth-yapilis-sureci.html">➤ Belge: Behemoth'un İnşası</a></li>
-            <li><a href="aserwar-gedian.html">➤ Aserwar Gedian (Suikastçı Mimar)</a></li>
-            <li><a href="morvran-corvus.html">➤ General Morvran Corvus</a></li>
-            <li><a href="silus-praxton.html">➤ Silus Praxton (Yankı'nın Mirasçısı)</a></li>
-            <li><a href="sapan-disliler.html">➤ Hikaye: Sapan Dişliler</a></li>
-            <li><a href="uclu-pakt.html"><i class="fas fa-file-signature"></i> Belge: Üçlü Pakt</a></li>
-        </ul>
-    </details>
-    <details>
-        <summary>Yaşam Öyküleri</summary>
-        <ul>
-            <li><a href="aserwar-gedian-yasam-oykusu.html">➤ Aserwar Gedian: Yaşam Öyküsü</a></li>
-            <li><a href="denoistos-los-aser-yasam-oykusu.html">➤ General Denoistos: Yaşam Öyküsü</a></li>
-        </ul>
-    </details>
-</aside>
+            <details>
+                <summary>1. Kısım: Parçalanmış Taç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details open>
+                <summary>2. Kısım: Tiranların Çağı</summary>
+                <ul>
+                    <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
+                    <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
+                    <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
+                    <li><a href="iki-taht-bir-golge.html">➤ İki Taht, Bir Gölge</a></li>
+                    <li><a href="denoistos-los-aser.html">➤ General Denoistos Los Aser</a></li>
+                    <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
+                    <li><a href="lucian-baron-mhoore.html">➤ Lucian "Baron" Mhoore</a></li>
+                    <li><a href="zykrath-vhalgoroth-aser.html">➤ Kral Zykrath Vhalgoroth Aser</a></li>
+                    <li><a href="celestine-darvell.html">➤ Celestine D'Arvell</a></li>
+                    <li><a href="kutuphanedeki-sessiz-kanaat.html" class="active">➤ Belge: Kütüphanedeki Sessiz Kanaat</a></li>
+                    <li><a href="stellan-korvath.html">➤ Stellan Korvath (Kuzeyin Mimarı)</a></li>
+                    <li><a href="kaelus-theron.html">➤ Lord Koruyucu Kaelus Theron</a></li>
+                    <li><a href="behemoth-yapilis-sureci.html">➤ Belge: Behemoth'un İnşası</a></li>
+                    <li><a href="aserwar-gedian.html">➤ Aserwar Gedian (Suikastçı Mimar)</a></li>
+                    <li><a href="morvran-corvus.html">➤ General Morvran Corvus</a></li>
+                    <li><a href="silus-praxton.html">➤ Silus Praxton (Yankı'nın Mirasçısı)</a></li>
+                    <li><a href="sapan-disliler.html">➤ Hikaye: Sapan Dişliler</a></li>
+                    <li><a href="uclu-pakt.html"><i class="fas fa-file-signature"></i> Belge: Üçlü Pakt</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Yaşam Öyküleri</summary>
+                <ul>
+                    <li><a href="aserwar-gedian-yasam-oykusu.html">➤ Aserwar Gedian: Yaşam Öyküsü</a></li>
+                    <li><a href="denoistos-los-aser-yasam-oykusu.html">➤ General Denoistos: Yaşam Öyküsü</a></li>
+                </ul>
+            </details>
+        </aside>
 
         <main class="content">
 
             <div class="infobox">
-                <div class="infobox-header">ARŞİV BELGESİ</div>
-                <div class="infobox-image"><i class="fas fa-scroll" style="font-size:4rem;"></i></div>
+                <div class="infobox-header">KÜTÜPHANEDEKİ SESSİZ KANAAT</div>
+                <div class="infobox-image"><i class="fas fa-file-signature" style="font-size:4rem;"></i></div>
                 <table class="infobox-table">
-                    <tr><th>Belge Adı:</th><td>Kütüphanedeki Sessiz Kanaat</td></tr>
-                    <tr><th>Tür:</th><td>Kişisel Anı / Tanık İfadesi</td></tr>
-                    <tr><th>Yazar:</th><td>Elias (EASC Memuru)</td></tr>
-                    <tr><th>Tarih:</th><td>M.S. 37 Civarı</td></tr>
-                    <tr><th>Konu:</th><td>Celestine D'Arvell'in Yükselişi</td></tr>
-                    <tr><th>Önem:</th><td>"C.D." Rumuzunun Kökeni</td></tr>
+                    <tr><th>Anlatıcı:</th><td>Elias (EASC Memuru)</td></tr>
+                    <tr><th>Konu:</th><td>"C.D." (Celestine D'Arvell)</td></tr>
+                    <tr><th>Dönem:</th><td>M.S. 37 Öncesi ve Sonrası</td></tr>
+                    <tr><th>Konum:</th><td>Supremia / EASC Binası</td></tr>
+                    <tr><th>Önem:</th><td>Celestine'in Yükselişi</td></tr>
                 </table>
             </div>
 
             <h1>Kütüphanedeki Sessiz Kanaat</h1>
-            <p style="color:#888; font-size:0.9rem; margin-bottom:20px;">
-                <em>*Aşağıdaki metin, EASC (Doğu AserLand Konseyi) arşivlerinde bulunan, dönemin alt düzey memurlarından Elias'a ait olduğu düşünülen kişisel bir günlük kaydıdır. Celestine D'Arvell'in "C.D." kimliğiyle gölgelerde nasıl yükseldiğine dair nadir bir birinci ağız anlatımıdır.*</em>
-            </p>
 
-            <div class="journal-entry">
-                <p>
-                    Benim adım Elias. Yıllardır EASC'de (Doğu AserLand Konseyi) hizmet veren sıradan bir memurum. Konseyin yaşlı ve yorgun üyelerine hizmet etmek, onların notlarını derlemek, arşivleri düzenlemek benim işimdi. O dönemler, Maria Von Cortex ve ardından gelen Elena Von Cortex'in reform rüzgarları esiyordu. Herkes büyük bir değişimden bahsediyordu, ancak ben bu koridorlarda daha çok yorgunluk ve belirsizlik görüyordum.
-                </p>
-                <p>
-                    Bir gün, 14 konsey üyesinden birisi olan Lord Kael'in masasından notlarını toplarken, garip bir şeye rastladım. Not defterinin kenarında, el yazısıyla yazılmış, kimsenin bilmediği bir isim vardı: <strong>"C.D."</strong>. Bu harflerin hemen altında, Elena'nın yeni vergi reformuyla ilgili bir öneri vardı. Öneri, reformun zayıf noktalarını gösteriyor ve daha etkili bir çözüm sunuyordu. İlginç olan şuydu ki, bu öneri Lord Kael'in kendi fikri değildi.
-                </p>
-                <p>
-                    Sonraki günlerde, başka konsey üyelerinin not defterlerinde de bu harfleri görmeye başladım. "C.D.", sanki bir hayalet gibi dolaşıyordu bu koridorlarda. Bir isim değil, bir kanaat gibiydi. Bir öneri, bir not... Hepsi de akılcı ve cesur fikirlerdi. Bu gizemli figür, konseyin içindeki en önemli meseleleri içeriden, sessizce yönlendiriyor gibiydi. Kimdi bu C.D.? Kimse bilmiyordu, kimse sormuyordu bile. Ama ben, sıradan bir memur olarak, bu sessiz gücün varlığını en yakından hissedenlerden biriydim.
-                </p>
-                <p>
-                    Gizemli "C.D." notlarını gördüğüm günlerde, kütüphanede bir kızla tanıştım. Aslında tanışmadım, sadece onu fark ettim. Çok gençti, sıradan bir taşra kızı gibi giyinmişti. Ama gözleri... O gözler asla sıradan değildi. Gecenin karanlığına alışmış gibiydi; sessizliğin içinden ses çekmeyi öğrenmiş gibi. Diğer öğrenciler, önlerindeki kitapları ezberlemeye çalışırken, o sadece bakar, düşünürdü. Sorular sormaz, yanıtları kendi içinde ölçüp biçerdi.
-                </p>
-                <p>
-                    Bir keresinde, onun masasına yakın bir sandalyede otururken, Maria Von Cortex'in yeni bir yasa tasarısı hakkındaki bir metni okuduğunu gördüm. Diğer öğrenciler bu yasa tasarısının teorik yanlarını tartışırken, o sessizce, sanki yasanın pratikte neler getireceğini hayal ediyormuş gibi, sayfalara bakıyordu. Aklıma hemen "C.D." notları geldi. O notlarda da yasanın teorik yönü değil, pratikte yaratacağı boşluklar ele alınıyordu. Sanki bu genç kız, yasanın her maddesini, Doğu AserLand'ın her köşesinde yaşayacak insanlara ne gibi etkileri olacağını önceden görüyor gibiydi. Bu gözlem, içimde bir şüphe tohumu ekti. Bu genç kız, bu sessiz gözler... Acaba "C.D." o olabilir miydi?
-                </p>
-                <p>
-                    Elena Von Cortex'in yönetimi, ilk başta büyük bir umut fırtınası gibi başlamıştı. Ancak rüzgar dindiğinde geriye sadece kararsızlık ve belirsizlik kaldı. Bu durumu en iyi ben biliyordum; konsey üyelerinin yüzlerindeki hayal kırıklığını, halkın giderek artan hoşnutsuzluğunu her gün görüyordum. Ve bu süreçte, o gizemli "C.D." notları daha da sık gelmeye başlamıştı. Artık sadece öneri değil, adeta bir yargı gibiydiler.
-                </p>
-                <p>
-                    Bir gün, en önemli konsey toplantılarından birinde, Elena'nın bir yasa tasarısı masaya yatırılmıştı. “Halkın Umudu” adındaki bu yasa, halka yeni haklar tanıyor, ancak maliyetini karşılayacak somut bir plan sunmuyordu. Tam o sırada, Lord Kael'in elindeki parşomene bir göz attım. Her zaman olduğu gibi, defterin kenarında "C.D." harfleri vardı ve altında yasa tasarısının pratikte nasıl bir kaosa yol açacağını anlatan detaylı ancak kısa bir analiz yazıyordu. Lord Kael, bu notu okurken yüzü bembeyaz oldu ve yasa tasarısını tartışmaya açmadan geri çekti. İşte o an, bu notların sadece bir öneri değil, bir emir niteliği taşıdığını anladım.
-                </p>
-                <p>
-                    Elena'nın yönetimi kısa bir süre sonra son buldu. EASC, yeni bir demokratik seçim süreci başlattı. Ben ve benim gibiler, bu süreçten yeni bir liderin çıkacağını düşünüyorduk. Ancak toplantı salonlarından içeriye sızan fısıltılar, bambaşka bir şey anlatıyordu. Seçim sürecinin sonunda, kimsenin tanımadığı o genç kadın, Celestine D'Arvell, başa geçti. O, o sessiz kızdı, kütüphanedeki "C.D." idi.
-                </p>
-                <p>
-                    Göreve başladıktan kısa bir süre sonra ise, konseyi feshetme kararı aldı. İşte o an, her şeyin planlı olduğunu anladım. O genç kadın, taht için değil, sadece bir kurum olmak için doğmuştu ve kaderin hükmünü vermişti. O, kelimelerin ve kılıçların değil, alışkanlıkların ve emirlerin lideriydi.
-                </p>
-                <div class="signature">- Elias</div>
-            </div>
+            <p>
+                Benim adım Elias. Yıllardır EASC'de (Doğu AserLand Konseyi) hizmet veren sıradan bir memurum. Konseyin yaşlı ve yorgun üyelerine hizmet etmek, onların notlarını derlemek, arşivleri düzenlemek benim işimdi. O dönemler, Maria Von Cortex ve ardından gelen Elena Von Cortex'in reform rüzgarları esiyordu. Herkes büyük bir değişimden bahsediyordu, ancak ben bu koridorlarda daha çok yorgunluk ve belirsizlik görüyordum.
+            </p>
+            <p>
+                Bir gün, 14 konsey üyesinden birisi olan Lord Kael'in masasından notlarını toplarken, garip bir şeye rastladım. Not defterinin kenarında, el yazısıyla yazılmış, kimsenin bilmediği bir isim vardı: "C.D.". Bu harflerin hemen altında, Elena'nın yeni vergi reformuyla ilgili bir öneri vardı. Öneri, reformun zayıf noktalarını gösteriyor ve daha etkili bir çözüm sunuyordu. İlginç olan şuydu ki, bu öneri Lord Kael'in kendi fikri değildi. Sonraki günlerde, başka konsey üyelerinin not defterlerinde de bu harfleri görmeye başladım. "C.D.", sanki bir hayalet gibi dolaşıyordu bu koridorlarda. Bir isim değil, bir kanaat gibiydi. Bir öneri, bir not... Hepsi de akılcı ve cesur fikirlerdi. Bu gizemli figür, konseyin içindeki en önemli meseleleri içeriden, sessizce yönlendiriyor gibiydi. Kimdi bu C.D.? Kimse bilmiyordu, kimse sormuyordu bile. Ama ben, sıradan bir memur olarak, bu sessiz gücün varlığını en yakından hissedenlerden biriydim.
+            </p>
+            <p>
+                Gizemli "C.D." notlarını gördüğüm günlerde, kütüphanede bir kızla tanıştım. Aslında tanışmadım, sadece onu fark ettim. Çok gençti, sıradan bir taşra kızı gibi giyinmişti. Ama gözleri... O gözler asla sıradan değildi. Gecenin karanlığına alışmış gibiydi; sessizliğin içinden ses çekmeyi öğrenmiş gibi. Diğer öğrenciler, önlerindeki kitapları ezberlemeye çalışırken, o sadece bakar, düşünürdü. Sorular sormaz, yanıtları kendi içinde ölçüp biçerdi.
+            </p>
+            <p>
+                Bir keresinde, onun masasına yakın bir sandalyede otururken, Maria Von Cortex'in yeni bir yasa tasarısı hakkındaki bir metni okuduğunu gördüm. Diğer öğrenciler bu yasa tasarısının teorik yanlarını tartışırken, o sessizce, sanki yasanın pratikte neler getireceğini hayal ediyormuş gibi, sayfalara bakıyordu. Aklıma hemen "C.D." notları geldi. O notlarda da yasanın teorik yönü değil, pratikte yaratacağı boşluklar ele alınıyordu. Sanki bu genç kız, yasanın her maddesini, Doğu AserLand'ın her köşesinde yaşayacak insanlara ne gibi etkileri olacağını önceden görüyor gibiydi. Bu gözlem, içimde bir şüphe tohumu ekti. Bu genç kız, bu sessiz gözler... Acaba "C.D." o olabilir miydi?
+            </p>
+            <p>
+                Elena Von Cortex'in yönetimi, ilk başta büyük bir umut fırtınası gibi başlamıştı. Ancak rüzgar dindiğinde geriye sadece kararsızlık ve belirsizlik kaldı. Bu durumu en iyi ben biliyordum; konsey üyelerinin yüzlerindeki hayal kırıklığını, halkın giderek artan hoşnutsuzluğunu her gün görüyordum. Ve bu süreçte, o gizemli "C.D." notları daha da sık gelmeye başlamıştı. Artık sadece öneri değil, adeta bir yargı gibiydiler.
+            </p>
+            <p>
+                Bir gün, en önemli konsey toplantılarından birinde, Elena'nın bir yasa tasarısı masaya yatırılmıştı. “Halkın Umudu” adındaki bu yasa, halka yeni haklar tanıyor, ancak maliyetini karşılayacak somut bir plan sunmuyordu. Tam o sırada, Lord Kael'in elindeki parşomene bir göz attım. Her zaman olduğu gibi, defterin kenarında "C.D." harfleri vardı ve altında yasa tasarısının pratikte nasıl bir kaosa yol açacağını anlatan detaylı ancak kısa bir analiz yazıyordu. Lord Kael, bu notu okurken yüzü bembeyaz oldu ve yasa tasarısını tartışmaya açmadan geri çekti. İşte o an, bu notların sadece bir öneri değil, bir emir niteliği taşıdığını anladım.
+            </p>
+            <p>
+                Elena'nın yönetimi kısa bir süre sonra son buldu. EASC, yeni bir demokratik seçim süreci başlattı. Ben ve benim gibiler, bu süreçten yeni bir liderin çıkacağını düşünüyorduk. Ancak toplantı salonlarından içeriye sızan fısıltılar, bambaşka bir şey anlatıyordu. Seçim sürecinin sonunda, kimsenin tanımadığı o genç kadın, Celestine D'Arvell, başa geçti. O, o sessiz kızdı, kütüphanedeki "C.D." idi. Göreve başladıktan kısa bir süre sonra ise, konseyi feshetme kararı aldı. İşte o an, her şeyin planlı olduğunu anladım. O genç kadın, taht için değil, sadece bir kurum olmak için doğmuştu ve kaderin hükmünü vermişti. O, kelimelerin ve kılıçların değil, alışkanlıkların ve emirlerin lideriydi.
+            </p>
 
         </main>
     </div>
