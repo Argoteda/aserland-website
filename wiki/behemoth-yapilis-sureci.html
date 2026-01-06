@@ -58,7 +58,7 @@
         .log-content { font-style: italic; color: #ccc; line-height: 1.8; }
         .log-content p { margin-bottom: 15px; }
 
-        /* INFOBOX */
+        /* INFOBOX (DÜZELTİLMİŞ) */
         .infobox {
             float: right;
             width: 320px;
@@ -67,32 +67,35 @@
             margin: 0 0 20px 20px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.5);
             font-size: 0.95rem;
-            /* İçeriğin üstte kalmasını sağlar */
-            position: relative; 
-            z-index: 10; 
+            position: relative;
+            z-index: 10;
         }
-        
-        /* EKRAN KÜÇÜLDÜĞÜNDE (Laptop ve Tablet) KUTUYU DÜZELTME */
-        @media (max-width: 1300px) { 
-            .infobox { 
-                float: none; /* Sağa yaslamayı iptal et */
-                width: 100%; /* Tam genişlik yap */
-                max-width: 100%;
-                margin: 0 0 30px 0; /* Alta boşluk bırak */
-                display: table; /* İçeriği toparla */
-            }
-            .infobox-image {
-                height: 250px; /* Görseli biraz büyüt */
-            }
+        .infobox-header {
+            background: var(--ana-renk);
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .infobox-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            background: #000;
+            height: 180px;
+            display: flex; align-items: center; justify-content: center; color: #333;
         }
         .infobox-table { width: 100%; border-collapse: collapse; }
         .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
         .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
 
-        @media (max-width: 900px) { 
+        /* RESPONSIVE LAYOUT */
+        @media (max-width: 1300px) { 
             .container { flex-direction: column; } 
             .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
-            .infobox { float: none; width: 100%; margin: 20px 0; }
+            .infobox { float: none; width: 100%; margin: 0 0 30px 0; }
         }
     </style>
 </head>
@@ -105,51 +108,51 @@
 
     <div class="container">
         <aside class="sidebar">
-    <details>
-        <summary>1. Kısım: Parçalanmış Taç</summary>
-        <ul>
-            <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
-            <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
-            <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
-            <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
-            <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
-            <li><a href="asertechno.html">➤ AserTechno</a></li>
-            <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
-            <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
-            <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
-        </ul>
-    </details>
-    <details open>
-        <summary>2. Kısım: Tiranların Çağı</summary>
-        <ul>
-            <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
-            <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
-            <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
-            <li><a href="iki-taht-bir-golge.html">➤ İki Taht, Bir Gölge</a></li>
-            <li><a href="denoistos-los-aser.html">➤ General Denoistos Los Aser</a></li>
-            <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
-            <li><a href="lucian-baron-mhoore.html">➤ Lucian "Baron" Mhoore</a></li>
-            <li><a href="zykrath-vhalgoroth-aser.html">➤ Kral Zykrath Vhalgoroth Aser</a></li>
-            <li><a href="celestine-darvell.html">➤ Celestine D'Arvell</a></li>
-            <li><a href="kutuphanedeki-sessiz-kanaat.html">➤ Belge: Kütüphanedeki Sessiz Kanaat</a></li>
-            <li><a href="stellan-korvath.html">➤ Stellan Korvath (Kuzeyin Mimarı)</a></li>
-            <li><a href="kaelus-theron.html">➤ Lord Koruyucu Kaelus Theron</a></li>
-            <li><a href="behemoth-yapilis-sureci.html" class="active">➤ Belge: Behemoth'un İnşası</a></li>
-            <li><a href="aserwar-gedian.html">➤ Aserwar Gedian (Suikastçı Mimar)</a></li>
-            <li><a href="morvran-corvus.html">➤ General Morvran Corvus</a></li>
-            <li><a href="silus-praxton.html">➤ Silus Praxton (Yankı'nın Mirasçısı)</a></li>
-            <li><a href="sapan-disliler.html">➤ Hikaye: Sapan Dişliler</a></li>
-            <li><a href="uclu-pakt.html"><i class="fas fa-file-signature"></i> Belge: Üçlü Pakt</a></li>
-        </ul>
-    </details>
-    <details>
-        <summary>Yaşam Öyküleri</summary>
-        <ul>
-            <li><a href="aserwar-gedian-yasam-oykusu.html">➤ Aserwar Gedian: Yaşam Öyküsü</a></li>
-            <li><a href="denoistos-los-aser-yasam-oykusu.html">➤ General Denoistos: Yaşam Öyküsü</a></li>
-        </ul>
-    </details>
-</aside>
+            <details>
+                <summary>1. Kısım: Parçalanmış Taç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details open>
+                <summary>2. Kısım: Tiranların Çağı</summary>
+                <ul>
+                    <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
+                    <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
+                    <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
+                    <li><a href="iki-taht-bir-golge.html">➤ İki Taht, Bir Gölge</a></li>
+                    <li><a href="denoistos-los-aser.html">➤ General Denoistos Los Aser</a></li>
+                    <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
+                    <li><a href="lucian-baron-mhoore.html">➤ Lucian "Baron" Mhoore</a></li>
+                    <li><a href="zykrath-vhalgoroth-aser.html">➤ Kral Zykrath Vhalgoroth Aser</a></li>
+                    <li><a href="celestine-darvell.html">➤ Celestine D'Arvell</a></li>
+                    <li><a href="kutuphanedeki-sessiz-kanaat.html">➤ Belge: Kütüphanedeki Sessiz Kanaat</a></li>
+                    <li><a href="stellan-korvath.html">➤ Stellan Korvath (Kuzeyin Mimarı)</a></li>
+                    <li><a href="kaelus-theron.html">➤ Lord Koruyucu Kaelus Theron</a></li>
+                    <li><a href="behemoth-yapilis-sureci.html" class="active">➤ Belge: Behemoth'un İnşası</a></li>
+                    <li><a href="aserwar-gedian.html">➤ Aserwar Gedian (Suikastçı Mimar)</a></li>
+                    <li><a href="morvran-corvus.html">➤ General Morvran Corvus</a></li>
+                    <li><a href="silus-praxton.html">➤ Silus Praxton (Yankı'nın Mirasçısı)</a></li>
+                    <li><a href="sapan-disliler.html">➤ Hikaye: Sapan Dişliler</a></li>
+                    <li><a href="uclu-pakt.html"><i class="fas fa-file-signature"></i> Belge: Üçlü Pakt</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Yaşam Öyküleri</summary>
+                <ul>
+                    <li><a href="aserwar-gedian-yasam-oykusu.html">➤ Aserwar Gedian: Yaşam Öyküsü</a></li>
+                    <li><a href="denoistos-los-aser-yasam-oykusu.html">➤ General Denoistos: Yaşam Öyküsü</a></li>
+                </ul>
+            </details>
+        </aside>
 
         <main class="content">
 
@@ -171,53 +174,108 @@
             </p>
 
             <div class="log-entry">
-                <div class="log-header">M.S. 70 Yılı, 24. Gün | Ironheart Gözetim Kampı (Eski Atölye 7)</div>
+                <div class="log-header">M.S. 70 YILI, 24. GÜN | IRONHEART GÖZETİM KAMPI (ESKİ ATÖLYE 7)</div>
                 <div class="log-content">
                     <p>Ironheart'ın havası... Artık metal ve kömür kokmuyor. Kül ve korku kokuyor.</p>
                     <p>Büyükbabam, Usta AserTechno'nun yanında çalışırmış. O her zaman, "Bilim ilerlemedir, Elara ise onun en parlak ışığıydı" derdi. Şimdi o ışığın katilleri, bizden, onların torunlarından, o bilimi bir canavara dönüştürmemizi istiyor. Kral Zykrath'ın son paranoyası: Proje Behemoth.</p>
-                    <p>Celestine D'Arvell'in ölümü, kralın zihnindeki son vidayı da gevşetti. Tüm kıtayı susturacak bir çığlık inşa ediyor. Biz mühendisler, Ironheart'ın dökümhanelerinde "çalışmıyoruz". Biz burada esiriz. Her köşede pelerinli bir "Demir Göz" ajanı dikiliyor.</p>
-                    <p>Baskı arttıkça, TÖH daha da derine iniyor. Bu canavarı inşa etmek zorundayız, evet. Ama onu, bizim bildiğimiz gibi inşa ediyoruz. Her zırh plakasının altına, her buhar borusunun eklem yerine, her hidrolik pistonun içine, görülmesi imkansız birer "kusur" ekiyoruz. Bu bir sabotaj değil; bu, geleceğe bırakılmış bir panzehir.</p>
-                    <p>Elara'nın ruhu şahit olsun; Zykrath'a bir silah değil, onun saltanatının tabutunu inşa ediyoruz.</p>
+                    <p>Celestine D'Arvell'in M.S. 69'daki ölümü, kralın zihnindeki son vidayı da gevşetti. Aseria'nın (ASC) sessizliğinden, yeraltındaki Teknoloji Özgürlüğü Hareketi'nden ve adını fısıldamaktan bile korktuğu Gecelerin Pelerini'nden o kadar korkuyor ki, tüm kıtayı susturacak bir çığlık inşa ediyor.</p>
+                    <p>Biz mühendisler, Ironheart'ın dökümhanelerinde "çalışmıyoruz". Biz burada esiriz. Atölyelerimiz, Aserwar Savaş Okulu'nun disiplinini aratmayan birer çalışma kampına dönüştü. Her köşede, her vincin başında, her perçin istasyonunda pelerinli bir "Demir Göz" ajanı dikiliyor. Görevleri bize yardım etmek değil. Görevleri, bizi izlemek.</p>
+                    <p>Konuşmalarımız fısıltıdan ibaret. Her fısıltı, bir ihanet şüphesi.</p>
+                    <p>Dün, hidrolik basınç sistemlerinden birinde çalışan Lyrus'u aldılar. Vardiya değişiminde, bir manivelayı kontrol ederken duraksamıştı. Sadece bir anlık tereddüt. Demir Göz ajanı bunu "sabotaj girişimi" olarak rapor etti. Lyrus geri dönmedi. Ailesine "talihsiz bir atölye kazası" haberi gidecek. Tıpkı Usta AserTechno'ya yaptıkları gibi.</p>
+                    <p>Baskı arttıkça, TÖH daha da derine iniyor. Biz, Zykrath'ın canavarını inşa etmeye zorlananlarız. Demir Göz bizim hatalarımızı arıyor; biz ise onların kör noktalarını. Bu canavarı inşa etmek zorundayız, evet. Zykrath'ın istediği "mutlak silahı" ona vermek zorundayız.</p>
+                    <p>Ama onu, bizim bildiğimiz gibi inşa ediyoruz.</p>
+                    <p>Her zırh plakasının altına, her buhar borusunun eklem yerine, her hidrolik pistonun içine, görülmesi imkansız birer "kusur" ekiyoruz. Bu bir sabotaj değil; bu, geleceğe bırakılmış bir panzehir. Bu makine bir gün çalışacak, evet. Ama çalışırken, içinde kendi yıkımının tohumlarını da taşıyacak.</p>
+                    <p>Bugün, Behemoth'un ana güç kaynağı olacak o devasa buhar çekirdeği için getirilen nadir ve dengesiz mineralin ilk sevkiyatını denetledim. Çekirdeğin yaydığı saf, kontrolsüz gücü hissettim. Korkunçtu.</p>
+                    <p>Zykrath, dağları eritebilecek bir topa sahip olduğunu sanıyor. Ama biz, onun eline patlamaya hazır bir yıldız verdiğimizi biliyoruz.</p>
+                    <p>Elara Ventis'in ana meydanda idam edildiği o kara günü hatırlıyorum. Büyükbabamın gözyaşlarını hatırlıyorum. O gün, Ironheart'ın ateşi söndü sanmışlardı. Yanıldılar. Ateş sadece yeraltına indi.</p>
+                    <p>Elara'nın ruhu şahit olsun; Zykrath'a bir silah değil, onun saltanatının tabutunu inşa ediyoruz. TÖH yaşıyor. Biz yaşıyoruz.</p>
                 </div>
             </div>
 
             <div class="log-entry">
-                <div class="log-header">M.S. 85 Yılı, 192. Gün | Ironheart Gözetim Kampı (Revir Bölgesi)</div>
+                <div class="log-header">M.S. 85 YILI, 192. GÜN | IRONHEART GÖZETİM KAMPI (REVİR BÖLGESİ)</div>
                 <div class="log-content">
                     <p>On beş yıl. Tam on beş yıldır bu metal mezarlığın içinde nefes alıyoruz. Proje Behemoth artık bir iskelet değil. Ironheart vadisinin üzerindeki güneşi kalıcı olarak karartan, hareket etmeyi bekleyen, paslanan bir canavar.</p>
-                    <p>Geçen hafta kıtanın dört bir yanında duyulan o ses... TÖH'ün manifestosu. Elara'nın idealleri gökyüzünden yankılandı. Ama bedelini ağır ödüyoruz. Zykrath'ın paranoyası artık bir hastalık değil, bir salgın.</p>
-                    <p>Benim görevim ise her zamankinden daha kritik. Canavarın kalbindeyim. Ana hidrolik pompa sistemlerinden sorumluyum. Bugün, o sistemin kalbi olan ana regülatör vanasını monte ettik. Vanayı ben tasarladım. Alaşımı kusursuz görünüyor. Ama içinde, sadece benim bildiğim bir sır var. Döküm sırasında, alaşımın içine yavaş ama istikrarlı etki eden aşındırıcı bir bileşen kattım.</p>
-                    <p>Zykrath'ın hayalini kurduğu o "mutlak gücü" serbest bıraktığı an... O muazzam ısı ve basınç, benim bıraktığım o küçük kusuru bulacak. Regülatör parçalanacak. Soğutma sistemi çökecek. Ve canavar, kendi ateşinde boğulacak.</p>
+                    <p>Geçen hafta kıtanın dört bir yanında duyulan o ses... TÖH (Teknoloji Özgürlüğü Hareketi), Zykrath'ın kendi siren kulelerini ele geçirip manifestomuzu yayınladığında, buradaki her mühendisin yüreğinde bir anlığına da olsa umut yeşerdi. Elara'nın idealleri, AserTechno'nun mirası... Gökyüzünden yankılandı.</p>
+                    <p>Ama bu zaferin bedelini ağır ödüyoruz.</p>
+                    <p>Zykrath'ın paranoyası artık bir hastalık değil, bir salgın. O yayından sonra "Demir Göz" sadece izlemeyi bıraktı; artık avlanıyor. Atölyeler birer sorgu odasına dönüştü. "Gümüş Damar Konvoyu"nun TÖH tarafından yok edilmesinin ardından gelen öfke dalgası, dün navigasyon ekibinden üç kişiyi daha bizden kopardı. Suçları? Vardiya değişiminde fısıldaşmak.</p>
+                    <p>TÖH ajanı mıydılar? Hayır. Sadece yorgundular. Artık yorgunluk da ihanet sayılıyor.</p>
+                    <p>Benim görevim ise her zamankinden daha kritik. Canavarın kalbindeyim. Zykrath'ın "dağları eritecek" o dengesiz mineral çekirdeğini soğutması gereken ana hidrolik pompa sistemlerinden sorumluyum.</p>
+                    <p>Bugün, o sistemin kalbi olan ana regülatör vanasını monte ettik. Başımda dikilen Demir Göz ajanı, her bir cıvatayı sıkışımı, her bir basınç ölçümü izledi. Ama o, metalurjiden anlamaz.</p>
+                    <p>Vanayı ben tasarladım. Alaşımı kusursuz görünüyor. Rejimin tüm ilkel stres testlerini geçti. Ama içinde, sadece benim bildiğim bir sır var. Döküm sırasında, alaşımın içine yavaş ama istikrarlı etki eden aşındırıcı bir bileşen kattım. Gözle görülmesi imkansız, mikroskobik bir çatlak.</p>
+                    <p>Bu vana yıllarca dayanır. Normal güçte, rutin operasyonlarda sorun çıkarmaz.</p>
+                    <p>Ama Zykrath'ın hayalini kurduğu o "mutlak gücü" serbest bıraktığı an... Çekirdeği, Aseria'yı haritadan silmek için tam kapasiteye zorladığı an... O muazzam ısı ve basınç, benim bıraktığım o küçük kusuru bulacak. Regülatör parçalanacak. Soğutma sistemi çökecek. Ve canavar, kendi ateşinde boğulacak.</p>
+                    <p>Kral'a bir silah inşa ediyoruz, evet. Ama panzehiri de içinde.</p>
+                    <p>Demir Göz'ün gölgesinde çalışmak ruhumu öldürüyor. Bazen Elara'nın darağacındaki meydan okuyan bakışlarını görüyorum rüyamda. Bazen de Lyrus'un götürülüşünü... Bizler, kendi mezarımızı inşa eden hayaletleriz.</p>
+                    <p>Umarım o düğmeye basıldığını görecek kadar yaşarım.</p>
                 </div>
             </div>
 
             <div class="log-entry">
-                <div class="log-header">M.S. 98 Yılı, 342. Gün | Ironheart Proje Alanı, Çekirdek Bakım Tüneli</div>
+                <div class="log-header">M.S. 98 YILI, 342. GÜN | IRONHEART PROJE ALANI, ÇEKİRDEK BAKIM TÜNELİ</div>
                 <div class="log-content">
-                    <p>Neredeyse otuz yıl. Dile kolay. Koskoca bir ömür... bir canavarın gölgesinde geçti. Proje Behemoth tamamlandı. Biz inşa ettik. Her perçininde yalanlarımız, her devresinde gizli yeminlerimiz var.</p>
-                    <p>Ve bugün... kilit kırıldı. Haber, Demir Göz'ün kendi şifreli hatlarından sızdı. Kral Zykrath Vhalgoroth Aser öldü. Yatağında. Yaşlılıktan. 61 yıllık tiranlık bir nefesle son buldu. O, ardında bir krallık değil, bir kıyamet makinesi bıraktı.</p>
-                    <p>Paslanan Taht boş. Ve şimdi, o tahta oturmak için generaller birbirine girecek. Kaelus... Morvran.... Hepsi Behemoth'un kontrolünü isteyecek. Benim regülatör vanam, benim gizli çatlağım, Zykrath'ın deliliği için tasarlanmıştı. Ya bu yeni tiranlardan biri onu bizden önce bulursa?</p>
-                    <p>Zykrath'ın ölümü barış getirmedi. O, "Behemoth Savaşları"nı başlattı. TÖH'ün bekleme vakti sona erdi. Zincirler kırıldı.</p>
+                    <p>Neredeyse otuz yıl. Dile kolay. Koskoca bir ömür... bir canavarın gölgesinde geçti.</p>
+                    <p>Proje Behemoth tamamlandı. Artık bir şantiye değil. Ironheart vadisinde duruyor; gökyüzünü karartan, toprağı titreten, yaşayan bir dağ. Zykrath'ın Paranoya Kalesi'nin son ve en ölümcül kulesi. Biz inşa ettik. Her perçininde yalanlarımız, her devresinde gizli yeminlerimiz var.</p>
+                    <p>Ben artık o genç, öfkeli çırak değilim. Kır saçlı, nasırlı elleri her an titreyebilen, kıdemli bir sistem denetçisiyim. Demir Göz'ün aptal ajanları, bana "sadık usta" diyor. Bilmiyorlar ki bu sadakat, demire değil, o demirin içindeki gizli çürüğe.</p>
+                    <p>Savaşımız tuhaf bir hal aldı. "Hayalet Savaşı". Zykrath'ın canavarı orada duruyor ama onu kullanamıyor. Neden mi? Bizden korkuyor. TÖH'ün (Teknoloji Özgürlüğü Hareketi) bir virüs gibi sistemin her yerine yayıldığını biliyor. Bir fabrikayı sabote ediyoruz, bir ikmal hattını kesiyoruz, bir komutanın iletişimini bozuyoruz. Bizimle savaşmak için Behemoth'u çalıştırsa, kime ateş edecek? Kendi atölyelerine mi?</p>
+                    <p>Ama korktuğu tek şey biz değiliz. Casuslarımız (Aseria'nın [ASC] bize sızdırdığı o soğuk teknokratlar sayesinde) kralın en büyük korkusunu fısıldadı: Denoistos'u bir gecede yok eden o 'Görünmez El'. Behemoth'u, yani Denge'yi sarsacak o mutlak hamleyi yaparsa, o isimsiz bıçakların hedefi olmaktan korkuyor. Dünyanın en güçlü silahına sahip ama onu kullanmaya cesaret edemiyor. Bu kilitlenme, bizim yaşam sigortamızdı.</p>
+                    <p>Ve bugün... kilit kırıldı.</p>
+                    <p>Haber, Demir Göz'ün kendi şifreli hatlarından, TÖH içindeki bağlantımıza sızdı. Kral Zykrath Vhalgoroth Aser öldü. Yatağında. Yaşlılıktan.</p>
+                    <p>Atölyedeki çekiç sesleri bir anlığına durdu. Demir Göz ajanları bile ne yapacaklarını bilmez halde koşuşturuyor. 61 yıllık tiranlık bir nefesle son buldu. Ama biz TÖH hücreleri olarak kutlama yapmıyoruz. Bizim için bu bir zafer değil, bir sinyal.</p>
+                    <p>O, ardında bir krallık değil, bir kıyamet makinesi bıraktı. Paslanan Taht boş. Ve şimdi, o tahta oturmak için generaller birbirine girecek. Kaelus... Morvran.... Hepsi Behemoth'un kontrolünü isteyecek.</p>
+                    <p>Benim regülatör vanam, benim gizli çatlağım, Zykrath'ın deliliği için tasarlanmıştı. Ya bu yeni tiranlardan biri onu bizden önce bulursa? Ya da daha kötüsü, onu anlamadan, Aseria'ya veya Skarrgard'a ateşlemeye kalkarsa?</p>
+                    <p>Sessizlik bitti. Zykrath'ın ölümü barış getirmedi. O, "Behemoth Savaşları"nı başlattı. TÖH'ün bekleme vakti sona erdi.</p>
+                    <p>Canavarın kalbini bizden, onu inşa edenlerden başkası almamalı. Joel Van Cortex'e haber yolladım.</p>
+                    <p>Zincirler kırıldı.</p>
                 </div>
             </div>
 
             <div class="log-entry">
-                <div class="log-header">M.S. 99 Yılı, 45. Gün | Ironheart Yeraltı Tünelleri</div>
+                <div class="log-header">M.S. 99 YILI, 45. GÜN | IRONHEART YERALTI TÜNELLERİ (GİZLİ TÖH SIĞINAĞI)</div>
                 <div class="log-content">
-                    <p>Kaybettik. Zykrath'ın ölümü bir kurtuluş değil, bir kıyamet sinyaliymiş. Paslanan Taht'ın boşaldığı haberi Ironheart'a ulaştığı an, buradaki "düzen" bir gecede parçalandı.</p>
-                    <p>Joel Van Cortex'in liderliğinde, iki generalin dağınık garnizonlarına karşı savaştık ve kazandık. Bir anlığına... Proje Behemoth'un ana kontrol köprüsünü ele geçirdik. Ama zaferimiz, kuzeyden gelen bir haberle küle döndü. General Kaelus, Morvran'ı yenmiş. "Demir Yumruğun Vârisi" Kaelus, Ironheart'a yürüyor.</p>
-                    <p>Geldiler. Kaba kuvvetin, zekâya karşı acımasız zaferiydi. "Geri çekilin!" emri geldiğinde, kalbim parçalandı. Yenilmiştik. Tünellere kaçarken, son bir görevim vardı. Ana Çekirdek odasına geri döndüm. Son saniyelerimde, o gizli regülatör vanasına ulaştım. Onu patlatmadım. Sadece, TÖH'ün gizli komutlarıyla kilitledim. Kaelus canavarı ele geçirdi, evet. Ama panzehir hala içinde.</p>
+                    <p>Kaybettik.</p>
+                    <p>Zykrath'ın ölümü bir kurtuluş değil, bir kıyamet sinyaliymiş. Paslanan Taht'ın boşaldığı haberi Ironheart'a ulaştığı an, buradaki "düzen" bir gecede parçalandı.</p>
+                    <p>Zykrath'ın iki köpeği, iki general, anında birbirinin boğazına sarıldı. Burada, Ironheart'taki garnizonu yöneten, Zykrath'ın paranoyasının vücut bulmuş hali olan General Morvran'ın "Demir Göz" ajanları ile canavarın dış çeperini koruyan General Kaelus'un sadık Lejyonerleri arasında bir iç savaş patlak verdi. İki tiran adayı, canavarın kontrolü için birbirini yerken, Joel Van Cortex beklediğimiz o sinyali verdi.</p>
+                    <p>"Şimdi, TÖH (Teknoloji Özgürlüğü Hareketi) için."</p>
+                    <p>Bu, Elara Ventis'in M.S. 37'deki son direnişinden bu yana en büyük isyanımızdı. Bu kez hazırlıklıydık. Bizler artık sadece mühendis değildik; biz bu makinenin hayaletleriydik.</p>
+                    <p>Atölyeler birer kaleye dönüştü. Tıpkı Elara'nın yaptığı gibi, Usta AserTechno'nun mirasını onlara karşı silah olarak kullandık. Ben ve ekibim, ana soğutma sistemini ele geçirdik. O kusurlu vanayı (panzehiri) patlatmadık; o, son çareydi. Ama Zykrath'ın askerlerini avlamak için buhar tünellerini birer tuzağa dönüştürdük. Basınçlı, yakıcı buharı Demir Göz devriyelerinin üzerine saldık. Cevher Kırıcıları yeniden programlayarak Lejyonerlerin ikmal hatlarını yuttuk.</p>
+                    <p>Joel Van Cortex'in liderliğinde, iki generalin dağınık garnizonlarına karşı savaştık ve kazandık. Bir anlığına... Sadece bir anlığına, Proje Behemoth'un ana kontrol köprüsünü ele geçirdik. O koltukta Joel'ü görmek, AserTechno'nun rüyasının gerçekleştiğini görmek gibiydi.</p>
+                    <p>Ama zaferimiz, kuzeyden gelen bir haberle küle döndü. General Kaelus, Morvran'ı Aserion'da yenmiş.</p>
+                    <p>Entrikacı yılanın (Morvran) başı ezilmiş. Ve şimdi "Demir Yumruğun Vârisi" Kaelus, iç savaşı kazanmış, birleşik, kana susamış ordusunun tamamıyla... Ironheart'a yürüyormuş.</p>
+                    <p>Bizim direnişimiz, bölünmüş garnizonlara karşıydı. Kaelus'un tüm gücüne karşı bir hiçtik.</p>
+                    <p>Geldiler. Kaba kuvvetin, zekâya karşı acımasız zaferiydi. Bizim mekanik tuzaklarımız, onun Lejyonerlerinin demir disiplini ve ezici sayısı karşısında eridi. Hidrolik vinçlerimizi mancınıklarla parçaladılar. Buhar tünellerimizi çökerttiler. Joel Van Cortex, kontrol köprüsünü son ana kadar savundu ama bu umutsuz bir savaştı.</p>
+                    <p>"Geri çekilin!" emri geldiğinde, kalbim parçalandı.</p>
+                    <p>Yenilmiştik. Canavarı, onu inşa edenlerin elinden alıp, daha da acımasız bir tirana, "Lord Koruyucu" Kaelus'a teslim etmiştik.</p>
+                    <p>Tünellere kaçarken, son bir görevim vardı. Ana Çekirdek odasına geri döndüm. Kaelus'un askerleri koridorun başındaydı. Son saniyelerimde, o gizli regülatör vanasına ulaştım. Onu patlatmadım. Sadece, TÖH'ün gizli komutlarıyla kilitledim. Benim yarattığım o mikroskobik çatlak, artık sadece Kaelus'un değil, bizim de sırrımızdı.</p>
+                    <p>Kaelus canavarı ele geçirdi, evet. Ama panzehir hala içinde.</p>
+                    <p>Şimdi bu nemli tünellerde, atalarımızın (AserTechno ve Elara'nın) yeraltındaki ilk sığınağında saklanıyoruz. Yukarıda, Kaelus'un zafer naralarını duyabiliyorum. Behemoth'un gücünü Aseria'ya ve Skarrgard'a göstererek tüm kıtayı diz çöktürdüğünü biliyorum.</p>
+                    <p>O, kazandığını sanıyor. Ama biz buradayız. Ve canavarın kalbindeki saatli bomba, sessizce ticking yapmaya devam ediyor.</p>
                 </div>
             </div>
 
             <div class="log-entry">
-                <div class="log-header">M.S. 104 Yılı | Behemoth'un Söküm Alanı</div>
+                <div class="log-header">M.S. 104 YILI | BEHEMOTH'UN SÖKÜM ALANI (ESKİ ÇEKİRDEK ODASI)</div>
                 <div class="log-content">
-                    <p>Bitti. Kaelus'un tiranlığı, Zykrath'ınkinden daha karanlık, daha acımasızdı. Ama bir gün, bizimle, TÖH ile temasa geçtiler. Pelerin'in küllerinden yeni bir gölge doğdu: Aserwar Gedian.</p>
-                    <p>Gedian'ın ekibi (AserCouncil) birer hayaletti. Onlara, Kaelus'un sensör ağındaki kör noktaları gösterdim. Onları, yıllar önce o gizli çatlağı yerleştirdiğim ana soğutma borularına getirdim. Gedian, Kaelus'u yendi.</p>
-                    <p>Bir hafta sonra, Joel ve ben, Ironheart'taki komuta köprüsünde yeni liderle, Aserwar Gedian'la yüz yüze geldik. O metal canavara, ömrümüzü çalan o demir yığınına nefretle bakıyorduk. Ve Gedian, bize döndü. Tek bir cümle söyledi: "Bunu yok edin."</p>
-                    <p>O an... O an, Elara'nın ve AserTechno'nun ruhunun kazandığını anladım. Bugün, o son cıvatayı sökerken ellerim titredi. Bir ömür harcadığım bu canavar, şimdi TÖH mühendislerinin elinde parçalara ayrılıyor. Benim küçük, gizli kusuruma... o çatlak vanaya... gerek kalmadı. Gedian, makineyi değil, fikri yok etti.</p>
-                    <p>Günlüğüm burada sona eriyor. Zykrath öldü. Kaelus öldü. Behemoth öldü. Biz kazandık.</p>
+                    <p>Bitti.</p>
+                    <p>Kaelus'un tiranlığı, Zykrath'ınkinden daha karanlık, daha acımasızdı. "Lord Koruyucu", TÖH'ü (Teknoloji Özgürlüğü Hareketi) avlamak için değil, kıtadaki her gölgeyi yok etmek için yemin etmişti. "Gölgelerin Avı" adını verdiği o lanet operasyonu başlattığında, Behemoth'u bir silahtan çok, dev bir sensör ağı gibi kullandı.</p>
+                    <p>Korktuğumuz başımıza geldi. Yeraltındaki hücrelerimiz bir bir bulundu. Kaelus, bizim bile varlığından emin olmadığımız, Denoistos'u avlayan o "Görünmez El"i, Gecelerin Pelerini'ni, Behemoth'un gücüyle buldu. Ve sonra... Ithran Deltası'nı haritadan sildi. Fısıldayan Labirent'in yok edilişi, Usta AserTechno'nun ölümünden sonraki en karanlık gündü. Kaelus, Denge'yi yok etmişti.</p>
+                    <p>Yeraltında, TÖH'ün son kalıntılarında, umudumuzu yitirmek üzereydik. Ben ve Joel Van Cortex, sadece hayatta kalmaya çalışıyorduk.</p>
+                    <p>Sonra o geldi.</p>
+                    <p>Pelerin'in küllerinden yeni bir gölge doğdu. Adı bir fısıltı gibi yayıldı: Aserwar Gedian. Kaelus'un generalleri birer birer, imkansız "kazalarda" ölmeye başladı. Demir Göz'ün en acımasız sorgucuları yataklarında ölü bulundu. Bu bizim işimiz değildi; bu daha temizdi, daha cerrahiydi. Gedian ve onun "kardeşleri", AserCouncil, Kaelus'un rejimini bizden daha zekice, içeriden zehirliyordu.</p>
+                    <p>Ve bir gün, bizimle, TÖH ile temasa geçtiler.</p>
+                    <p>Joel Van Cortex, sığınağımıza döndüğünde yüzü değişmişti. Gedian'ın bir planı vardı. Bir sabotaj değil. Bir fetih. Canavarı, Proje Behemoth'u içeriden vuracaktı. Ama içeri girmek için bizim yardımımıza ihtiyacı vardı. Benim yardımıma.</p>
+                    <p>Onları, AserTechno ve Elara'nın inşa ettiği, Zykrath'ın bile bilmediği o gizli bakım tünellerinden ve unutulmuş buhar kanallarından bizzat geçirdim. Gedian'ın ekibi (AserFire, AserIce, AserSpace, AserStick) birer hayaletti. Onlara, Kaelus'un sensör ağındaki kör noktaları gösterdim. Onları, yıllar önce o gizli çatlağı yerleştirdiğim ana soğutma borularına getirdim.</p>
+                    <p>Onlar makinenin kalbine, komuta köprüsüne tırmanırken, Joel ve benim ekibim çekirdek odasına indi. Gedian'ın yukarıda savaşı başlattığı an, ben de aşağıda kendi savaşımı verdim. Kaelus'un askerleri köprüdeki kaosa koşarken, ben 34 yıl önce yerleştirdiğim o kusurlu vanayı buldum.</p>
+                    <p>Gedian, Kaelus'u yendi. Tiranı yakaladı.</p>
+                    <p>Bir hafta sonra, Kaelus'un Aserion meydanında idam edilmesinin ardından, Joel ve ben, Ironheart'taki komuta köprüsünde yeni liderle, Aserwar Gedian'la yüz yüze geldik. O metal canavara, ömrümüzü çalan o demir yığınına nefretle bakıyorduk.</p>
+                    <p>Ve Gedian, bize döndü. Tek bir cümle söyledi: "Bunu yok edin."</p>
+                    <p>O an... O an, Elara'nın ve AserTechno'nun ruhunun kazandığını anladım.</p>
+                    <p>Bugün, o son cıvatayı sökerken ellerim titredi. Bir ömür harcadığım bu canavar, şimdi TÖH mühendislerinin elinde parçalara ayrılıyor. Çekirdeği, Joel'ün denetiminde bir enerji istasyonuna dönüşüyor. Metalleri, savaşta yıkılan köyleri, evleri ve okulları inşa etmek için eritiliyor.</p>
+                    <p>Gedian, Aseria ve Skarrgard ile masaya oturdu. "Mutlak güç, mutlak tiranlık doğurur," dedi. Ve TÖH'e, yani bize, "Teknoloji Bağımsızlığı Fermanı" ile anayasal bir görev verdi: Bir daha asla Behemoth gibi bir canavarın inşa edilmemesini sağlamak.</p>
+                    <p>Yeraltındaki hayaletler, artık sistemin koruyucuları oldu. Benim küçük, gizli kusuruma... o çatlak vanaya... gerek kalmadı. Gedian, makineyi değil, fikri yok etti.</p>
+                    <p>Günlüğüm burada sona eriyor. Zykrath öldü. Kaelus öldü. Behemoth öldü.</p>
+                    <p>Biz kazandık.</p>
+                    <p>Elara... Usta AserTechno... Kazandık.</p>
                 </div>
             </div>
 
