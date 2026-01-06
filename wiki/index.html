@@ -34,16 +34,22 @@
         }
         .phase-box:hover { transform: translateX(10px); border-color: var(--ana-renk); }
         .phase-title { color: #fff; font-size: 1.8rem; margin-bottom: 15px; font-weight: bold; }
-        .phase-desc { color: #aaa; margin-bottom: 20px; }
+        .phase-desc { color: #aaa; margin-bottom: 20px; line-height: 1.6; }
+        .release-date { display: block; font-size: 0.85rem; color: #666; margin-bottom: 15px; font-style: italic; }
         
         /* LİSTE TASARIMI */
         .story-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
         .story-tag { 
-            background: #222; color: #fff; padding: 8px 18px; border-radius: 20px; font-size: 0.95rem; border: 1px solid #444; display: inline-flex; align-items: center; gap: 8px;
+            background: #222; color: #fff; padding: 8px 18px; border-radius: 20px; font-size: 0.95rem; border: 1px solid #444; display: inline-flex; align-items: center; gap: 8px; transition: 0.3s;
         }
-        .story-tag:hover { background: var(--ana-renk); color: #000; border-color: var(--ana-renk); }
+        .story-tag:hover { background: var(--ana-renk); color: #000; border-color: var(--ana-renk); transform: translateY(-3px); }
         .story-tag i { color: var(--ana-renk); }
         .story-tag:hover i { color: #000; }
+
+        /* ÖZEL ETİKETLER */
+        .story-tag.doc { border-color: #aaa; color: #ccc; } /* Belge */
+        .story-tag.bio { border-color: #FFD700; } /* Biyografi */
+        .story-tag.story { border-color: #ff6b6b; } /* Hikaye */
 
     </style>
 </head>
@@ -59,24 +65,21 @@
         <p class="intro">95.000+ kelimelik devasa bir evren. Kronolojik sıraya göre ayrılmış arşivler.</p>
 
         <div class="phase-box">
-            <div class="phase-title"> 1. Kısım: Parçalanmış Taç</div>
+            <div class="phase-title">1. Kısım: Parçalanmış Taç</div>
             <div class="phase-desc">
                 AserLand'ın bölünüşü, Skarrgard'ın doğuşu ve yeni çağı getiren Damethia Anlaşması'nın hikayesi.
             </div>
             <span class="release-date">(15 Haziran 2025'te Yayınlandı)</span>
             <ul class="story-list">
-                <li><a href="dunas-zia.html" class="story-tag"><i class="fas fa-user"></i> Dunas Zia</a></li>
-                <li><a href="nevery-aserilios.html" class="story-tag"><i class="fas fa-crown"></i> Nevery Aserilios</a></li>
-                <li><a href="skarryion-damethsizi.html" class="story-tag"><i class="fas fa-pen-nib"></i> Skarryion Damethsizi</a></li>
-                
-                <li><a href="ironheart-protestolari.html" class="story-tag"><i class="fas fa-fist-raised"></i> Ironheart Protestoları</a></li>
-                
-                <li><a href="madam-elena.html" class="story-tag"><i class="fas fa-user-tie"></i> Madam Elena</a></li>
-                <li><a href="asertechno.html" class="story-tag"><i class="fas fa-cogs"></i> AserTechno</a></li>
-                <li><a href="eumandarg-damethsizi.html" class="story-tag"><i class="fas fa-drafting-compass"></i> Eumandarg Damethsizi</a></li>
-                <li><a href="madam-maria.html" class="story-tag"><i class="fas fa-balance-scale"></i> Madam Maria</a></li>
-
-                <li><a href="damethia-anlasmasi.html" class="story-tag" style="border-color:var(--ana-renk);"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                <li><a href="dunas-zia.html" class="story-tag bio"><i class="fas fa-user"></i> Dunas Zia</a></li>
+                <li><a href="nevery-aserilios.html" class="story-tag bio"><i class="fas fa-crown"></i> Nevery Aserilios</a></li>
+                <li><a href="skarryion-damethsizi.html" class="story-tag bio"><i class="fas fa-pen-nib"></i> Skarryion Damethsizi</a></li>
+                <li><a href="ironheart-protestolari.html" class="story-tag story"><i class="fas fa-fist-raised"></i> Ironheart Protestoları</a></li>
+                <li><a href="madam-elena.html" class="story-tag bio"><i class="fas fa-user-tie"></i> Madam Elena</a></li>
+                <li><a href="asertechno.html" class="story-tag bio"><i class="fas fa-cogs"></i> AserTechno</a></li>
+                <li><a href="eumandarg-damethsizi.html" class="story-tag bio"><i class="fas fa-drafting-compass"></i> Eumandarg Damethsizi</a></li>
+                <li><a href="madam-maria.html" class="story-tag bio"><i class="fas fa-balance-scale"></i> Madam Maria</a></li>
+                <li><a href="damethia-anlasmasi.html" class="story-tag doc" style="border-color:var(--ana-renk);"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
             </ul>
         </div>
 
@@ -88,7 +91,26 @@
             <span class="release-date">(3 Kasım 2025'te Yayınlandı)</span>
 
             <ul class="story-list">
-                <li><a href="#" class="story-tag" style="opacity:0.5;">İçerikler Yükleniyor...</a></li>
+                <li><a href="behemoth-savaslari.html" class="story-tag story"><i class="fas fa-shield-alt"></i> Behemoth Savaşları</a></li>
+                <li><a href="gecelerin-pelerini-kurulus.html" class="story-tag story"><i class="fas fa-mask"></i> Gecelerin Pelerini</a></li>
+                <li><a href="kaelen-damethsizi.html" class="story-tag bio"><i class="fas fa-chess-king"></i> Kaelen Damethsizi</a></li>
+                <li><a href="iki-taht-bir-golge.html" class="story-tag story"><i class="fas fa-balance-scale-left"></i> İki Taht, Bir Gölge</a></li>
+                <li><a href="denoistos-los-aser.html" class="story-tag bio"><i class="fas fa-skull-crossbones"></i> Gen. Denoistos</a></li>
+                <li><a href="denoistos-los-aser-yasam-oykusu.html" class="story-tag bio" style="border-style:dashed;"><i class="fas fa-book-open"></i> Denoistos (Yaşam Öyküsü)</a></li>
+                <li><a href="hayalet-savasi.html" class="story-tag story"><i class="fas fa-ghost"></i> Hayalet Savaşı</a></li>
+                <li><a href="lucian-baron-mhoore.html" class="story-tag bio"><i class="fas fa-sack-dollar"></i> Lucian "Baron" Mhoore</a></li>
+                <li><a href="zykrath-vhalgoroth-aser.html" class="story-tag bio"><i class="fas fa-crown"></i> Kral Zykrath</a></li>
+                <li><a href="celestine-darvell.html" class="story-tag bio"><i class="fas fa-music"></i> Celestine D'Arvell</a></li>
+                <li><a href="kutuphanedeki-sessiz-kanaat.html" class="story-tag doc"><i class="fas fa-scroll"></i> Belge: Sessiz Kanaat</a></li>
+                <li><a href="stellan-korvath.html" class="story-tag bio"><i class="fas fa-drafting-compass"></i> Stellan Korvath</a></li>
+                <li><a href="kaelus-theron.html" class="story-tag bio"><i class="fas fa-fist-raised"></i> Lord Kaelus</a></li>
+                <li><a href="behemoth-yapilis-sureci.html" class="story-tag doc"><i class="fas fa-book-dead"></i> Belge: Behemoth Günlüğü</a></li>
+                <li><a href="aserwar-gedian.html" class="story-tag bio"><i class="fas fa-user-ninja"></i> Aserwar Gedian</a></li>
+                <li><a href="aserwar-gedian-yasam-oykusu.html" class="story-tag bio" style="border-style:dashed;"><i class="fas fa-book-open"></i> Gedian (Yaşam Öyküsü)</a></li>
+                <li><a href="morvran-corvus.html" class="story-tag bio"><i class="fas fa-eye"></i> Gen. Morvran</a></li>
+                <li><a href="silus-praxton.html" class="story-tag bio"><i class="fas fa-chart-line"></i> Silus Praxton</a></li>
+                <li><a href="sapan-disliler.html" class="story-tag story"><i class="fas fa-user-clock"></i> Hikaye: Sapan Dişliler</a></li>
+                <li><a href="uclu-pakt.html" class="story-tag doc" style="border-color:var(--ana-renk);"><i class="fas fa-file-signature"></i> Belge: Üçlü Pakt</a></li>
             </ul>
         </div>
 
