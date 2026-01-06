@@ -25,7 +25,6 @@
         summary:hover { color: var(--ana-renk); }
         summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
         details[open] summary::after { transform: rotate(180deg); }
-        
         .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
         .sidebar li { margin-bottom: 8px; }
         .sidebar a { color: #888; font-size: 0.9rem; display: block; }
@@ -35,12 +34,13 @@
         /* İÇERİK ALANI */
         .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
         .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
-        .content h2 { color: #fff; margin-top: 30px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.5rem; }
+        .content h2 { color: #fff; margin-top: 40px; border-left: 4px solid var(--ana-renk); padding-left: 10px; font-size: 1.8rem; background: linear-gradient(90deg, #222, transparent); padding: 10px; border-radius: 0 5px 5px 0; }
+        .content h3 { color: var(--ana-renk); margin-top: 25px; font-size: 1.3rem; border-bottom: 1px dashed #333; padding-bottom: 5px; }
         
         /* LİSTELER */
         .content ul { list-style: none; padding-left: 0; }
         .content li { margin-bottom: 15px; padding-left: 20px; position: relative; }
-        .content li::before { content: '❖'; color: var(--ana-renk); font-weight: bold; position: absolute; left: 0; font-size: 0.8rem; top: 5px; }
+        .content li::before { content: '📜'; color: var(--ana-renk); font-weight: bold; position: absolute; left: 0; font-size: 0.8rem; top: 5px; }
         .content li strong { color: var(--ana-renk); }
 
         /* INFOBOX */
@@ -52,6 +52,8 @@
             margin: 0 0 20px 20px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.5);
             font-size: 0.95rem;
+            position: relative;
+            z-index: 10;
         }
         .infobox-header {
             background: var(--ana-renk);
@@ -74,10 +76,10 @@
         .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
         .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
 
-        @media (max-width: 900px) { 
+        @media (max-width: 1300px) { 
             .container { flex-direction: column; } 
             .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
-            .infobox { float: none; width: 100%; margin: 20px 0; }
+            .infobox { float: none; width: 100%; margin: 0 0 30px 0; }
         }
     </style>
 </head>
@@ -90,58 +92,57 @@
 
     <div class="container">
         <aside class="sidebar">
-    <details open>
-        <summary>1. Kısım: Parçalanmış Taç</summary>
-        <ul>
-            <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
-            <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
-            <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
-            <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
-            <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
-            <li><a href="asertechno.html">➤ AserTechno</a></li>
-            <li><a href="eumandarg-damethsizi.html" class="active">➤ Eumandarg Damethsizi</a></li>
-            <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
-            <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
-        </ul>
-    </details>
-    <details>
-        <summary>2. Kısım: Tiranların Çağı</summary>
-        <ul>
-            <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
-            <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
-            <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
-            <li><a href="iki-taht-bir-golge.html">➤ İki Taht, Bir Gölge</a></li>
-            <li><a href="denoistos-los-aser.html">➤ General Denoistos Los Aser</a></li>
-            <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
-            <li><a href="lucian-baron-mhoore.html">➤ Lucian "Baron" Mhoore</a></li>
-            <li><a href="zykrath-vhalgoroth-aser.html">➤ Kral Zykrath Vhalgoroth Aser</a></li>
-            <li><a href="celestine-darvell.html">➤ Celestine D'Arvell</a></li>
-            <li><a href="kutuphanedeki-sessiz-kanaat.html">➤ Belge: Kütüphanedeki Sessiz Kanaat</a></li>
-            <li><a href="stellan-korvath.html">➤ Stellan Korvath (Kuzeyin Mimarı)</a></li>
-            <li><a href="kaelus-theron.html">➤ Lord Koruyucu Kaelus Theron</a></li>
-            <li><a href="behemoth-yapilis-sureci.html">➤ Belge: Behemoth'un İnşası</a></li>
-            <li><a href="aserwar-gedian.html">➤ Aserwar Gedian (Suikastçı Mimar)</a></li>
-            <li><a href="morvran-corvus.html">➤ General Morvran Corvus</a></li>
-            <li><a href="silus-praxton.html">➤ Silus Praxton (Yankı'nın Mirasçısı)</a></li>
-            <li><a href="sapan-disliler.html">➤ Hikaye: Sapan Dişliler</a></li>
-            <li><a href="uclu-pakt.html"><i class="fas fa-file-signature"></i> Belge: Üçlü Pakt</a></li>
-        </ul>
-    </details>
-    <details>
-        <summary>Yaşam Öyküleri</summary>
-        <ul>
-            <li><a href="aserwar-gedian-yasam-oykusu.html">➤ Aserwar Gedian: Yaşam Öyküsü</a></li>
-            <li><a href="denoistos-los-aser-yasam-oykusu.html">➤ General Denoistos: Yaşam Öyküsü</a></li>
-        </ul>
-    </details>
-</aside>
+            <details open>
+                <summary>1. Kısım: Parçalanmış Taç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html" class="active">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>2. Kısım: Tiranların Çağı</summary>
+                <ul>
+                    <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
+                    <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
+                    <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
+                    <li><a href="iki-taht-bir-golge.html">➤ İki Taht, Bir Gölge</a></li>
+                    <li><a href="denoistos-los-aser.html">➤ General Denoistos Los Aser</a></li>
+                    <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
+                    <li><a href="lucian-baron-mhoore.html">➤ Lucian "Baron" Mhoore</a></li>
+                    <li><a href="zykrath-vhalgoroth-aser.html">➤ Kral Zykrath Vhalgoroth Aser</a></li>
+                    <li><a href="celestine-darvell.html">➤ Celestine D'Arvell</a></li>
+                    <li><a href="kutuphanedeki-sessiz-kanaat.html">➤ Belge: Kütüphanedeki Sessiz Kanaat</a></li>
+                    <li><a href="stellan-korvath.html">➤ Stellan Korvath (Kuzeyin Mimarı)</a></li>
+                    <li><a href="kaelus-theron.html">➤ Lord Koruyucu Kaelus Theron</a></li>
+                    <li><a href="behemoth-yapilis-sureci.html">➤ Belge: Behemoth'un İnşası</a></li>
+                    <li><a href="aserwar-gedian.html">➤ Aserwar Gedian (Suikastçı Mimar)</a></li>
+                    <li><a href="morvran-corvus.html">➤ General Morvran Corvus</a></li>
+                    <li><a href="silus-praxton.html">➤ Silus Praxton (Yankı'nın Mirasçısı)</a></li>
+                    <li><a href="sapan-disliler.html">➤ Hikaye: Sapan Dişliler</a></li>
+                    <li><a href="uclu-pakt.html"><i class="fas fa-file-signature"></i> Belge: Üçlü Pakt</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Yaşam Öyküleri</summary>
+                <ul>
+                    <li><a href="aserwar-gedian-yasam-oykusu.html">➤ Aserwar Gedian: Yaşam Öyküsü</a></li>
+                    <li><a href="denoistos-los-aser-yasam-oykusu.html">➤ General Denoistos: Yaşam Öyküsü</a></li>
+                </ul>
+            </details>
+        </aside>
+
         <main class="content">
 
             <div class="infobox">
                 <div class="infobox-header">EUMANDARG DAMETHSIZI</div>
-                
-                <div class="infobox-image"><i class="fas fa-drafting-compass" style="font-size:4rem;"></i></div>
-
+                <div class="infobox-image"><i class="fas fa-scroll" style="font-size:4rem;"></i></div>
                 <table class="infobox-table">
                     <tr><th>Unvan:</th><td>Mirasın Bekçisi ve Skarrgard'ın Mimarı</td></tr>
                     <tr><th>Yaşam:</th><td>M.Ö 22 – M.S 19</td></tr>
