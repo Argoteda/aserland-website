@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İnteraktif AserLand Haritası | AserLand Wiki</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #0f0f0f; --panel: #151515; --yazi: #ddd; }
+        body { background: var(--arka-plan); color: var(--yazi); font-family: 'Segoe UI', sans-serif; margin: 0; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+        
+        nav { background: #000; border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: relative; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; text-decoration: none; }
+
+        /* HARİTA KONTEYNERI */
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #111;
+            overflow: auto; /* Harita büyükse kaydırma */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .map-image {
+            max-width: 100%;
+            max-height: 90vh;
+            display: block;
+            border: 2px solid #333;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+        }
+
+        /* HOTSPOTS (NOKTALAR) */
+        .hotspot {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: rgba(255, 215, 0, 0.6);
+            border: 2px solid var(--ana-renk);
+            border-radius: 50%;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+            z-index: 10;
+            transform: translate(-50%, -50%); /* Merkezi hizalama */
+        }
+        .hotspot:hover {
+            background: var(--ana-renk);
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 215, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+        }
+
+        /* TOOLTIP (BİLGİ KUTUCUĞU) */
+        .tooltip {
+            position: absolute;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 1px solid var(--ana-renk);
+            font-size: 0.9rem;
+            white-space: nowrap;
+            display: none;
+            z-index: 20;
+            pointer-events: none;
+        }
+        .hotspot:hover .tooltip { display: block; }
+
+        /* KOORDİNATLAR (Yüzdelik olarak ayarlandı - İnce ayar gerekebilir) */
+        /* Skarrgard (Kuzey Batı) */
+        .loc-skarrgard { top: 15%; left: 35%; }
+        
+        /* Damethia (Skarrgard içi) */
+        .loc-damethia { top: 20%; left: 38%; }
+
+        /* Aseria (Doğu) */
+        .loc-aseria { top: 55%; left: 75%; }
+
+        /* Supremia (Aseria içi) */
+        .loc-supremia { top: 52%; left: 78%; }
+
+        /* Ironheart (Güney Batı) */
+        .loc-ironheart { top: 78%; left: 32%; }
+
+        /* Ithran (Orta) */
+        .loc-ithran { top: 38%; left: 58%; }
+
+        /* Aldewood (Batı) */
+        .loc-aldewood { top: 55%; left: 20%; }
+
+        /* Doom Waters (Güney Doğu) */
+        .loc-doom { top: 80%; left: 80%; }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Siteye Dön</a>
+        <a href="index.html">Wiki Ana Sayfa</a>
+    </nav>
+
+    <div class="map-container">
+        <img src="AserLand World Map.png" alt="AserLand Haritası" class="map-image">
+
+        <div class="hotspot loc-skarrgard">
+            <div class="tooltip">🏔️ Skarrgard: Devrimin Doğduğu Yer</div>
+        </div>
+
+        <div class="hotspot loc-damethia">
+            <div class="tooltip">🏰 Damethia (Başkent)</div>
+        </div>
+
+        <div class="hotspot loc-aseria">
+            <div class="tooltip">🏛️ Aseria: Düzenin Kalesi</div>
+        </div>
+
+        <div class="hotspot loc-supremia">
+            <div class="tooltip">⚖️ Supremia (ASC Merkezi)</div>
+        </div>
+
+        <div class="hotspot loc-ironheart">
+            <div class="tooltip">⚙️ Ironheart: Behemoth'un Yuvası</div>
+        </div>
+
+        <div class="hotspot loc-ithran">
+            <div class="tooltip">🌊 Ithran: Bağımsız Şehir</div>
+        </div>
+
+        <div class="hotspot loc-aldewood">
+            <div class="tooltip">🌲 Aldewood: Katliam Ormanı</div>
+        </div>
+
+        <div class="hotspot loc-doom">
+            <div class="tooltip">🦑 The Doom Waters</div>
+        </div>
+
+    </div>
+
+</body>
+</html>
