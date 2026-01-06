@@ -67,23 +67,23 @@
             margin: 0 0 20px 20px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.5);
             font-size: 0.95rem;
+            /* İçeriğin üstte kalmasını sağlar */
+            position: relative; 
+            z-index: 10; 
         }
-        .infobox-header {
-            background: var(--ana-renk);
-            color: #000;
-            text-align: center;
-            padding: 10px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-        }
-        .infobox-image {
-            width: 100%;
-            display: block;
-            border-bottom: 1px solid var(--border);
-            background: #000;
-            height: 180px;
-            display: flex; align-items: center; justify-content: center; color: #333;
+        
+        /* EKRAN KÜÇÜLDÜĞÜNDE (Laptop ve Tablet) KUTUYU DÜZELTME */
+        @media (max-width: 1300px) { 
+            .infobox { 
+                float: none; /* Sağa yaslamayı iptal et */
+                width: 100%; /* Tam genişlik yap */
+                max-width: 100%;
+                margin: 0 0 30px 0; /* Alta boşluk bırak */
+                display: table; /* İçeriği toparla */
+            }
+            .infobox-image {
+                height: 250px; /* Görseli biraz büyüt */
+            }
         }
         .infobox-table { width: 100%; border-collapse: collapse; }
         .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
