@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Damethia Anlaşması | AserLand Wiki</title> 
+    <title>Damethia Anlaşması (0) | AserLand Wiki</title> 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
@@ -25,7 +25,6 @@
         summary:hover { color: var(--ana-renk); }
         summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
         details[open] summary::after { transform: rotate(180deg); }
-        
         .sidebar ul { list-style: none; padding: 10px 0 0 15px; margin: 0; }
         .sidebar li { margin-bottom: 8px; }
         .sidebar a { color: #888; font-size: 0.9rem; display: block; }
@@ -33,118 +32,60 @@
         .sidebar a.active { color: var(--ana-renk); font-weight: bold; border-left: 2px solid var(--ana-renk); padding-left: 10px; }
 
         /* İÇERİK ALANI */
-        .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.8; }
-        
-        /* --- BELGE ÇERÇEVESİ (KUTU) --- */
-        .treaty-document {
-            background: #121212;
-            border: 2px solid #333;
-            border-top: 5px solid var(--ana-renk);
-            padding: 60px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-            
-            /* İŞTE SİHİRLİ KODLAR BURADA: */
-            display: flex;             /* Esnek kutu yap */
-            flex-direction: column;    /* Alt alta diz */
-            align-items: center;       /* Yatayda her şeyi ORTALA */
-            text-align: center;        /* Metinleri ORTALA */
-        }
+        .content { flex: 1; padding: 40px; display: flex; justify-content: center; }
 
-        /* Başlık */
-        .treaty-document h1 { 
-            font-size: 2.8rem; 
-            color: var(--ana-renk); 
-            margin-bottom: 30px; 
-            text-transform: uppercase; 
-            letter-spacing: 3px;
-            border-bottom: 1px solid #444; 
-            padding-bottom: 20px;
-            width: 100%; /* Tam genişlikte olsun ki altındaki çizgi uzasın */
-        }
-
-        /* Giriş Metni (Preamble) */
-        .preamble { 
-            font-style: italic; 
-            color: #aaa; 
-            margin-bottom: 50px; 
-            max-width: 800px; /* Çok yayılmasın, derli toplu dursun */
-            line-height: 1.9;
-        }
-
-        /* Taraflar Kutusu */
-        .parties-box { 
-            display: flex; 
-            justify-content: center; /* Kutuları ortada topla */
-            gap: 60px; /* Aralarını aç */
-            background: #1a1a1a; 
-            padding: 30px; 
-            margin-bottom: 50px; 
-            border: 1px solid #333; 
+        /* ANLAŞMA KAĞIDI TASARIMI */
+        .agreement-paper {
+            background-color: #f4e4bc; /* Parşömen rengi */
+            color: #1a1a1a; /* Koyu mürekkep rengi */
             width: 100%;
             max-width: 900px;
+            padding: 60px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            font-family: 'Georgia', serif; /* Resmi belge fontu */
+            line-height: 1.6;
+            border: 1px solid #d4c4a0;
+            position: relative;
         }
-        .party { text-align: center; } /* İsimleri ortala */
-        .party h3 { color: #fff; border-bottom: 2px solid var(--ana-renk); padding-bottom: 10px; margin-bottom: 15px; display: inline-block; }
-        .party ul { list-style: none; padding: 0; }
-        .party li { margin-bottom: 8px; color: #bbb; }
+        /* Kağıt Dokusu Efekti */
+        .agreement-paper::before {
+            content: "";
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 2px solid #8b7d6b;
+            pointer-events: none;
+        }
 
-        /* Maddeler */
-        .article-box { 
-            margin-bottom: 35px; 
-            width: 100%; 
-            max-width: 900px; /* Okunabilirlik için genişlik sınırı */
+        .agreement-title {
+            text-align: center;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid #1a1a1a;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-weight: bold;
         }
+
+        .preamble { font-style: italic; margin-bottom: 30px; text-align: justify; }
         
-        .article-title { 
-            color: var(--ana-renk); 
-            font-weight: bold; 
-            font-size: 1.4rem; 
-            margin-bottom: 15px; 
-            display: block; 
-            text-align: center; /* Madde başlıklarını ortala */
-            text-decoration: underline;
-            text-decoration-color: #333;
-            text-underline-offset: 8px;
-        }
-        
-        /* Madde metinleri okunaklı olsun diye "İki Yana Yaslı" (Justify) kalmalı. 
-           Eğer bunu da ortalamak istersen 'text-align: center' yapabilirsin ama zor okunur. */
-        .article-content { 
-            color: #ddd; 
-            text-align: justify; 
-            background: #151515; /* Hafif bir arka plan verelim ki öne çıksın */
-            padding: 20px;
-            border-radius: 5px;
-            border: 1px dashed #333;
-        }
+        .parties { background: #e8d8b0; padding: 15px; border: 1px solid #8b7d6b; margin-bottom: 30px; }
+        .parties ul { list-style: none; padding: 0; }
+        .parties li { margin-bottom: 5px; font-weight: bold; }
 
-        /* Sonuç ve Onay */
-        .conclusion-box {
-            margin-top: 40px; 
-            padding: 30px;
-            max-width: 800px;
-            border-top: 2px solid #333;
-        }
+        .article { margin-bottom: 25px; }
+        .article-title { font-weight: bold; text-transform: uppercase; text-decoration: underline; display: block; margin-bottom: 5px; }
 
-        /* INFOBOX */
-        .infobox {
-            float: right;
-            width: 300px;
-            background: #1a1a1a;
-            border: 1px solid var(--ana-renk);
-            margin: 0 0 20px 20px;
-            font-size: 0.9rem;
-        }
-        .infobox-header { background: var(--ana-renk); color: #000; text-align: center; padding: 10px; font-weight: bold; }
-        .infobox-image { background: #000; height: 150px; display: flex; align-items: center; justify-content: center; color: #333; }
-        .infobox-table th, .infobox-table td { padding: 8px; border-bottom: 1px solid #333; text-align: left; }
-        .infobox-table th { color: var(--ana-renk); width: 40%; }
+        .signatures { margin-top: 60px; display: flex; justify-content: space-between; text-align: center; }
+        .sign-box { width: 30%; border-top: 1px solid #1a1a1a; padding-top: 10px; }
+        .sign-title { font-size: 0.8rem; text-transform: uppercase; display: block; margin-top: 5px; }
+        .seal { font-size: 3rem; color: #8b0000; margin-bottom: 10px; opacity: 0.8; }
 
         @media (max-width: 900px) { 
             .container { flex-direction: column; } 
             .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
-            .infobox { float: none; width: 100%; margin: 20px 0; }
-            .parties-box { flex-direction: column; gap: 30px; }
+            .agreement-paper { padding: 20px; }
+            .signatures { flex-direction: column; gap: 30px; }
+            .sign-box { width: 100%; }
         }
     </style>
 </head>
@@ -157,145 +98,125 @@
 
     <div class="container">
         <aside class="sidebar">
-    <details>
-        <summary>1. Kısım: Parçalanmış Taç</summary>
-        <ul>
-            <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
-            <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
-            <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
-            <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
-            <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
-            <li><a href="asertechno.html">➤ AserTechno</a></li>
-            <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
-            <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
-            <li><a href="damethia-anlasmasi.html" class="active"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
-        </ul>
-    </details>
-    <details open>
-        <summary>2. Kısım: Tiranların Çağı</summary>
-        <ul>
-            <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
-            <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
-            <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
-            <li><a href="iki-taht-bir-golge.html">➤ İki Taht, Bir Gölge</a></li>
-            <li><a href="denoistos-los-aser.html">➤ General Denoistos Los Aser</a></li>
-            <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
-            <li><a href="lucian-baron-mhoore.html">➤ Lucian "Baron" Mhoore</a></li>
-            <li><a href="zykrath-vhalgoroth-aser.html">➤ Kral Zykrath Vhalgoroth Aser</a></li>
-            <li><a href="celestine-darvell.html">➤ Celestine D'Arvell</a></li>
-            <li><a href="kutuphanedeki-sessiz-kanaat.html">➤ Belge: Kütüphanedeki Sessiz Kanaat</a></li>
-            <li><a href="stellan-korvath.html">➤ Stellan Korvath (Kuzeyin Mimarı)</a></li>
-            <li><a href="kaelus-theron.html">➤ Lord Koruyucu Kaelus Theron</a></li>
-            <li><a href="behemoth-yapilis-sureci.html">➤ Belge: Behemoth'un İnşası</a></li>
-            <li><a href="aserwar-gedian.html">➤ Aserwar Gedian (Suikastçı Mimar)</a></li>
-            <li><a href="morvran-corvus.html">➤ General Morvran Corvus</a></li>
-            <li><a href="silus-praxton.html">➤ Silus Praxton (Yankı'nın Mirasçısı)</a></li>
-            <li><a href="sapan-disliler.html">➤ Hikaye: Sapan Dişliler</a></li>
-            <li><a href="uclu-pakt.html"><i class="fas fa-file-signature"></i> Belge: Üçlü Pakt</a></li>
-        </ul>
-    </details>
-    <details>
-        <summary>Yaşam Öyküleri</summary>
-        <ul>
-            <li><a href="aserwar-gedian-yasam-oykusu.html">➤ Aserwar Gedian: Yaşam Öyküsü</a></li>
-            <li><a href="denoistos-los-aser-yasam-oykusu.html">➤ General Denoistos: Yaşam Öyküsü</a></li>
-        </ul>
-    </details>
-</aside>
+            <details open>
+                <summary>1. Kısım: Parçalanmış Taç</summary>
+                <ul>
+                    <li><a href="dunas-zia.html">➤ Dunas Zia</a></li>
+                    <li><a href="nevery-aserilios.html">➤ Nevery Aserilios</a></li>
+                    <li><a href="skarryion-damethsizi.html">➤ Skarryion Damethsizi</a></li>
+                    <li><a href="ironheart-protestolari.html">➤ Ironheart Protestoları</a></li>
+                    <li><a href="madam-elena.html">➤ Madam Elena Von Cortex</a></li>
+                    <li><a href="asertechno.html">➤ AserTechno</a></li>
+                    <li><a href="eumandarg-damethsizi.html">➤ Eumandarg Damethsizi</a></li>
+                    <li><a href="madam-maria.html">➤ Madam Maria Von Cortex</a></li>
+                    <li><a href="damethia-anlasmasi.html" class="active"><i class="fas fa-file-contract"></i> Damethia Anlaşması</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>2. Kısım: Tiranların Çağı</summary>
+                <ul>
+                    <li><a href="behemoth-savaslari.html">➤ Behemoth Savaşları ve Gedian</a></li>
+                    <li><a href="gecelerin-pelerini-kurulus.html">➤ Gecelerin Pelerini: Kuruluş</a></li>
+                    <li><a href="kaelen-damethsizi.html">➤ Kaelen Damethsizi (III. Damethsizi)</a></li>
+                    <li><a href="iki-taht-bir-golge.html">➤ İki Taht, Bir Gölge</a></li>
+                    <li><a href="denoistos-los-aser.html">➤ General Denoistos Los Aser</a></li>
+                    <li><a href="hayalet-savasi.html">➤ Hayalet Savaşı</a></li>
+                    <li><a href="lucian-baron-mhoore.html">➤ Lucian "Baron" Mhoore</a></li>
+                    <li><a href="zykrath-vhalgoroth-aser.html">➤ Kral Zykrath Vhalgoroth Aser</a></li>
+                    <li><a href="celestine-darvell.html">➤ Celestine D'Arvell</a></li>
+                    <li><a href="kutuphanedeki-sessiz-kanaat.html">➤ Belge: Kütüphanedeki Sessiz Kanaat</a></li>
+                    <li><a href="stellan-korvath.html">➤ Stellan Korvath (Kuzeyin Mimarı)</a></li>
+                    <li><a href="kaelus-theron.html">➤ Lord Koruyucu Kaelus Theron</a></li>
+                    <li><a href="behemoth-yapilis-sureci.html">➤ Belge: Behemoth'un İnşası</a></li>
+                    <li><a href="aserwar-gedian.html">➤ Aserwar Gedian (Suikastçı Mimar)</a></li>
+                    <li><a href="morvran-corvus.html">➤ General Morvran Corvus</a></li>
+                    <li><a href="silus-praxton.html">➤ Silus Praxton (Yankı'nın Mirasçısı)</a></li>
+                    <li><a href="sapan-disliler.html">➤ Hikaye: Sapan Dişliler</a></li>
+                    <li><a href="uclu-pakt.html"><i class="fas fa-file-signature"></i> Belge: Üçlü Pakt</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Yaşam Öyküleri</summary>
+                <ul>
+                    <li><a href="aserwar-gedian-yasam-oykusu.html">➤ Aserwar Gedian: Yaşam Öyküsü</a></li>
+                    <li><a href="denoistos-los-aser-yasam-oykusu.html">➤ General Denoistos: Yaşam Öyküsü</a></li>
+                </ul>
+            </details>
+        </aside>
 
         <main class="content">
-
-            <div class="infobox">
-                <div class="infobox-header">BELGE KÜNYESİ</div>
-                <div class="infobox-image"><i class="fas fa-scroll" style="font-size:4rem;"></i></div>
-                <table class="infobox-table" style="width:100%; border-collapse:collapse;">
-                    <tr><th>Belge Adı:</th><td>Damethia Anlaşması</td></tr>
-                    <tr><th>Tarih:</th><td>0 Yılı</td></tr>
-                    <tr><th>Yer:</th><td>Damethia</td></tr>
-                    <tr><th>Durum:</th><td>Yürürlükte</td></tr>
-                    <tr><th>İmzalayanlar:</th><td>Kuzeybatılı İsyancı Halk<br>AserLand Devleti</td></tr>
-                </table>
-            </div>
-
-            <div class="treaty-document">
-                <h1>Damethia Anlaşması (0)</h1>
-                <h3 style="color:#888; margin-top:-20px; margin-bottom:30px;">Eumandarg Damethsizi</h3>
+            
+            <div class="agreement-paper">
+                <div class="agreement-title">DAMETHIA ANLAŞMASI (0)</div>
                 
                 <div class="preamble">
-                    İşbu anlaşma, Kuzeybatılı İsyancı Halk ve AserLand Devleti arasında vuku bulan savaş halini sonlandırmak, kalıcı barış ve istikrarı tesis etmek, tarafların hak ve yükümlülüklerini belirlemek maksadıyla, tarafların tam yetkili temsilcileri tarafından 0 yılı Damethia'da akdedilmiş ve tasdik edilmiştir.
+                    <p>İşbu anlaşma, Kuzeybatılı İsyancı Halk ve AserLand Devleti arasında vuku bulan savaş halini sonlandırmak, kalıcı barış ve istikrarı tesis etmek, tarafların hak ve yükümlülüklerini belirlemek maksadıyla, tarafların tam yetkili temsilcileri tarafından 0 yılı Damethia'da akdedilmiş ve tasdik edilmiştir.</p>
                 </div>
 
-                <div class="parties-box">
-                    <div class="party">
-                        <h3>Kuzeybatılı İsyancı Halk</h3>
-                        <ul>
-                            <li>Skarryion Damethsizi</li>
-                            <li>Eumandarg Damethsizi</li>
-                            <li>General Denoistos Los Aser</li>
-                        </ul>
-                    </div>
-                    <div class="party">
-                        <h3>AserLand Devleti</h3>
-                        <ul>
-                            <li>Kraliçe Madam Maria Von Cortex</li>
-                        </ul>
-                    </div>
+                <div class="parties">
+                    <strong>ANLAŞMANIN TARAFLARI:</strong>
+                    <ul>
+                        <li>Kuzeybatılı İsyancı Halk'ı temsilen: <strong>Skarryion Damethsizi</strong>, <strong>Eumandarg Damethsizi</strong> ve <strong>General Denoistos Los Aser</strong>.</li>
+                        <li>AserLand Devleti'ni temsilen: <strong>Kraliçe Madam Maria Von Cortex</strong>.</li>
+                    </ul>
                 </div>
 
-                <div class="article-box">
+                <div class="article">
                     <span class="article-title">Madde 1: Skarrgard Devleti'nin Bağımsızlığı ve Egemenliği</span>
-                    <div class="article-content">
-                        Kuzeybatılı İsyancı Halk tarafından kurulan Skarrgard Devleti'nin bağımsızlığı ve toprak bütünlüğü, işbu anlaşmaya taraf olan devletlerce ve uluslararası arenada tanınmıştır. AserNorthia kenti, Skarrgard Devleti'nin başkenti olarak tayin edilmiş ve adı Damethia olarak resmen ilan edilmiştir. Kurulan yeni devletin lideri olarak Skarryion Damethsizi, Ana Bakan olarak ise Eumandarg Damethsizi görevlendirilmiştir.
-                    </div>
+                    Kuzeybatılı İsyancı Halk tarafından kurulan Skarrgard Devleti'nin bağımsızlığı ve toprak bütünlüğü, işbu anlaşmaya taraf olan devletlerce ve uluslararası arenada tanınmıştır. AserNorthia kenti, Skarrgard Devleti'nin başkenti olarak tayin edilmiş ve adı Damethia olarak resmen ilan edilmiştir. Kurulan yeni devletin lideri olarak Skarryion Damethsizi, Ana Bakan olarak ise Eumandarg Damethsizi görevlendirilmiştir.
                 </div>
 
-                <div class="article-box">
+                <div class="article">
                     <span class="article-title">Madde 2: Halkın Tanımlanması</span>
-                    <div class="article-content">
-                        Skarrgard Devleti vatandaşlarına, herhangi bir resmi veya gayri resmi kaynakta "Kuzeybatılılar" olarak hitap edilmesi yasaklanmıştır. Tüm resmi belgelerde ve iletişimde, Skarrgard vatandaşları için münhasıran "Skarrgardlılar" ifadesi kullanılacaktır.
-                    </div>
+                    Skarrgard Devleti vatandaşlarına, herhangi bir resmi veya gayri resmi kaynakta "Kuzeybatılılar" olarak hitap edilmesi yasaklanmıştır. Tüm resmi belgelerde ve iletişimde, Skarrgard vatandaşları için münhasıran "Skarrgardlılar" ifadesi kullanılacaktır.
                 </div>
 
-                <div class="article-box">
+                <div class="article">
                     <span class="article-title">Madde 3: AserLand'ın İdari Yeniden Yapılandırılması</span>
-                    <div class="article-content">
-                        AserLand Devleti, anlaşmanın yürürlüğe girmesiyle birlikte idari olarak Doğu AserLand ve Batı AserLand olmak üzere ikiye ayrılacaktır. Skinnyleg, Fatlag, Ternas, Supremia ve Ithran şehirleri ile çevresindeki bölgeler Doğu AserLand'a bağlanmış; mevcut AserLand'ın geri kalan toprakları ise Batı AserLand olarak isimlendirilmiştir. Her iki bölgenin idari sorumluluğu, görevi süresince Madam Maria Von Cortex'e devredilmiştir.
-                    </div>
+                    AserLand Devleti, anlaşmanın yürürlüğe girmesiyle birlikte idari olarak Doğu AserLand ve Batı AserLand olmak üzere ikiye ayrılacaktır. Skinnyleg, Fatlag, Ternas, Supremia ve Ithran şehirleri ile çevresindeki bölgeler Doğu AserLand'a bağlanmış; mevcut AserLand'ın geri kalan toprakları ise Batı AserLand olarak isimlendirilmiştir. Her iki bölgenin idari sorumluluğu, görevi süresince Madam Maria Von Cortex'e devredilmiştir.
                 </div>
 
-                <div class="article-box">
+                <div class="article">
                     <span class="article-title">Madde 4: Savaş Tazminatı ve Ekonomik İhya</span>
-                    <div class="article-content">
-                        Batı AserLand, Skarrgard'a 150.000 Asercoin tutarında savaş tazminatı ödemeyi taahhüt eder. Ek olarak, Batı AserLand, yıllardır süregelen ağır vergiler nedeniyle ekonomik olarak yıpranmış olan Skarrgard bölgesinin yeniden inşasından ve ihyasından mesul tutulacaktır.
-                    </div>
+                    Batı AserLand, Skarrgard'a 150.000 Asercoin tutarında savaş tazminatı ödemeyi taahhüt eder. Ek olarak, Batı AserLand, yıllardır süregelen ağır vergiler nedeniyle ekonomik olarak yıpranmış olan Skarrgard bölgesinin yeniden inşasından ve ihyasından mesul tutulacaktır.
                 </div>
 
-                <div class="article-box">
+                <div class="article">
                     <span class="article-title">Madde 5: Nevery Aserilios'un Hukuki Durumu</span>
-                    <div class="article-content">
-                        Nevery Aserilios, bir savaş esiri olarak Damethia Sarayı'nda tutuklu kalacaktır. Kendisinin iadesi için Batı AserLand hükümetleriyle hiçbir koşulda pazarlık yapılmayacaktır. Aserilios hanedanına mensup bireyler, Batı AserLand hükümetinin denetimi altında gözetim altında tutulacaktır.
-                    </div>
+                    Nevery Aserilios, bir savaş esiri olarak Damethia Sarayı'nda tutuklu kalacaktır. Kendisinin iadesi için Batı AserLand hükümetleriyle hiçbir koşulda pazarlık yapılmayacaktır. Aserilios hanedanına mensup bireyler, Batı AserLand hükümetinin denetimi altında gözetim altında tutulacaktır.
                 </div>
 
-                <div class="article-box">
+                <div class="article">
                     <span class="article-title">Madde 6: Eğitim Kurumlarının Yönetimi</span>
-                    <div class="article-content">
-                        Nevery Aserilios'un mensubu olduğu ve eğitim gördüğü Aserwar Kraliyet Savaş Okulu'nun tüm idari yetkileri, Skarrgard'ın yeni atanan Generali Denoistos Los Aser'e devredilecektir.
-                    </div>
+                    Nevery Aserilios'un mensubu olduğu ve eğitim gördüğü Aserwar Kraliyet Savaş Okulu'nun tüm idari yetkileri, Skarrgard'ın yeni atanan Generali Denoistos Los Aser'e devredilecektir.
                 </div>
 
-                <div class="article-box">
+                <div class="article">
                     <span class="article-title">Madde 7: Teknolojik İşbirliği</span>
-                    <div class="article-content">
-                        Mühendis AserTechno'ya, Skarrgard Devleti sınırları içinde bir teknoloji enstitüsü kurma ve yönetme yetkisi verilmiştir.
-                    </div>
+                    Mühendis AserTechno'ya, Skarrgard Devleti sınırları içinde bir teknoloji enstitüsü kurma ve yönetme yetkisi verilmiştir.
                 </div>
 
-                <div class="conclusion-box">
-                    <span class="article-title" style="border:none;">Tasdik ve Yürürlük</span>
-                    <p style="color:#ddd; margin:0;">
-                        İşbu anlaşma, tarafların karşılıklı rızası ve tasdikiyle, imza altına alındığı andan itibaren tüm maddeleriyle birlikte derhal yürürlüğe girer.
-                    </p>
+                <div class="article">
+                    <span class="article-title">TASDİK VE YÜRÜRLÜK</span>
+                    İşbu anlaşma, tarafların karşılıklı rızası ve tasdikiyle, imza altına alındığı andan itibaren tüm maddeleriyle birlikte derhal yürürlüğe girer.
+                </div>
+
+                <div class="signatures">
+                    <div class="sign-box">
+                        <div class="seal"><i class="fas fa-feather-alt"></i></div>
+                        <strong>Skarryion Damethsizi</strong>
+                        <span class="sign-title">Skarrgard Lideri</span>
+                    </div>
+                    <div class="sign-box">
+                        <div class="seal"><i class="fas fa-scroll"></i></div>
+                        <strong>Eumandarg Damethsizi</strong>
+                        <span class="sign-title">Skarrgard Ana Bakanı</span>
+                    </div>
+                    <div class="sign-box">
+                        <div class="seal"><i class="fas fa-crown"></i></div>
+                        <strong>Maria Von Cortex</strong>
+                        <span class="sign-title">AserLand Kraliçesi</span>
+                    </div>
                 </div>
 
             </div>
