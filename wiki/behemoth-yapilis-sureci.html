@@ -36,29 +36,29 @@
         .content { flex: 1; padding: 40px; font-size: 1.1rem; line-height: 1.7; }
         .content h1 { font-size: 2.5rem; color: var(--ana-renk); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-top: 0; }
         
-        /* GÜNLÜK FORMATI */
+        /* TEMİZ GÜNLÜK FORMATI (Çerçevesiz) */
         .log-entry {
-            background: #222;
-            border-left: 4px solid var(--ana-renk);
-            padding: 20px;
-            margin-bottom: 30px;
-            border-radius: 0 10px 10px 0;
-            position: relative;
+            /* Arka plan kutusu kaldırıldı */
+            margin-bottom: 40px;
+            padding-left: 20px;
+            border-left: 3px solid var(--ana-renk); /* Sadece sol tarafta ince bir çizgi */
         }
         .log-header {
             font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: var(--ana-renk);
-            border-bottom: 1px dashed #444;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
+            font-weight: bold;
+            margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        .log-content { font-style: italic; color: #ccc; line-height: 1.8; }
+        .log-content { 
+            color: #ddd; 
+            line-height: 1.8;
+        }
         .log-content p { margin-bottom: 15px; }
 
-        /* INFOBOX (DÜZELTİLMİŞ) */
+        /* INFOBOX (Hizalama Sorunu Giderilmiş) */
         .infobox {
             float: right;
             width: 320px;
@@ -91,11 +91,17 @@
         .infobox-table th { text-align: left; padding: 10px; color: var(--ana-renk); border-bottom: 1px solid #333; width: 35%; vertical-align: top; }
         .infobox-table td { padding: 10px; border-bottom: 1px solid #333; color: #ccc; }
 
-        /* RESPONSIVE LAYOUT */
+        /* MOBİL VE KÜÇÜK EKRAN UYUMU */
         @media (max-width: 1300px) { 
             .container { flex-direction: column; } 
             .sidebar { width: 100%; height: auto; position: relative; top: 0; } 
-            .infobox { float: none; width: 100%; margin: 0 0 30px 0; }
+            
+            /* Ekran daralınca kutuyu metnin üstüne al */
+            .infobox { 
+                float: none; 
+                width: 100%; 
+                margin: 0 0 30px 0; 
+            }
         }
     </style>
 </head>
@@ -218,7 +224,7 @@
                     <p>Proje Behemoth tamamlandı. Artık bir şantiye değil. Ironheart vadisinde duruyor; gökyüzünü karartan, toprağı titreten, yaşayan bir dağ. Zykrath'ın Paranoya Kalesi'nin son ve en ölümcül kulesi. Biz inşa ettik. Her perçininde yalanlarımız, her devresinde gizli yeminlerimiz var.</p>
                     <p>Ben artık o genç, öfkeli çırak değilim. Kır saçlı, nasırlı elleri her an titreyebilen, kıdemli bir sistem denetçisiyim. Demir Göz'ün aptal ajanları, bana "sadık usta" diyor. Bilmiyorlar ki bu sadakat, demire değil, o demirin içindeki gizli çürüğe.</p>
                     <p>Savaşımız tuhaf bir hal aldı. "Hayalet Savaşı". Zykrath'ın canavarı orada duruyor ama onu kullanamıyor. Neden mi? Bizden korkuyor. TÖH'ün (Teknoloji Özgürlüğü Hareketi) bir virüs gibi sistemin her yerine yayıldığını biliyor. Bir fabrikayı sabote ediyoruz, bir ikmal hattını kesiyoruz, bir komutanın iletişimini bozuyoruz. Bizimle savaşmak için Behemoth'u çalıştırsa, kime ateş edecek? Kendi atölyelerine mi?</p>
-                    <p>Ama korktuğu tek şey biz değiliz. Casuslarımız (Aseria'nın [ASC] bize sızdırdığı o soğuk teknokratlar sayesinde) kralın en büyük korkusunu fısıldadı: Denoistos'u bir gecede yok eden o 'Görünmez El'. Behemoth'u, yani Denge'yi sarsacak o mutlak hamleyi yaparsa, o isimsiz bıçakların hedefi olmaktan korkuyor. Dünyanın en güçlü silahına sahip ama onu kullanmaya cesaret edemiyor. Bu kilitlenme, bizim yaşam sigortamızdı.</p>
+                    <p>Ama korktuğu tek şey biz değiliz. Casuslarımız (Aseria'nın [ASC] bize sızdırdığı o soğuk teknokratlar sayesinde ) kralın en büyük korkusunu fısıldadı: Denoistos'u bir gecede yok eden o 'Görünmez El'. Behemoth'u, yani Denge'yi sarsacak o mutlak hamleyi yaparsa, o isimsiz bıçakların hedefi olmaktan korkuyor. Dünyanın en güçlü silahına sahip ama onu kullanmaya cesaret edemiyor. Bu kilitlenme, bizim yaşam sigortamızdı.</p>
                     <p>Ve bugün... kilit kırıldı.</p>
                     <p>Haber, Demir Göz'ün kendi şifreli hatlarından, TÖH içindeki bağlantımıza sızdı. Kral Zykrath Vhalgoroth Aser öldü. Yatağında. Yaşlılıktan.</p>
                     <p>Atölyedeki çekiç sesleri bir anlığına durdu. Demir Göz ajanları bile ne yapacaklarını bilmez halde koşuşturuyor. 61 yıllık tiranlık bir nefesle son buldu. Ama biz TÖH hücreleri olarak kutlama yapmıyoruz. Bizim için bu bir zafer değil, bir sinyal.</p>
@@ -257,20 +263,20 @@
                 <div class="log-header">M.S. 104 YILI | BEHEMOTH'UN SÖKÜM ALANI (ESKİ ÇEKİRDEK ODASI)</div>
                 <div class="log-content">
                     <p>Bitti.</p>
-                    <p>Kaelus'un tiranlığı, Zykrath'ınkinden daha karanlık, daha acımasızdı. "Lord Koruyucu", TÖH'ü (Teknoloji Özgürlüğü Hareketi) avlamak için değil, kıtadaki her gölgeyi yok etmek için yemin etmişti. "Gölgelerin Avı" adını verdiği o lanet operasyonu başlattığında, Behemoth'u bir silahtan çok, dev bir sensör ağı gibi kullandı.</p>
+                    <p>Kaelus'un tiranlığı, Zykrath'ınkinden daha karanlık, daha acımasızdı. "Lord Koruyucu" , TÖH'ü (Teknoloji Özgürlüğü Hareketi) avlamak için değil, kıtadaki her gölgeyi yok etmek için yemin etmişti . "Gölgelerin Avı" adını verdiği o lanet operasyonu başlattığında, Behemoth'u bir silahtan çok, dev bir sensör ağı gibi kullandı.</p>
                     <p>Korktuğumuz başımıza geldi. Yeraltındaki hücrelerimiz bir bir bulundu. Kaelus, bizim bile varlığından emin olmadığımız, Denoistos'u avlayan o "Görünmez El"i, Gecelerin Pelerini'ni, Behemoth'un gücüyle buldu. Ve sonra... Ithran Deltası'nı haritadan sildi. Fısıldayan Labirent'in yok edilişi, Usta AserTechno'nun ölümünden sonraki en karanlık gündü. Kaelus, Denge'yi yok etmişti.</p>
                     <p>Yeraltında, TÖH'ün son kalıntılarında, umudumuzu yitirmek üzereydik. Ben ve Joel Van Cortex, sadece hayatta kalmaya çalışıyorduk.</p>
                     <p>Sonra o geldi.</p>
-                    <p>Pelerin'in küllerinden yeni bir gölge doğdu. Adı bir fısıltı gibi yayıldı: Aserwar Gedian. Kaelus'un generalleri birer birer, imkansız "kazalarda" ölmeye başladı. Demir Göz'ün en acımasız sorgucuları yataklarında ölü bulundu. Bu bizim işimiz değildi; bu daha temizdi, daha cerrahiydi. Gedian ve onun "kardeşleri", AserCouncil, Kaelus'un rejimini bizden daha zekice, içeriden zehirliyordu.</p>
+                    <p>Pelerin'in küllerinden yeni bir gölge doğdu. Adı bir fısıltı gibi yayıldı: Aserwar Gedian. Kaelus'un generalleri birer birer, imkansız "kazalarda" ölmeye başladı. Demir Göz'ün en acımasız sorgucuları yataklarında ölü bulundu. Bu bizim işimiz değildi; bu daha temizdi, daha cerrahiydi. Gedian ve onun "kardeşleri" , AserCouncil , Kaelus'un rejimini bizden daha zekice, içeriden zehirliyordu .</p>
                     <p>Ve bir gün, bizimle, TÖH ile temasa geçtiler.</p>
                     <p>Joel Van Cortex, sığınağımıza döndüğünde yüzü değişmişti. Gedian'ın bir planı vardı. Bir sabotaj değil. Bir fetih. Canavarı, Proje Behemoth'u içeriden vuracaktı. Ama içeri girmek için bizim yardımımıza ihtiyacı vardı. Benim yardımıma.</p>
-                    <p>Onları, AserTechno ve Elara'nın inşa ettiği, Zykrath'ın bile bilmediği o gizli bakım tünellerinden ve unutulmuş buhar kanallarından bizzat geçirdim. Gedian'ın ekibi (AserFire, AserIce, AserSpace, AserStick) birer hayaletti. Onlara, Kaelus'un sensör ağındaki kör noktaları gösterdim. Onları, yıllar önce o gizli çatlağı yerleştirdiğim ana soğutma borularına getirdim.</p>
+                    <p>Onları, AserTechno ve Elara'nın inşa ettiği, Zykrath'ın bile bilmediği o gizli bakım tünellerinden ve unutulmuş buhar kanallarından bizzat geçirdim. Gedian'ın ekibi (AserFire, AserIce, AserSpace, AserStick ) birer hayaletti. Onlara, Kaelus'un sensör ağındaki kör noktaları gösterdim. Onları, yıllar önce o gizli çatlağı yerleştirdiğim ana soğutma borularına getirdim.</p>
                     <p>Onlar makinenin kalbine, komuta köprüsüne tırmanırken, Joel ve benim ekibim çekirdek odasına indi. Gedian'ın yukarıda savaşı başlattığı an, ben de aşağıda kendi savaşımı verdim. Kaelus'un askerleri köprüdeki kaosa koşarken, ben 34 yıl önce yerleştirdiğim o kusurlu vanayı buldum.</p>
-                    <p>Gedian, Kaelus'u yendi. Tiranı yakaladı.</p>
+                    <p>Gedian, Kaelus'u yendi . Tiranı yakaladı.</p>
                     <p>Bir hafta sonra, Kaelus'un Aserion meydanında idam edilmesinin ardından, Joel ve ben, Ironheart'taki komuta köprüsünde yeni liderle, Aserwar Gedian'la yüz yüze geldik. O metal canavara, ömrümüzü çalan o demir yığınına nefretle bakıyorduk.</p>
-                    <p>Ve Gedian, bize döndü. Tek bir cümle söyledi: "Bunu yok edin."</p>
+                    <p>Ve Gedian, bize döndü. Tek bir cümle söyledi: "Bunu yok edin." </p>
                     <p>O an... O an, Elara'nın ve AserTechno'nun ruhunun kazandığını anladım.</p>
-                    <p>Bugün, o son cıvatayı sökerken ellerim titredi. Bir ömür harcadığım bu canavar, şimdi TÖH mühendislerinin elinde parçalara ayrılıyor. Çekirdeği, Joel'ün denetiminde bir enerji istasyonuna dönüşüyor. Metalleri, savaşta yıkılan köyleri, evleri ve okulları inşa etmek için eritiliyor.</p>
+                    <p>Bugün, o son cıvatayı sökerken ellerim titredi. Bir ömür harcadığım bu canavar, şimdi TÖH mühendislerinin elinde parçalara ayrılıyor. Çekirdeği, Joel'ün denetiminde bir enerji istasyonuna dönüşüyor. Metalleri, savaşta yıkılan köyleri, evleri ve okulları inşa etmek için eritiliyor .</p>
                     <p>Gedian, Aseria ve Skarrgard ile masaya oturdu. "Mutlak güç, mutlak tiranlık doğurur," dedi. Ve TÖH'e, yani bize, "Teknoloji Bağımsızlığı Fermanı" ile anayasal bir görev verdi: Bir daha asla Behemoth gibi bir canavarın inşa edilmemesini sağlamak.</p>
                     <p>Yeraltındaki hayaletler, artık sistemin koruyucuları oldu. Benim küçük, gizli kusuruma... o çatlak vanaya... gerek kalmadı. Gedian, makineyi değil, fikri yok etti.</p>
                     <p>Günlüğüm burada sona eriyor. Zykrath öldü. Kaelus öldü. Behemoth öldü.</p>
