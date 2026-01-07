@@ -50,11 +50,35 @@
         }
         iframe { width: 100%; height: 100%; border: none; }
 
-        /* TRACK LIST GRID */
-        .track-grid {
+        /* ALBUM SECTIONS */
+        .album-section {
             max-width: 1400px;
-            margin: 50px auto;
+            margin: 40px auto;
             padding: 0 20px;
+        }
+
+        .album-header {
+            border-bottom: 1px solid #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+        }
+
+        .album-title {
+            font-size: 1.8rem;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 4px solid var(--ana-renk);
+            padding-left: 15px;
+        }
+
+        .album-meta { color: #666; font-size: 0.9rem; font-style: italic; }
+
+        /* TRACK GRID */
+        .track-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
@@ -83,11 +107,25 @@
         .card-title { color: #fff; font-weight: bold; font-size: 1.1rem; display: block; margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .card-album { color: #888; font-size: 0.85rem; display: block; }
         
-        .genre-tag { align-self: flex-start; font-size: 0.7rem; padding: 4px 10px; border: 1px solid #444; border-radius: 12px; color: #aaa; margin-bottom: 15px; }
+        /* TAG CONTAINER */
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .genre-tag { 
+            font-size: 0.7rem; 
+            padding: 4px 10px; 
+            border: 1px solid #444; 
+            border-radius: 12px; 
+            color: #aaa; 
+            background: rgba(255,255,255,0.05);
+        }
 
         /* ACTION BUTTONS */
         .btn-group { margin-top: auto; display: flex; gap: 10px; }
-        
         .action-btn {
             flex: 1;
             padding: 10px 0;
@@ -138,135 +176,181 @@
         </p>
     </header>
 
-    <div class="track-grid" id="trackListContainer"></div>
+    <div id="contentContainer"></div>
 
     <script>
-        // Şarkı Listesi Veritabanı
+        /* VERİ GİRİŞ KILAVUZU:
+           1. 'section': Bu şarkının hangi başlık altında duracağını belirler (Albüm Adı).
+           2. 'tags': Türleri '/' ile ayırabilirsin (Örn: "Industrial / Rock"). Kod bunları otomatik böler.
+           3. 'id': Spotify Şarkı ID'si (Linkin sonundaki kod).
+           4. 'img': Albüm kapağı resmi.
+        */
+
         const tracks = [
-            // ALBÜM 1: War Against War
-            { title: "Suffer", album: "War Against War", genre: "Industrial / Cyberpunk", id: "ID_GİR_1", img: "https://via.placeholder.com/70/333/fff?text=WAW" },
-            { title: "Exterminate", album: "War Against War", genre: "Industrial / Electronic", id: "ID_GİR_2", img: "https://via.placeholder.com/70/333/fff?text=WAW" },
-            { title: "Rogue", album: "War Against War", genre: "Cyberpunk", id: "ID_GİR_3", img: "https://via.placeholder.com/70/333/fff?text=WAW" },
-            { title: "War Against War", album: "War Against War", genre: "Industrial", id: "ID_GİR_4", img: "https://via.placeholder.com/70/333/fff?text=WAW" },
+            // --- ALBÜM: WAR AGAINST WAR ---
+            { title: "Suffer", section: "War Against War", tags: "Industrial / Electronic / Cyberpunk", id: "ID_GİR", img: "https://via.placeholder.com/70/333/fff?text=WAW" },
+            { title: "Exterminate", section: "War Against War", tags: "Industrial / Electronic / Cyberpunk", id: "ID_GİR", img: "https://via.placeholder.com/70/333/fff?text=WAW" },
+            { title: "Rogue", section: "War Against War", tags: "Industrial / Electronic / Cyberpunk", id: "ID_GİR", img: "https://via.placeholder.com/70/333/fff?text=WAW" },
+            { title: "War Against War", section: "War Against War", tags: "Industrial / Electronic / Cyberpunk", id: "ID_GİR", img: "https://via.placeholder.com/70/333/fff?text=WAW" },
 
-            // ALBÜM 2: Cybertape 1
-            { title: "Sundered Sky", album: "Cybertape 1", genre: "Psy-Trance", id: "ID_GİR_5", img: "https://via.placeholder.com/70/509/fff?text=CYB1" },
-            { title: "Underestimated", album: "Cybertape 1", genre: "Cyberpunk", id: "ID_GİR_6", img: "https://via.placeholder.com/70/509/fff?text=CYB1" },
-            { title: "Predator of What", album: "Cybertape 1", genre: "Synthwave", id: "ID_GİR_7", img: "https://via.placeholder.com/70/509/fff?text=CYB1" },
-            { title: "Eternity of Void", album: "Cybertape 1", genre: "Psy-Trance", id: "ID_GİR_8", img: "https://via.placeholder.com/70/509/fff?text=CYB1" },
+            // --- ALBÜM: CYBERTAPE 1 ---
+            { title: "Sundered Sky", section: "Cybertape 1", tags: "Psy-Trance / Cyberpunk / Synthwave", id: "ID_GİR", img: "https://via.placeholder.com/70/509/fff?text=CYB1" },
+            { title: "Underestimated", section: "Cybertape 1", tags: "Psy-Trance / Cyberpunk / Synthwave", id: "ID_GİR", img: "https://via.placeholder.com/70/509/fff?text=CYB1" },
+            { title: "Predator of What", section: "Cybertape 1", tags: "Psy-Trance / Cyberpunk / Synthwave", id: "ID_GİR", img: "https://via.placeholder.com/70/509/fff?text=CYB1" },
+            { title: "Eternity of Void", section: "Cybertape 1", tags: "Psy-Trance / Cyberpunk / Synthwave", id: "ID_GİR", img: "https://via.placeholder.com/70/509/fff?text=CYB1" },
 
-            // ALBÜM 3: Cybertape 2
-            { title: "Dètruire", album: "Cybertape 2", genre: "Synthwave", id: "ID_GİR_9", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
-            { title: "Lightspeed", album: "Cybertape 2", genre: "Dubstep", id: "ID_GİR_10", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
-            { title: "The Creature", album: "Cybertape 2", genre: "EDM", id: "ID_GİR_11", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
-            { title: "Cyberlith", album: "Cybertape 2", genre: "Cyberpunk", id: "ID_GİR_12", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
-            { title: "Global Disaster", album: "Cybertape 2", genre: "Dubstep", id: "ID_GİR_13", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
+            // --- ALBÜM: CYBERTAPE 2 ---
+            { title: "Dètruire", section: "Cybertape 2", tags: "Synthwave / Dubstep / EDM", id: "ID_GİR", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
+            { title: "Lightspeed", section: "Cybertape 2", tags: "Synthwave / Dubstep / EDM", id: "ID_GİR", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
+            { title: "The Creature", section: "Cybertape 2", tags: "Synthwave / Dubstep / EDM", id: "ID_GİR", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
+            { title: "Cyberlith", section: "Cybertape 2", tags: "Synthwave / Dubstep / EDM", id: "ID_GİR", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
+            { title: "Global Disaster", section: "Cybertape 2", tags: "Synthwave / Dubstep / EDM", id: "ID_GİR", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
 
-            // ALBÜM 4: AserCouncil
-            { title: "Red Headed", album: "AserCouncil", genre: "Dubstep", id: "ID_GİR_14", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
-            { title: "Potion of Death", album: "AserCouncil", genre: "Industrial", id: "ID_GİR_15", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
-            { title: "You Will Suffer", album: "AserCouncil", genre: "Synthwave", id: "ID_GİR_16", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
-            { title: "AserLand Disco", album: "AserCouncil", genre: "Cyberpunk", id: "ID_GİR_17", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
-            { title: "14", album: "AserCouncil", genre: "Experimental", id: "ID_GİR_18", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
-            { title: "Cloak of the Nights", album: "AserCouncil", genre: "Synthwave", id: "ID_GİR_19", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
-            { title: "Silent Street", album: "AserCouncil", genre: "Ambient", id: "ID_GİR_20", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
-            { title: "Don't Dream of Your Lovers", album: "AserCouncil", genre: "Synthwave", id: "ID_GİR_21", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            // --- ALBÜM: ASERCOUNCIL ---
+            { title: "Red Headed", section: "AserCouncil", tags: "Dubstep / Industrial / Synthwave / Cyberpunk", id: "ID_GİR", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "Potion of Death", section: "AserCouncil", tags: "Dubstep / Industrial / Synthwave / Cyberpunk", id: "ID_GİR", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "You Will Suffer", section: "AserCouncil", tags: "Dubstep / Industrial / Synthwave / Cyberpunk", id: "ID_GİR", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "AserLand Disco", section: "AserCouncil", tags: "Dubstep / Industrial / Synthwave / Cyberpunk", id: "ID_GİR", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "14", section: "AserCouncil", tags: "Dubstep / Industrial / Synthwave / Cyberpunk", id: "ID_GİR", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "Cloak of the Nights", section: "AserCouncil", tags: "Dubstep / Industrial / Synthwave / Cyberpunk", id: "ID_GİR", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "Silent Street", section: "AserCouncil", tags: "Dubstep / Industrial / Synthwave / Cyberpunk", id: "ID_GİR", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "Don't Dream of Your Lovers", section: "AserCouncil", tags: "Dubstep / Industrial / Synthwave / Cyberpunk", id: "ID_GİR", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
 
-            // SINGLES
-            { title: "War Against Peace", album: "Single", genre: "Industrial", id: "ID_GİR_22", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "Until the Very End", album: "Single", genre: "Rock", id: "ID_GİR_23", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "Article 34", album: "Single", genre: "Synthwave", id: "ID_GİR_24", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "Omega Squad", album: "Single", genre: "8-Bit / Psy-Trance", id: "ID_GİR_25", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "Hymn of Liberation", album: "Single", genre: "Synthwave", id: "ID_GİR_26", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "Pyrrhic Victory", album: "Single", genre: "Lo-Fi", id: "ID_GİR_27", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            // --- ALBÜM: ROCKOMANIA ---
+            { title: "Goodbye", section: "Rockomania", tags: "Industrial Rock / Metal / Anime Opening", id: "ID_GİR", img: "https://via.placeholder.com/70/800/fff?text=ROCK" },
+            { title: "When Will You Come Back?", section: "Rockomania", tags: "Industrial Rock / Metal / Anime Opening", id: "ID_GİR", img: "https://via.placeholder.com/70/800/fff?text=ROCK" },
+            { title: "Choice", section: "Rockomania", tags: "Industrial Rock / Metal / Anime Opening", id: "ID_GİR", img: "https://via.placeholder.com/70/800/fff?text=ROCK" },
+            { title: "This Is Our Fight", section: "Rockomania", tags: "Industrial Rock / Metal / Anime Opening", id: "ID_GİR", img: "https://via.placeholder.com/70/800/fff?text=ROCK" },
 
-            // ALBÜM 5: Rockomania
-            { title: "Goodbye", album: "Rockomania", genre: "Industrial Rock", id: "ID_GİR_28", img: "https://via.placeholder.com/70/800/fff?text=ROCK" },
-            { title: "When Will You Come Back?", album: "Rockomania", genre: "Metal", id: "ID_GİR_29", img: "https://via.placeholder.com/70/800/fff?text=ROCK" },
-            { title: "Choice", album: "Rockomania", genre: "Anime Opening", id: "ID_GİR_30", img: "https://via.placeholder.com/70/800/fff?text=ROCK" },
-            { title: "This Is Our Fight", album: "Rockomania", genre: "Rock", id: "ID_GİR_31", img: "https://via.placeholder.com/70/800/fff?text=ROCK" },
+            // --- ALBÜM: CYBERTAPE PREMIUM ---
+            { title: "Heartstrings and Bloodstains", section: "Cybertape Premium", tags: "Dubstep / Industrial / Cyberpunk / Psy-Trance", id: "ID_GİR", img: "https://via.placeholder.com/70/505/fff?text=PREM" },
+            { title: "Chillfight", section: "Cybertape Premium", tags: "Dubstep / Industrial / Cyberpunk / Psy-Trance", id: "ID_GİR", img: "https://via.placeholder.com/70/505/fff?text=PREM" },
+            { title: "Night Side", section: "Cybertape Premium", tags: "Dubstep / Industrial / Cyberpunk / Psy-Trance", id: "ID_GİR", img: "https://via.placeholder.com/70/505/fff?text=PREM" },
 
-            // ALBÜM 6: Cybertape Premium
-            { title: "Heartstrings and Bloodstains", album: "Cybertape Premium", genre: "Dubstep", id: "ID_GİR_32", img: "https://via.placeholder.com/70/505/fff?text=PREM" },
-            { title: "Chillfight", album: "Cybertape Premium", genre: "Industrial", id: "ID_GİR_33", img: "https://via.placeholder.com/70/505/fff?text=PREM" },
-            { title: "Night Side", album: "Cybertape Premium", genre: "Cyberpunk", id: "ID_GİR_34", img: "https://via.placeholder.com/70/505/fff?text=PREM" },
+            // --- ALBÜM: YOUR LAUGHER ROUGHER ---
+            { title: "Chronicles of Synthwave", section: "Your Laugher Rougher", tags: "Hard Dubstep / Industrial / Synthwave", id: "ID_GİR", img: "https://via.placeholder.com/70/660/fff?text=YLR" },
+            { title: "Midnight Machinery", section: "Your Laugher Rougher", tags: "Hard Dubstep / Industrial / Synthwave", id: "ID_GİR", img: "https://via.placeholder.com/70/660/fff?text=YLR" },
+            { title: "Your Laugher Rougher", section: "Your Laugher Rougher", tags: "Hard Dubstep / Industrial / Synthwave", id: "ID_GİR", img: "https://via.placeholder.com/70/660/fff?text=YLR" },
 
-            // ALBÜM 7: Your Laugher Rougher
-            { title: "Chronicles of Synthwave", album: "Your Laugher Rougher", genre: "Synthwave", id: "ID_GİR_35", img: "https://via.placeholder.com/70/660/fff?text=YLR" },
-            { title: "Midnight Machinery", album: "Your Laugher Rougher", genre: "Industrial", id: "ID_GİR_36", img: "https://via.placeholder.com/70/660/fff?text=YLR" },
-            { title: "Your Laugher Rougher", album: "Your Laugher Rougher", genre: "Hard Dubstep", id: "ID_GİR_37", img: "https://via.placeholder.com/70/660/fff?text=YLR" },
+             // --- ALBÜM: MINDSCAPER ---
+            { title: "Anamorphic Thought Spiral", section: "Mindscaper", tags: "Psy-Trance", id: "ID_GİR", img: "https://via.placeholder.com/70/500/fff?text=MIND" },
+            { title: "Emerging from the Abyss", section: "Mindscaper", tags: "Psy-Trance", id: "ID_GİR", img: "https://via.placeholder.com/70/500/fff?text=MIND" },
+            { title: "Overload Protocol", section: "Mindscaper", tags: "Psy-Trance", id: "ID_GİR", img: "https://via.placeholder.com/70/500/fff?text=MIND" },
+            { title: "Mindscaper", section: "Mindscaper", tags: "Psy-Trance", id: "ID_GİR", img: "https://via.placeholder.com/70/500/fff?text=MIND" },
 
-            // ALBÜM 8: AserLand Pt. 1 (HİKAYE ALBÜMÜ)
-            { title: "Unyielding Dawn of Freedom", album: "AserLand Pt. 1", genre: "Orchestral", id: "ID_GİR_38", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "dunas-zia.html" },
-            { title: "The Pen of Revolution", album: "AserLand Pt. 1", genre: "Epicore", id: "ID_GİR_39", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "skarryion-damethsizi.html" },
-            { title: "Sharp as Words", album: "AserLand Pt. 1", genre: "Classical", id: "ID_GİR_40", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "eumandarg-damethsizi.html" },
-            { title: "Echoes of Democracy", album: "AserLand Pt. 1", genre: "World", id: "ID_GİR_41", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "celestine-darvell.html" },
-            { title: "Iron Hands United Hearts", album: "AserLand Pt. 1", genre: "Orchestral", id: "ID_GİR_42", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "ironheart-protestolari.html" },
+            // --- HİKAYE ALBÜMÜ: ASERLAND PT. 1 ---
+            { title: "Unyielding Dawn of Freedom", section: "AserLand Pt. 1", tags: "Orchestral / Epicore / Classical / World", id: "ID_GİR", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "dunas-zia.html" },
+            { title: "The Pen of Revolution", section: "AserLand Pt. 1", tags: "Orchestral / Epicore / Classical / World", id: "ID_GİR", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "skarryion-damethsizi.html" },
+            { title: "Sharp as Words", section: "AserLand Pt. 1", tags: "Orchestral / Epicore / Classical / World", id: "ID_GİR", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "eumandarg-damethsizi.html" },
+            { title: "Echoes of Democracy", section: "AserLand Pt. 1", tags: "Orchestral / Epicore / Classical / World", id: "ID_GİR", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "celestine-darvell.html" },
+            { title: "Iron Hands United Hearts", section: "AserLand Pt. 1", tags: "Orchestral / Epicore / Classical / World", id: "ID_GİR", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "ironheart-protestolari.html" },
 
-            // SINGLES 2
-            { title: "Solstice Pulse", album: "Single", genre: "Industrial", id: "ID_GİR_43", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "Phantom Altruist", album: "Single", genre: "Vaporwave", id: "ID_GİR_44", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "God.exe Terminated", album: "Single", genre: "Hard Dubstep", id: "ID_GİR_45", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "Unfuckwithable", album: "Single", genre: "Deep House", id: "ID_GİR_46", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "Beni Bulur", album: "Single", genre: "Deep House", id: "ID_GİR_47", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "Dirty Mouth", album: "Single", genre: "Chill House", id: "ID_GİR_48", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "Geçip Gidenler", album: "Single", genre: "Deep House", id: "ID_GİR_49", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            // --- HİKAYE ALBÜMÜ: ASERLAND PT. 2 ---
+            { title: "As the Pendulum Swings", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic", id: "ID_GİR", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "iki-taht-bir-golge.html" },
+            { title: "Echo of the Absolute", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic", id: "ID_GİR", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "celestine-darvell.html" },
+            { title: "Tacit Opinion of the Stacks", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic", id: "ID_GİR", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "kutuphanedeki-sessiz-kanaat.html" },
+            { title: "Wrath of a Broken Crown", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic", id: "ID_GİR", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "zykrath-vhalgoroth-aser.html" },
+            { title: "Titan of Ironheart", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic", id: "ID_GİR", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "behemoth-yapilis-sureci.html" },
+            { title: "The Empire's Butcher", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic", id: "ID_GİR", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "denoistos-los-aser.html" },
+            { title: "Lord Protector", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic", id: "ID_GİR", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "kaelus-theron.html" },
+            { title: "The Assasin Architect", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic", id: "ID_GİR", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "aserwar-gedian.html" },
 
-            // ALBÜM 9: Mindscaper
-            { title: "Anamorphic Thought Spiral", album: "Mindscaper", genre: "Psy-Trance", id: "ID_GİR_50", img: "https://via.placeholder.com/70/500/fff?text=MIND" },
-            { title: "Emerging from the Abyss", album: "Mindscaper", genre: "Psy-Trance", id: "ID_GİR_51", img: "https://via.placeholder.com/70/500/fff?text=MIND" },
-            { title: "Overload Protocol", album: "Mindscaper", genre: "Psy-Trance", id: "ID_GİR_52", img: "https://via.placeholder.com/70/500/fff?text=MIND" },
-            { title: "Mindscaper", album: "Mindscaper", genre: "Psy-Trance", id: "ID_GİR_53", img: "https://via.placeholder.com/70/500/fff?text=MIND" },
-
-            // ALBÜM 10: AserLand Pt. 2 (HİKAYE ALBÜMÜ)
-            { title: "As the Pendulum Swings", album: "AserLand Pt. 2", genre: "Orchestral", id: "ID_GİR_54", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "iki-taht-bir-golge.html" },
-            { title: "Echo of the Absolute", album: "AserLand Pt. 2", genre: "World", id: "ID_GİR_55", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "celestine-darvell.html" },
-            { title: "Tacit Opinion of the Stacks", album: "AserLand Pt. 2", genre: "Industrial", id: "ID_GİR_56", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "kutuphanedeki-sessiz-kanaat.html" },
-            { title: "Wrath of a Broken Crown", album: "AserLand Pt. 2", genre: "Metal", id: "ID_GİR_57", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "zykrath-vhalgoroth-aser.html" },
-            { title: "Titan of Ironheart", album: "AserLand Pt. 2", genre: "Industrial", id: "ID_GİR_58", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "behemoth-yapilis-sureci.html" },
-            { title: "The Empire's Butcher", album: "AserLand Pt. 2", genre: "Orchestral", id: "ID_GİR_59", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "denoistos-los-aser.html" },
-            { title: "Lord Protector", album: "AserLand Pt. 2", genre: "Classic", id: "ID_GİR_60", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "kaelus-theron.html" },
-            { title: "The Assasin Architect", album: "AserLand Pt. 2", genre: "Orchestral", id: "ID_GİR_61", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "aserwar-gedian.html" },
+            // --- SINGLES (Tümü Bir Başlık Altında) ---
+            { title: "War Against Peace", section: "Singles & EPs", tags: "Industrial / Cyberpunk", id: "ID_GİR", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Until the Very End", section: "Singles & EPs", tags: "Rock", id: "ID_GİR", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Article 34", section: "Singles & EPs", tags: "Synthwave / EDM", id: "ID_GİR", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Omega Squad", section: "Singles & EPs", tags: "8-Bit / Electronic / Psy-Trance", id: "ID_GİR", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Hymn of Liberation", section: "Singles & EPs", tags: "Synthwave / EDM", id: "ID_GİR", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Pyrrhic Victory", section: "Singles & EPs", tags: "Lo-Fi / EDM / Synthwave", id: "ID_GİR", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Solstice Pulse", section: "Singles & EPs", tags: "Industrial / Dubstep", id: "ID_GİR", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Phantom Altruist", section: "Singles & EPs", tags: "Chillwave / Vaporwave", id: "ID_GİR", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "God.exe Terminated", section: "Singles & EPs", tags: "Cyberpunk / Hard Dubstep", id: "ID_GİR", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Unfuckwithable", section: "Singles & EPs", tags: "Deep House", id: "ID_GİR", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Beni Bulur", section: "Singles & EPs", tags: "Deep House", id: "ID_GİR", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Dirty Mouth", section: "Singles & EPs", tags: "Chill House / EDM", id: "ID_GİR", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Geçip Gidenler", section: "Singles & EPs", tags: "Deep House", id: "ID_GİR", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
         ];
 
-        // Şarkıları Ekrana Basan Fonksiyon
+        // 1. Gruplama Fonksiyonu (Albümlere Göre Ayır)
+        function groupBySection(tracks) {
+            return tracks.reduce((groups, track) => {
+                const section = track.section || "Diğer";
+                if (!groups[section]) {
+                    groups[section] = [];
+                }
+                groups[section].push(track);
+                return groups;
+            }, {});
+        }
+
+        // 2. Ekrana Basma Fonksiyonu
         function renderTracks() {
-            const container = document.getElementById('trackListContainer');
+            const container = document.getElementById('contentContainer');
             container.innerHTML = "";
 
-            tracks.forEach(track => {
-                let wikiButton = "";
-                if (track.wiki) {
-                    wikiButton = `<a href="wiki/${track.wiki}" class="action-btn wiki-btn" onclick="event.stopPropagation()">
-                                    <i class="fas fa-book"></i> Hikayeyi Oku
-                                  </a>`;
-                }
+            const groupedTracks = groupBySection(tracks);
 
-                // ID_GİR yazıyorsa Rick Astley çalsın ki bozuk durmasın (Geçici)
-                let playId = track.id.includes("ID_GİR") ? "4cOdK2wGLETKBW3PvgPWqT" : track.id;
-                let spotifyLink = `https://open.spotify.com/track/${playId}`;
-
-                const cardHtml = `
-                    <div class="track-card" onclick="changeSpotifyTrack(this, '${playId}')">
-                        <div class="card-header">
-                            <img src="${track.img}" class="mini-art">
-                            <div class="card-info">
-                                <span class="card-title">${track.title}</span>
-                                <span class="card-album">${track.album}</span>
-                            </div>
-                            <i class="fab fa-spotify spotify-icon"></i>
+            // Her bir albüm grubu için döngü
+            for (const [sectionName, sectionTracks] of Object.entries(groupedTracks)) {
+                
+                // Başlık Oluştur
+                let sectionHtml = `
+                    <div class="album-section">
+                        <div class="album-header">
+                            <h2 class="album-title">${sectionName}</h2>
+                            <span class="album-meta">${sectionTracks.length} Parça</span>
                         </div>
-                        <span class="genre-tag">${track.genre}</span>
-                        <div class="btn-group">
-                            <a href="${spotifyLink}" target="_blank" class="action-btn spotify-btn" onclick="event.stopPropagation()">
-                                <i class="fab fa-spotify"></i> Spotify
-                            </a>
-                            ${wikiButton}
-                        </div>
-                    </div>
+                        <div class="track-grid">
                 `;
-                container.innerHTML += cardHtml;
-            });
+
+                // O albümün şarkılarını ekle
+                sectionTracks.forEach(track => {
+                    let wikiButton = "";
+                    if (track.wiki) {
+                        wikiButton = `<a href="wiki/${track.wiki}" class="action-btn wiki-btn" onclick="event.stopPropagation()">
+                                        <i class="fas fa-book"></i> Hikaye
+                                      </a>`;
+                    }
+
+                    // Rick Astley kontrolü (ID girilmemişse)
+                    let playId = track.id.includes("ID_GİR") ? "4cOdK2wGLETKBW3PvgPWqT" : track.id;
+                    let spotifyLink = `https://open.spotify.com/track/${playId}`;
+
+                    // Etiketleri Parçala (Split)
+                    let tagsHtml = "";
+                    if (track.tags) {
+                        const tagList = track.tags.split(' / ');
+                        tagsHtml = `<div class="tag-container">` + 
+                                   tagList.map(tag => `<span class="genre-tag">${tag}</span>`).join('') + 
+                                   `</div>`;
+                    }
+
+                    sectionHtml += `
+                        <div class="track-card" onclick="changeSpotifyTrack(this, '${playId}')">
+                            <div class="card-header">
+                                <img src="${track.img}" class="mini-art">
+                                <div class="card-info">
+                                    <span class="card-title">${track.title}</span>
+                                    <span class="card-album">${track.section}</span>
+                                </div>
+                                <i class="fab fa-spotify spotify-icon"></i>
+                            </div>
+                            
+                            ${tagsHtml}
+
+                            <div class="btn-group">
+                                <a href="${spotifyLink}" target="_blank" class="action-btn spotify-btn" onclick="event.stopPropagation()">
+                                    <i class="fab fa-spotify"></i> Dinle
+                                </a>
+                                ${wikiButton}
+                            </div>
+                        </div>
+                    `;
+                });
+
+                sectionHtml += `</div></div>`; // Grid ve Section kapat
+                container.innerHTML += sectionHtml;
+            }
         }
 
         function changeSpotifyTrack(element, trackId) {
@@ -278,7 +362,7 @@
             element.classList.add('playing');
         }
 
-        // Sayfa açılınca listeyi oluştur
+        // Başlat
         renderTracks();
 
     </script>
