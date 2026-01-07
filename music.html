@@ -100,7 +100,7 @@
         .track-card:hover .spotify-icon { color: var(--spotify-green); transform: scale(1.1); }
         
         .card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
-        .mini-art { width: 70px; height: 70px; border-radius: 5px; object-fit: cover; border: 1px solid #333; }
+        /* .mini-art stili silindi çünkü artık kullanılmıyor */
         .spotify-icon { font-size: 1.8rem; color: #555; margin-left: auto; transition: 0.3s; }
 
         .card-info { flex: 1; overflow: hidden; }
@@ -183,7 +183,7 @@
            1. 'section': Bu şarkının hangi başlık altında duracağını belirler (Albüm Adı).
            2. 'tags': Türleri '/' ile ayırabilirsin (Örn: "Industrial / Rock"). Kod bunları otomatik böler.
            3. 'id': Spotify Şarkı ID'si (Linkin sonundaki kod).
-           4. 'img': Albüm kapağı resmi.
+           4. 'img': Albüm kapağı resmi (GEREKSİZ AMA KODDA DURUYOR, EKRANA BASILMIYOR).
         */
 
         const tracks = [
@@ -328,7 +328,6 @@
                     sectionHtml += `
                         <div class="track-card" onclick="changeSpotifyTrack(this, '${playId}')">
                             <div class="card-header">
-                                <img src="${track.img}" class="mini-art">
                                 <div class="card-info">
                                     <span class="card-title">${track.title}</span>
                                     <span class="card-album">${track.section}</span>
