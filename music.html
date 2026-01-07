@@ -38,14 +38,14 @@
         .artist-subtitle { color: #888; margin-bottom: 30px; letter-spacing: 2px; }
 
         .spotify-container {
-            max-width: 400px;
+            max-width: 800px; /* Genişlik tekrar eski büyük haline döndü */
             margin: 0 auto;
             background: #000;
             border: 1px solid var(--ana-renk);
             box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
             border-radius: 12px;
             overflow: hidden;
-            height: 380px;
+            height: 152px; /* Yükseklik Spotify'ın geniş moduna tam oturdu (Boşluk yok) */
             transition: 0.3s;
         }
         iframe { width: 100%; height: 100%; border: none; }
@@ -100,7 +100,6 @@
         .track-card:hover .spotify-icon { color: var(--spotify-green); transform: scale(1.1); }
         
         .card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
-        /* .mini-art stili silindi çünkü artık kullanılmıyor */
         .spotify-icon { font-size: 1.8rem; color: #555; margin-left: auto; transition: 0.3s; }
 
         .card-info { flex: 1; overflow: hidden; }
@@ -166,8 +165,8 @@
 
         <div class="spotify-container" id="mainPlayer">
             <iframe id="spotify-widget" style="border-radius:12px" 
-                src="https://open.spotify.com/embed/track/4cOdK2wGLETKBW3PvgPWqT?utm_source=generator&theme=0" 
-                width="100%" height="380" frameBorder="0" allowfullscreen="" 
+                src="https://open.spotify.com/embed/track/1nC8UzyXIzTxFmQzsrieoH?utm_source=generator&theme=0" 
+                width="100%" height="152" frameBorder="0" allowfullscreen="" 
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
             </iframe>
         </div>
@@ -179,13 +178,6 @@
     <div id="contentContainer"></div>
 
     <script>
-        /* VERİ GİRİŞ KILAVUZU:
-           1. 'section': Bu şarkının hangi başlık altında duracağını belirler (Albüm Adı).
-           2. 'tags': Türleri '/' ile ayırabilirsin (Örn: "Industrial / Rock"). Kod bunları otomatik böler.
-           3. 'id': Spotify Şarkı ID'si (Linkin sonundaki kod).
-           4. 'img': Albüm kapağı resmi (GEREKSİZ AMA KODDA DURUYOR, EKRANA BASILMIYOR).
-        */
-
         const tracks = [
             // --- ALBÜM: WAR AGAINST WAR ---
             { title: "Suffer", section: "War Against War", tags: "Industrial / Electronic / Cyberpunk", id: "0e2OsNFuksdK5LDZyW0dMP", img: "https://via.placeholder.com/70/333/fff?text=WAW" },
