@@ -37,18 +37,28 @@
         .artist-title { font-size: 3rem; letter-spacing: 5px; color: var(--ana-renk); margin-bottom: 10px; text-transform: uppercase; }
         .artist-subtitle { color: #888; margin-bottom: 30px; letter-spacing: 2px; }
 
+        /* --- YENİ ÇERÇEVE MANTIĞI BAŞLANGIÇ --- */
+        
+        /* Container artık sadece hizalama yapıyor, çerçeve özelliği yok */
         .spotify-container {
-            max-width: 400px; /* Kare görünüm için ideal genişlik */
+            max-width: 400px; 
             margin: 0 auto;
-            background: #000;
-            border: 1px solid var(--ana-renk);
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
-            border-radius: 12px;
-            overflow: hidden;
-            height: 152px; /* DÜZELTME: Spotify Kart yüksekliği tam 352px'dir. Bunu 380 yapınca boşluk kalıyordu. */
+            /* Yükseklik, border, background BURADAN SİLİNDİ */
             transition: 0.3s;
         }
-        iframe { width: 100%; height: 100%; border: none; }
+
+        /* Çerçeve özellikleri direkt IFRAME'e verildi */
+        iframe { 
+            width: 100%; 
+            height: 352px; /* Standart Spotify Kart Yüksekliği */
+            border: 1px solid var(--ana-renk); /* Altın Çerçeve Burada */
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
+            display: block; /* Alt kısımdaki hayalet boşluğu siler */
+            background: #000; /* Yüklenirken siyah zemin */
+        }
+        
+        /* --- YENİ ÇERÇEVE MANTIĞI BİTİŞ --- */
 
         /* ALBUM SECTIONS */
         .album-section {
@@ -164,9 +174,9 @@
         <p class="artist-subtitle">The Sound of AserLand</p>
 
         <div class="spotify-container" id="mainPlayer">
-            <iframe id="spotify-widget" style="border-radius:12px" 
+            <iframe id="spotify-widget" 
                 src="https://open.spotify.com/embed/track/1nC8UzyXIzTxFmQzsrieoH?utm_source=generator&theme=0" 
-                width="400px" height="152px" frameBorder="0" allowfullscreen="" 
+                width="100%" height="352" frameBorder="0" allowfullscreen="" 
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
             </iframe>
         </div>
@@ -304,9 +314,8 @@
                                       </a>`;
                     }
 
-                    // ID kontrolü ve Spotify Linki
+                    // Rick Astley kontrolü (ID girilmemişse)
                     let playId = track.id.includes("ID_GİR") ? "4cOdK2wGLETKBW3PvgPWqT" : track.id;
-                    // DÜZELTME: Resmi Spotify Web Linki yapısı
                     let spotifyLink = `https://open.spotify.com/track/${playId}`;
 
                     // Etiketleri Parçala (Split)
@@ -346,7 +355,6 @@
         }
 
         function changeSpotifyTrack(element, trackId) {
-            // DÜZELTME: Link yapısı resmi formata çekildi (https://open.spotify.com/embed/track/...)
             var newSrc = "https://open.spotify.com/embed/track/" + trackId + "?utm_source=generator&theme=0";
             document.getElementById('spotify-widget').src = newSrc;
 
