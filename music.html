@@ -7,7 +7,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="wiki/favicon.png">
     <style>
-        :root { --ana-renk: #FFD700; --arka-plan: #050505; --panel: #111; --yazi: #e0e0e0; --gri: #333; --spotify-green: #1DB954; }
+        :root { --ana-renk: #FFD700; --arka-plan: #050505; --panel: #111; --yazi: #e0e0e0; --gri: #333; --spotify-green: #1DB954; --wiki-blue: #00a8ff; }
         
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
@@ -34,39 +34,30 @@
             border-bottom: 1px solid var(--gri);
         }
 
-        .artist-title {
-            font-size: 3rem;
-            letter-spacing: 5px;
-            color: var(--ana-renk);
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
+        .artist-title { font-size: 3rem; letter-spacing: 5px; color: var(--ana-renk); margin-bottom: 10px; text-transform: uppercase; }
         .artist-subtitle { color: #888; margin-bottom: 30px; letter-spacing: 2px; }
 
-        /* SPOTIFY CONTAINER */
         .spotify-container {
             max-width: 800px;
             margin: 0 auto;
             background: #000;
-            border: 1px solid var(--ana-renk); /* Altın Çerçeve */
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.15); /* Hafif Altın Parıltı */
+            border: 1px solid var(--ana-renk);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
             border-radius: 12px;
             overflow: hidden;
             height: 352px;
             transition: 0.3s;
         }
-
         iframe { width: 100%; height: 100%; border: none; }
 
         /* TRACK LIST GRID */
         .track-grid {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 50px auto;
             padding: 0 20px;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .track-card {
@@ -81,88 +72,45 @@
             flex-direction: column;
         }
 
-        .track-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--ana-renk);
-            background: #1a1a1a;
-        }
-
+        .track-card:hover { transform: translateY(-5px); border-color: var(--ana-renk); background: #1a1a1a; }
         .track-card:hover .spotify-icon { color: var(--spotify-green); transform: scale(1.1); }
         
-        /* Kartın İç Düzeni */
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
+        .card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .mini-art { width: 70px; height: 70px; border-radius: 5px; object-fit: cover; border: 1px solid #333; }
+        .spotify-icon { font-size: 1.8rem; color: #555; margin-left: auto; transition: 0.3s; }
 
-        .mini-art {
-            width: 70px; height: 70px;
-            border-radius: 5px;
-            object-fit: cover;
-            border: 1px solid #333;
-        }
-
-        .spotify-icon {
-            font-size: 1.8rem;
-            color: #555;
-            margin-left: auto;
-            transition: 0.3s;
-        }
-
-        .card-info { flex: 1; }
-        .card-title { color: #fff; font-weight: bold; font-size: 1.1rem; display: block; margin-bottom: 3px; }
+        .card-info { flex: 1; overflow: hidden; }
+        .card-title { color: #fff; font-weight: bold; font-size: 1.1rem; display: block; margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .card-album { color: #888; font-size: 0.85rem; display: block; }
         
-        .genre-tag {
-            align-self: flex-start;
-            font-size: 0.7rem;
-            padding: 4px 10px;
-            border: 1px solid #444;
-            border-radius: 12px;
-            color: #aaa;
-            margin-bottom: 15px;
-        }
+        .genre-tag { align-self: flex-start; font-size: 0.7rem; padding: 4px 10px; border: 1px solid #444; border-radius: 12px; color: #aaa; margin-bottom: 15px; }
 
-        /* SPOTIFY BUTONU */
-        .spotify-btn {
-            margin-top: auto; /* Kartın en altına it */
-            display: block;
-            width: 100%;
+        /* ACTION BUTTONS */
+        .btn-group { margin-top: auto; display: flex; gap: 10px; }
+        
+        .action-btn {
+            flex: 1;
             padding: 10px 0;
-            border: 1px solid var(--spotify-green);
-            color: var(--spotify-green);
             text-align: center;
             border-radius: 25px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: bold;
             transition: 0.3s;
+            display: flex; align-items: center; justify-content: center; gap: 5px;
         }
 
-        .spotify-btn:hover {
-            background-color: var(--spotify-green);
-            color: #fff;
-            box-shadow: 0 0 15px rgba(29, 185, 84, 0.4);
-        }
+        .spotify-btn { border: 1px solid var(--spotify-green); color: var(--spotify-green); }
+        .spotify-btn:hover { background-color: var(--spotify-green); color: #fff; }
 
-        .spotify-btn i { margin-right: 8px; }
+        .wiki-btn { border: 1px solid var(--wiki-blue); color: var(--wiki-blue); }
+        .wiki-btn:hover { background-color: var(--wiki-blue); color: #fff; }
 
         /* SEÇİLİ KART EFEKTİ */
-        .track-card.playing {
-            border-color: var(--spotify-green);
-            background: #0f0f0f;
-            box-shadow: 0 0 15px rgba(29, 185, 84, 0.1);
-        }
+        .track-card.playing { border-color: var(--spotify-green); background: #0f0f0f; box-shadow: 0 0 15px rgba(29, 185, 84, 0.1); }
         .track-card.playing .spotify-icon { color: var(--spotify-green); }
         .track-card.playing .card-title { color: var(--spotify-green); }
 
-        /* MOBİL */
-        @media (max-width: 768px) {
-            .artist-title { font-size: 2rem; }
-            .spotify-container { height: 152px; } /* Mobilde daha kompakt */
-        }
-
+        @media (max-width: 768px) { .artist-title { font-size: 2rem; } .spotify-container { height: 152px; } }
     </style>
 </head>
 <body>
@@ -186,97 +134,153 @@
             </iframe>
         </div>
         <p style="margin-top:15px; font-size:0.8rem; color:#666;">
-            <i class="fab fa-spotify" style="color:var(--spotify-green);"></i> 
-            Listeden seçim yaparak oynatıcıyı güncelleyebilirsiniz.
+            <i class="fab fa-spotify" style="color:var(--spotify-green);"></i> Listeden bir parçaya tıklayarak oynatıcıyı güncelleyebilirsiniz.
         </p>
     </header>
 
-    <div class="track-grid">
-
-        <div class="track-card playing" onclick="changeSpotifyTrack(this, '4cOdK2wGLETKBW3PvgPWqT')">
-            <div class="card-header">
-                <img src="https://via.placeholder.com/70/333/1DB954?text=PT.2" class="mini-art">
-                <div class="card-info">
-                    <span class="card-title">AserLand Pt.2</span>
-                    <span class="card-album">AserLand OST</span>
-                </div>
-                <i class="fab fa-spotify spotify-icon"></i>
-            </div>
-            
-            <span class="genre-tag">Orchestral / Epic</span>
-
-            <a href="https://open.spotify.com/track/4cOdK2wGLETKBW3PvgPWqT" target="_blank" class="spotify-btn" onclick="event.stopPropagation()">
-                <i class="fab fa-spotify"></i> Spotify'da Dinle
-            </a>
-        </div>
-
-        <div class="track-card" onclick="changeSpotifyTrack(this, '0VjIjW4GlUZAMYd2vXMi3b')">
-            <div class="card-header">
-                <img src="https://via.placeholder.com/70/550000/fff?text=IRON" class="mini-art">
-                <div class="card-info">
-                    <span class="card-title">Ironheart Industrial</span>
-                    <span class="card-album">Behemoth Chronicles</span>
-                </div>
-                <i class="fab fa-spotify spotify-icon"></i>
-            </div>
-            
-            <span class="genre-tag">Industrial / Dark Synth</span>
-
-            <a href="https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b" target="_blank" class="spotify-btn" onclick="event.stopPropagation()">
-                <i class="fab fa-spotify"></i> Spotify'da Dinle
-            </a>
-        </div>
-
-        <div class="track-card" onclick="changeSpotifyTrack(this, 'YOUR_TRACK_ID_HERE')">
-            <div class="card-header">
-                <img src="https://via.placeholder.com/70/003366/fff?text=ECHO" class="mini-art">
-                <div class="card-info">
-                    <span class="card-title">Echoes of Democracy</span>
-                    <span class="card-album">Celestine Era</span>
-                </div>
-                <i class="fab fa-spotify spotify-icon"></i>
-            </div>
-            
-            <span class="genre-tag">Ambient / Electronic</span>
-
-            <a href="#" target="_blank" class="spotify-btn" onclick="event.stopPropagation()">
-                <i class="fab fa-spotify"></i> Spotify'da Dinle
-            </a>
-        </div>
-
-        <div class="track-card" onclick="changeSpotifyTrack(this, 'YOUR_TRACK_ID_HERE')">
-            <div class="card-header">
-                <img src="https://via.placeholder.com/70/002200/0f0?text=DOOM" class="mini-art">
-                <div class="card-info">
-                    <span class="card-title">The Doom Waters</span>
-                    <span class="card-album">Skarrgard Saga</span>
-                </div>
-                <i class="fab fa-spotify spotify-icon"></i>
-            </div>
-            
-            <span class="genre-tag">Horror / Dark Ambient</span>
-
-            <a href="#" target="_blank" class="spotify-btn" onclick="event.stopPropagation()">
-                <i class="fab fa-spotify"></i> Spotify'da Dinle
-            </a>
-        </div>
-
-    </div>
+    <div class="track-grid" id="trackListContainer"></div>
 
     <script>
+        // Şarkı Listesi Veritabanı
+        const tracks = [
+            // ALBÜM 1: War Against War
+            { title: "Suffer", album: "War Against War", genre: "Industrial / Cyberpunk", id: "ID_GİR_1", img: "https://via.placeholder.com/70/333/fff?text=WAW" },
+            { title: "Exterminate", album: "War Against War", genre: "Industrial / Electronic", id: "ID_GİR_2", img: "https://via.placeholder.com/70/333/fff?text=WAW" },
+            { title: "Rogue", album: "War Against War", genre: "Cyberpunk", id: "ID_GİR_3", img: "https://via.placeholder.com/70/333/fff?text=WAW" },
+            { title: "War Against War", album: "War Against War", genre: "Industrial", id: "ID_GİR_4", img: "https://via.placeholder.com/70/333/fff?text=WAW" },
+
+            // ALBÜM 2: Cybertape 1
+            { title: "Sundered Sky", album: "Cybertape 1", genre: "Psy-Trance", id: "ID_GİR_5", img: "https://via.placeholder.com/70/509/fff?text=CYB1" },
+            { title: "Underestimated", album: "Cybertape 1", genre: "Cyberpunk", id: "ID_GİR_6", img: "https://via.placeholder.com/70/509/fff?text=CYB1" },
+            { title: "Predator of What", album: "Cybertape 1", genre: "Synthwave", id: "ID_GİR_7", img: "https://via.placeholder.com/70/509/fff?text=CYB1" },
+            { title: "Eternity of Void", album: "Cybertape 1", genre: "Psy-Trance", id: "ID_GİR_8", img: "https://via.placeholder.com/70/509/fff?text=CYB1" },
+
+            // ALBÜM 3: Cybertape 2
+            { title: "Dètruire", album: "Cybertape 2", genre: "Synthwave", id: "ID_GİR_9", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
+            { title: "Lightspeed", album: "Cybertape 2", genre: "Dubstep", id: "ID_GİR_10", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
+            { title: "The Creature", album: "Cybertape 2", genre: "EDM", id: "ID_GİR_11", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
+            { title: "Cyberlith", album: "Cybertape 2", genre: "Cyberpunk", id: "ID_GİR_12", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
+            { title: "Global Disaster", album: "Cybertape 2", genre: "Dubstep", id: "ID_GİR_13", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
+
+            // ALBÜM 4: AserCouncil
+            { title: "Red Headed", album: "AserCouncil", genre: "Dubstep", id: "ID_GİR_14", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "Potion of Death", album: "AserCouncil", genre: "Industrial", id: "ID_GİR_15", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "You Will Suffer", album: "AserCouncil", genre: "Synthwave", id: "ID_GİR_16", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "AserLand Disco", album: "AserCouncil", genre: "Cyberpunk", id: "ID_GİR_17", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "14", album: "AserCouncil", genre: "Experimental", id: "ID_GİR_18", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "Cloak of the Nights", album: "AserCouncil", genre: "Synthwave", id: "ID_GİR_19", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "Silent Street", album: "AserCouncil", genre: "Ambient", id: "ID_GİR_20", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "Don't Dream of Your Lovers", album: "AserCouncil", genre: "Synthwave", id: "ID_GİR_21", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+
+            // SINGLES
+            { title: "War Against Peace", album: "Single", genre: "Industrial", id: "ID_GİR_22", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Until the Very End", album: "Single", genre: "Rock", id: "ID_GİR_23", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Article 34", album: "Single", genre: "Synthwave", id: "ID_GİR_24", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Omega Squad", album: "Single", genre: "8-Bit / Psy-Trance", id: "ID_GİR_25", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Hymn of Liberation", album: "Single", genre: "Synthwave", id: "ID_GİR_26", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Pyrrhic Victory", album: "Single", genre: "Lo-Fi", id: "ID_GİR_27", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+
+            // ALBÜM 5: Rockomania
+            { title: "Goodbye", album: "Rockomania", genre: "Industrial Rock", id: "ID_GİR_28", img: "https://via.placeholder.com/70/800/fff?text=ROCK" },
+            { title: "When Will You Come Back?", album: "Rockomania", genre: "Metal", id: "ID_GİR_29", img: "https://via.placeholder.com/70/800/fff?text=ROCK" },
+            { title: "Choice", album: "Rockomania", genre: "Anime Opening", id: "ID_GİR_30", img: "https://via.placeholder.com/70/800/fff?text=ROCK" },
+            { title: "This Is Our Fight", album: "Rockomania", genre: "Rock", id: "ID_GİR_31", img: "https://via.placeholder.com/70/800/fff?text=ROCK" },
+
+            // ALBÜM 6: Cybertape Premium
+            { title: "Heartstrings and Bloodstains", album: "Cybertape Premium", genre: "Dubstep", id: "ID_GİR_32", img: "https://via.placeholder.com/70/505/fff?text=PREM" },
+            { title: "Chillfight", album: "Cybertape Premium", genre: "Industrial", id: "ID_GİR_33", img: "https://via.placeholder.com/70/505/fff?text=PREM" },
+            { title: "Night Side", album: "Cybertape Premium", genre: "Cyberpunk", id: "ID_GİR_34", img: "https://via.placeholder.com/70/505/fff?text=PREM" },
+
+            // ALBÜM 7: Your Laugher Rougher
+            { title: "Chronicles of Synthwave", album: "Your Laugher Rougher", genre: "Synthwave", id: "ID_GİR_35", img: "https://via.placeholder.com/70/660/fff?text=YLR" },
+            { title: "Midnight Machinery", album: "Your Laugher Rougher", genre: "Industrial", id: "ID_GİR_36", img: "https://via.placeholder.com/70/660/fff?text=YLR" },
+            { title: "Your Laugher Rougher", album: "Your Laugher Rougher", genre: "Hard Dubstep", id: "ID_GİR_37", img: "https://via.placeholder.com/70/660/fff?text=YLR" },
+
+            // ALBÜM 8: AserLand Pt. 1 (HİKAYE ALBÜMÜ)
+            { title: "Unyielding Dawn of Freedom", album: "AserLand Pt. 1", genre: "Orchestral", id: "ID_GİR_38", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "dunas-zia.html" },
+            { title: "The Pen of Revolution", album: "AserLand Pt. 1", genre: "Epicore", id: "ID_GİR_39", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "skarryion-damethsizi.html" },
+            { title: "Sharp as Words", album: "AserLand Pt. 1", genre: "Classical", id: "ID_GİR_40", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "eumandarg-damethsizi.html" },
+            { title: "Echoes of Democracy", album: "AserLand Pt. 1", genre: "World", id: "ID_GİR_41", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "celestine-darvell.html" },
+            { title: "Iron Hands United Hearts", album: "AserLand Pt. 1", genre: "Orchestral", id: "ID_GİR_42", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "ironheart-protestolari.html" },
+
+            // SINGLES 2
+            { title: "Solstice Pulse", album: "Single", genre: "Industrial", id: "ID_GİR_43", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Phantom Altruist", album: "Single", genre: "Vaporwave", id: "ID_GİR_44", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "God.exe Terminated", album: "Single", genre: "Hard Dubstep", id: "ID_GİR_45", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Unfuckwithable", album: "Single", genre: "Deep House", id: "ID_GİR_46", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Beni Bulur", album: "Single", genre: "Deep House", id: "ID_GİR_47", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Dirty Mouth", album: "Single", genre: "Chill House", id: "ID_GİR_48", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Geçip Gidenler", album: "Single", genre: "Deep House", id: "ID_GİR_49", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+
+            // ALBÜM 9: Mindscaper
+            { title: "Anamorphic Thought Spiral", album: "Mindscaper", genre: "Psy-Trance", id: "ID_GİR_50", img: "https://via.placeholder.com/70/500/fff?text=MIND" },
+            { title: "Emerging from the Abyss", album: "Mindscaper", genre: "Psy-Trance", id: "ID_GİR_51", img: "https://via.placeholder.com/70/500/fff?text=MIND" },
+            { title: "Overload Protocol", album: "Mindscaper", genre: "Psy-Trance", id: "ID_GİR_52", img: "https://via.placeholder.com/70/500/fff?text=MIND" },
+            { title: "Mindscaper", album: "Mindscaper", genre: "Psy-Trance", id: "ID_GİR_53", img: "https://via.placeholder.com/70/500/fff?text=MIND" },
+
+            // ALBÜM 10: AserLand Pt. 2 (HİKAYE ALBÜMÜ)
+            { title: "As the Pendulum Swings", album: "AserLand Pt. 2", genre: "Orchestral", id: "ID_GİR_54", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "iki-taht-bir-golge.html" },
+            { title: "Echo of the Absolute", album: "AserLand Pt. 2", genre: "World", id: "ID_GİR_55", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "celestine-darvell.html" },
+            { title: "Tacit Opinion of the Stacks", album: "AserLand Pt. 2", genre: "Industrial", id: "ID_GİR_56", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "kutuphanedeki-sessiz-kanaat.html" },
+            { title: "Wrath of a Broken Crown", album: "AserLand Pt. 2", genre: "Metal", id: "ID_GİR_57", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "zykrath-vhalgoroth-aser.html" },
+            { title: "Titan of Ironheart", album: "AserLand Pt. 2", genre: "Industrial", id: "ID_GİR_58", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "behemoth-yapilis-sureci.html" },
+            { title: "The Empire's Butcher", album: "AserLand Pt. 2", genre: "Orchestral", id: "ID_GİR_59", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "denoistos-los-aser.html" },
+            { title: "Lord Protector", album: "AserLand Pt. 2", genre: "Classic", id: "ID_GİR_60", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "kaelus-theron.html" },
+            { title: "The Assasin Architect", album: "AserLand Pt. 2", genre: "Orchestral", id: "ID_GİR_61", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "aserwar-gedian.html" },
+        ];
+
+        // Şarkıları Ekrana Basan Fonksiyon
+        function renderTracks() {
+            const container = document.getElementById('trackListContainer');
+            container.innerHTML = "";
+
+            tracks.forEach(track => {
+                let wikiButton = "";
+                if (track.wiki) {
+                    wikiButton = `<a href="wiki/${track.wiki}" class="action-btn wiki-btn" onclick="event.stopPropagation()">
+                                    <i class="fas fa-book"></i> Hikayeyi Oku
+                                  </a>`;
+                }
+
+                // ID_GİR yazıyorsa Rick Astley çalsın ki bozuk durmasın (Geçici)
+                let playId = track.id.includes("ID_GİR") ? "4cOdK2wGLETKBW3PvgPWqT" : track.id;
+                let spotifyLink = `https://open.spotify.com/track/${playId}`;
+
+                const cardHtml = `
+                    <div class="track-card" onclick="changeSpotifyTrack(this, '${playId}')">
+                        <div class="card-header">
+                            <img src="${track.img}" class="mini-art">
+                            <div class="card-info">
+                                <span class="card-title">${track.title}</span>
+                                <span class="card-album">${track.album}</span>
+                            </div>
+                            <i class="fab fa-spotify spotify-icon"></i>
+                        </div>
+                        <span class="genre-tag">${track.genre}</span>
+                        <div class="btn-group">
+                            <a href="${spotifyLink}" target="_blank" class="action-btn spotify-btn" onclick="event.stopPropagation()">
+                                <i class="fab fa-spotify"></i> Spotify
+                            </a>
+                            ${wikiButton}
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHtml;
+            });
+        }
+
         function changeSpotifyTrack(element, trackId) {
-            // 1. Iframe'i güncelle (Spotify ID'sini URL'e gömüyoruz)
             var newSrc = "https://open.spotify.com/embed/track/" + trackId + "?utm_source=generator&theme=0";
             document.getElementById('spotify-widget').src = newSrc;
 
-            // 2. Görsel Efektler
             var cards = document.querySelectorAll('.track-card');
             cards.forEach(card => card.classList.remove('playing'));
             element.classList.add('playing');
-            
-            // 3. Opsiyonel: Sayfayı yukarı, player'a doğru yumuşakça kaydır
-            // document.querySelector('.music-hero').scrollIntoView({ behavior: 'smooth' });
         }
+
+        // Sayfa açılınca listeyi oluştur
+        renderTracks();
+
     </script>
 
 </body>
