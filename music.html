@@ -37,28 +37,26 @@
         .artist-title { font-size: 3rem; letter-spacing: 5px; color: var(--ana-renk); margin-bottom: 10px; text-transform: uppercase; }
         .artist-subtitle { color: #888; margin-bottom: 30px; letter-spacing: 2px; }
 
-        /* --- YENİ ÇERÇEVE MANTIĞI BAŞLANGIÇ --- */
+        /* --- FINAL PLAYER STİLİ (GENİŞ & ÇERÇEVESİZ) --- */
         
-        /* Container artık sadece hizalama yapıyor, çerçeve özelliği yok */
         .spotify-container {
-            max-width: 400px; 
+            max-width: 800px; /* Geniş Mod için 800px idealdir */
             margin: 0 auto;
-            /* Yükseklik, border, background BURADAN SİLİNDİ */
             transition: 0.3s;
         }
 
-        /* Çerçeve özellikleri direkt IFRAME'e verildi */
         iframe { 
             width: 100%; 
-            height: 352px; /* Standart Spotify Kart Yüksekliği */
-            border: 1px solid var(--ana-renk); /* Altın Çerçeve Burada */
+            height: 152px; /* Spotify'ın Yatay (Wide) Mod yüksekliği sabittir */
+            border: none;  /* ÇERÇEVE KALDIRILDI */
             border-radius: 12px;
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
-            display: block; /* Alt kısımdaki hayalet boşluğu siler */
-            background: #000; /* Yüklenirken siyah zemin */
+            /* Hafif bir gölge bırakıyorum ki zeminle karışmasın, istersen bunu da silebilirsin */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+            display: block;
+            background: #000;
         }
         
-        /* --- YENİ ÇERÇEVE MANTIĞI BİTİŞ --- */
+        /* --- STİL SONU --- */
 
         /* ALBUM SECTIONS */
         .album-section {
@@ -176,7 +174,7 @@
         <div class="spotify-container" id="mainPlayer">
             <iframe id="spotify-widget" 
                 src="https://open.spotify.com/embed/track/1nC8UzyXIzTxFmQzsrieoH?utm_source=generator&theme=0" 
-                width="100%" height="352" frameBorder="0" allowfullscreen="" 
+                width="100%" height="152" frameBorder="0" allowfullscreen="" 
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
             </iframe>
         </div>
@@ -314,7 +312,7 @@
                                       </a>`;
                     }
 
-                    // Rick Astley kontrolü (ID girilmemişse)
+                    // ID kontrolü ve Spotify Linki
                     let playId = track.id.includes("ID_GİR") ? "4cOdK2wGLETKBW3PvgPWqT" : track.id;
                     let spotifyLink = `https://open.spotify.com/track/${playId}`;
 
@@ -355,6 +353,7 @@
         }
 
         function changeSpotifyTrack(element, trackId) {
+            // Resmi Embed Link Yapısı
             var newSrc = "https://open.spotify.com/embed/track/" + trackId + "?utm_source=generator&theme=0";
             document.getElementById('spotify-widget').src = newSrc;
 
