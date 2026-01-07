@@ -38,14 +38,14 @@
         .artist-subtitle { color: #888; margin-bottom: 30px; letter-spacing: 2px; }
 
         .spotify-container {
-            max-width: 800px; /* Genişlik tekrar eski büyük haline döndü */
+            max-width: 800px; /* Genişliği tekrar ideal boyuta getirdik */
             margin: 0 auto;
             background: #000;
             border: 1px solid var(--ana-renk);
             box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
             border-radius: 12px;
             overflow: hidden;
-            height: 152px; /* Yükseklik Spotify'ın geniş moduna tam oturdu (Boşluk yok) */
+            height: 152px; /* DÜZELTME: Yükseklik Spotify'ın kendi boyutuyla eşitlendi (Boşluk yok) */
             transition: 0.3s;
         }
         iframe { width: 100%; height: 100%; border: none; }
@@ -306,7 +306,7 @@
 
                     // Rick Astley kontrolü (ID girilmemişse)
                     let playId = track.id.includes("ID_GİR") ? "4cOdK2wGLETKBW3PvgPWqT" : track.id;
-                    let spotifyLink = `https://open.spotify.com/track/${playId}`;
+                    let spotifyLink = `https://open.spotify.com/embed/track/${playId}?utm_source=generator&theme=0`;
 
                     // Etiketleri Parçala (Split)
                     let tagsHtml = "";
