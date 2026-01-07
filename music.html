@@ -38,14 +38,14 @@
         .artist-subtitle { color: #888; margin-bottom: 30px; letter-spacing: 2px; }
 
         .spotify-container {
-            max-width: 800px; /* Genişliği tekrar ideal boyuta getirdik */
+            max-width: 400px; /* Kare görünüm için ideal genişlik */
             margin: 0 auto;
             background: #000;
             border: 1px solid var(--ana-renk);
             box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
             border-radius: 12px;
             overflow: hidden;
-            height: 152px; /* DÜZELTME: Yükseklik Spotify'ın kendi boyutuyla eşitlendi (Boşluk yok) */
+            height: 352px; /* DÜZELTME: Spotify Kart yüksekliği tam 352px'dir. Bunu 380 yapınca boşluk kalıyordu. */
             transition: 0.3s;
         }
         iframe { width: 100%; height: 100%; border: none; }
@@ -166,7 +166,7 @@
         <div class="spotify-container" id="mainPlayer">
             <iframe id="spotify-widget" style="border-radius:12px" 
                 src="https://open.spotify.com/embed/track/1nC8UzyXIzTxFmQzsrieoH?utm_source=generator&theme=0" 
-                width="100%" height="152" frameBorder="0" allowfullscreen="" 
+                width="100%" height="352" frameBorder="0" allowfullscreen="" 
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
             </iframe>
         </div>
@@ -304,9 +304,10 @@
                                       </a>`;
                     }
 
-                    // Rick Astley kontrolü (ID girilmemişse)
+                    // ID kontrolü ve Spotify Linki
                     let playId = track.id.includes("ID_GİR") ? "4cOdK2wGLETKBW3PvgPWqT" : track.id;
-                    let spotifyLink = `https://open.spotify.com/embed/track/${playId}?utm_source=generator&theme=0`;
+                    // DÜZELTME: Resmi Spotify Web Linki yapısı
+                    let spotifyLink = `https://open.spotify.com/track/${playId}`;
 
                     // Etiketleri Parçala (Split)
                     let tagsHtml = "";
@@ -345,6 +346,7 @@
         }
 
         function changeSpotifyTrack(element, trackId) {
+            // DÜZELTME: Link yapısı resmi formata çekildi (https://open.spotify.com/embed/track/...)
             var newSrc = "https://open.spotify.com/embed/track/" + trackId + "?utm_source=generator&theme=0";
             document.getElementById('spotify-widget').src = newSrc;
 
