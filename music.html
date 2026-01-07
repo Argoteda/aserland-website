@@ -7,7 +7,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="wiki/favicon.png">
     <style>
-        :root { --ana-renk: #FFD700; --arka-plan: #050505; --panel: #111; --yazi: #e0e0e0; --gri: #333; }
+        :root { --ana-renk: #FFD700; --arka-plan: #050505; --panel: #111; --yazi: #e0e0e0; --gri: #333; --spotify-green: #1DB954; }
         
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
@@ -26,10 +26,10 @@
         nav a:hover { color: var(--ana-renk); }
         nav a.active { color: var(--ana-renk); border-bottom: 2px solid var(--ana-renk); padding-bottom: 5px; }
 
-        /* HERO & MAIN PLAYER */
+        /* HERO & SPOTIFY PLAYER */
         .music-hero {
-            background: linear-gradient(to bottom, #1a1a1a, #050505);
-            padding: 60px 20px;
+            background: linear-gradient(to bottom, #101010, #050505);
+            padding: 40px 20px;
             text-align: center;
             border-bottom: 1px solid var(--gri);
         }
@@ -42,93 +42,30 @@
             text-transform: uppercase;
         }
 
-        .artist-subtitle { color: #888; margin-bottom: 40px; letter-spacing: 2px; }
+        .artist-subtitle { color: #888; margin-bottom: 30px; letter-spacing: 2px; }
 
-        /* CUSTOM AUDIO PLAYER */
-        .main-player-container {
+        /* SPOTIFY CONTAINER */
+        .spotify-container {
             max-width: 800px;
             margin: 0 auto;
-            background: var(--panel);
-            border: 1px solid var(--gri);
-            border-radius: 10px;
-            padding: 30px;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            position: relative;
+            background: #000;
+            border: 1px solid var(--ana-renk); /* Altın Çerçeve */
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.15); /* Hafif Altın Parıltı */
+            border-radius: 12px;
             overflow: hidden;
+            height: 352px;
+            transition: 0.3s;
         }
 
-        /* Arka planda hafif blur efekti için */
-        .main-player-container::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px;
-            background: var(--ana-renk);
-        }
+        iframe { width: 100%; height: 100%; border: none; }
 
-        .current-art {
-            width: 150px;
-            height: 150px;
-            background-color: #000;
-            border-radius: 5px;
-            object-fit: cover;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            border: 1px solid #333;
-        }
-
-        .player-controls { flex: 1; }
-
-        .track-info { margin-bottom: 20px; }
-        .track-title { font-size: 1.5rem; color: #fff; font-weight: bold; display: block; margin-bottom: 5px; }
-        .track-artist { color: var(--ana-renk); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* İlerleme Çubuğu */
-        .progress-container {
-            width: 100%;
-            height: 6px;
-            background: #333;
-            border-radius: 3px;
-            cursor: pointer;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        .progress-bar {
-            height: 100%;
-            background: var(--ana-renk);
-            border-radius: 3px;
-            width: 0%; /* JS ile değişecek */
-            transition: width 0.1s linear;
-            position: relative;
-        }
-        .progress-bar::after {
-            content: ''; position: absolute; right: -5px; top: -4px;
-            width: 14px; height: 14px; background: #fff; border-radius: 50%;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5); opacity: 0; transition: 0.2s;
-        }
-        .progress-container:hover .progress-bar::after { opacity: 1; }
-
-        /* Butonlar */
-        .buttons { display: flex; align-items: center; gap: 20px; justify-content: center; }
-        .btn { background: none; border: none; color: #aaa; font-size: 1.2rem; cursor: pointer; transition: 0.3s; }
-        .btn:hover { color: #fff; }
-        .btn-play {
-            width: 50px; height: 50px;
-            border-radius: 50%;
-            background: var(--ana-renk);
-            color: #000;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
-        }
-        .btn-play:hover { transform: scale(1.1); color: #000; background: #fff; }
-
-        /* TRACK LIST (GRID) */
+        /* TRACK LIST GRID */
         .track-grid {
             max-width: 1200px;
             margin: 50px auto;
             padding: 0 20px;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
         }
 
@@ -136,67 +73,94 @@
             background: var(--panel);
             border: 1px solid var(--gri);
             border-radius: 10px;
-            padding: 15px;
+            padding: 20px;
             transition: 0.3s;
             cursor: pointer;
             position: relative;
-            group;
+            display: flex;
+            flex-direction: column;
         }
 
         .track-card:hover {
             transform: translateY(-5px);
             border-color: var(--ana-renk);
-            background: #222;
+            background: #1a1a1a;
         }
 
-        .card-img-container {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 1/1;
-            overflow: hidden;
-            border-radius: 5px;
+        .track-card:hover .spotify-icon { color: var(--spotify-green); transform: scale(1.1); }
+        
+        /* Kartın İç Düzeni */
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
             margin-bottom: 15px;
         }
 
-        .card-img {
-            width: 100%; height: 100%; object-fit: cover;
-            transition: 0.5s;
+        .mini-art {
+            width: 70px; height: 70px;
+            border-radius: 5px;
+            object-fit: cover;
+            border: 1px solid #333;
         }
-        
-        .track-card:hover .card-img { transform: scale(1.1); opacity: 0.6; }
 
-        /* Kartın üzerindeki Play İkonu */
-        .card-play-icon {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            font-size: 3rem;
-            color: var(--ana-renk);
+        .spotify-icon {
+            font-size: 1.8rem;
+            color: #555;
+            margin-left: auto;
             transition: 0.3s;
-            z-index: 2;
         }
+
+        .card-info { flex: 1; }
+        .card-title { color: #fff; font-weight: bold; font-size: 1.1rem; display: block; margin-bottom: 3px; }
+        .card-album { color: #888; font-size: 0.85rem; display: block; }
         
-        .track-card:hover .card-play-icon { transform: translate(-50%, -50%) scale(1); }
-
-        .card-title { color: #fff; font-weight: bold; margin-bottom: 5px; font-size: 1.1rem; }
-        .card-desc { color: #888; font-size: 0.85rem; }
-
-        /* GENRE TAGS */
         .genre-tag {
-            display: inline-block;
+            align-self: flex-start;
             font-size: 0.7rem;
-            padding: 3px 8px;
+            padding: 4px 10px;
             border: 1px solid #444;
-            border-radius: 10px;
+            border-radius: 12px;
             color: #aaa;
-            margin-top: 10px;
+            margin-bottom: 15px;
         }
 
-        /* RESPONSIVE */
+        /* SPOTIFY BUTONU */
+        .spotify-btn {
+            margin-top: auto; /* Kartın en altına it */
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+            border: 1px solid var(--spotify-green);
+            color: var(--spotify-green);
+            text-align: center;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .spotify-btn:hover {
+            background-color: var(--spotify-green);
+            color: #fff;
+            box-shadow: 0 0 15px rgba(29, 185, 84, 0.4);
+        }
+
+        .spotify-btn i { margin-right: 8px; }
+
+        /* SEÇİLİ KART EFEKTİ */
+        .track-card.playing {
+            border-color: var(--spotify-green);
+            background: #0f0f0f;
+            box-shadow: 0 0 15px rgba(29, 185, 84, 0.1);
+        }
+        .track-card.playing .spotify-icon { color: var(--spotify-green); }
+        .track-card.playing .card-title { color: var(--spotify-green); }
+
+        /* MOBİL */
         @media (max-width: 768px) {
-            .main-player-container { flex-direction: column; text-align: center; }
-            .current-art { width: 200px; height: 200px; margin-bottom: 10px; }
             .artist-title { font-size: 2rem; }
+            .spotify-container { height: 152px; } /* Mobilde daha kompakt */
         }
 
     </style>
@@ -214,134 +178,104 @@
         <h1 class="artist-title">ARGOTEDA</h1>
         <p class="artist-subtitle">THE SOUND OF ASERLAND</p>
 
-        <div class="main-player-container">
-            <img src="https://via.placeholder.com/300/111/FFD700?text=ARGOTEDA" alt="Album Art" class="current-art" id="mainArt">
-            
-            <div class="player-controls">
-                <div class="track-info">
-                    <span class="track-title" id="mainTitle">AserLand Pt.2 (Theme)</span>
-                    <span class="track-artist">ARGOTEDA • AserLand OST</span>
-                </div>
-
-                <div class="progress-container" onclick="seek(event)">
-                    <div class="progress-bar" id="progressBar"></div>
-                </div>
-
-                <div class="buttons">
-                    <button class="btn"><i class="fas fa-step-backward"></i></button>
-                    <button class="btn btn-play" onclick="togglePlay()"><i class="fas fa-play" id="playIcon"></i></button>
-                    <button class="btn"><i class="fas fa-step-forward"></i></button>
-                </div>
-            </div>
-            
-            <audio id="audioSource" src=""></audio> 
+        <div class="spotify-container" id="mainPlayer">
+            <iframe id="spotify-widget" style="border-radius:12px" 
+                src="https://open.spotify.com/embed/track/4cOdK2wGLETKBW3PvgPWqT?utm_source=generator&theme=0" 
+                width="100%" height="352" frameBorder="0" allowfullscreen="" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+            </iframe>
         </div>
+        <p style="margin-top:15px; font-size:0.8rem; color:#666;">
+            <i class="fab fa-spotify" style="color:var(--spotify-green);"></i> 
+            Listeden seçim yaparak oynatıcıyı güncelleyebilirsiniz.
+        </p>
     </header>
 
     <div class="track-grid">
 
-        <div class="track-card" onclick="loadTrack('AserLand Pt.2 (Theme)', 'AserLand OST', 'https://via.placeholder.com/300/333/FFD700?text=PT.2', 'music/aserland-pt2.mp3')">
-            <div class="card-img-container">
-                <img src="https://via.placeholder.com/300/333/FFD700?text=PT.2" class="card-img">
-                <i class="fas fa-play-circle card-play-icon"></i>
+        <div class="track-card playing" onclick="changeSpotifyTrack(this, '4cOdK2wGLETKBW3PvgPWqT')">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/70/333/1DB954?text=PT.2" class="mini-art">
+                <div class="card-info">
+                    <span class="card-title">AserLand Pt.2</span>
+                    <span class="card-album">AserLand OST</span>
+                </div>
+                <i class="fab fa-spotify spotify-icon"></i>
             </div>
-            <div class="card-title">AserLand Pt.2</div>
-            <div class="card-desc">Ana Tema Müziği</div>
+            
             <span class="genre-tag">Orchestral / Epic</span>
+
+            <a href="https://open.spotify.com/track/4cOdK2wGLETKBW3PvgPWqT" target="_blank" class="spotify-btn" onclick="event.stopPropagation()">
+                <i class="fab fa-spotify"></i> Spotify'da Dinle
+            </a>
         </div>
 
-        <div class="track-card" onclick="loadTrack('Ironheart Industrial', 'Behemoth Chronicles', 'https://via.placeholder.com/300/550000/fff?text=IRONHEART', 'music/ironheart.mp3')">
-            <div class="card-img-container">
-                <img src="https://via.placeholder.com/300/550000/fff?text=IRONHEART" class="card-img">
-                <i class="fas fa-play-circle card-play-icon"></i>
+        <div class="track-card" onclick="changeSpotifyTrack(this, '0VjIjW4GlUZAMYd2vXMi3b')">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/70/550000/fff?text=IRON" class="mini-art">
+                <div class="card-info">
+                    <span class="card-title">Ironheart Industrial</span>
+                    <span class="card-album">Behemoth Chronicles</span>
+                </div>
+                <i class="fab fa-spotify spotify-icon"></i>
             </div>
-            <div class="card-title">Ironheart Industrial</div>
-            <div class="card-desc">Fabrika ve Dişli Sesleri</div>
-            <span class="genre-tag">Dark Synth / Industrial</span>
+            
+            <span class="genre-tag">Industrial / Dark Synth</span>
+
+            <a href="https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b" target="_blank" class="spotify-btn" onclick="event.stopPropagation()">
+                <i class="fab fa-spotify"></i> Spotify'da Dinle
+            </a>
         </div>
 
-        <div class="track-card" onclick="loadTrack('Echoes of Democracy', 'Celestine Era', 'https://via.placeholder.com/300/003366/fff?text=ECHOES', 'music/echoes.mp3')">
-            <div class="card-img-container">
-                <img src="https://via.placeholder.com/300/003366/fff?text=ECHOES" class="card-img">
-                <i class="fas fa-play-circle card-play-icon"></i>
+        <div class="track-card" onclick="changeSpotifyTrack(this, 'YOUR_TRACK_ID_HERE')">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/70/003366/fff?text=ECHO" class="mini-art">
+                <div class="card-info">
+                    <span class="card-title">Echoes of Democracy</span>
+                    <span class="card-album">Celestine Era</span>
+                </div>
+                <i class="fab fa-spotify spotify-icon"></i>
             </div>
-            <div class="card-title">Echoes of Democracy</div>
-            <div class="card-desc">Matematiksel Düzen</div>
-            <span class="genre-tag">Electronic / Ambient</span>
+            
+            <span class="genre-tag">Ambient / Electronic</span>
+
+            <a href="#" target="_blank" class="spotify-btn" onclick="event.stopPropagation()">
+                <i class="fab fa-spotify"></i> Spotify'da Dinle
+            </a>
         </div>
 
-        <div class="track-card" onclick="loadTrack('The Doom Waters', 'Skarrgard Saga', 'https://via.placeholder.com/300/002200/0f0?text=DOOM', 'music/doom.mp3')">
-            <div class="card-img-container">
-                <img src="https://via.placeholder.com/300/002200/0f0?text=DOOM" class="card-img">
-                <i class="fas fa-play-circle card-play-icon"></i>
+        <div class="track-card" onclick="changeSpotifyTrack(this, 'YOUR_TRACK_ID_HERE')">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/70/002200/0f0?text=DOOM" class="mini-art">
+                <div class="card-info">
+                    <span class="card-title">The Doom Waters</span>
+                    <span class="card-album">Skarrgard Saga</span>
+                </div>
+                <i class="fab fa-spotify spotify-icon"></i>
             </div>
-            <div class="card-title">The Doom Waters</div>
-            <div class="card-desc">Derinliklerin Korkusu</div>
-            <span class="genre-tag">Dark Ambient / Horror</span>
+            
+            <span class="genre-tag">Horror / Dark Ambient</span>
+
+            <a href="#" target="_blank" class="spotify-btn" onclick="event.stopPropagation()">
+                <i class="fab fa-spotify"></i> Spotify'da Dinle
+            </a>
         </div>
 
     </div>
 
     <script>
-        const audio = document.getElementById('audioSource');
-        const playIcon = document.getElementById('playIcon');
-        const progressBar = document.getElementById('progressBar');
-        const mainTitle = document.getElementById('mainTitle');
-        const mainArt = document.getElementById('mainArt');
-        const mainArtist = document.querySelector('.track-artist');
+        function changeSpotifyTrack(element, trackId) {
+            // 1. Iframe'i güncelle (Spotify ID'sini URL'e gömüyoruz)
+            var newSrc = "https://open.spotify.com/embed/track/" + trackId + "?utm_source=generator&theme=0";
+            document.getElementById('spotify-widget').src = newSrc;
 
-        let isPlaying = false;
-
-        // Şarkı Yükleme Fonksiyonu
-        function loadTrack(title, artist, artUrl, audioUrl) {
-            mainTitle.innerText = title;
-            mainArtist.innerText = "ARGOTEDA • " + artist;
-            mainArt.src = artUrl;
+            // 2. Görsel Efektler
+            var cards = document.querySelectorAll('.track-card');
+            cards.forEach(card => card.classList.remove('playing'));
+            element.classList.add('playing');
             
-            // Gerçek bir ses dosyası varsa burayı aç:
-            // audio.src = audioUrl; 
-            
-            // Otomatik oynatmayı başlat (Demo olduğu için console.log)
-            console.log("Playing:", title);
-            isPlaying = true;
-            updatePlayIcon();
-            
-            // Simülasyon: İlerleme çubuğunu hareket ettir (Gerçekte audio.ontimeupdate kullanılır)
-            simulateProgress();
-        }
-
-        // Oynat/Durdur Butonu
-        function togglePlay() {
-            if (isPlaying) {
-                // audio.pause();
-                isPlaying = false;
-            } else {
-                // audio.play();
-                isPlaying = true;
-                simulateProgress();
-            }
-            updatePlayIcon();
-        }
-
-        // İkonu Güncelle
-        function updatePlayIcon() {
-            if (isPlaying) {
-                playIcon.classList.remove('fa-play');
-                playIcon.classList.add('fa-pause');
-            } else {
-                playIcon.classList.remove('fa-pause');
-                playIcon.classList.add('fa-play');
-            }
-        }
-
-        // İlerleme Çubuğu Simülasyonu (Demo Amaçlı)
-        function simulateProgress() {
-            let width = 0;
-            const interval = setInterval(() => {
-                if (!isPlaying || width >= 100) clearInterval(interval);
-                width += 0.5;
-                progressBar.style.width = width + '%';
-            }, 100); // Hızlı demo
+            // 3. Opsiyonel: Sayfayı yukarı, player'a doğru yumuşakça kaydır
+            // document.querySelector('.music-hero').scrollIntoView({ behavior: 'smooth' });
         }
     </script>
 
