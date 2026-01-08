@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Argoteda Music | AserLand Soundscapes</title>
+    <title>Music | AserLand Soundscapes</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="wiki/favicon.png">
     <style>
@@ -168,7 +168,7 @@
     </nav>
 
     <header class="music-hero">
-        <h1 class="artist-title">ARGOTEDA MUSIC</h1>
+        <h1 class="artist-title">Argoteda Music</h1>
         <p class="artist-subtitle">The Sound of AserLand</p>
 
         <div class="spotify-container" id="mainPlayer">
@@ -188,87 +188,87 @@
     <script>
         const tracks = [
             // --- ALBÜM: WAR AGAINST WAR ---
-            { title: "Suffer", section: "War Against War", tags: "Industrial / Electronic / Cyberpunk", id: "0e2OsNFuksdK5LDZyW0dMP", img: "https://via.placeholder.com/70/333/fff?text=WAW" },
-            { title: "Exterminate", section: "War Against War", tags: "Industrial / Electronic / Cyberpunk", id: "3EMOPG2ioudOuZGhtuORnJ", img: "https://via.placeholder.com/70/333/fff?text=WAW" },
-            { title: "Rogue", section: "War Against War", tags: "Industrial / Electronic / Cyberpunk", id: "3BoDk8YdRfV3jhMCOm3KrZ", img: "https://via.placeholder.com/70/333/fff?text=WAW" },
-            { title: "War Against War", section: "War Against War", tags: "Industrial / Electronic / Cyberpunk", id: "3hmvwJrqxWTne1uOube5hh", img: "https://via.placeholder.com/70/333/fff?text=WAW" },
+            { title: "Suffer", section: "War Against War", tags: "Electronic / Cyberpunk / Medium Scale AI-Powered", id: "0e2OsNFuksdK5LDZyW0dMP", img: "https://via.placeholder.com/70/333/fff?text=WAW" },
+            { title: "Exterminate", section: "War Against War", tags: "Electronic / Cyberpunk / High Scale AI-Powered", id: "3EMOPG2ioudOuZGhtuORnJ", img: "https://via.placeholder.com/70/333/fff?text=WAW" },
+            { title: "Rogue", section: "War Against War", tags: "Electronic / Cyberpunk / Medium Scale AI-Powered", id: "3BoDk8YdRfV3jhMCOm3KrZ", img: "https://via.placeholder.com/70/333/fff?text=WAW" },
+            { title: "War Against War", section: "War Against War", tags: "Industrial / Electronic / Cyberpunk / 100% DAW", id: "3hmvwJrqxWTne1uOube5hh", img: "https://via.placeholder.com/70/333/fff?text=WAW" },
 
             // --- ALBÜM: CYBERTAPE 1 ---
-            { title: "Sundered Sky", section: "Cybertape 1", tags: "Psy-Trance / Cyberpunk / Synthwave", id: "5DZJZc6o9GBf4eWZ7XXWkd", img: "https://via.placeholder.com/70/509/fff?text=CYB1" },
-            { title: "Underestimated", section: "Cybertape 1", tags: "Psy-Trance / Cyberpunk / Synthwave", id: "4K38EnpECJLKHoDS4shmM7", img: "https://via.placeholder.com/70/509/fff?text=CYB1" },
-            { title: "Predator of What", section: "Cybertape 1", tags: "Psy-Trance / Cyberpunk / Synthwave", id: "5nKWw8r7fNdKiCMNcOUKSu", img: "https://via.placeholder.com/70/509/fff?text=CYB1" },
-            { title: "Eternity of Void", section: "Cybertape 1", tags: "Psy-Trance / Cyberpunk / Synthwave", id: "62rAbhNOnL9yvOYp5sS6nr", img: "https://via.placeholder.com/70/509/fff?text=CYB1" },
+            { title: "Sundered Sky", section: "Cybertape 1", tags: "Psy-Trance / Cyberpunk / Synthwave / Medium Scale AI-Powered", id: "5DZJZc6o9GBf4eWZ7XXWkd", img: "https://via.placeholder.com/70/509/fff?text=CYB1" },
+            { title: "Underestimated", section: "Cybertape 1", tags: "Psy-Trance / Cyberpunk / Synthwave / Medium Scale AI-Powered", id: "4K38EnpECJLKHoDS4shmM7", img: "https://via.placeholder.com/70/509/fff?text=CYB1" },
+            { title: "Predator of What", section: "Cybertape 1", tags: "Psy-Trance / Cyberpunk / Synthwave / High Scale AI-Powered", id: "5nKWw8r7fNdKiCMNcOUKSu", img: "https://via.placeholder.com/70/509/fff?text=CYB1" },
+            { title: "Eternity of Void", section: "Cybertape 1", tags: "Psy-Trance / Cyberpunk / Synthwave / Industrial / High Scale AI-Powered", id: "62rAbhNOnL9yvOYp5sS6nr", img: "https://via.placeholder.com/70/509/fff?text=CYB1" },
 
             // --- ALBÜM: CYBERTAPE 2 ---
-            { title: "Dètruire", section: "Cybertape 2", tags: "Synthwave / Dubstep / EDM", id: "6Tphd46iJf31xhvlIeEduH", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
-            { title: "Lightspeed", section: "Cybertape 2", tags: "Synthwave / Dubstep / EDM", id: "2BdgbLABPNhDS0VUbHEUPh", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
-            { title: "The Creature", section: "Cybertape 2", tags: "Synthwave / Dubstep / EDM", id: "0dBmLG3hnFyDlE0vQqsykD", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
-            { title: "Cyberlith", section: "Cybertape 2", tags: "Synthwave / Dubstep / EDM", id: "5zkMfFInM0DXcsMJj37ryG", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
-            { title: "Global Disaster", section: "Cybertape 2", tags: "Synthwave / Dubstep / EDM", id: "1dCwcHKVg3FOp19TOlRlSg", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
+            { title: "Dètruire", section: "Cybertape 2", tags: "Synthwave / Dubstep / Medium Scale AI-Powered", id: "6Tphd46iJf31xhvlIeEduH", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
+            { title: "Lightspeed", section: "Cybertape 2", tags: "Synthwave / Dubstep / EDM / Low Scale AI-Powered", id: "2BdgbLABPNhDS0VUbHEUPh", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
+            { title: "The Creature", section: "Cybertape 2", tags: "Synthwave / Dubstep / High Scale AI-Powered", id: "0dBmLG3hnFyDlE0vQqsykD", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
+            { title: "Cyberlith", section: "Cybertape 2", tags: "Synthwave / Dubstep / EDM / Low Scale AI-Powered", id: "5zkMfFInM0DXcsMJj37ryG", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
+            { title: "Global Disaster", section: "Cybertape 2", tags: "Synthwave / Dubstep / High Scale AI-Powered", id: "1dCwcHKVg3FOp19TOlRlSg", img: "https://via.placeholder.com/70/905/fff?text=CYB2" },
 
             // --- ALBÜM: ASERCOUNCIL ---
-            { title: "Red Headed", section: "AserCouncil", tags: "Dubstep / Industrial / Synthwave / Cyberpunk", id: "50KgFXG03unUASpkjs562A", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
-            { title: "Potion of Death", section: "AserCouncil", tags: "Dubstep / Industrial / Synthwave / Cyberpunk", id: "6lXCnrfehvwp7BPvrD3Nek", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
-            { title: "You Will Suffer", section: "AserCouncil", tags: "Dubstep / Industrial / Synthwave / Cyberpunk", id: "5n3USLTyqcseYGaiVtUEHH", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
-            { title: "AserLand Disco", section: "AserCouncil", tags: "Dubstep / Industrial / Synthwave / Cyberpunk", id: "2RqdwcwwPT7HEIDD1GhDYI", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
-            { title: "14", section: "AserCouncil", tags: "Dubstep / Industrial / Synthwave / Cyberpunk", id: "4OfuST9Te7Li2ifFOoCmfW", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
-            { title: "Cloak of the Nights", section: "AserCouncil", tags: "Dubstep / Industrial / Synthwave / Cyberpunk", id: "5naYELDC6NMgTCn1rcMk9G", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
-            { title: "Silent Street", section: "AserCouncil", tags: "Dubstep / Industrial / Synthwave / Cyberpunk", id: "35CQjrFHuLat6wJ6GcCNMJ", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
-            { title: "Don't Dream of Your Lovers", section: "AserCouncil", tags: "Dubstep / Industrial / Synthwave / Cyberpunk", id: "7sRQRUulrFlMBO9L8KlYHw", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "Red Headed", section: "AserCouncil", tags: "Dubstep / Industrial / Synthwave / Cyberpunk / High Scale AI-Powered", id: "50KgFXG03unUASpkjs562A", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "Potion of Death", section: "AserCouncil", tags: "Dubstep / Industrial / Synthwave / Cyberpunk / High Scale AI-Powered", id: "6lXCnrfehvwp7BPvrD3Nek", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "You Will Suffer", section: "AserCouncil", tags: "Dubstep / Industrial / Synthwave / Cyberpunk / High Scale AI-Powered", id: "5n3USLTyqcseYGaiVtUEHH", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "AserLand Disco", section: "AserCouncil", tags: "Dubstep / Psy-Trance / Synthwave / Cyberpunk / Medium Scale AI-Powered", id: "2RqdwcwwPT7HEIDD1GhDYI", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "14", section: "AserCouncil", tags: "Dubstep / Industrial / Synthwave / Cyberpunk / Medium Scale AI-Powered", id: "4OfuST9Te7Li2ifFOoCmfW", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "Cloak of the Nights", section: "AserCouncil", tags: "Dubstep / Synthwave / Cyberpunk / Low Scale AI-Powered", id: "5naYELDC6NMgTCn1rcMk9G", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "Silent Street", section: "AserCouncil", tags: "Dubstep / Synthwave / Cyberpunk / High Scale AI-Powered", id: "35CQjrFHuLat6wJ6GcCNMJ", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
+            { title: "Don't Dream of Your Lovers", section: "AserCouncil", tags: "Dubstep / Industrial / Synthwave / Cyberpunk / Low Scale AI-Powered", id: "7sRQRUulrFlMBO9L8KlYHw", img: "https://via.placeholder.com/70/222/fff?text=ASC" },
 
             // --- ALBÜM: ROCKOMANIA ---
-            { title: "Goodbye", section: "Rockomania", tags: "Industrial Rock / Metal / Anime Opening", id: "3usf9cq2kRzYPHrbkLU4bx", img: "https://via.placeholder.com/70/800/fff?text=ROCK" },
-            { title: "When Will You Come Back?", section: "Rockomania", tags: "Industrial Rock / Metal / Anime Opening", id: "4zmeGJy4S039luMPAu7hHE", img: "https://via.placeholder.com/70/800/fff?text=ROCK" },
-            { title: "Choice", section: "Rockomania", tags: "Industrial Rock / Metal / Anime Opening", id: "2p0MXKXXh4wwWQVDolGgxQ", img: "https://via.placeholder.com/70/800/fff?text=ROCK" },
-            { title: "This Is Our Fight", section: "Rockomania", tags: "Industrial Rock / Metal / Anime Opening", id: "0gLBKfOwYAKHnyBC57GMrZ", img: "https://via.placeholder.com/70/800/fff?text=ROCK" },
+            { title: "Goodbye", section: "Rockomania", tags: "Industrial Rock / Metal / Anime Opening / AI Vocals", id: "3usf9cq2kRzYPHrbkLU4bx", img: "https://via.placeholder.com/70/800/fff?text=ROCK" },
+            { title: "When Will You Come Back?", section: "Rockomania", tags: "Industrial Rock / Metal / Anime Opening / AI Vocals", id: "4zmeGJy4S039luMPAu7hHE", img: "https://via.placeholder.com/70/800/fff?text=ROCK" },
+            { title: "Choice", section: "Rockomania", tags: "Industrial Rock / Metal / Anime Opening / Low Scale AI-Powered", id: "2p0MXKXXh4wwWQVDolGgxQ", img: "https://via.placeholder.com/70/800/fff?text=ROCK" },
+            { title: "This Is Our Fight", section: "Rockomania", tags: "Industrial Rock / Metal / Anime Opening / Low Scale AI-Powered", id: "0gLBKfOwYAKHnyBC57GMrZ", img: "https://via.placeholder.com/70/800/fff?text=ROCK" },
 
             // --- ALBÜM: CYBERTAPE PREMIUM ---
-            { title: "Heartstrings and Bloodstains", section: "Cybertape Premium", tags: "Dubstep / Industrial / Cyberpunk / Psy-Trance", id: "1xJH0p87Ati9qxybu3FIgd", img: "https://via.placeholder.com/70/505/fff?text=PREM" },
-            { title: "Chillfight", section: "Cybertape Premium", tags: "Dubstep / Industrial / Cyberpunk / Psy-Trance", id: "2z1L3zkArbxGCL6OoRM46c", img: "https://via.placeholder.com/70/505/fff?text=PREM" },
-            { title: "Night Side", section: "Cybertape Premium", tags: "Dubstep / Industrial / Cyberpunk / Psy-Trance", id: "76SZgeXeBUX2posZqquD0b", img: "https://via.placeholder.com/70/505/fff?text=PREM" },
+            { title: "Heartstrings and Bloodstains", section: "Cybertape Premium", tags: "Dubstep / Cyberpunk / Psy-Trance / Low Scale AI-Powered", id: "1xJH0p87Ati9qxybu3FIgd", img: "https://via.placeholder.com/70/505/fff?text=PREM" },
+            { title: "Chillfight", section: "Cybertape Premium", tags: "Dubstep / Cyberpunk / EDM / Low Scale AI-Powered", id: "2z1L3zkArbxGCL6OoRM46c", img: "https://via.placeholder.com/70/505/fff?text=PREM" },
+            { title: "Night Side", section: "Cybertape Premium", tags: "Dubstep / Cyberpunk / Psy-Trance / 100% DAW", id: "76SZgeXeBUX2posZqquD0b", img: "https://via.placeholder.com/70/505/fff?text=PREM" },
 
             // --- ALBÜM: YOUR LAUGHER ROUGHER ---
-            { title: "Chronicles of Synthwave", section: "Your Laugher Rougher", tags: "Hard Dubstep / Industrial / Synthwave", id: "7L7FzbRLMAHKcuCY8cKp6w", img: "https://via.placeholder.com/70/660/fff?text=YLR" },
-            { title: "Midnight Machinery", section: "Your Laugher Rougher", tags: "Hard Dubstep / Industrial / Synthwave", id: "4sNIn89eqD8C8l1FKfhW63", img: "https://via.placeholder.com/70/660/fff?text=YLR" },
-            { title: "Your Laugher Rougher", section: "Your Laugher Rougher", tags: "Hard Dubstep / Industrial / Synthwave", id: "2lD6wAZ9CHWTxWmi8xNbUm", img: "https://via.placeholder.com/70/660/fff?text=YLR" },
+            { title: "Chronicles of Synthwave", section: "Your Laugher Rougher", tags: "Hard Dubstep / Industrial / Synthwave / Low Scale AI-Powered", id: "7L7FzbRLMAHKcuCY8cKp6w", img: "https://via.placeholder.com/70/660/fff?text=YLR" },
+            { title: "Midnight Machinery", section: "Your Laugher Rougher", tags: "Hard Dubstep / Industrial / Synthwave / Low Scale AI-Powered", id: "4sNIn89eqD8C8l1FKfhW63", img: "https://via.placeholder.com/70/660/fff?text=YLR" },
+            { title: "Your Laugher Rougher", section: "Your Laugher Rougher", tags: "Hard Dubstep / Industrial / Synthwave / 100% DAW", id: "2lD6wAZ9CHWTxWmi8xNbUm", img: "https://via.placeholder.com/70/660/fff?text=YLR" },
 
              // --- ALBÜM: MINDSCAPER ---
-            { title: "Anamorphic Thought Spiral", section: "Mindscaper", tags: "Psy-Trance", id: "5dsCARl47G1SKPtisKQ11J", img: "https://via.placeholder.com/70/500/fff?text=MIND" },
-            { title: "Emerging from the Abyss", section: "Mindscaper", tags: "Psy-Trance", id: "1e273cjCLSPVfuuV9cgYms", img: "https://via.placeholder.com/70/500/fff?text=MIND" },
-            { title: "Overload Protocol", section: "Mindscaper", tags: "Psy-Trance", id: "34ugzJID2joMuFI9iWl0Og", img: "https://via.placeholder.com/70/500/fff?text=MIND" },
-            { title: "Mindscaper", section: "Mindscaper", tags: "Psy-Trance", id: "41Lko5AlE5qv0TZViL7bU9", img: "https://via.placeholder.com/70/500/fff?text=MIND" },
+            { title: "Anamorphic Thought Spiral", section: "Mindscaper", tags: "Psy-Trance / 100% DAW", id: "5dsCARl47G1SKPtisKQ11J", img: "https://via.placeholder.com/70/500/fff?text=MIND" },
+            { title: "Emerging from the Abyss", section: "Mindscaper", tags: "Psy-Trance / 100% DAW", id: "1e273cjCLSPVfuuV9cgYms", img: "https://via.placeholder.com/70/500/fff?text=MIND" },
+            { title: "Overload Protocol", section: "Mindscaper", tags: "Psy-Trance 100% DAW", id: "34ugzJID2joMuFI9iWl0Og", img: "https://via.placeholder.com/70/500/fff?text=MIND" },
+            { title: "Mindscaper", section: "Mindscaper", tags: "Psy-Trance / 100% DAW", id: "41Lko5AlE5qv0TZViL7bU9", img: "https://via.placeholder.com/70/500/fff?text=MIND" },
 
             // --- HİKAYE ALBÜMÜ: ASERLAND PT. 1 ---
-            { title: "Unyielding Dawn of Freedom", section: "AserLand Pt. 1", tags: "Orchestral / Epicore / Classical / World", id: "6Itqvo7Fh6bN0l42fEEz0Y", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "dunas-zia.html" },
-            { title: "The Pen of Revolution", section: "AserLand Pt. 1", tags: "Orchestral / Epicore / Classical / World", id: "44pav7ofwL4chZ7vfiEzwn", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "skarryion-damethsizi.html" },
-            { title: "Sharp as Words", section: "AserLand Pt. 1", tags: "Orchestral / Epicore / Classical / World", id: "3pYC40xEHfP6lPTnrHJlLl", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "eumandarg-damethsizi.html" },
-            { title: "Echoes of Democracy", section: "AserLand Pt. 1", tags: "Orchestral / Epicore / Classical / World", id: "2n47K2ZHOIxKfgGP1TjTAW", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "celestine-darvell.html" },
-            { title: "Iron Hands United Hearts", section: "AserLand Pt. 1", tags: "Orchestral / Epicore / Classical / World", id: "3dEznJQQRIFa8Kx5oBC6K8", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "ironheart-protestolari.html" },
+            { title: "Unyielding Dawn of Freedom", section: "AserLand Pt. 1", tags: "Orchestral / Epicore / Classical / World / 100% DAW", id: "6Itqvo7Fh6bN0l42fEEz0Y", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "dunas-zia.html" },
+            { title: "The Pen of Revolution", section: "AserLand Pt. 1", tags: "Orchestral / Epicore / Classical / World / 100% DAW", id: "44pav7ofwL4chZ7vfiEzwn", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "skarryion-damethsizi.html" },
+            { title: "Sharp as Words", section: "AserLand Pt. 1", tags: "Orchestral / Epicore / Classical / World / 100% DAW", id: "3pYC40xEHfP6lPTnrHJlLl", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "eumandarg-damethsizi.html" },
+            { title: "Echoes of Democracy", section: "AserLand Pt. 1", tags: "Orchestral / Epicore / Classical / World / 100% DAW", id: "2n47K2ZHOIxKfgGP1TjTAW", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "celestine-darvell.html" },
+            { title: "Iron Hands United Hearts", section: "AserLand Pt. 1", tags: "Orchestral / Epicore / Classical / World / 100% DAW", id: "3dEznJQQRIFa8Kx5oBC6K8", img: "https://via.placeholder.com/70/FFD700/000?text=PT1", wiki: "ironheart-protestolari.html" },
 
             // --- HİKAYE ALBÜMÜ: ASERLAND PT. 2 ---
-            { title: "As the Pendulum Swings", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic", id: "76SRU54ZGr0JYRK7ISqQx9", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "iki-taht-bir-golge.html" },
-            { title: "Echo of the Absolute", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic", id: "4FlyHWIX7JPquAzCKCSErh", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "celestine-darvell.html" },
-            { title: "Tacit Opinion of the Stacks", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic", id: "3gI9biWsUB81Y2sFILJVrK", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "kutuphanedeki-sessiz-kanaat.html" },
-            { title: "Wrath of a Broken Crown", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic", id: "32L1WDZAai8vlSyNPnB36f", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "zykrath-vhalgoroth-aser.html" },
-            { title: "Titan of Ironheart", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic", id: "1nC8UzyXIzTxFmQzsrieoH", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "behemoth-yapilis-sureci.html" },
-            { title: "The Empire's Butcher", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic", id: "44QHLsVdvGEWBfpgDsvdPb", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "denoistos-los-aser.html" },
-            { title: "Lord Protector", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic", id: "1WQgGtjw8TDUzltnBIwIPG", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "kaelus-theron.html" },
-            { title: "The Assasin Architect", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic", id: "0uaGEZOeUDS4FQEkX8QRu7", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "aserwar-gedian.html" },
+            { title: "As the Pendulum Swings", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic / Studio Record", id: "76SRU54ZGr0JYRK7ISqQx9", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "iki-taht-bir-golge.html" },
+            { title: "Echo of the Absolute", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic / 100% DAW", id: "4FlyHWIX7JPquAzCKCSErh", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "celestine-darvell.html" },
+            { title: "Tacit Opinion of the Stacks", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic / 100% DAW", id: "3gI9biWsUB81Y2sFILJVrK", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "kutuphanedeki-sessiz-kanaat.html" },
+            { title: "Wrath of a Broken Crown", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic / Studio Record - DAW", id: "32L1WDZAai8vlSyNPnB36f", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "zykrath-vhalgoroth-aser.html" },
+            { title: "Titan of Ironheart", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic / 100% DAW", id: "1nC8UzyXIzTxFmQzsrieoH", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "behemoth-yapilis-sureci.html" },
+            { title: "The Empire's Butcher", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic / 100% DAW", id: "44QHLsVdvGEWBfpgDsvdPb", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "denoistos-los-aser.html" },
+            { title: "Lord Protector", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic / 100% DAW", id: "1WQgGtjw8TDUzltnBIwIPG", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "kaelus-theron.html" },
+            { title: "The Assasin Architect", section: "AserLand Pt. 2", tags: "Orchestral / World / Industrial / Metal / Classic / Studio Record - DAW", id: "0uaGEZOeUDS4FQEkX8QRu7", img: "https://via.placeholder.com/70/FFD700/000?text=PT2", wiki: "aserwar-gedian.html" },
 
             // --- SINGLES (Tümü Bir Başlık Altında) ---
-            { title: "War Against Peace", section: "Singles & EPs", tags: "Industrial / Cyberpunk", id: "0SrHroYyh3cfpr0nXDSmrB", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "Until the Very End", section: "Singles & EPs", tags: "Rock", id: "0nVZVaFbTru90Qouor3G0I", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "Article 34", section: "Singles & EPs", tags: "Synthwave / EDM", id: "49FT3MWO8KMuWThETi6hbX", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "Omega Squad", section: "Singles & EPs", tags: "8-Bit / Electronic / Psy-Trance", id: "29JM4Z3if78RMJoionsMCA", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "Hymn of Liberation", section: "Singles & EPs", tags: "Synthwave / EDM", id: "5pp2G1cgDKgl4Y8InYkADi", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "Pyrrhic Victory", section: "Singles & EPs", tags: "Lo-Fi / EDM / Synthwave", id: "2cqhiE9x6MHFuWC8XqhICK", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "Solstice Pulse", section: "Singles & EPs", tags: "Industrial / Dubstep", id: "3N6S3WmVex02RI7lWMgriC", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "Phantom Altruist", section: "Singles & EPs", tags: "Chillwave / Vaporwave", id: "0LPQDF0VzpPropg3ExkbTW", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "God.exe Terminated", section: "Singles & EPs", tags: "Cyberpunk / Hard Dubstep", id: "2OiEDt3ax9Dzpwqrl0AKnn", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "Unfuckwithable", section: "Singles & EPs", tags: "Deep House", id: "15maBmarOaUGzAfHUW1qrj", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "Beni Bulur", section: "Singles & EPs", tags: "Deep House", id: "1jA1W0aBm9OnJyPYrvirsy", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "Dirty Mouth", section: "Singles & EPs", tags: "Chill House / EDM", id: "1suZMRaXgypTNeBzC4Kg2Q", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
-            { title: "Geçip Gidenler", section: "Singles & EPs", tags: "Deep House", id: "76He74R9ux0I47FrLioSoT", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "War Against Peace", section: "Singles & EPs", tags: "Industrial / Cyberpunk / Remix / Low Scale AI-Powered", id: "0SrHroYyh3cfpr0nXDSmrB", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Until the Very End", section: "Singles & EPs", tags: "Rock / Studio Record - DAW", id: "0nVZVaFbTru90Qouor3G0I", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Article 34", section: "Singles & EPs", tags: "Synthwave / EDM / Studio Record - DAW", id: "49FT3MWO8KMuWThETi6hbX", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Omega Squad", section: "Singles & EPs", tags: "8-Bit / Electronic / Psy-Trance / 100% DAW", id: "29JM4Z3if78RMJoionsMCA", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Hymn of Liberation", section: "Singles & EPs", tags: "Synthwave / EDM / Studio Record - DAW", id: "5pp2G1cgDKgl4Y8InYkADi", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Pyrrhic Victory", section: "Singles & EPs", tags: "Lo-Fi / EDM / Synthwave / Studio Record - DAW", id: "2cqhiE9x6MHFuWC8XqhICK", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Solstice Pulse", section: "Singles & EPs", tags: "Industrial / Dubstep / 100% DAW", id: "3N6S3WmVex02RI7lWMgriC", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Phantom Altruist", section: "Singles & EPs", tags: "Chillwave / Vaporwave / 100% DAW", id: "0LPQDF0VzpPropg3ExkbTW", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "God.exe Terminated", section: "Singles & EPs", tags: "Cyberpunk / Hard Dubstep / 100% DAW", id: "2OiEDt3ax9Dzpwqrl0AKnn", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Unfuckwithable", section: "Singles & EPs", tags: "Deep House / Gothic / Studio Record - DAW", id: "15maBmarOaUGzAfHUW1qrj", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Beni Bulur", section: "Singles & EPs", tags: "Deep House / Studio Record - DAW", id: "1jA1W0aBm9OnJyPYrvirsy", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Dirty Mouth", section: "Singles & EPs", tags: "Chill House / EDM / Studio Record - DAW / Low Scale AI-Powered", id: "1suZMRaXgypTNeBzC4Kg2Q", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
+            { title: "Geçip Gidenler", section: "Singles & EPs", tags: "Deep House / Studio Record - DAW", id: "76He74R9ux0I47FrLioSoT", img: "https://via.placeholder.com/70/111/fff?text=SGL" },
         ];
 
         // 1. Gruplama Fonksiyonu (Albümlere Göre Ayır)
