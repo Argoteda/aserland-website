@@ -101,17 +101,17 @@
         }
 
         .term-title {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--ana-renk);
             margin-bottom: 10px;
             font-weight: bold;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 5px;
         }
 
         .term-category {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             background: #222;
             color: #888;
             padding: 3px 8px;
@@ -119,6 +119,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             border: 1px solid #333;
+            width: fit-content;
         }
 
         .term-desc {
@@ -134,7 +135,7 @@
             padding: 40px;
             color: #666;
             font-size: 1.2rem;
-            display: none; /* Başlangıçta gizli */
+            display: none;
         }
 
         @media (max-width: 768px) { .hero-title { font-size: 2rem; } }
@@ -145,7 +146,8 @@
     <nav>
         <a href="../index.html">Ana Sayfa</a>
         <a href="../music.html">Müzik</a>
-        <a href="index.html">Wiki</a> <a href="../about.html">Hakkında</a>
+        <a href="index.html">Wiki</a>
+        <a href="../about.html">Hakkında</a>
         <a href="dictionary.html" class="active">Sözlük</a>
     </nav>
 
@@ -155,7 +157,7 @@
         
         <div class="search-container">
             <i class="fas fa-search search-icon"></i>
-            <input type="text" id="searchInput" class="search-input" placeholder="Terim ara... (Örn: Ironheart, Skarrgard)">
+            <input type="text" id="searchInput" class="search-input" placeholder="Terim ara... (Örn: Behemoth, Gedian, Denge)">
         </div>
     </header>
 
@@ -167,53 +169,129 @@
     </div>
 
     <script>
-        // --- VERİ TABANI ---
         const dictionaryData = [
-            { 
-                term: "AserLand", 
-                type: "Coğrafya", 
-                desc: "Argoteda tarafından kurgulanan, hikayenin geçtiği ana kıta ve imparatorluğun merkezi." 
-            },
-            { 
-                term: "Ironheart", 
-                type: "Organizasyon", 
-                desc: "AserLand içindeki protestoları bastırmak ve düzeni sağlamak için kullanılan askeri güç ve demir yumruk simgesi." 
-            },
-            { 
-                term: "Skarrgard", 
-                type: "Bölge", 
-                desc: "Bağımsızlık mücadelesinin verildiği, soğuk iklimiyle bilinen kuzey bölgesi. Skarryion Damethsizi'nin memleketi." 
-            },
-            { 
-                term: "Skarryion Damethsizi", 
-                type: "Kişi", 
-                desc: "Skarrgard'ın bağımsızlığı için savaşan ana karakter ve devrim lideri." 
-            },
-            { 
-                term: "Celestine D'Arvell", 
-                type: "Kişi", 
-                desc: "AserLand evreninde müzikal eserleriyle tanınan, 'Echoes of Democracy' gibi parçaların bestecisi olduğu varsayılan karakter." 
-            },
-            { 
-                term: "War Against War", 
-                type: "Olay / Albüm", 
-                desc: "Hem büyük savaş karşıtı hareketi hem de Argoteda'nın bu dönemi anlatan müzik albümü." 
-            },
-            { 
-                term: "Argoteda", 
-                type: "Yaratıcı", 
-                desc: "AserLand evreninin kurucusu, yazarı ve bestecisi olan Enes Cihan'ın mahlası." 
-            },
-            { 
-                term: "Behemoth", 
-                type: "Silah / Makine", 
-                desc: "Titan of Ironheart olarak da bilinen, savaşın seyrini değiştiren devasa mekanik yapı." 
-            },
-             { 
-                term: "Eldorin Valtas Aser", 
-                type: "Kişi", 
-                desc: "Aser hanedanının önemli figürlerinden biri, imparatorluk tarihinde kritik bir rol oynar." 
-            }
+            // --- HANEDANLAR VE KİŞİLER ---
+            { term: "Aser (Hanedan)", type: "Soyad / Hanedanlık", desc: "AserLand'i kuran kraliyet hanedanının adıdır. Bu soy, Rotto Kant Aser (I. Aser) ile başlar." },
+            { term: "Aser (Unvan)", type: "Unvan", desc: "Aserwar Gedian reformları ile 'Aser' kelimesi, bir kan bağından ziyade, kendi alanında mutlak uzmanlığa veya ustalığa ulaşmış kişilere verilen bir onur unvanı veya sıfatı haline gelmiştir." },
+            { term: "Rotto Kant Aser (I. Aser)", type: "Kişi", desc: "M.Ö. 520-478. AserLand'in efsanevi kurucusu ve ilk kralı. Bölünmüş kabileleri 'Tek bir bayrak, tek bir millet' ideolojisiyle birleştirmiştir." },
+            { term: "Eldorin Valtas Aser (II. Aser)", type: "Kişi", desc: "M.Ö. 515-450. AserLand'in İkinci Kralı ve 'İlk Müzisyeni'. Abisi Rotto'nun mirasını korumuş, müzik okulunu kurmuş ve ulusal marşı bestelemiştir." },
+            { term: "Myrantos Velkan Asrier", type: "Kişi", desc: "M.Ö. 500-429. Rotto'nun oğlu. Babasının ideallerini reddederek Asrier Hanedanı'nı kurmuş ve krallığı kaosa sürüklemiştir." },
+            { term: "Lyraeus Valtas Aser", type: "Kişi", desc: "Eldorin'in oğlu ve tahtın meşru varisi. Kuzeni Myrantos tarafından sürgüne gönderilmiş, kuzeyde direnişin sembolü olmuştur." },
+            { term: "Asrier", type: "Hanedanlık", desc: "Myrantos Velkan Aser tarafından kurulan, AserLand tarihindeki iç savaşları tetikleyen soylu hanedan." },
+            { term: "Baelor Korth", type: "Kişi", desc: "Eski düzenin güçlü liderlerinden biri. Rotto'nun birleşme fikrine karşı Üç Kasabalar İsyanı'nı başlatmıştır." },
+            { term: "Dunas Zia", type: "Kişi", desc: "M.Ö. 39- M.S. 0. 'Adaletin Sessiz Elçisi'. Skarrgard Duvarı'nı keşfettiği için Kral IV. Aserilios tarafından idam edilen idealist diplomat." },
+            { term: "Skarryion Damethsizi", type: "Kişi", desc: "M.Ö. 32- M.S. 12. 'Devrimin Kalemi'. Skarrgard'ın kurucusu ve ilk kralı. Bağımsızlık savaşını medya gücü ve stratejiyle kazanmıştır." },
+            { term: "Eumandarg Damethsizi", type: "Kişi", desc: "M.Ö. 22- M.S. 19. Skarrgard'ın 2. Kralı, Skarryion'un kardeşi. Devleti kurumsallaştıran ve Damethia Anlaşması'nı hazırlayan 'Mirasın Bekçisi'." },
+            { term: "Kaelen Damethsizi", type: "Kişi", desc: "M.S. 1-100. Skarrgard'ın 3. Kralı. 'Gözlemci Kral'. Krallığını 'Uzun Kış' izolasyonuyla dış tehditlerden korumuştur." },
+            { term: "Stellan Korvath", type: "Kişi", desc: "Skarrgard Devrim Konseyi Başbakanı. Kaelus Theron ve Aserwar Gedian ile Üçlü Pakt'ı imzalayan devlet adamı." },
+            { term: "Nevery Aserilios (IV. Aserilios)", type: "Kişi", desc: "M.Ö. 44- M.S. 9. 'Aserlerin Kara Lekesi'. Demir Vergi politikasıyla Skarrgard isyanını tetikleyen tiran kral." },
+            { term: "Denoistos Los Aser", type: "Kişi", desc: "M.Ö. 28- M.S. 51. 'İmparatorluğun Kasabı'. Skarrgard devriminin generali iken intikam hırsıyla savaş suçlusu haline gelen trajik komutan." },
+            { term: "Yüzbaşı Torvin", type: "Kişi", desc: "Kurt Kalesi'nin sadık yüzbaşısı. Denoistos'un ahlaki vicdanı olmaya çalışmış, onun ordusundan sağ kalan tek kişidir." },
+            { term: "Madam Maria Von Cortex", type: "Kişi", desc: "M.Ö. 22- M.S. 36. Batı AserLand Kraliçesi. Damethia Anlaşması'nı imzalayan ve demokratik reformlar yapan 'Özgürlüğün Şafağı'." },
+            { term: "Madam Elena Von Cortex", type: "Kişi", desc: "M.S. 37'de kısa süre Doğu AserLand'i yöneten, 'Kayıp Reformcu' olarak bilinen lider." },
+            { term: "Celestine D'Arvell", type: "Kişi", desc: "M.S. 3-69. Aseria'nın (Doğu AserLand) lideri. Bölgeyi mutlak bürokrasi ve izolasyonla yöneten 'Mutlak Olanın Yankısı'." },
+            { term: "Silus Praxton", type: "Kişi", desc: "Celestine'den sonra ASC'nin başına geçen Baş Konsül. Hayalet Savaşı'nı yönetmiş ve Üçlü Pakt'ı imzalamıştır." },
+            { term: "Zykrath Vhalgoroth Aser", type: "Kişi", desc: "M.S. 0-98. Batı AserLand Kralı. Otoriter ve paranoyak yönetimiyle Proje Behemoth'u inşa ettiren 'Kırık Tacın Hiddeti'." },
+            { term: "AserTechno", type: "Kişi / Unvan", desc: "Ironheart'lı dâhi mühendis ve ilk Teknoloji Bakanı. Bilimi halk yararına kullandığı için Zykrath tarafından öldürtülmüştür." },
+            { term: "Elara Ventis", type: "Kişi", desc: "AserTechno'nun çırağı. Ironheart Teknoloji Protestoları'nı yöneten ve TÖH'e ilham olan direnişçi mühendis." },
+            { term: "Kaelus Theron", type: "Kişi", desc: "M.S. 61-104. 'Lord Koruyucu'. Batı AserLand'in tiran generali. Proje Behemoth ile Gecelerin Pelerini'ni yok etmiştir." },
+            { term: "Morvran Corvus", type: "Kişi", desc: "'Tepeden Bakan Göz'. Zykrath'ın casus ustası ve Demir Göz teşkilatının lideri." },
+            { term: "Lucian 'Baron' Mhoore", type: "Kişi", desc: "'Kaosun Tüccarı'. Ithranlı uyuşturucu baronu ve 'Şirket'in kurucusu. Aserwar Gedian'ın eski patronu." },
+            { term: "Aserwar Gedian", type: "Kişi", desc: "M.S. 68-120. AserCouncil'in kurucusu, 'Suikastçı Mimar'. Kaelus'u devirip Denge düzenini kuran lider." },
+            { term: "Joel Van Cortex", type: "Kişi", desc: "Teknoloji Özgürlüğü Hareketi'nin (TÖH) lideri. Gedian ile ittifak kurarak Kaelus'un devrilmesine yardım etmiştir." },
+            { term: "AserFire", type: "Kişi", desc: "AserCouncil kurucusu. Patlayıcı uzmanı ve sabotajcı kardeş." },
+            { term: "AserIce", type: "Kişi", desc: "AserCouncil kurucusu. Soğukkanlı analist ve istihbaratçı kardeş." },
+            { term: "AserSpace", type: "Kişi", desc: "AserCouncil kurucusu. İnanılmaz çevikliğiyle tanınan hırsız ve sızma uzmanı kardeş." },
+            { term: "AserStick", type: "Kişi", desc: "AserCouncil kurucusu. Grubun savunma hattı ve 'sarsılmaz duvarı' olan kardeş." },
+            { term: "Gecelerin Pelerini Kurucusu", type: "Kişi", desc: "Aser-Asrier savaşları sırasında Ithran'a kaçarak örgütü kuran isimsiz alim." },
+            { term: "Üstat Valerius", type: "Kişi", desc: "Denoistos'un hocası. Ona 'korku ile yönetme' stratejisini öğreten kişi." },
+            { term: "Bjorn", type: "Kişi", desc: "Kuzey halkının uğradığı zulmü bildirmek için saraya gelen ve hapsedilen kuzeyli heyet lideri." },
+            { term: "Lord Corvin", type: "Kişi", desc: "Demir Vergi buyruğunu Kurt Kalesi'ne getiren vergi tahsildarı." },
+            { term: "Elias", type: "Kişi", desc: "EASC memuru. Celestine D'Arvell'in yükselişine tanıklık eden anlatıcı." },
+            { term: "Edrin Valtos", type: "Kişi", desc: "Rotto Kant Aser'in birleşme çabalarında onun yanında yer alan yerel lider." },
+
+            // --- KURUMLAR VE ORGANİZASYONLAR ---
+            { term: "AserCouncil (Eski)", type: "Kurum", desc: "Aser hanedanlığının geleneksel yönetim organı. Soylulardan oluşan eski meclis." },
+            { term: "AserCouncil (Gedian)", type: "Kurum", desc: "Aserwar Gedian tarafından kurulan, liderin gücünü denetleyen ve devleti koruyan anayasal konsey." },
+            { term: "Aseria Yüksek Konseyi (ASC)", type: "Kurum", desc: "Celestine D'Arvell'in ölümünden sonra Aseria'yı yöneten bürokratlar meclisi." },
+            { term: "Doğu AserLand Yüksek Konseyi (EASC)", type: "Kurum", desc: "Maria Von Cortex tarafından Doğu AserLand'de demokrasiyi sağlamak için kurulan meclis." },
+            { term: "Aserwar Savaş Okulu", type: "Kurum", desc: "AserLand'in en prestijli askeri akademisi. Birçok tarihi figürü mezun etmiştir." },
+            { term: "Gecelerin Pelerini", type: "Organizasyon", desc: "Denge felsefesini savunan, Ithran Deltası merkezli gizli ve kadim örgüt." },
+            { term: "Teknoloji Özgürlüğü Hareketi (TÖH)", type: "Organizasyon", desc: "Bilimin özgürlüğünü savunan yeraltı mühendislik örgütü. Daha sonra resmi kuruma dönüşmüştür." },
+            { term: "Demir Göz", type: "Organizasyon", desc: "Kral Zykrath tarafından kurulan acımasız gizli polis teşkilatı." },
+            { term: "Şirket", type: "Organizasyon", desc: "Baron Mhoore tarafından yönetilen kıtalararası kaçakçılık ve istihbarat ağı." },
+
+            // --- BÖLGELER VE YERLER ---
+            { term: "AserLand (Birleşik)", type: "Bölge", desc: "Rotto Kant Aser tarafından kurulan tüm kıtayı kapsayan eski krallık." },
+            { term: "AserLand (Batı)", type: "Bölge", desc: "Damethia Anlaşması ile bölünen, başkenti Aserion olan devlet." },
+            { term: "Aseria", type: "Bölge", desc: "Eski Doğu AserLand. Celestine D'Arvell tarafından yeniden adlandırılmıştır. Başkenti Supremia." },
+            { term: "Skarrgard", type: "Bölge", desc: "AserNorthia'nın bağımsızlığını kazandıktan sonraki adı. Başkenti Damethia." },
+            { term: "Aserion", type: "Bölge", desc: "AserLand Krallığı'nın ve Batı AserLand'in tarihi başkenti." },
+            { term: "Supremia", type: "Bölge", desc: "Aseria'nın (Doğu AserLand) başkenti." },
+            { term: "Damethia", type: "Bölge", desc: "Skarrgard'ın başkenti. Eski adı Kurt Kalesi." },
+            { term: "Kurt Kalesi", type: "Bölge", desc: "AserNorthia'nın ana garnizonu. Skarrgard devriminin başladığı yer." },
+            { term: "Karyon Surları", type: "Bölge", desc: "Baelor Korth'un son kalesi. Baelor burada gizemli şekilde kaybolmuştur." },
+            { term: "Ternas", type: "Bölge", desc: "Baelor Korth İsyanı'nın merkezi olan doğu kasabası." },
+            { term: "Aldewood", type: "Bölge", desc: "Zengin ormanları ve teknoloji enstitüsüyle bilinen stratejik bölge." },
+            { term: "Ironheart", type: "Bölge", desc: "AserLand'in sanayi ve teknoloji merkezi. TÖH'ün doğum yeri." },
+            { term: "Ithran", type: "Bölge", desc: "Aseria'ya bağlı bataklık deltası. Gecelerin Pelerini'nin sığınağı." },
+            { term: "Ironreach", type: "Bölge", desc: "Hukuk fakültesiyle bilinen batı körfez kenti." },
+            { term: "Ironhand", type: "Bölge", desc: "Rotto ve Eldorin'in doğduğu fakir köy." },
+            { term: "Skinnyleg", type: "Bölge", desc: "Akademisyenlerin ve müzik okulunun bulunduğu doğu şehri." },
+            { term: "Fatlag", type: "Bölge", desc: "Skinnyleg'in güneyinde bulunan doğu şehri." },
+            { term: "Yılanın Geçidi", type: "Bölge", desc: "Damethia yakınlarındaki stratejik dağ geçidi." },
+            { term: "Fork", type: "Bölge", desc: "Yılanın Geçidi'nin güney koridoruyla birleştiği nokta." },
+            { term: "Oakhaven", type: "Bölge", desc: "Kuzey Ithran'da bulunan, Denoistos'un katliam yaptığı küçük kasaba." },
+            { term: "Batı Koridoru", type: "Bölge", desc: "Skarrgard Surları'nın bulunduğu stratejik sınır hattı." },
+            { term: "Çekişme Denizi", type: "Bölge", desc: "Aldewood ve Skarrgard arasında kalan körfez denizi." },
+            { term: "Kıyamet Suları (The Doom Waters)", type: "Bölge", desc: "Tehlikeli yaratıkların yaşadığı güneydoğu deniz bölgesi." },
+            { term: "Aserian Gulf", type: "Bölge", desc: "Skinnyleg ve Fatlag arasındaki körfez." },
+            { term: "Aserian Multi Gulf", type: "Bölge", desc: "Aseria ve Batı AserLand sınırındaki üçlü körfez." },
+            { term: "Ironreach Körfezi", type: "Bölge", desc: "Ironreach ve Ironheart arasındaki körfez." },
+            { term: "Ithranlı Körfezi", type: "Bölge", desc: "Ithran Deltası kıyısındaki körfez." },
+            { term: "Skarrgardlı Denizi", type: "Bölge", desc: "Oakhaven ve Damethia arasındaki deniz." },
+
+            // --- OLAYLAR VE SAVAŞLAR ---
+            { term: "Damethia Anlaşması", type: "Olay / Milat", desc: "M.S. 0. Skarrgard'ın bağımsızlığını tanıyan ve AserLand'i bölen tarihi antlaşma." },
+            { term: "Üçlü Pakt", type: "Olay / Anlaşma", desc: "Kaelus'un devrilmesinden sonra üç devlet arasında imzalanan kalıcı barış anlaşması." },
+            { term: "Baelor Korth İsyanı", type: "Olay / İsyan", desc: "M.Ö. 485. Eski düzen yanlılarının Rotto'nun birleşme fikrine karşı başlattığı isyan." },
+            { term: "Demir Vergi", type: "Olay / Politika", desc: "IV. Aserilios'un kuzey halkına dayattığı, bağımsızlık savaşını tetikleyen baskıcı vergi." },
+            { term: "Aldewood Baskını", type: "Olay / İşgal", desc: "Denoistos'un kaynak toplama bahanesiyle Aldewood'a yaptığı askeri harekat." },
+            { term: "Kuzey Ithran İşgali", type: "Olay / İşgal", desc: "Denoistos'un intikam amacıyla başlattığı ve kontrolden çıkan kanlı harekat." },
+            { term: "Ironheart Teknoloji Protestoları", type: "Olay / İsyan", desc: "AserTechno'nun ölümü üzerine mühendislerin başlattığı ve kanlı bastırılan direniş." },
+            { term: "Sessizlik Duvarı", type: "Olay / Politika", desc: "Batı ve Doğu AserLand arasındaki mutlak izolasyon dönemi." },
+            { term: "Hayalet Savaşı", type: "Olay / Savaş", desc: "Zykrath ve ASC arasında, TÖH kullanılarak yürütülen vekalet savaşı." },
+            { term: "Gölgelerin Avı", type: "Olay / Savaş", desc: "Kaelus Theron'un Proje Behemoth'u kullanarak Gecelerin Pelerini'ni yok ettiği operasyon." },
+            { term: "Gölge Savaşı", type: "Olay / Savaş", desc: "Gedian'ın Kaelus'a karşı yürüttüğü cerrahi ve gizli direniş mücadelesi." },
+
+            // --- NESNELER VE KAVRAMLAR ---
+            { term: "Denge", type: "Felsefe", desc: "Kaos ve Tiranlık arasındaki hassas noktayı korumayı amaçlayan ideoloji." },
+            { term: "Proje Behemoth", type: "Alet / Silah", desc: "Zykrath tarafından yaptırılan, 'Titan of Ironheart' olarak bilinen devasa yıkım makinesi." },
+            { term: "Cañón de los Aseros", type: "Alet / Silah", desc: "AserTechno'nun yaptığı devasa kuşatma topları." },
+            { term: "Skarrgard Duvarı", type: "Yapı", desc: "Skarryion tarafından inşa ettirilen, bağımsızlık ilanı niteliğindeki sınır duvarı." },
+            { term: "Hayalet Öpücüğü", type: "Nesne", desc: "Gecelerin Pelerini'nin kullandığı, sanrılara sebep olan kimyasal." },
+            { term: "Kızıl Yosun Tentürü", type: "Nesne", desc: "Gecelerin Pelerini'nin kullandığı felç edici zehir." },
+            { term: "Engerek Uykusu", type: "Nesne", desc: "Gecelerin Pelerini'nin kullandığı, kalp krizini taklit eden ölümcül nörotoksin." },
+            { term: "Efsanevi Yedi", type: "Kavram", desc: "Baelor Korth İsyanı'nda isyancıların astığı eski lider flamaları." },
+            { term: "Halkın Umudu", type: "Kavram", desc: "Elena Von Cortex'in sunduğu ancak Celestine tarafından reddedilen yasa tasarısı." },
+            { term: "Gedian", type: "Grup", desc: "Aserwar Gedian'ın gençliğinde kurduğu, geceleri adalet dağıtan ilk grubun adı." },
+            { term: "Güneyin Hayaletleri", type: "Lakap", desc: "Gedian grubuna halk tarafından takılan isim." },
+            { term: "Su Halkı", type: "Topluluk", desc: "Ithran Deltası'nda izole yaşayan yerel topluluk." },
+
+            // --- MÜZİK VE MARŞLAR ---
+            { term: "Iron Hands, United Hearts", type: "Müzik / Marş", desc: "AserLand'in ulusal marşı. Eldorin Valtas Aser tarafından bestelenmiştir." },
+            { term: "Echoes of Democracy", type: "Müzik / Marş", desc: "Aseria'nın (Doğu AserLand) ulusal marşı. Celestine D'Arvell tarafından bestelenmiştir." },
+            { term: "Sharp as Words", type: "Müzik / Marş", desc: "Skarrgard'ın ulusal marşı. Skarrgard Müzik Akademisi tarafından bestelenmiştir." },
+            { term: "The Pen of Revolution", type: "Müzik / Tema", desc: "Skarryion Damethsizi'nin tema müziği." },
+            { term: "Unyielding Dawn of Freedom", type: "Müzik / Tema", desc: "Madam Maria Von Cortex'in tema müziği. Celestine tarafından bestelenmiştir." },
+            { term: "As the Pendulum Swings", type: "Müzik / Tema", desc: "Gecelerin Pelerini örgütünün tema müziği." },
+            { term: "Echo of the Absolute", type: "Müzik / Tema", desc: "Celestine D'Arvell'in tema müziği." },
+            { term: "Tacit Opinion of the Stacks", type: "Müzik / Tema", desc: "Celestine'in yazdığı hikayeyi anlatan parça." },
+            { term: "Wrath of a Broken Crown", type: "Müzik / Tema", desc: "Kral Zykrath Vhalgoroth Aser'in tema müziği." },
+            { term: "Titan of Ironheart", type: "Müzik / Tema", desc: "Proje Behemoth'un tema müziği." },
+            { term: "The Empire's Butcher", type: "Müzik / Tema", desc: "General Denoistos Los Aser'in tema müziği." },
+            { term: "Lord Protector", type: "Müzik / Tema", desc: "Kaelus Theron'un tema müziği." },
+            { term: "The Assassin Architect", type: "Müzik / Tema", desc: "Aserwar Gedian'ın tema müziği. Kardeşi AserSpace tarafından bestelenmiştir." }
         ];
 
         // --- FONKSİYONLAR ---
@@ -231,8 +309,8 @@
             } else {
                 noResultMsg.style.display = 'none';
                 
-                // Alfabetik sırala
-                data.sort((a, b) => a.term.localeCompare(b.term));
+                // Alfabetik sırala (Türkçe karakter duyarlı)
+                data.sort((a, b) => a.term.localeCompare(b.term, 'tr'));
 
                 data.forEach(item => {
                     const card = document.createElement('div');
@@ -250,11 +328,13 @@
         }
 
         searchInput.addEventListener('input', (e) => {
-            const searchText = e.target.value.toLowerCase();
+            const searchText = e.target.value.toLocaleLowerCase('tr');
+            
             const filteredData = dictionaryData.filter(item => {
-                return item.term.toLowerCase().includes(searchText) || 
-                       item.desc.toLowerCase().includes(searchText);
+                return item.term.toLocaleLowerCase('tr').includes(searchText) || 
+                       item.desc.toLocaleLowerCase('tr').includes(searchText);
             });
+
             loadTerms(filteredData);
         });
 
