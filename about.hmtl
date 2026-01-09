@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkında | Argoteda</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="wiki/favicon.png">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #050505; --panel: #111; --yazi: #e0e0e0; --gri: #333; }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            background-color: var(--arka-plan); 
+            color: var(--yazi); 
+            font-family: 'Segoe UI', sans-serif; 
+            line-height: 1.6;
+            display: flex; flex-direction: column; min-height: 100vh;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 1px solid var(--gri); padding: 20px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
+        nav a:hover { color: var(--ana-renk); }
+        nav a.active { color: var(--ana-renk); border-bottom: 2px solid var(--ana-renk); padding-bottom: 5px; }
+
+        /* HERO SECTION */
+        .about-hero {
+            background: linear-gradient(to bottom, #101010, #050505);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--gri);
+        }
+
+        .hero-title { font-size: 2.5rem; color: var(--ana-renk); margin-bottom: 10px; letter-spacing: 3px; text-transform: uppercase; }
+        .hero-subtitle { color: #888; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        /* MAIN CONTENT CONTAINER */
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        /* BIO SECTIONS */
+        .bio-section {
+            margin-bottom: 40px;
+            background: var(--panel);
+            border-left: 4px solid var(--ana-renk);
+            padding: 30px;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        .bio-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 10px;
+        }
+
+        .bio-header i { font-size: 1.5rem; color: var(--ana-renk); }
+        .bio-title { font-size: 1.4rem; color: #fff; font-weight: bold; text-transform: uppercase; }
+
+        .bio-text { color: #ccc; font-size: 1rem; text-align: justify; }
+        .bio-text p { margin-bottom: 15px; }
+
+        /* PROFILE CARD (Üstteki Kısa Özet) */
+        .profile-card {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 50px;
+            background: #0a0a0a;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #222;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--ana-renk);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+        }
+
+        .profile-info h2 { color: #fff; margin-bottom: 5px; font-size: 1.8rem; }
+        .profile-info .alias { color: var(--ana-renk); font-weight: bold; font-size: 1rem; display: block; margin-bottom: 15px; }
+        .tag-cloud { display: flex; gap: 10px; flex-wrap: wrap; }
+        .tag { background: #222; color: #aaa; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; border: 1px solid #333; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .profile-card { flex-direction: column; text-align: center; }
+            .hero-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="music.html">Müzik</a>
+        <a href="wiki/index.html">Wiki</a>
+        <a href="about.html" class="active">Hakkında</a>
+    </nav>
+
+    <header class="about-hero">
+        <h1 class="hero-title">Hikayenin Arkasındaki Zihin</h1>
+        <p class="hero-subtitle">Müzisyen, Yazar ve Oyun Geliştiricisi.</p>
+    </header>
+
+    <div class="container">
+
+        <div class="profile-card">
+            <img src="https://via.placeholder.com/150/111/FFD700?text=ARGOTEDA" alt="Argoteda" class="profile-img">
+            <div class="profile-info">
+                <h2>Enes Cihan</h2>
+                <span class="alias">a.k.a ARGOTEDA</span>
+                <p style="color:#888; margin-bottom:15px;">İstanbul, Türkiye doğumlu multidisipliner sanatçı. AserLand evreninin yaratıcısı.</p>
+                <div class="tag-cloud">
+                    <span class="tag">Music Producer</span>
+                    <span class="tag">Game Dev</span>
+                    <span class="tag">Storyteller</span>
+                    <span class="tag">FL Studio</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bio-section">
+            <div class="bio-header">
+                <i class="fas fa-terminal"></i>
+                <h3 class="bio-title">Dijital Kökenler</h3>
+            </div>
+            <div class="bio-text">
+                <p>
+                    Gerçek ismim Enes Cihan olsa da, dijital dünyada ve sanat camiasında <strong>Argoteda</strong> mahlasıyla tanınırım. Eylül 2003'te İstanbul'da başlayan yolculuğum, henüz 6 yaşındayken teknolojiyle tanışmamla şekillendi. Bilgisayar dünyasına duyduğum merak, beni sadece bir kullanıcı olmaktan çıkarıp, kendi içeriklerini üreten bir yaratıcıya dönüştürdü.
+                </p>
+            </div>
+        </div>
+
+        <div class="bio-section">
+            <div class="bio-header">
+                <i class="fas fa-music"></i>
+                <h3 class="bio-title">Müzikal Evrim</h3>
+            </div>
+            <div class="bio-text">
+                <p>
+                    Müziğe olan ilgim 14 yaşında başladı. Kendi kendime <strong>FL Studio</strong> öğrenerek başladığım bu süreç, darbuka ve piyano gibi enstrümanlarla derinleşti. 2022 yılında yaşadığım kişisel bir kaybın ardından müziğe verdiğim iki yıllık zorunlu arayı, 2024'te <em>"War Against War"</em> albümüyle sonlandırdım.
+                </p>
+                <p>
+                    Başlangıçta Synthwave, Electronic ve Dubstep türlerinde eserler üretirken, yapay zeka araçlarını minimalize etme kararımla birlikte prodüksiyon yeteneklerimi geliştirdim. <em>"Rockomania"</em> albümüyle rock müziğe adım attım ve bağımsız vokalistlerle işbirlikleri yaparak diskografimi genişlettim.
+                </p>
+            </div>
+        </div>
+
+        <div class="bio-section">
+            <div class="bio-header">
+                <i class="fas fa-book-open"></i> <h3 class="bio-title">AserLand Projesi</h3>
+            </div>
+            <div class="bio-text">
+                <p>
+                    Müzik benim için sadece notalardan ibaret değil, bir anlatım aracıdır. Eski bir arkadaşımın ricası üzerine yaptığım bir orkestral remix, zihnimde 2014'ten beri kurguladığım <strong>AserLand</strong> hikayesini canlandırmamı sağladı.
+                </p>
+                <p>
+                    Müziği hikaye anlatımıyla birleştirerek <em>"AserLand Pt.1"</em> ve ardından daha derin bir kurguya sahip olan <em>"AserLand Pt.2"</em> albümlerini yayımladım. Bu albümler sadece müzik değil; haritası, hükümdarları ve karakterleri (Celestine D'Arvell, Eldorin Valtas Aser) olan yaşayan bir evrenin sesleridir.
+                </p>
+            </div>
+        </div>
+
+        <div class="bio-section">
+            <div class="bio-header">
+                <i class="fas fa-gamepad"></i>
+                <h3 class="bio-title">Gelecek Vizyonu: Skarrgard</h3>
+            </div>
+            <div class="bio-text">
+                <p>
+                    Hikayeyi anlatmanın en etkileşimli yolu olarak oyun geliştirmeye yöneldim. Şu anda, ana karakteri <em>Skarryion Damethsizi</em> olan ve Skarrgard'ın bağımsızlık mücadelesini konu alan bir oyun geliştiriyorum. Tüm kodlama ve tasarım süreçlerini tek başıma yürüttüğüm bu proje, yorucu olsa da en büyük tutkum.
+                </p>
+                <p>
+                    <em>"Kimse hiçbir şey anlamadı"</em> diyerek başladığım bu yolda, anlaşılmayı beklemiyor; kendi evrenimi inşa etmeye devam ediyorum.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
