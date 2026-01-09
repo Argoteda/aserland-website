@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AserDictionary | AserLand Terimler Sözlüğü</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #050505; --panel: #111; --yazi: #e0e0e0; --gri: #333; }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            background-color: var(--arka-plan); 
+            color: var(--yazi); 
+            font-family: 'Segoe UI', sans-serif; 
+            display: flex; flex-direction: column; min-height: 100vh;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* NAVBAR */
+        nav { background: #000; border-bottom: 1px solid var(--gri); padding: 20px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav a { color: #fff; margin: 0 15px; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
+        nav a:hover { color: var(--ana-renk); }
+        nav a.active { color: var(--ana-renk); border-bottom: 2px solid var(--ana-renk); padding-bottom: 5px; }
+
+        /* HERO & SEARCH AREA */
+        .dict-hero {
+            background: linear-gradient(to bottom, #101010, #050505);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--gri);
+        }
+
+        .hero-title { font-size: 3rem; color: var(--ana-renk); margin-bottom: 10px; letter-spacing: 3px; text-transform: uppercase; }
+        .hero-subtitle { color: #888; margin-bottom: 40px; }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 20px;
+            padding-left: 50px;
+            font-size: 1.1rem;
+            background: #000;
+            border: 2px solid #333;
+            color: #fff;
+            border-radius: 30px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-input:focus { border-color: var(--ana-renk); box-shadow: 0 0 15px rgba(255, 215, 0, 0.2); }
+        
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        /* RESULTS GRID */
+        .results-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .term-card {
+            background: var(--panel);
+            border: 1px solid #222;
+            padding: 25px;
+            border-radius: 10px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .term-card:hover {
+            border-color: var(--ana-renk);
+            transform: translateY(-5px);
+            background: #161616;
+        }
+
+        .term-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 100%;
+            background: var(--ana-renk);
+        }
+
+        .term-title {
+            font-size: 1.4rem;
+            color: var(--ana-renk);
+            margin-bottom: 10px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .term-category {
+            font-size: 0.7rem;
+            background: #222;
+            color: #888;
+            padding: 3px 8px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid #333;
+        }
+
+        .term-desc {
+            color: #ccc;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* BOŞ SONUÇ MESAJI */
+        .no-result {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 1.2rem;
+            display: none; /* Başlangıçta gizli */
+        }
+
+        @media (max-width: 768px) { .hero-title { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html">Ana Sayfa</a>
+        <a href="../music.html">Müzik</a>
+        <a href="index.html">Wiki</a> <a href="../about.html">Hakkında</a>
+        <a href="dictionary.html" class="active">Sözlük</a>
+    </nav>
+
+    <header class="dict-hero">
+        <h1 class="hero-title">AserDictionary</h1>
+        <p class="hero-subtitle">AserLand evrenine dair terimler, kavramlar ve anlamlar.</p>
+        
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="searchInput" class="search-input" placeholder="Terim ara... (Örn: Ironheart, Skarrgard)">
+        </div>
+    </header>
+
+    <div class="results-container" id="dictionaryGrid">
+        <div class="no-result" id="noResultMsg">
+            <i class="fas fa-ghost" style="font-size:2rem; margin-bottom:10px; display:block;"></i>
+            Aradığınız terim arşivlerde bulunamadı.
+        </div>
+    </div>
+
+    <script>
+        // --- VERİ TABANI ---
+        const dictionaryData = [
+            { 
+                term: "AserLand", 
+                type: "Coğrafya", 
+                desc: "Argoteda tarafından kurgulanan, hikayenin geçtiği ana kıta ve imparatorluğun merkezi." 
+            },
+            { 
+                term: "Ironheart", 
+                type: "Organizasyon", 
+                desc: "AserLand içindeki protestoları bastırmak ve düzeni sağlamak için kullanılan askeri güç ve demir yumruk simgesi." 
+            },
+            { 
+                term: "Skarrgard", 
+                type: "Bölge", 
+                desc: "Bağımsızlık mücadelesinin verildiği, soğuk iklimiyle bilinen kuzey bölgesi. Skarryion Damethsizi'nin memleketi." 
+            },
+            { 
+                term: "Skarryion Damethsizi", 
+                type: "Kişi", 
+                desc: "Skarrgard'ın bağımsızlığı için savaşan ana karakter ve devrim lideri." 
+            },
+            { 
+                term: "Celestine D'Arvell", 
+                type: "Kişi", 
+                desc: "AserLand evreninde müzikal eserleriyle tanınan, 'Echoes of Democracy' gibi parçaların bestecisi olduğu varsayılan karakter." 
+            },
+            { 
+                term: "War Against War", 
+                type: "Olay / Albüm", 
+                desc: "Hem büyük savaş karşıtı hareketi hem de Argoteda'nın bu dönemi anlatan müzik albümü." 
+            },
+            { 
+                term: "Argoteda", 
+                type: "Yaratıcı", 
+                desc: "AserLand evreninin kurucusu, yazarı ve bestecisi olan Enes Cihan'ın mahlası." 
+            },
+            { 
+                term: "Behemoth", 
+                type: "Silah / Makine", 
+                desc: "Titan of Ironheart olarak da bilinen, savaşın seyrini değiştiren devasa mekanik yapı." 
+            },
+             { 
+                term: "Eldorin Valtas Aser", 
+                type: "Kişi", 
+                desc: "Aser hanedanının önemli figürlerinden biri, imparatorluk tarihinde kritik bir rol oynar." 
+            }
+        ];
+
+        // --- FONKSİYONLAR ---
+
+        const searchInput = document.getElementById('searchInput');
+        const grid = document.getElementById('dictionaryGrid');
+        const noResultMsg = document.getElementById('noResultMsg');
+
+        function loadTerms(data) {
+            const existingCards = document.querySelectorAll('.term-card');
+            existingCards.forEach(card => card.remove());
+
+            if (data.length === 0) {
+                noResultMsg.style.display = 'block';
+            } else {
+                noResultMsg.style.display = 'none';
+                
+                // Alfabetik sırala
+                data.sort((a, b) => a.term.localeCompare(b.term));
+
+                data.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'term-card';
+                    card.innerHTML = `
+                        <div class="term-title">
+                            ${item.term}
+                            <span class="term-category">${item.type}</span>
+                        </div>
+                        <div class="term-desc">${item.desc}</div>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            const searchText = e.target.value.toLowerCase();
+            const filteredData = dictionaryData.filter(item => {
+                return item.term.toLowerCase().includes(searchText) || 
+                       item.desc.toLowerCase().includes(searchText);
+            });
+            loadTerms(filteredData);
+        });
+
+        loadTerms(dictionaryData);
+    </script>
+
+</body>
+</html>
