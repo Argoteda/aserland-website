@@ -211,6 +211,68 @@
             color: var(--ana-renk);
         }
 
+        /* LİGHTBOX (MODAL) EFEKTİ İÇİN CSS */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            padding-top: 60px; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.9); 
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            border: 2px solid var(--ana-renk);
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+            animation: zoom 0.3s ease;
+        }
+
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: var(--ana-renk);
+            padding: 15px 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            animation: zoom 0.3s ease;
+        }
+
+        @keyframes zoom {
+            from {transform:scale(0)} 
+            to {transform:scale(1)}
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: var(--ana-renk);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 <body>
@@ -311,6 +373,42 @@
         </div>
 
     </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="fullImage">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("fullImage");
+        var captionText = document.getElementById("caption");
+        var images = document.querySelectorAll(".screenshot");
+        var span = document.getElementsByClassName("close")[0];
+
+        // Resimlere tıklanınca büyüt
+        images.forEach(function(img) {
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                // Resmin hemen altındaki .media-caption içindeki yazıyı modal başlığı olarak al
+                captionText.innerHTML = this.nextElementSibling.innerHTML;
+            }
+        });
+
+        // Çarpı ikonuna basınca kapat
+        span.onclick = function() { 
+            modal.style.display = "none";
+        }
+
+        // Resmin dışındaki siyah alana tıklayınca da kapat
+        modal.onclick = function(e) {
+            if (e.target !== modalImg) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
