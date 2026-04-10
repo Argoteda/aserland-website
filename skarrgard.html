@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skarrgard Revolution | AserLand</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="wiki/favicon.png">
+    <link rel="canonical" href="https://aserland.com/skarrgard.html" />
+
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #050505; --yazi: #e0e0e0; --panel: #111; --mavi: #00e5ff; }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            background: linear-gradient(rgba(5, 5, 5, 0.92), rgba(5, 5, 5, 0.92)), url('images/arkaplan.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--yazi); 
+            font-family: 'Segoe UI', sans-serif; 
+        }
+
+        /* Geri Dönüş Menüsü */
+        nav { 
+            background: rgba(0, 0, 0, 0.8); 
+            border-bottom: 2px solid var(--ana-renk); 
+            padding: 15px; 
+            text-align: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 99; 
+            backdrop-filter: blur(5px);
+        }
+        nav a { color: #fff; text-decoration: none; margin: 0 15px; font-weight: bold; transition: 0.3s; text-transform: uppercase; }
+        nav a:hover { color: var(--ana-renk); }
+
+        /* OYUN KAPAĞI BÖLÜMÜ (HERO) */
+        .game-hero {
+            text-align: center;
+            padding: 60px 20px 20px;
+        }
+
+        .game-logo-text {
+            font-size: 3.5rem;
+            color: var(--ana-renk);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .game-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: rgba(0, 229, 255, 0.1);
+            color: var(--mavi);
+            border: 1px solid var(--mavi);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        /* METİN İÇERİK ALANI */
+        .content-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Intro Paragrafı (Ana özet) */
+        .intro-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #fff;
+            text-align: justify;
+            border-left: 4px solid var(--ana-renk);
+            padding-left: 20px;
+            margin-bottom: 50px;
+            background: rgba(17, 17, 17, 0.6);
+            padding: 20px 20px 20px 25px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        /* Detay Bölümleri */
+        .detail-section {
+            background: var(--panel);
+            border: 1px solid #222;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: var(--ana-renk);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .detail-list {
+            list-style-type: none;
+        }
+
+        .detail-list li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #ccc;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        /* Listelerin başına sarı kılıç ikonu ekler */
+        .detail-list li::before {
+            content: '\f6d1'; 
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--ana-renk);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        .detail-text {
+            color: #ccc;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        /* GALERİ VE MEDYA BÖLÜMÜ */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .screenshot {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border: 2px solid #333;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .screenshot:hover {
+            border-color: var(--ana-renk);
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        /* AUDIO PLAYER (Sarı temalı müzik çalar) */
+        .audio-wrapper {
+            margin-top: 15px;
+            width: 100%;
+            background: #0a0a0a;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--ana-renk);
+        }
+
+        .song-title {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        audio {
+            width: 100%;
+            height: 35px;
+        }
+        
+        /* Audio çaların tarayıcıdaki gri rengini AserLand temasına uydurma hilesi */
+        audio::-webkit-media-controls-panel {
+            background-color: var(--panel);
+        }
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display {
+            color: var(--ana-renk);
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="projeler.html"><i class="fas fa-arrow-left"></i> Arşivlere Dön</a>
+        <a href="index.html"><i class="fas fa-home"></i> Ana Sayfa</a>
+    </nav>
+
+    <div class="game-hero">
+        <h1 class="game-logo-text">Skarrgard Revolution</h1>
+        <p style="color: #888; font-size: 1.2rem; letter-spacing: 2px;">AserLand Chronicles</p>
+        
+        <div class="game-tags">
+            <span class="tag">Solo Developer</span>
+            <span class="tag">2D Turn-Based</span>
+            <span class="tag">RPG</span>
+            <span class="tag">Unity & C#</span>
+        </div>
+    </div>
+
+    <div class="content-container">
+
+        <div class="intro-text">
+            AserLand: Skarrgard Revolution, Argoteda tarafından Unity oyun motoru ve C# programlama dili kullanılarak tek kişilik bir ekip (solo developer) bünyesinde geliştirilmekte olan, iki boyutlu (2D) taktiksel sıra tabanlı (turn-based) bir rol yapma oyunudur (RPG). Oyun, salt bir yazılım projesi olmanın ötesinde, arka planında zengin bir "lore" (evren hikayesi) barındıran ve geliştiricinin kendi bestelediği AserLand Pt.1 ve AserLand Pt.2 gibi orijinal orkestral albümlerle desteklenen geniş çaplı bir multimedya evreninin etkileşimli ayağını oluşturur.
+        </div>
+
+        <div class="detail-section">
+            <h2 class="section-title"><i class="fas fa-chess-knight"></i> İçerik Nedir?</h2>
+            <p class="detail-text" style="margin-bottom: 20px;">Oyun, derinlemesine taktiksel savaş mekaniklerine, zengin fraksiyonlara ve stratejik parti yönetimine odaklanan bir yapı sunar. İçerik bağlamında oyunun öne çıkan temel unsurları şunlardır:</p>
+            
+            <ul class="detail-list">
+                <li><strong style="color:#fff;">Taktiksel Savaş Sistemi (BattleManager Mimarisi):</strong> Çarpışmalar, anlık reflekslerden ziyade stratejik planlamaya dayalı sıra tabanlı bir yapıda gerçekleşir. Arka planda çalışan kapsamlı savaş yöneticisi (BattleManager), karakterlerin ve düşmanların hız veya inisiyatif değerlerine göre sıralarını belirler.</li>
+                <li><strong style="color:#fff;">Gelişmiş Düşman Yapay Zekası (Enemy AI):</strong> Düşmanlar (Boss'lar ve Minyonlar) sadece rastgele saldırılar yapmakla kalmaz; oyuncunun can değeri, sahnedeki tank karakterlerin kışkırtma (taunt) yetenekleri veya uygulanan statü etkilerine göre dinamik kararlar alarak hedef belirler.</li>
+                <li><strong style="color:#fff;">Arayüz ve Görsel Bütünlük:</strong> 2D karakter spritelarının sisteme entegrasyonu, hassas pivot noktaları (Bottom Center) baz alınarak tasarlanmıştır. Bu sayede savaş sırasındaki aktif karakteri gösteren belirteçler (Turn Indicators) gibi arayüz (UI) elementleri, görsel akışı bozmadan oyuncuya kusursuz bir taktiksel geri bildirim sağlar.</li>
+                <li><strong style="color:#fff;">Evren ve Lore:</strong> Skarrgard devrimi ve isyanı etrafında şekillenen ana hikaye, "Aser Lejyonerleri" gibi fraksiyonları, siyasi entrikaları ve tarihi kırılmaları barındıran karanlık ve epik bir fantezi dünyasında geçmektedir.</li>
+            </ul>
+        </div>
+
+        <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+            
+            <div class="detail-section" style="flex: 1; min-width: 300px;">
+                <h2 class="section-title"><i class="fas fa-hammer"></i> Ne Aşamadadır?</h2>
+                <p class="detail-text">
+                    Proje şu an itibarıyla <strong>"Ön-Alfa" (Pre-Alpha) / Erken Geliştirme</strong> aşamasındadır. Oyunun belkemiğini oluşturan temel savaş döngüsü, yapay zeka karar mekanizmaları, altyapı kodlamaları ve görsel arayüz prototipleri başarıyla inşa edilmiştir. Ancak projenin bağımsız (indie) ve tek kişilik bir yapım olması; ayrıca geliştirme sürecinin müzik prodüksiyonu ve akademik çalışmalar gibi diğer yaratıcı disiplinlerle paralel yürütülmesi sebebiyle, oyunun veri tabanı, bölüm tasarımları ve geniş çaplı içerik entegrasyonları aşamalı olarak geliştirilmeye devam etmektedir.
+                </p>
+            </div>
+
+            <div class="detail-section" style="flex: 1; min-width: 300px;">
+                <h2 class="section-title"><i class="fas fa-calendar-alt"></i> Çıkış Tarihi</h2>
+                <p class="detail-text">
+                    Projenin nihai çıkış takvimi, oyunun sanatsal bütünlüğünü korumak ve bağımsız geliştirme sürecinin kalite standartlarından ödün vermemek adına <strong>henüz resmi olarak tayin edilmemiştir (TBA)</strong>. Geliştirici, spesifik bir son teslim tarihine (deadline) bağlı kalmaksızın, oyunun mekanik ve hikaye olarak tam olgunluğa eriştiği noktada esnek bir yayın stratejisi izlemeyi öngörmektedir.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="detail-section">
+            <h2 class="section-title"><i class="fas fa-images"></i> Geliştirici Günlükleri (Görseller)</h2>
+            <p class="detail-text" style="font-size: 0.9rem; margin-bottom: 15px;">Ön-Alfa aşamasından test görüntüleri.</p>
+            
+            <div class="media-grid">
+                <img src="images/oyun-resim-1.png" alt="Oyun İçi Test" class="screenshot">
+                <img src="images/oyun-resim-2.png" alt="Savaş Sistemi Test" class="screenshot">
+                <img src="images/oyun-resim-3.png" alt="Karakter Spriteları" class="screenshot">
+            </div>
+        </div>
+
+        <div class="detail-section">
+            <h2 class="section-title"><i class="fas fa-headphones"></i> Resmi Soundtrack</h2>
+            <p class="detail-text" style="font-size: 0.9rem;">Argoteda tarafından oyunun atmosferi için bestelenen parçalar.</p>
+            
+            <div class="audio-wrapper">
+                <div class="song-title">AserLand Pt.1 - Battle Theme</div>
+                <audio controls>
+                    <source src="sarkilar/aserland-pt1.mp3" type="audio/mpeg">
+                    Tarayıcınız müzik çaları desteklemiyor.
+                </audio>
+            </div>
+
+            <div class="audio-wrapper">
+                <div class="song-title">AserLand Pt.2 - The Revolution</div>
+                <audio controls>
+                    <source src="sarkilar/aserland-pt2.mp3" type="audio/mpeg">
+                    Tarayıcınız müzik çaları desteklemiyor.
+                </audio>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
