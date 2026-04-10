@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeler | AserLand</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="wiki/favicon.png">
+    
+    <link rel="canonical" href="https://aserland.com/projeler.html" />
+
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #050505; --yazi: #e0e0e0; --panel: #111; --kilitli: #333; }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            background: linear-gradient(rgba(5, 5, 5, 0.90), rgba(5, 5, 5, 0.90)), url('images/arkaplan.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--yazi); 
+            font-family: 'Segoe UI', sans-serif; 
+            display: flex; flex-direction: column; min-height: 100vh;
+        }
+
+        /* NAVBAR (Geri dönüş için eklendi) */
+        nav { 
+            background: rgba(0, 0, 0, 0.8); 
+            border-bottom: 2px solid var(--ana-renk); 
+            padding: 15px; 
+            text-align: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 99; 
+            backdrop-filter: blur(5px);
+        }
+        nav a { color: #fff; text-decoration: none; margin: 0 15px; font-weight: bold; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        nav a:hover { color: var(--ana-renk); }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* SAYFA BAŞLIĞI */
+        .page-header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            position: relative;
+        }
+
+        .page-title {
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--ana-renk);
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+            margin-bottom: 10px;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: #888;
+            letter-spacing: 2px;
+        }
+
+        /* PROJE IZGARASI */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1300px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        /* GENEL KART STİLİ */
+        .project-card {
+            background: var(--panel);
+            border: 1px solid #222;
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 8px;
+            position: relative;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 250px;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 3px;
+            background: #222;
+            transition: 0.4s;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+
+        .project-desc {
+            color: #999;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            z-index: 2;
+        }
+
+        /* AKTİF PROJE (Skarrgard Revolution) */
+        .project-card.active {
+            border-color: #444;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            cursor: pointer;
+        }
+
+        .project-card.active::before { background: var(--ana-renk); }
+        
+        .project-card.active:hover {
+            transform: translateY(-8px);
+            border-color: var(--ana-renk);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.15);
+        }
+
+        .project-card.active .status-badge {
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--ana-renk);
+            border: 1px solid var(--ana-renk);
+        }
+
+        /* YARI AKTİF PROJE (Rise of the Cold Echo) */
+        .project-card.semi-active {
+            border-color: #222;
+            cursor: pointer;
+        }
+        
+        .project-card.semi-active::before { background: #00e5ff; }
+
+        .project-card.semi-active:hover {
+            transform: translateY(-8px);
+            border-color: #00e5ff;
+            box-shadow: 0 15px 40px rgba(0, 229, 255, 0.1);
+        }
+
+        .project-card.semi-active .status-badge {
+            background: rgba(0, 229, 255, 0.1);
+            color: #00e5ff;
+            border: 1px solid #00e5ff;
+        }
+
+        /* KİLİTLİ PROJELER (Gelecek Planları) */
+        .project-card.locked {
+            opacity: 0.6;
+            background: #0a0a0a;
+            user-select: none;
+        }
+
+        .project-card.locked:hover {
+            opacity: 0.8;
+        }
+
+        .project-card.locked .status-badge {
+            background: transparent;
+            color: #555;
+            border: 1px solid #333;
+        }
+
+        .lock-icon {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        /* DURUM ETİKETLERİ */
+        .status-badge {
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .page-title { font-size: 2.5rem; }
+            .project-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html"><i class="fas fa-home"></i> Ana Sayfa</a>
+    </nav>
+
+    <header class="page-header">
+        <h1 class="page-title">Arşivler</h1>
+        <p class="page-subtitle">AserLand Proje ve Oyun Külliyatı</p>
+    </header>
+
+    <div class="project-grid">
+        
+        <a href="skarrgard.html" class="project-card active">
+            <span class="status-badge"><i class="fas fa-code"></i> Aktif Geliştirme</span>
+            <h3 class="project-title">AserLand: Skarrgard Revolution</h3>
+            <p class="project-desc">2D sıra tabanlı RPG deneyimi. Eski kehanetler gerçekleşirken krallığın kaderini belirleyecek olan büyük isyanın stratejik adımlarını atın.</p>
+        </a>
+
+        <div class="project-card locked">
+            <span class="status-badge"><i class="fas fa-lock"></i> Mühürlü Kayıt</span>
+            <i class="fas fa-user-ninja lock-icon"></i>
+            <h3 class="project-title">AserLand: The Empire's Butcher</h3>
+            <p class="project-desc">Evrenin karanlık geçmişine dair veriler şu an için erişime kapalı.</p>
+        </div>
+
+        <a href="music.html" class="project-card semi-active">
+            <span class="status-badge"><i class="fas fa-headphones"></i> Müzik Dinlenebilir</span>
+            <h3 class="project-title">AserLand: Rise of the Cold Echo</h3>
+            <p class="project-desc">Oyun geliştirme aşamasına geçmeden önce, bu soğuk diyarların ruhunu yansıtan ilk konsept müzik yayında.</p>
+        </a>
+
+        <div class="project-card locked">
+            <span class="status-badge"><i class="fas fa-lock"></i> Mühürlü Kayıt</span>
+            <i class="fas fa-khanda lock-icon"></i>
+            <h3 class="project-title">AserLand: Born from Division</h3>
+            <p class="project-desc">Bölünmüşlükten doğan gücün hikayesi. Dosyalar henüz şifrelenmiş durumda.</p>
+        </div>
+
+        <div class="project-card locked">
+            <span class="status-badge"><i class="fas fa-lock"></i> Mühürlü Kayıt</span>
+            <i class="fas fa-chess-king lock-icon"></i>
+            <h3 class="project-title">AserLand: Two Thrones, One Shadow</h3>
+            <p class="project-desc">Siyasi entrikalar ve gölgelerin savaşı. Veri tabanında kilitli tutuluyor.</p>
+        </div>
+
+        <div class="project-card locked">
+            <span class="status-badge"><i class="fas fa-lock"></i> Mühürlü Kayıt</span>
+            <i class="fas fa-scroll lock-icon"></i>
+            <h3 class="project-title">AserLand: The Assassin Architect</h3>
+            <p class="project-desc">Ölümü bir sanat gibi tasarlayanların gizli arşivi.</p>
+        </div>
+
+        <div class="project-card locked">
+            <span class="status-badge"><i class="fas fa-lock"></i> Mühürlü Kayıt</span>
+            <i class="fas fa-dragon lock-icon"></i>
+            <h3 class="project-title">AserLand: The Behemoth Wars</h3>
+            <p class="project-desc">Büyük savaşın destanları. Tarihçiler tarafından henüz onaylanmadı.</p>
+        </div>
+
+        <div class="project-card locked">
+            <span class="status-badge"><i class="fas fa-lock"></i> Mühürlü Kayıt</span>
+            <i class="fas fa-guitar lock-icon"></i>
+            <h3 class="project-title">AserLand: Son of Behemoth</h3>
+            <p class="project-desc">Ağır metal ve epik orkestranın çarpışacağı karanlık çağ. Frekanslar şu an kilitli.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
