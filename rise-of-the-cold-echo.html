@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rise of the Cold Echo | AserLand</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="wiki/favicon.png">
+    <link rel="canonical" href="https://aserland.com/rise-of-the-cold-echo.html" />
+
+    <style>
+        :root { --ana-renk: #FFD700; --arka-plan: #050505; --yazi: #e0e0e0; --panel: #111; --mavi: #00e5ff; }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            background: linear-gradient(rgba(5, 5, 5, 0.92), rgba(5, 5, 5, 0.92)), url('images/arkaplan.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--yazi); 
+            font-family: 'Segoe UI', sans-serif; 
+        }
+
+        /* Geri Dönüş Menüsü */
+        nav { 
+            background: rgba(0, 0, 0, 0.8); 
+            border-bottom: 2px solid var(--ana-renk); 
+            padding: 15px; 
+            text-align: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 99; 
+            backdrop-filter: blur(5px);
+        }
+        nav a { color: #fff; text-decoration: none; margin: 0 15px; font-weight: bold; transition: 0.3s; text-transform: uppercase; }
+        nav a:hover { color: var(--ana-renk); }
+
+        /* OYUN KAPAĞI BÖLÜMÜ (HERO) */
+        .game-hero {
+            text-align: center;
+            padding: 60px 20px 20px;
+        }
+
+        .game-logo-text {
+            font-size: 3.5rem;
+            color: var(--ana-renk);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .game-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: rgba(0, 229, 255, 0.1);
+            color: var(--mavi);
+            border: 1px solid var(--mavi);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        /* METİN İÇERİK ALANI */
+        .content-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Intro Paragrafı (Ana özet) */
+        .intro-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #fff;
+            text-align: justify;
+            border-left: 4px solid var(--ana-renk);
+            padding-left: 20px;
+            margin-bottom: 50px;
+            background: rgba(17, 17, 17, 0.6);
+            padding: 20px 20px 20px 25px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        /* Detay Bölümleri */
+        .detail-section {
+            background: var(--panel);
+            border: 1px solid #222;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: var(--ana-renk);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .detail-list {
+            list-style-type: none;
+        }
+
+        .detail-list li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #ccc;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        /* Listelerin başına sarı kılıç ikonu ekler */
+        .detail-list li::before {
+            content: '\f6d1'; 
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--ana-renk);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        .detail-text {
+            color: #ccc;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        /* AUDIO PLAYER (Sarı temalı müzik çalar) */
+        .audio-wrapper {
+            margin-top: 15px;
+            width: 100%;
+            background: #0f0f0f;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--ana-renk);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .song-title {
+            color: #fff;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        audio {
+            width: 100%;
+            height: 45px;
+            outline: none;
+            color-scheme: dark;
+        }
+        
+        /* Audio çaların tarayıcıdaki gri rengini AserLand temasına uydurma hilesi */
+        audio::-webkit-media-controls-panel {
+            background-color: #222;
+        }
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display {
+            color: var(--ana-renk);
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="projeler.html"><i class="fas fa-arrow-left"></i> Arşivlere Dön</a>
+        <a href="index.html"><i class="fas fa-home"></i> Ana Sayfa</a>
+    </nav>
+
+    <div class="game-hero">
+        <h1 class="game-logo-text">RISE OF THE COLD ECHO</h1>
+        <p style="color: #888; font-size: 1.2rem; letter-spacing: 2px;">AserLand Chronicles</p>
+        
+        <div class="game-tags">
+            <span class="tag">Solo Developer</span>
+            <span class="tag">Isometric Narrative RPG</span>
+            <span class="tag">Detective & Strategy</span>
+            <span class="tag">Unity & C#</span>
+        </div>
+    </div>
+
+    <div class="content-container">
+
+        <div class="intro-text">
+            AserLand: Rise of the Cold Echo, AserLand evreninin en dark-felsefik ve psikolojik ayağını oluşturmak üzere şu an fikir ve konsept tasarım aşamasında olan izometrik bir anlatı/dedektiflik RYO (Narrative RPG) projesidir. Fiziksel şiddetin yerini bürokratik tiranlığın aldığı M.S. 20 yılları civarı Aseria'sında geçen oyun; kılıçların değil kelimelerin, kanunların ve şantajların konuştuğu devasa bir politik gerilim sunmayı hedeflemektedir.
+        </div>
+
+        <div class="detail-section">
+            <h2 class="section-title"><i class="fas fa-chess-knight"></i> Planlanan İçerik ve Mekanikler</h2>
+            <p class="detail-text" style="margin-bottom: 20px;">Skarrgard Revolution projesinin aksine, bu oyunda geleneksel savaş alanları yer almayacaktır. Tasarım dokümanlarında (GDD) şekillenen ve oyuna entegre edilmesi planlanan temel sistemler şunlardır:</p>
+            
+            <ul class="detail-list">
+                <li><strong style="color:#fff;">Zihin Becerileri (Skill Check Sistemi):</strong> Çarpışmalar fiziksel statlarla değil; "Sistematik Zeka", "Acımasız Pragmatizm" ve "Mutlak Otorite" gibi zihinsel parametreler üzerinden atılan zarlarla (ihtimal hesaplarıyla) gerçekleşecektir.</li>
+                <li><strong style="color:#fff;">Diyalog Olarak Çatışma:</strong> Oyuncunun temel silahı kelimelerdir. Aseria Yüksek Konseyi'ndeki rakipler; kanunlardaki boşluklar bulunarak, gizli evraklar çalınarak ve İstihbarat (TÖH) raporları üzerinden kurulan psikolojik baskılarla alt edilecektir.</li>
+                <li><strong style="color:#fff;">Celestine'in Yükselişi:</strong> Oyuncu, Celestine D'Arvell'in alt kademe, hırslı bir devlet görevlisinden; o buz gibi, ruhsuz "Mutlak Olanın Yankısı" sistemini kuran Baş Konsül'e dönüşümünü bizzat oynayarak deneyimleyecektir.</li>
+            </ul>
+        </div>
+
+        <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+            
+            <div class="detail-section" style="flex: 1; min-width: 300px;">
+                <h2 class="section-title"><i class="fas fa-hammer"></i> Proje Ne Aşamadadır?</h2>
+                <p class="detail-text">
+                    Proje şu an itibarıyla tamamen <strong>Konsept (Ideation) ve Kurgu</strong> aşamasındadır.<br><br>
+                    Şu anda motor üzerinde (Unity) aktif bir kodlama yapılmamakta; bunun yerine oyunun devasa diyalog ağaçları (Dialogue Trees), karakter psikolojileri, hikayenin dallanma noktaları ve zar matematiği kağıt üzerinde ve tasarım dokümanlarında inşa edilmektedir. Argoteda ekibi olarak (solo dev), şu an tüm teknik odak ilk oyunumuz olan Skarrgard Revolution'ın prototip sürecine verilmiştir. Bu proje, evrenin edebi altyapısı tamamlandıktan sonra aktif geliştirme sürecine girecektir.
+                </p>
+            </div>
+
+            <div class="detail-section" style="flex: 1; min-width: 300px;">
+                <h2 class="section-title"><i class="fas fa-calendar-alt"></i> Çıkış Tarihi</h2>
+                <p class="detail-text">
+                    Henüz aktif üretim aşamasına geçilmediği için projenin herhangi bir tahmini çıkış tarihi <strong>(TBA)</strong> bulunmamaktadır.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="detail-section">
+            <h2 class="section-title"><i class="fas fa-eye"></i> Görsel ve İşitsel Vizyon (Tasarım Notları)</h2>
+            <p class="detail-text" style="margin-bottom: 15px;">
+                Oyun henüz fikir aşamasında olduğu için oyun içi ekran görüntüsü (screenshot) veya karakter spriteları bulunmamaktadır. Ancak planlanan atmosfer vizyonu şöyledir:
+            </p>
+            <p class="detail-text" style="margin-bottom: 15px;">
+                Oyun, oyuncuya klostrofobik ve soğuk bir deneyim yaşatmak üzere <strong>İzometrik Kamera</strong> açısıyla tasarlanacaktır. Geleneksel RYO'lardaki renkli ormanlar veya zindanlar yerine; Aseria Yüksek Konseyi'nin simetrik, yüksek tavanlı, devasa evrak dolaplarıyla dolu tozlu ve ışıksız arşiv odaları keşfedilecektir.
+            </p>
+            <p class="detail-text">
+                Görsel dil, karakterin (Celestine'in) sisteme olan inancı arttıkça yavaş yavaş solacak; oyunun renk paleti zamanla tamamen gri, gümüş ve siyahın soğuk tonlarına bürünecektir. Bu ruhsuz atmosfere, arka planda bitmek bilmeyen ritmik saat tiktakları, mühür sesleri ve Echo of the Absolute orkestral temasının gergin yaylıları eşlik edecektir.
+            </p>
+        </div>
+
+        <div class="detail-section">
+            <h2 class="section-title"><i class="fas fa-headphones"></i> Konsept Soundtrack</h2>
+            <p class="detail-text" style="font-size: 0.9rem; font-style: italic; color: #bbb; background: rgba(0,0,0,0.4); padding: 10px; border-left: 3px solid var(--ana-renk); border-radius: 4px;">
+                <i class="fas fa-copyright" style="color: var(--ana-renk);"></i> <strong>Telif Hakkı Uyarısı:</strong> Bu sayfada yer alan orijinal müzik eserlerinin tüm fikri mülkiyet ve telif hakları Argoteda'ya aittir. Eserlerin izinsiz kopyalanması, ticari veya bireysel projelerde kullanılması ve başka platformlarda yeniden dağıtılması kesinlikle yasaktır. Yalnızca kişisel dinleme amacıyla erişime açılmıştır.
+            </p>
+            
+            <div class="audio-wrapper">
+                <div class="song-title">Echo of the Absolute (Theme)</div>
+                <audio controls>
+                    <source src="sarkilar/Echo of the Absolute.mp3" type="audio/mpeg">
+                    Tarayıcınız müzik çaları desteklemiyor.
+                </audio>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
