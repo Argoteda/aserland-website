@@ -147,6 +147,12 @@
             margin-top: 20px;
         }
 
+        .media-item {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
         .screenshot {
             width: 100%;
             height: 150px;
@@ -160,6 +166,14 @@
             border-color: var(--ana-renk);
             transform: scale(1.05);
             cursor: pointer;
+        }
+
+        .media-caption {
+            margin-top: 12px;
+            font-size: 0.9rem;
+            color: var(--ana-renk);
+            font-weight: bold;
+            letter-spacing: 0.5px;
         }
 
         /* AUDIO PLAYER (Sarı temalı müzik çalar) */
@@ -259,9 +273,18 @@
             <p class="detail-text" style="font-size: 0.9rem; margin-bottom: 15px;">Ön-Alfa aşamasından test görüntüleri.</p>
             
             <div class="media-grid">
-                <img src="images/1Skarryion Damethsizi.png" alt="Skarryion Damethsizi Sprite Görseli" class="screenshot">
-                <img src="images/Eumandarg Damethsizi.png" alt="Eumandarg Damethsizi Sprite Görseli" class="screenshot">
-                <img src="images/İmparatorluğun Kasabı.png" alt="Denoistos Los Aser Özel Yeteneğinin İkonu" class="screenshot">
+                <div class="media-item">
+                    <img src="images/1Skarryion Damethsizi.png" alt="Skarryion Damethsizi Sprite Görseli" class="screenshot">
+                    <div class="media-caption">Skarryion Damethsizi Oyun İçi Görünümü</div>
+                </div>
+                <div class="media-item">
+                    <img src="images/Eumandarg Damethsizi.png" alt="Eumandarg Damethsizi Sprite Görseli" class="screenshot">
+                    <div class="media-caption">Eumandarg Damethsizi Oyun İçi Görünümü</div>
+                </div>
+                <div class="media-item">
+                    <img src="images/İmparatorluğun Kasabı.png" alt="Denoistos Los Aser Özel Yeteneğinin İkonu" class="screenshot">
+                    <div class="media-caption">Denoistos Los Aser Ulti Yeteneği İkonu</div>
+                </div>
             </div>
         </div>
 
