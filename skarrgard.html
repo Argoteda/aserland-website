@@ -166,27 +166,31 @@
         .audio-wrapper {
             margin-top: 15px;
             width: 100%;
-            background: #0a0a0a;
+            background: #0f0f0f;
             padding: 15px;
             border-radius: 8px;
             border-left: 3px solid var(--ana-renk);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
 
         .song-title {
             color: #fff;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
+            margin-bottom: 12px;
+            font-size: 1rem;
             font-weight: bold;
+            letter-spacing: 0.5px;
         }
 
         audio {
             width: 100%;
-            height: 35px;
+            height: 45px;
+            outline: none;
+            color-scheme: dark;
         }
         
         /* Audio çaların tarayıcıdaki gri rengini AserLand temasına uydurma hilesi */
         audio::-webkit-media-controls-panel {
-            background-color: var(--panel);
+            background-color: #222;
         }
         audio::-webkit-media-controls-current-time-display,
         audio::-webkit-media-controls-time-remaining-display {
@@ -266,20 +270,20 @@
             <p class="detail-text" style="font-size: 0.9rem;">Argoteda tarafından oyunun atmosferi için bestelenen parçalar.</p>
             
             <div class="audio-wrapper">
-            <div class="song-title">Test of Blood</div>
-            <audio controls>
-                <source src="sarkilar/Test of Blood.mp3" type="audio/mpeg">
-                Tarayıcınız müzik çaları desteklemiyor.
-            </audio>
-        </div>
+                <div class="song-title">Test of Blood</div>
+                <audio controls>
+                    <source src="sarkilar/Test of Blood.mp3" type="audio/mpeg">
+                    Tarayıcınız müzik çaları desteklemiyor.
+                </audio>
+            </div>
 
-        <div class="audio-wrapper">
-            <div class="song-title">The Gilded Cage Breaks</div>
-            <audio controls>
-                <source src="sarkilar/The Gilded Cage Breaks.mp3" type="audio/mpeg">
-                Tarayıcınız müzik çaları desteklemiyor.
-            </audio>
-        </div>
+            <div class="audio-wrapper">
+                <div class="song-title">The Gilded Cage Breaks</div>
+                <audio controls>
+                    <source src="sarkilar/The Gilded Cage Breaks.mp3" type="audio/mpeg">
+                    Tarayıcınız müzik çaları desteklemiyor.
+                </audio>
+            </div>
 
         </div>
 
