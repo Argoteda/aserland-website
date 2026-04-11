@@ -12,7 +12,10 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body { 
-            background-color: var(--arka-plan); 
+            background: linear-gradient(rgba(5, 5, 5, 0.95), rgba(5, 5, 5, 0.95)), url('../images/arkaplan.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: var(--yazi); 
             font-family: 'Segoe UI', sans-serif; 
             display: flex; flex-direction: column; min-height: 100vh;
@@ -21,151 +24,224 @@
         a { text-decoration: none; color: inherit; transition: 0.3s; }
 
         /* NAVBAR */
-        nav { background: #000; border-bottom: 1px solid var(--gri); padding: 20px; text-align: center; position: sticky; top: 0; z-index: 99; }
+        nav { background: rgba(0, 0, 0, 0.9); border-bottom: 2px solid var(--ana-renk); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 99; backdrop-filter: blur(5px); }
         nav a { color: #fff; margin: 0 15px; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
         nav a:hover { color: var(--ana-renk); }
         nav a.active { color: var(--ana-renk); border-bottom: 2px solid var(--ana-renk); padding-bottom: 5px; }
 
         /* HERO & SEARCH AREA */
         .dict-hero {
-            background: linear-gradient(to bottom, #101010, #050505);
-            padding: 40px 20px;
+            padding: 60px 20px 40px;
             text-align: center;
-            border-bottom: 1px solid var(--gri);
+            position: relative;
         }
 
-        .hero-title { font-size: 2.5rem; color: var(--ana-renk); margin-bottom: 10px; letter-spacing: 3px; text-transform: uppercase; }
+        .hero-title { font-size: 3.5rem; color: var(--ana-renk); margin-bottom: 15px; letter-spacing: 4px; text-transform: uppercase; text-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+        .hero-subtitle { color: #888; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 40px; }
         
         .search-container {
-            max-width: 600px;
-            margin: 20px auto 0;
+            max-width: 700px;
+            margin: 0 auto;
             position: relative;
         }
 
         .search-input {
             width: 100%;
-            padding: 15px 20px;
-            padding-left: 50px;
+            padding: 18px 25px 18px 60px;
             font-size: 1.1rem;
-            background: #000;
+            background: rgba(17, 17, 17, 0.8);
             border: 2px solid #333;
             color: #fff;
-            border-radius: 30px;
+            border-radius: 40px;
             outline: none;
-            transition: 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
         }
 
-        .search-input:focus { border-color: var(--ana-renk); box-shadow: 0 0 15px rgba(255, 215, 0, 0.2); }
+        .search-input:focus { border-color: var(--ana-renk); box-shadow: 0 0 25px rgba(255, 215, 0, 0.15); background: rgba(17, 17, 17, 0.95); }
+        .search-input::placeholder { color: #666; font-style: italic; }
         
         .search-icon {
             position: absolute;
-            left: 20px;
+            left: 25px;
             top: 50%;
             transform: translateY(-50%);
-            color: #666;
-            font-size: 1.2rem;
+            color: var(--ana-renk);
+            font-size: 1.3rem;
+            pointer-events: none;
         }
 
-        /* --- LİSTE GÖRÜNÜMÜ (Başlangıç) --- */
-        .list-container {
-            max-width: 800px;
-            margin: 40px auto;
+        /* --- YENİ KART IZGARA GÖRÜNÜMÜ --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 40px auto 80px;
             padding: 0 20px;
+            width: 100%;
         }
 
-        .list-item {
-            background: var(--panel);
-            border-bottom: 1px solid #222;
-            padding: 15px 20px;
+        .dict-card {
+            background: rgba(17, 17, 17, 0.7);
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            transition: 0.2s;
+            flex-direction: column;
+            backdrop-filter: blur(4px);
         }
 
-        .list-item:first-child { border-top-left-radius: 10px; border-top-right-radius: 10px; }
-        .list-item:last-child { border-bottom: none; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; }
-
-        .list-item:hover {
-            background: #1a1a1a;
-            border-left: 4px solid var(--ana-renk);
-            padding-left: 16px; /* Border eklenince kaymasın diye */
-        }
-
-        .list-term { font-size: 1.1rem; font-weight: bold; color: #fff; }
-        .list-type { font-size: 0.8rem; color: #666; background: #000; padding: 3px 8px; border-radius: 4px; border: 1px solid #333; }
-        .list-arrow { color: var(--ana-renk); opacity: 0; transition: 0.2s; }
-        .list-item:hover .list-arrow { opacity: 1; transform: translateX(5px); }
-
-
-        /* --- DETAY GÖRÜNÜMÜ (Tıklanınca Açılır) --- */
-        .detail-view {
-            display: none; /* Başlangıçta gizli */
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-            animation: fadeIn 0.4s ease;
-        }
-
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: #888;
-            cursor: pointer;
-            margin-bottom: 20px;
-            font-size: 1rem;
+        .dict-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 100%;
+            background: var(--ana-renk);
+            opacity: 0;
             transition: 0.3s;
         }
-        .back-btn:hover { color: var(--ana-renk); }
 
-        .detail-card {
-            background: var(--panel);
-            border: 1px solid var(--ana-renk);
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 0 30px rgba(0,0,0,0.5);
-            position: relative;
+        .dict-card:hover {
+            transform: translateY(-5px);
+            background: rgba(26, 26, 26, 0.9);
+            border-color: #444;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
         }
 
-        .detail-header { border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 20px; }
+        .dict-card:hover::before { opacity: 1; }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        .dict-card:hover .card-title { color: var(--ana-renk); }
+
+        .card-type {
+            font-size: 0.75rem;
+            color: var(--ana-renk);
+            background: rgba(255, 215, 0, 0.08);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            padding: 4px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-preview {
+            color: #888;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-top: auto;
+        }
+
+        /* --- MODAL DETAY GÖRÜNÜMÜ --- */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+            padding: 20px;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+        .detail-card {
+            background: #111;
+            border: 1px solid #333;
+            border-top: 4px solid var(--ana-renk);
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.6);
+            animation: slideUp 0.4s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px; right: 25px;
+            color: #666;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: 0.3s;
+            background: none; border: none;
+        }
+
+        .close-btn:hover { color: var(--ana-renk); transform: rotate(90deg); }
+
+        .detail-header { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid #222; }
         
         .detail-title { 
-            font-size: 2.5rem; 
+            font-size: 2.2rem; 
             color: var(--ana-renk); 
-            margin-bottom: 10px; 
+            margin-bottom: 15px; 
             font-weight: bold; 
-            text-transform: uppercase; 
-            letter-spacing: 1px;
+            line-height: 1.2;
         }
 
         .detail-badge {
             display: inline-block;
-            background: rgba(255, 215, 0, 0.1);
-            color: var(--ana-renk);
-            border: 1px solid var(--ana-renk);
-            padding: 5px 15px;
+            background: #000;
+            color: #aaa;
+            border: 1px solid #444;
+            padding: 6px 15px;
             border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .detail-desc {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             line-height: 1.8;
-            color: #ddd;
+            color: #ccc;
             text-align: justify;
         }
 
-        .no-result { text-align: center; padding: 20px; color: #666; display: none; }
+        .no-result { grid-column: 1 / -1; text-align: center; padding: 40px; color: #666; font-size: 1.2rem; font-style: italic; display: none; }
+
+        /* SCROLLBAR GÜZELLEŞTİRME */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--ana-renk); }
 
         @media (max-width: 768px) { 
-            .hero-title { font-size: 2rem; } 
+            .hero-title { font-size: 2.2rem; } 
             .detail-title { font-size: 1.8rem; }
-            .detail-card { padding: 20px; }
+            .detail-card { padding: 25px; }
+            .grid-container { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -175,32 +251,31 @@
         <a href="../index.html">Ana Sayfa</a>
         <a href="../music.html">Müzik</a>
         <a href="index.html">Wiki</a>
-        <a href="../about.html">Hakkında</a>
         <a href="dictionary.html" class="active">Sözlük</a>
     </nav>
 
     <header class="dict-hero">
         <h1 class="hero-title">ASER DICTIONARY</h1>
+        <p class="hero-subtitle">Evrenin Tüm Sırları</p>
         <div class="search-container">
             <i class="fas fa-search search-icon"></i>
-            <input type="text" id="searchInput" class="search-input" placeholder="Terim ara... (Örn: Behemoth, Skarryion)">
+            <input type="text" id="searchInput" class="search-input" placeholder="Terim, karakter, bölge veya kavram ara...">
         </div>
     </header>
 
-    <div class="list-container" id="listContainer">
-        <div class="no-result" id="noResultMsg">Sonuç bulunamadı.</div>
-    </div>
-
-    <div class="detail-view" id="detailView">
-        <div class="back-btn" onclick="closeDetail()">
-            <i class="fas fa-arrow-left"></i> Listeye Geri Dön
+    <div class="grid-container" id="gridContainer">
+        <div class="no-result" id="noResultMsg">"AserLand arşivlerinde böyle bir kayıt bulunamadı..."</div>
         </div>
 
-        <div class="detail-card">
+    <div class="modal-overlay" id="detailModal" onclick="closeModal(event)">
+        <div class="detail-card" onclick="event.stopPropagation()">
+            <button class="close-btn" onclick="closeDetail()"><i class="fas fa-times"></i></button>
+            
             <div class="detail-header">
                 <h2 class="detail-title" id="dTitle">Başlık</h2>
                 <span class="detail-badge" id="dType">Kategori</span>
             </div>
+            
             <div class="detail-desc" id="dDesc">
                 Açıklama metni buraya gelecek...
             </div>
@@ -208,7 +283,7 @@
     </div>
 
     <script>
-        // --- VERİ TABANI (Tüm Veriler) ---
+        // --- VERİ TABANI (Tüm Veriler Mevcut Şekliyle Korundu) ---
         const dictionaryData = [
             { term: "Aser - Soyad, Hanedan", type: "İsim - Hanedanlık", desc: "AserLand'i kuran kraliyet hanedanının adıdır. Bu soy, Rotto Kant Aser (I. Aser) ile başlar." },
             { term: "Aser - Unvan", type: "İsim - Unvan", desc: "Aserwar Gedian reformları ile \"Aser\" kelimesi, bir kan bağından ziyade, kendi alanında mutlak uzmanlığa veya ustalığa ulaşmış kişilere verilen bir onur unvanı veya sıfatı haline gelmiştir." },
@@ -328,8 +403,8 @@
 
         // --- DOM ELEMANLARI ---
         const searchInput = document.getElementById('searchInput');
-        const listContainer = document.getElementById('listContainer');
-        const detailView = document.getElementById('detailView');
+        const gridContainer = document.getElementById('gridContainer');
+        const detailModal = document.getElementById('detailModal');
         const noResultMsg = document.getElementById('noResultMsg');
 
         // Detay Elemanları
@@ -339,11 +414,11 @@
 
         // --- FONKSİYONLAR ---
 
-        // 1. Listeyi Ekrana Bas
-        function renderList(data) {
-            // Önce listeyi temizle (noResult hariç)
-            const oldItems = document.querySelectorAll('.list-item');
-            oldItems.forEach(item => item.remove());
+        // 1. Kartları Ekrana Bas
+        function renderGrid(data) {
+            // Önce grid'i temizle (noResult hariç)
+            const oldCards = document.querySelectorAll('.dict-card');
+            oldCards.forEach(card => card.remove());
 
             if (data.length === 0) {
                 noResultMsg.style.display = 'block';
@@ -353,66 +428,69 @@
                 // Alfabetik sırala
                 data.sort((a, b) => a.term.localeCompare(b.term, 'tr'));
 
-                data.forEach((item, index) => {
-                    const div = document.createElement('div');
-                    div.className = 'list-item';
-                    
-                    // Veriyi data attribute olarak saklamıyoruz, index üzerinden erişeceğiz
-                    // veya direkt click event'ine item'ı gönderiyoruz.
-                    div.onclick = () => openDetail(item);
+                data.forEach((item) => {
+                    const card = document.createElement('div');
+                    card.className = 'dict-card';
+                    card.onclick = () => openDetail(item);
 
-                    div.innerHTML = `
-                        <span class="list-term">${item.term}</span>
-                        <div style="display:flex; align-items:center; gap:10px;">
-                            <span class="list-type">${item.type}</span>
-                            <i class="fas fa-chevron-right list-arrow"></i>
+                    card.innerHTML = `
+                        <div class="card-header">
+                            <span class="card-title">${item.term}</span>
+                            <span class="card-type">${item.type}</span>
                         </div>
+                        <div class="card-preview">${item.desc}</div>
                     `;
-                    listContainer.appendChild(div);
+                    gridContainer.appendChild(card);
                 });
             }
         }
 
-        // 2. Detay Sayfasını Aç
+        // 2. Detay Modalını Aç
         function openDetail(item) {
-            // Listeyi gizle, detayı göster
-            listContainer.style.display = 'none';
-            detailView.style.display = 'block';
+            detailModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Arka plan kaydırmayı kilitle
 
             // İçeriği doldur
             dTitle.textContent = item.term;
             dType.textContent = item.type;
             dDesc.textContent = item.desc;
-
-            // Sayfayı yukarı kaydır (Telefonda aşağıda kalmasın diye)
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // 3. Listeye Geri Dön
+        // 3. Modalı Kapat
         function closeDetail() {
-            detailView.style.display = 'none';
-            listContainer.style.display = 'block';
+            detailModal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Arka plan kaydırmayı aç
+        }
+
+        // Modal dışına tıklayınca kapatma
+        function closeModal(event) {
+            if (event.target === detailModal) {
+                closeDetail();
+            }
         }
 
         // 4. Arama Fonksiyonu
         searchInput.addEventListener('input', (e) => {
             const searchText = e.target.value.toLocaleLowerCase('tr');
 
-            // Eğer detay açıksa ve arama yapılırsa, otomatik listeye dön
-            if (detailView.style.display === 'block') {
-                closeDetail();
-            }
-
             const filteredData = dictionaryData.filter(item => {
                 return item.term.toLocaleLowerCase('tr').includes(searchText) || 
-                       item.desc.toLocaleLowerCase('tr').includes(searchText);
+                       item.desc.toLocaleLowerCase('tr').includes(searchText) ||
+                       item.type.toLocaleLowerCase('tr').includes(searchText);
             });
 
-            renderList(filteredData);
+            renderGrid(filteredData);
         });
 
         // Başlangıçta tüm listeyi yükle
-        renderList(dictionaryData);
+        renderGrid(dictionaryData);
+
+        // ESC tuşuyla modalı kapatma
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && detailModal.style.display === 'flex') {
+                closeDetail();
+            }
+        });
 
     </script>
 
