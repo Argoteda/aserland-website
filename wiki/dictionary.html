@@ -39,15 +39,32 @@
         .hero-title { font-size: 3.5rem; color: var(--ana-renk); margin-bottom: 15px; letter-spacing: 4px; text-transform: uppercase; text-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
         .hero-subtitle { color: #888; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 40px; }
         
-        .search-container {
-            max-width: 700px;
+        /* ARAMA VE FİLTRELEME ALANI */
+        .filter-search-wrapper {
+            display: flex;
+            gap: 15px;
+            max-width: 900px;
             margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-container {
+            flex: 2;
+            min-width: 300px;
             position: relative;
         }
 
-        .search-input {
+        .filter-wrapper {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-input, .filter-select {
             width: 100%;
-            padding: 18px 25px 18px 60px;
+            padding: 18px 25px;
             font-size: 1.1rem;
             background: rgba(17, 17, 17, 0.8);
             border: 2px solid #333;
@@ -59,7 +76,14 @@
             backdrop-filter: blur(5px);
         }
 
-        .search-input:focus { border-color: var(--ana-renk); box-shadow: 0 0 25px rgba(255, 215, 0, 0.15); background: rgba(17, 17, 17, 0.95); }
+        .search-input { padding-left: 60px; }
+
+        .search-input:focus, .filter-select:focus { 
+            border-color: var(--ana-renk); 
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.15); 
+            background: rgba(17, 17, 17, 0.95); 
+        }
+        
         .search-input::placeholder { color: #666; font-style: italic; }
         
         .search-icon {
@@ -70,6 +94,31 @@
             color: var(--ana-renk);
             font-size: 1.3rem;
             pointer-events: none;
+        }
+
+        .filter-select {
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        .filter-wrapper::after {
+            content: '\f107';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--ana-renk);
+            pointer-events: none;
+            font-size: 1.2rem;
+        }
+
+        .filter-select option {
+            background: #111;
+            color: #fff;
         }
 
         /* --- YENİ KART IZGARA GÖRÜNÜMÜ --- */
@@ -242,6 +291,8 @@
             .detail-title { font-size: 1.8rem; }
             .detail-card { padding: 25px; }
             .grid-container { grid-template-columns: 1fr; }
+            .filter-search-wrapper { flex-direction: column; }
+            .search-container, .filter-wrapper { width: 100%; min-width: 100%; }
         }
     </style>
 </head>
@@ -257,10 +308,19 @@
     <header class="dict-hero">
         <h1 class="hero-title">ASER DICTIONARY</h1>
         <p class="hero-subtitle">Evrenin Tüm Sırları</p>
-        <div class="search-container">
-            <i class="fas fa-search search-icon"></i>
-            <input type="text" id="searchInput" class="search-input" placeholder="Terim, karakter, bölge veya kavram ara...">
+        
+        <div class="filter-search-wrapper">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" class="search-input" placeholder="Sadece terim adına göre ara... (Örn: Behemoth)">
+            </div>
+            <div class="filter-wrapper">
+                <select id="typeFilter" class="filter-select">
+                    <option value="all">Tüm Kategoriler</option>
+                    </select>
+            </div>
         </div>
+
     </header>
 
     <div class="grid-container" id="gridContainer">
@@ -283,7 +343,7 @@
     </div>
 
     <script>
-        // --- VERİ TABANI (Tüm Veriler Mevcut Şekliyle Korundu) ---
+        // --- VERİ TABANI ---
         const dictionaryData = [
             { term: "Aser - Soyad, Hanedan", type: "İsim - Hanedanlık", desc: "AserLand'i kuran kraliyet hanedanının adıdır. Bu soy, Rotto Kant Aser (I. Aser) ile başlar." },
             { term: "Aser - Unvan", type: "İsim - Unvan", desc: "Aserwar Gedian reformları ile \"Aser\" kelimesi, bir kan bağından ziyade, kendi alanında mutlak uzmanlığa veya ustalığa ulaşmış kişilere verilen bir onur unvanı veya sıfatı haline gelmiştir." },
@@ -388,7 +448,7 @@
             { term: "“Halkın Umudu”", type: "Kavram", desc: "Elena Von Cortex’in hükümdarlığı sırasında sunduğu, ancak Celestine D’Arvell’in “C.D.” imzalı bir notla eleştirerek pratik olmadığını belirttiği, uygulanmayan yasa tasarısıdır." },
             { term: "Echoes of Democracy - Demokrasinin Yankıları", type: "İsim - Marş/Müzik", desc: "Aseria'nın (Doğu AserLand) resmi ulusal marşıdır. Parça, M.S. 37'de EASC'yi feshederek iktidara gelen ve bölgenin adını \"Aseria\" olarak değiştiren Celestine D'Arvell tarafından bizzat bestelenmiştir. Celestine, bu marşı Aseria'nın bağımsızlığını ve yeni düzenini pekiştirmek amacıyla kaleme almıştır. “AserLand Pt.1” albümünde yer alır." },
             { term: "Sharp as Words", type: "İsim - Müzik/Marş", desc: "Skarrgard ulusunun resmi milli marşıdır. \"AserLand Pt.1\" albümünde yer alan parçalardan biridir. Marş, Skarrgard'ın ikinci kralı ve \"Mirasın Bekçisi\" olan Eumandarg Damethsizi'nin hükümdarlığı sırasında, onun kurduğu Skarrgard Müzik Akademisi Konseyi tarafından bestelenmiştir." },
-            { term: "Iron Hands, United Hearts", type: "İsim - Müzik/Marş", desc: "AserLand'in ulusal marşıdır. Marş, AserLand'in İkinci Kralı ve \"AserLand'ın İlk Müzisyeni\" olarak da bilinen Eldorin Valtas Aser tarafından bestelenmiştir. Eldorin, bu marşı Rotto'nun mirasını yaşatmak ve krallığın bütünlüğünü korumak için yaptığı reformlar sırasında, AserLand adına bestelemiştir. “AserLand Pt.1” albümünde yer alır." },
+            { term: "Iron Hands, United Hearts", type: "İsim - Müzik/Marş", desc: "AserLand'in ulusal marşıdır. Marş, AserLand'in İkinci Kralı ve \"AserLand'ın İlk Müzisyeni\" olarak da bilinen Eldorin Valtas Aser tarafından bestelenmiştir. Eldorin, this marşı Rotto'nun mirasını yaşatmak ve krallığın bütünlüğünü korumak için yaptığı reformlar sırasında, AserLand adına bestelemiştir. “AserLand Pt.1” albümünde yer alır." },
             { term: "The Pen of Revolution", type: "İsim - Müzik/Tema Müziği", desc: "Skarrgard'ın kurucusu ve ilk kralı Skarryion Damethsizi'nin resmi tema müziğidir. \"AserLand Pt.1\" albümünde yer alan parçalardan biridir. Tıpkı ulusal marş \"Sharp as Words\" gibi, bu parça da Skarrgard Müzik Akademisi Konseyi tarafından bestelenmiştir." },
             { term: "Unyielding Dawn of Freedom", type: "İsim - Müzik/Tema Müziği", desc: "\"Özgürlüğün Sarsılmaz Şafağı\" olarak da bilinen, \"AserLand Pt.1\" albümünde yer alan ve Madam Maria Von Cortex'in resmi tema müziğidir. Parça, Aseria'nın gelecekteki lideri olacak Celestine D'Arvell tarafından, henüz Skinnyleg Müzik Okulu'ndan birincilikle mezun olduğu dönemde, Kraliçe Maria Von Cortex için bestelenmiştir." },
             { term: "As the Pendulum Swings", type: "İsim - Müzik/Tema Müziği", desc: "\"Gecelerin Pelerini\" (Cloak of the Nights) örgütünün resmi tema müziğidir. \"AserLand Pt.2\" albümünde yer alan parçalardan biridir. Bestekarı bilinmemektedir." },
@@ -403,6 +463,7 @@
 
         // --- DOM ELEMANLARI ---
         const searchInput = document.getElementById('searchInput');
+        const typeFilter = document.getElementById('typeFilter');
         const gridContainer = document.getElementById('gridContainer');
         const detailModal = document.getElementById('detailModal');
         const noResultMsg = document.getElementById('noResultMsg');
@@ -414,9 +475,19 @@
 
         // --- FONKSİYONLAR ---
 
+        // Kategorileri (Type) Filtre Seçeneklerine Ekle
+        function populateFilters() {
+            const uniqueTypes = [...new Set(dictionaryData.map(item => item.type))].sort();
+            uniqueTypes.forEach(type => {
+                const option = document.createElement('option');
+                option.value = type;
+                option.textContent = type;
+                typeFilter.appendChild(option);
+            });
+        }
+
         // 1. Kartları Ekrana Bas
         function renderGrid(data) {
-            // Önce grid'i temizle (noResult hariç)
             const oldCards = document.querySelectorAll('.dict-card');
             oldCards.forEach(card => card.remove());
 
@@ -425,7 +496,6 @@
             } else {
                 noResultMsg.style.display = 'none';
 
-                // Alfabetik sırala
                 data.sort((a, b) => a.term.localeCompare(b.term, 'tr'));
 
                 data.forEach((item) => {
@@ -448,9 +518,8 @@
         // 2. Detay Modalını Aç
         function openDetail(item) {
             detailModal.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // Arka plan kaydırmayı kilitle
+            document.body.style.overflow = 'hidden';
 
-            // İçeriği doldur
             dTitle.textContent = item.term;
             dType.textContent = item.type;
             dDesc.textContent = item.desc;
@@ -459,30 +528,37 @@
         // 3. Modalı Kapat
         function closeDetail() {
             detailModal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Arka plan kaydırmayı aç
+            document.body.style.overflow = 'auto';
         }
 
-        // Modal dışına tıklayınca kapatma
         function closeModal(event) {
             if (event.target === detailModal) {
                 closeDetail();
             }
         }
 
-        // 4. Arama Fonksiyonu
-        searchInput.addEventListener('input', (e) => {
-            const searchText = e.target.value.toLocaleLowerCase('tr');
+        // 4. Arama ve Filtreleme Fonksiyonu (BİRLEŞTİRİLDİ)
+        function filterDictionary() {
+            const searchText = searchInput.value.toLocaleLowerCase('tr');
+            const selectedType = typeFilter.value;
 
             const filteredData = dictionaryData.filter(item => {
-                return item.term.toLocaleLowerCase('tr').includes(searchText) || 
-                       item.desc.toLocaleLowerCase('tr').includes(searchText) ||
-                       item.type.toLocaleLowerCase('tr').includes(searchText);
+                // SADECE item.term (İsim) İÇİNDE ARAMA YAPIYOR
+                const matchSearch = item.term.toLocaleLowerCase('tr').includes(searchText);
+                const matchType = selectedType === 'all' || item.type === selectedType;
+                
+                return matchSearch && matchType;
             });
 
             renderGrid(filteredData);
-        });
+        }
 
-        // Başlangıçta tüm listeyi yükle
+        // Event Listener'lar
+        searchInput.addEventListener('input', filterDictionary);
+        typeFilter.addEventListener('change', filterDictionary);
+
+        // Başlangıç Kurulumları
+        populateFilters();
         renderGrid(dictionaryData);
 
         // ESC tuşuyla modalı kapatma
