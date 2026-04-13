@@ -7,7 +7,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="wiki/favicon.png">
     <style>
-        :root { --ana-renk: #FFD700; --arka-plan: #050505; --panel: #111; --yazi: #e0e0e0; --gri: #333; --spotify-green: #1DB954; --wiki-blue: #00a8ff; }
+        :root { --ana-renk: #FFD700; --arka-plan: #050505; --panel: #111; --yazi: #e0e0e0; --gri: #333; --spotify-green: #1DB954; --wiki-blue: #00a8ff; --vault-red: #ff003c; }
         
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
@@ -155,7 +155,105 @@
         .track-card.playing .spotify-icon { color: var(--spotify-green); }
         .track-card.playing .card-title { color: var(--spotify-green); }
 
-        @media (max-width: 768px) { .artist-title { font-size: 2rem; } .spotify-container { height: 152px; } }
+
+        /* --- YENİ EKLENEN: UNDERGROUND VAULT (BOOTLEGS) STİLLERİ --- */
+        .vault-section {
+            max-width: 1400px;
+            margin: 60px auto 60px;
+            padding: 40px 20px;
+            border-top: 2px dashed var(--vault-red);
+            background: radial-gradient(ellipse at top, rgba(255, 0, 60, 0.05) 0%, transparent 70%);
+        }
+        
+        .vault-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .vault-title {
+            font-size: 2.5rem;
+            color: var(--vault-red);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 0 0 15px rgba(255, 0, 60, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .vault-subtitle {
+            color: #888;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .vault-card {
+            background: #0a0a0a;
+            border: 1px solid #440011;
+            border-left: 4px solid var(--vault-red);
+            border-radius: 8px;
+            padding: 20px;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .vault-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--vault-red);
+            box-shadow: 0 10px 20px rgba(255, 0, 60, 0.15);
+        }
+
+        .vault-card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .vault-icon {
+            font-size: 1.8rem;
+            color: var(--vault-red);
+            margin-left: auto;
+        }
+
+        .vault-card-title {
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .vault-card-artist {
+            color: #aaa;
+            font-size: 0.85rem;
+            display: block;
+        }
+
+        .vault-audio {
+            width: 100%;
+            height: 40px;
+            margin-top: auto;
+            outline: none;
+        }
+
+        .vault-audio::-webkit-media-controls-panel {
+            background-color: #1a0006;
+        }
+
+        .vault-audio::-webkit-media-controls-current-time-display,
+        .vault-audio::-webkit-media-controls-time-remaining-display {
+            color: var(--vault-red);
+        }
+
+        @media (max-width: 768px) { 
+            .artist-title { font-size: 2rem; } 
+            .spotify-container { height: 152px; } 
+            .vault-title { font-size: 1.8rem; }
+        }
     </style>
 </head>
 <body>
@@ -184,6 +282,8 @@
     </header>
 
     <div id="contentContainer"></div>
+    
+    <div id="vaultContainer"></div>
 
     <script>
         const tracks = [
@@ -274,6 +374,23 @@
             
         ];
 
+        // --- YENİ EKLENEN: BOOTLEG / REMIX VERİ TABANI ---
+        const bootlegTracks = [
+            { 
+                title: "Ghostrunner Theme (Argoteda Bootleg)", 
+                originalArtist: "Daniel Deluxe", 
+                tags: "Cyberpunk / Industrial / Unreleased", 
+                file: "sarkilar/ghostrunner-bootleg.mp3" 
+            },
+            { 
+                title: "Destroyer (VIP Mix)", 
+                originalArtist: "Argoteda", 
+                tags: "Hard Phonk / Underground", 
+                file: "sarkilar/destroyer-vip.mp3" 
+            }
+            // Yeni bootleg'leri buraya ekleyebilirsin.
+        ];
+
         // 1. Gruplama Fonksiyonu (Albümlere Göre Ayır)
         function groupBySection(tracks) {
             return tracks.reduce((groups, track) => {
@@ -286,7 +403,7 @@
             }, {});
         }
 
-        // 2. Ekrana Basma Fonksiyonu
+        // 2. Spotify Albümlerini Ekrana Basma Fonksiyonu
         function renderTracks() {
             const container = document.getElementById('contentContainer');
             container.innerHTML = "";
@@ -317,7 +434,7 @@
 
                     // ID kontrolü ve Spotify Linki
                     let playId = track.id.includes("ID_GİR") ? "4cOdK2wGLETKBW3PvgPWqT" : track.id;
-                    let spotifyLink = `https://open.spotify.com/track/${playId}`;
+                    let spotifyLink = `https://open.spotify.com/track/$${playId}`;
 
                     // Etiketleri Parçala (Split)
                     let tagsHtml = "";
@@ -355,6 +472,52 @@
             }
         }
 
+        // 3. YERALTI KASASI (BOOTLEGS) EKRANA BASMA FONKSİYONU
+        function renderBootlegs() {
+            const container = document.getElementById('vaultContainer');
+            if (!container || bootlegTracks.length === 0) return;
+
+            let html = `
+                <div class="vault-section">
+                    <div class="vault-header">
+                        <h2 class="vault-title"><i class="fas fa-biohazard"></i> THE UNDERGROUND VAULT</h2>
+                        <p class="vault-subtitle">Spotify'da bulunmayan bağımsız remixler, bootlegler ve VIP kayıtlar.</p>
+                    </div>
+                    <div class="track-grid">
+            `;
+
+            bootlegTracks.forEach(track => {
+                let tagsHtml = "";
+                if (track.tags) {
+                    const tagList = track.tags.split(' / ');
+                    // Bootleg'lere özel kırmızı-pembemsi etiket renkleri
+                    tagsHtml = `<div class="tag-container">` + 
+                               tagList.map(tag => `<span class="genre-tag" style="border-color: #ff003c; color: #ff88a3;">${tag}</span>`).join('') + 
+                               `</div>`;
+                }
+
+                html += `
+                    <div class="vault-card">
+                        <div class="vault-card-header">
+                            <div class="card-info">
+                                <span class="vault-card-title">${track.title}</span>
+                                <span class="vault-card-artist">Orijinal: ${track.originalArtist}</span>
+                            </div>
+                            <i class="fas fa-compact-disc vault-icon"></i>
+                        </div>
+                        ${tagsHtml}
+                        <audio controls class="vault-audio">
+                            <source src="${track.file}" type="audio/mpeg">
+                            Tarayıcınız oynatıcıyı desteklemiyor.
+                        </audio>
+                    </div>
+                `;
+            });
+
+            html += `</div></div>`;
+            container.innerHTML = html;
+        }
+
         function changeSpotifyTrack(element, trackId) {
             // Resmi Embed Link Yapısı
             var newSrc = "https://open.spotify.com/embed/track/" + trackId + "?utm_source=generator&theme=0";
@@ -367,6 +530,7 @@
 
         // Başlat
         renderTracks();
+        renderBootlegs(); // Bootlegleri de çağır
 
     </script>
 
